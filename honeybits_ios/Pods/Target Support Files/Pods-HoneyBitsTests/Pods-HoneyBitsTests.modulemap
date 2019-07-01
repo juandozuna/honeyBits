@@ -1,0 +1,6 @@
+framework module Pods_HoneyBitsTests {
+  umbrella header "Pods-HoneyBitsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

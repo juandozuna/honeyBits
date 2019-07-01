@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (4.8.2)
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
+  - ChameleonFramework/Default (2.1.0)
+  - LoadingButton (0.1.1)
+  - PMSuperButton (3.0.1)
+  - SVProgressHUD (2.2.5)
+  - SwipeCellKit (2.6.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - ChameleonFramework
+  - LoadingButton
+  - PMSuperButton
+  - SVProgressHUD
+  - SwipeCellKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - ChameleonFramework
+    - LoadingButton
+    - PMSuperButton
+    - SVProgressHUD
+    - SwipeCellKit
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  LoadingButton: 0c0cacee893f261f471a70a4b724cf248f1d8be2
+  PMSuperButton: 2bef6f8659a5df969a69887f496ef309480c65eb
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
+
+PODFILE CHECKSUM: 1955f9198bcf9cf282ee86aecd414a046a30a341
+
+COCOAPODS: 1.7.1
