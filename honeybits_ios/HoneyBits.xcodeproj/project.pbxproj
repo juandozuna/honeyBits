@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BD5BDC146488DC7AD00F8EA /* Pods_HoneyBits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E461E760B99B774FB47708 /* Pods_HoneyBits.framework */; };
+		1C0F3653B6F29A19D501CAAB /* Pods_HoneyBitsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C636D69A3D1DCE55F9C6D98 /* Pods_HoneyBitsTests.framework */; };
+		94689591791F5DCFE6CF9A41 /* Pods_HoneyBitsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3796716515E095C76664E6F2 /* Pods_HoneyBitsUITests.framework */; };
+		B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */; };
+		B2FC8EE822CA1FBD008CE65C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC8EE722CA1FBD008CE65C /* ViewController.swift */; };
+		B2FC8EEB22CA1FBD008CE65C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FC8EE922CA1FBD008CE65C /* Main.storyboard */; };
+		B2FC8EED22CA1FBE008CE65C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2FC8EEC22CA1FBE008CE65C /* Assets.xcassets */; };
+		B2FC8EF022CA1FBE008CE65C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FC8EEE22CA1FBE008CE65C /* LaunchScreen.storyboard */; };
+		B2FC8EFB22CA1FBE008CE65C /* HoneyBitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC8EFA22CA1FBE008CE65C /* HoneyBitsTests.swift */; };
+		B2FC8F0622CA1FBE008CE65C /* HoneyBitsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC8F0522CA1FBE008CE65C /* HoneyBitsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B2FC8EF722CA1FBE008CE65C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2FC8EDA22CA1FBD008CE65C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2FC8EE122CA1FBD008CE65C;
+			remoteInfo = HoneyBits;
+		};
+		B2FC8F0222CA1FBE008CE65C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2FC8EDA22CA1FBD008CE65C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2FC8EE122CA1FBD008CE65C;
+			remoteInfo = HoneyBits;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E5BFC44C36379A4C726E008 /* Pods-HoneyBitsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsTests.release.xcconfig"; path = "Target Support Files/Pods-HoneyBitsTests/Pods-HoneyBitsTests.release.xcconfig"; sourceTree = "<group>"; };
+		3796716515E095C76664E6F2 /* Pods_HoneyBitsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoneyBitsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C636D69A3D1DCE55F9C6D98 /* Pods_HoneyBitsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoneyBitsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62E461E760B99B774FB47708 /* Pods_HoneyBits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoneyBits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		633F27CAC33C5B685297B670 /* Pods-HoneyBits.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBits.debug.xcconfig"; path = "Target Support Files/Pods-HoneyBits/Pods-HoneyBits.debug.xcconfig"; sourceTree = "<group>"; };
+		6E8B7938B853F1FCAA65E470 /* Pods-HoneyBitsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsUITests.debug.xcconfig"; path = "Target Support Files/Pods-HoneyBitsUITests/Pods-HoneyBitsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsUITests.release.xcconfig"; path = "Target Support Files/Pods-HoneyBitsUITests/Pods-HoneyBitsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		979A26B3C22A87F960576887 /* Pods-HoneyBitsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsTests.debug.xcconfig"; path = "Target Support Files/Pods-HoneyBitsTests/Pods-HoneyBitsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF08A3412DFB48B7CEC50E1A /* Pods-HoneyBits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBits.release.xcconfig"; path = "Target Support Files/Pods-HoneyBits/Pods-HoneyBits.release.xcconfig"; sourceTree = "<group>"; };
+		B2FC8EE222CA1FBD008CE65C /* HoneyBits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoneyBits.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B2FC8EE722CA1FBD008CE65C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B2FC8EEA22CA1FBD008CE65C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B2FC8EEC22CA1FBE008CE65C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B2FC8EEF22CA1FBE008CE65C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B2FC8EF122CA1FBE008CE65C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2FC8EF622CA1FBE008CE65C /* HoneyBitsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoneyBitsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2FC8EFA22CA1FBE008CE65C /* HoneyBitsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneyBitsTests.swift; sourceTree = "<group>"; };
+		B2FC8EFC22CA1FBE008CE65C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2FC8F0122CA1FBE008CE65C /* HoneyBitsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoneyBitsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2FC8F0522CA1FBE008CE65C /* HoneyBitsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneyBitsUITests.swift; sourceTree = "<group>"; };
+		B2FC8F0722CA1FBE008CE65C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2FC8EDF22CA1FBD008CE65C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BD5BDC146488DC7AD00F8EA /* Pods_HoneyBits.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2FC8EF322CA1FBE008CE65C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C0F3653B6F29A19D501CAAB /* Pods_HoneyBitsTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2FC8EFE22CA1FBE008CE65C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94689591791F5DCFE6CF9A41 /* Pods_HoneyBitsUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		329A663C18D8431F8D5AA002 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				633F27CAC33C5B685297B670 /* Pods-HoneyBits.debug.xcconfig */,
+				AF08A3412DFB48B7CEC50E1A /* Pods-HoneyBits.release.xcconfig */,
+				979A26B3C22A87F960576887 /* Pods-HoneyBitsTests.debug.xcconfig */,
+				1E5BFC44C36379A4C726E008 /* Pods-HoneyBitsTests.release.xcconfig */,
+				6E8B7938B853F1FCAA65E470 /* Pods-HoneyBitsUITests.debug.xcconfig */,
+				7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B2FC8ED922CA1FBD008CE65C = {
+			isa = PBXGroup;
+			children = (
+				B2FC8EE422CA1FBD008CE65C /* HoneyBits */,
+				B2FC8EF922CA1FBE008CE65C /* HoneyBitsTests */,
+				B2FC8F0422CA1FBE008CE65C /* HoneyBitsUITests */,
+				B2FC8EE322CA1FBD008CE65C /* Products */,
+				329A663C18D8431F8D5AA002 /* Pods */,
+				E7BE4C7547E88F5B785918BB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B2FC8EE322CA1FBD008CE65C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2FC8EE222CA1FBD008CE65C /* HoneyBits.app */,
+				B2FC8EF622CA1FBE008CE65C /* HoneyBitsTests.xctest */,
+				B2FC8F0122CA1FBE008CE65C /* HoneyBitsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2FC8EE422CA1FBD008CE65C /* HoneyBits */ = {
+			isa = PBXGroup;
+			children = (
+				B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */,
+				B2FC8EE722CA1FBD008CE65C /* ViewController.swift */,
+				B2FC8EE922CA1FBD008CE65C /* Main.storyboard */,
+				B2FC8EEC22CA1FBE008CE65C /* Assets.xcassets */,
+				B2FC8EEE22CA1FBE008CE65C /* LaunchScreen.storyboard */,
+				B2FC8EF122CA1FBE008CE65C /* Info.plist */,
+			);
+			path = HoneyBits;
+			sourceTree = "<group>";
+		};
+		B2FC8EF922CA1FBE008CE65C /* HoneyBitsTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2FC8EFA22CA1FBE008CE65C /* HoneyBitsTests.swift */,
+				B2FC8EFC22CA1FBE008CE65C /* Info.plist */,
+			);
+			path = HoneyBitsTests;
+			sourceTree = "<group>";
+		};
+		B2FC8F0422CA1FBE008CE65C /* HoneyBitsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B2FC8F0522CA1FBE008CE65C /* HoneyBitsUITests.swift */,
+				B2FC8F0722CA1FBE008CE65C /* Info.plist */,
+			);
+			path = HoneyBitsUITests;
+			sourceTree = "<group>";
+		};
+		E7BE4C7547E88F5B785918BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62E461E760B99B774FB47708 /* Pods_HoneyBits.framework */,
+				5C636D69A3D1DCE55F9C6D98 /* Pods_HoneyBitsTests.framework */,
+				3796716515E095C76664E6F2 /* Pods_HoneyBitsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2FC8EE122CA1FBD008CE65C /* HoneyBits */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2FC8F0A22CA1FBE008CE65C /* Build configuration list for PBXNativeTarget "HoneyBits" */;
+			buildPhases = (
+				83EBBBDDAF5156B2DB196107 /* [CP] Check Pods Manifest.lock */,
+				B2FC8EDE22CA1FBD008CE65C /* Sources */,
+				B2FC8EDF22CA1FBD008CE65C /* Frameworks */,
+				B2FC8EE022CA1FBD008CE65C /* Resources */,
+				1E24BA6FF82DFBBCDEC0D0A5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HoneyBits;
+			productName = HoneyBits;
+			productReference = B2FC8EE222CA1FBD008CE65C /* HoneyBits.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B2FC8EF522CA1FBE008CE65C /* HoneyBitsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2FC8F0D22CA1FBE008CE65C /* Build configuration list for PBXNativeTarget "HoneyBitsTests" */;
+			buildPhases = (
+				AAD06AB13315226901A9F6EA /* [CP] Check Pods Manifest.lock */,
+				B2FC8EF222CA1FBE008CE65C /* Sources */,
+				B2FC8EF322CA1FBE008CE65C /* Frameworks */,
+				B2FC8EF422CA1FBE008CE65C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2FC8EF822CA1FBE008CE65C /* PBXTargetDependency */,
+			);
+			name = HoneyBitsTests;
+			productName = HoneyBitsTests;
+			productReference = B2FC8EF622CA1FBE008CE65C /* HoneyBitsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B2FC8F0022CA1FBE008CE65C /* HoneyBitsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2FC8F1022CA1FBE008CE65C /* Build configuration list for PBXNativeTarget "HoneyBitsUITests" */;
+			buildPhases = (
+				FA57FF2454AF294CBD311678 /* [CP] Check Pods Manifest.lock */,
+				B2FC8EFD22CA1FBE008CE65C /* Sources */,
+				B2FC8EFE22CA1FBE008CE65C /* Frameworks */,
+				B2FC8EFF22CA1FBE008CE65C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2FC8F0322CA1FBE008CE65C /* PBXTargetDependency */,
+			);
+			name = HoneyBitsUITests;
+			productName = HoneyBitsUITests;
+			productReference = B2FC8F0122CA1FBE008CE65C /* HoneyBitsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2FC8EDA22CA1FBD008CE65C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Juan Daniel Ozuna Espinal";
+				TargetAttributes = {
+					B2FC8EE122CA1FBD008CE65C = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					B2FC8EF522CA1FBE008CE65C = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = B2FC8EE122CA1FBD008CE65C;
+					};
+					B2FC8F0022CA1FBE008CE65C = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = B2FC8EE122CA1FBD008CE65C;
+					};
+				};
+			};
+			buildConfigurationList = B2FC8EDD22CA1FBD008CE65C /* Build configuration list for PBXProject "HoneyBits" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B2FC8ED922CA1FBD008CE65C;
+			productRefGroup = B2FC8EE322CA1FBD008CE65C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2FC8EE122CA1FBD008CE65C /* HoneyBits */,
+				B2FC8EF522CA1FBE008CE65C /* HoneyBitsTests */,
+				B2FC8F0022CA1FBE008CE65C /* HoneyBitsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2FC8EE022CA1FBD008CE65C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2FC8EF022CA1FBE008CE65C /* LaunchScreen.storyboard in Resources */,
+				B2FC8EED22CA1FBE008CE65C /* Assets.xcassets in Resources */,
+				B2FC8EEB22CA1FBD008CE65C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2FC8EF422CA1FBE008CE65C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2FC8EFF22CA1FBE008CE65C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E24BA6FF82DFBBCDEC0D0A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoneyBits/Pods-HoneyBits-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoneyBits/Pods-HoneyBits-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HoneyBits/Pods-HoneyBits-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83EBBBDDAF5156B2DB196107 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HoneyBits-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAD06AB13315226901A9F6EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HoneyBitsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA57FF2454AF294CBD311678 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HoneyBitsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2FC8EDE22CA1FBD008CE65C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2FC8EE822CA1FBD008CE65C /* ViewController.swift in Sources */,
+				B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2FC8EF222CA1FBE008CE65C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2FC8EFB22CA1FBE008CE65C /* HoneyBitsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2FC8EFD22CA1FBE008CE65C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2FC8F0622CA1FBE008CE65C /* HoneyBitsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2FC8EF822CA1FBE008CE65C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2FC8EE122CA1FBD008CE65C /* HoneyBits */;
+			targetProxy = B2FC8EF722CA1FBE008CE65C /* PBXContainerItemProxy */;
+		};
+		B2FC8F0322CA1FBE008CE65C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2FC8EE122CA1FBD008CE65C /* HoneyBits */;
+			targetProxy = B2FC8F0222CA1FBE008CE65C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B2FC8EE922CA1FBD008CE65C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2FC8EEA22CA1FBD008CE65C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B2FC8EEE22CA1FBE008CE65C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2FC8EEF22CA1FBE008CE65C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B2FC8F0822CA1FBE008CE65C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B2FC8F0922CA1FBE008CE65C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B2FC8F0B22CA1FBE008CE65C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 633F27CAC33C5B685297B670 /* Pods-HoneyBits.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 755JV5Z68F;
+				INFOPLIST_FILE = HoneyBits/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.juandozuna.HoneyBits;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B2FC8F0C22CA1FBE008CE65C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF08A3412DFB48B7CEC50E1A /* Pods-HoneyBits.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 755JV5Z68F;
+				INFOPLIST_FILE = HoneyBits/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.juandozuna.HoneyBits;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B2FC8F0E22CA1FBE008CE65C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 979A26B3C22A87F960576887 /* Pods-HoneyBitsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 755JV5Z68F;
+				INFOPLIST_FILE = HoneyBitsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.juandozuna.HoneyBitsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HoneyBits.app/HoneyBits";
+			};
+			name = Debug;
+		};
+		B2FC8F0F22CA1FBE008CE65C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E5BFC44C36379A4C726E008 /* Pods-HoneyBitsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 755JV5Z68F;
+				INFOPLIST_FILE = HoneyBitsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.juandozuna.HoneyBitsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HoneyBits.app/HoneyBits";
+			};
+			name = Release;
+		};
+		B2FC8F1122CA1FBE008CE65C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E8B7938B853F1FCAA65E470 /* Pods-HoneyBitsUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 755JV5Z68F;
+				INFOPLIST_FILE = HoneyBitsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.juandozuna.HoneyBitsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HoneyBits;
+			};
+			name = Debug;
+		};
+		B2FC8F1222CA1FBE008CE65C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 755JV5Z68F;
+				INFOPLIST_FILE = HoneyBitsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.juandozuna.HoneyBitsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HoneyBits;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2FC8EDD22CA1FBD008CE65C /* Build configuration list for PBXProject "HoneyBits" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2FC8F0822CA1FBE008CE65C /* Debug */,
+				B2FC8F0922CA1FBE008CE65C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2FC8F0A22CA1FBE008CE65C /* Build configuration list for PBXNativeTarget "HoneyBits" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2FC8F0B22CA1FBE008CE65C /* Debug */,
+				B2FC8F0C22CA1FBE008CE65C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2FC8F0D22CA1FBE008CE65C /* Build configuration list for PBXNativeTarget "HoneyBitsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2FC8F0E22CA1FBE008CE65C /* Debug */,
+				B2FC8F0F22CA1FBE008CE65C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2FC8F1022CA1FBE008CE65C /* Build configuration list for PBXNativeTarget "HoneyBitsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2FC8F1122CA1FBE008CE65C /* Debug */,
+				B2FC8F1222CA1FBE008CE65C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2FC8EDA22CA1FBD008CE65C /* Project object */;
+}

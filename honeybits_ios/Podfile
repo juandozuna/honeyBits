@@ -1,0 +1,26 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'HoneyBits' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for HoneyBits
+  pod 'Alamofire'
+  pod 'PMSuperButton'
+  pod 'SwipeCellKit'
+  pod 'LoadingButton'
+  pod 'SVProgressHUD'
+  pod 'ChameleonFramework'
+
+  target 'HoneyBitsTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'HoneyBitsUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
