@@ -5,7 +5,7 @@ namespace honeybits_backend.Models {
         public int Id { get; set; }
         public String FirstName { get; set; }
         public String LastName { get; set; }
-        public DateTime BirthDate { get; set; }
+        public DateTime Birthdate { get; set; }
         
     }
 }
