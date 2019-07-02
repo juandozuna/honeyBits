@@ -1,3 +1,4 @@
+using honeybits_backend.Models;
 using honeybits_backend.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -18,8 +19,8 @@ namespace honeybits_backend.Controllers {
 
         [AllowAnonymous]
         [HttpPost("authenticate")]
-        public IActionResult Authenticate(string username, string password) {
-            var user = _userService.Authenticate(username, password);
+        public IActionResult Authenticate([FromBody]Token userParam) {
+            var user = _userService.Authenticate(userParam.Username, userParam.Password);
             
             if(user == null) {
                 return BadRequest();
