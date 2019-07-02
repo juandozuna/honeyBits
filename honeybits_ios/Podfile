@@ -9,7 +9,6 @@ target 'HoneyBits' do
   pod 'Alamofire'
   pod 'PMSuperButton'
   pod 'SwipeCellKit'
-  pod 'LoadingButton'
   pod 'SVProgressHUD'
   pod 'ChameleonFramework'
 

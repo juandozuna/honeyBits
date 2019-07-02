@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -99,8 +99,38 @@
 				6E8B7938B853F1FCAA65E470 /* Pods-HoneyBitsUITests.debug.xcconfig */,
 				7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B2A5813822CAD0F300C9C5D9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B2FC8EE722CA1FBD008CE65C /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B2A5813922CAD0F900C9C5D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B2DD098322CAF8D100A98586 /* Shared */,
+				B2FC8EE922CA1FBD008CE65C /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B2A5813A22CAD10100C9C5D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B2DD098322CAF8D100A98586 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		B2FC8ED922CA1FBD008CE65C = {
@@ -129,8 +159,9 @@
 			isa = PBXGroup;
 			children = (
 				B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */,
-				B2FC8EE722CA1FBD008CE65C /* ViewController.swift */,
-				B2FC8EE922CA1FBD008CE65C /* Main.storyboard */,
+				B2A5813A22CAD10100C9C5D9 /* Models */,
+				B2A5813922CAD0F900C9C5D9 /* Views */,
+				B2A5813822CAD0F300C9C5D9 /* Controllers */,
 				B2FC8EEC22CA1FBE008CE65C /* Assets.xcassets */,
 				B2FC8EEE22CA1FBE008CE65C /* LaunchScreen.storyboard */,
 				B2FC8EF122CA1FBE008CE65C /* Info.plist */,
@@ -567,6 +598,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 755JV5Z68F;
 				INFOPLIST_FILE = HoneyBits/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,7 +606,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.juandozuna.HoneyBits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -586,6 +618,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 755JV5Z68F;
 				INFOPLIST_FILE = HoneyBits/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -593,7 +626,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.juandozuna.HoneyBits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
