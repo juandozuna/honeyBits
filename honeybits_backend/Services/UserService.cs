@@ -17,8 +17,8 @@ namespace honeybits_backend.Services {
         private List<User> _users = new List<User> {
             new User { Id = 1, Role = Role.Administrator, FirstName = "Admin", LastName = "Admin", Birthdate = DateTime.Now, Username = "Admin", Password = "123456"},
             new User { Id = 2, Role = Role.Developer, FirstName = "Developer", LastName = "Dev", Birthdate = DateTime.Now, Username = "developer", Password = "123456"},
-            new User { Id = 3, Role = Role.Customer, FirstName = "Developer", LastName = "Dev", Birthdate = DateTime.Now, Username = "customer", Password = "123456"},
-            new User { Id = 4, Role = Role.Keeper, FirstName = "Developer", LastName = "Dev", Birthdate = DateTime.Now, Username = "keeper", Password = "123456"}
+            new User { Id = 3, Role = Role.Customer, FirstName = "Customer", LastName = "Cust", Birthdate = DateTime.Now, Username = "customer", Password = "123456"},
+            new User { Id = 4, Role = Role.Keeper, FirstName = "Keeper", LastName = "Keep", Birthdate = DateTime.Now, Username = "keeper", Password = "123456"}
         };
 
         private readonly AppSettings _appSettings;
@@ -52,9 +52,6 @@ namespace honeybits_backend.Services {
             };
         }
 
-        public IEnumerable<User> GetAll()
-        {
-            throw new System.NotImplementedException();
-        }
+        public IEnumerable<User> GetAll() => _users.ToList();
     }
 }
