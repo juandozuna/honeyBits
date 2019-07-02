@@ -74,7 +74,7 @@ namespace honeybits_backend
             .AllowAnyMethod()
             .AllowAnyOrigin());
             app.UseAuthentication();
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
             app.UseMvc();
         }
     }
