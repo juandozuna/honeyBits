@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:HoneyBits/Views/Shared/UserAuthentication.storyboard">
+   </FileRef>
+   <FileRef
       location = "group:HoneyBits.xcodeproj">
    </FileRef>
    <FileRef
