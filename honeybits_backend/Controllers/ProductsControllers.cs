@@ -15,6 +15,17 @@ namespace honeybits_backend.Controllers {
             _productService = productService;
         }
 
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
+        {
+            var product = _productService.Get(id);
+
+            if (product == null)
+                return NotFound();
+
+            return Ok(product);   
+        }
+
         [AllowAnonymous]
         [HttpGet("all")]
         public IActionResult GetAll() => Ok(_productService.GetAll());
