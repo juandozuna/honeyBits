@@ -7,14 +7,32 @@
 //
 
 import UIKit
+import DependencyInjector
 
 class ViewController: UIViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    func prepareView() {
+        
     }
 
 
 }
 
+
+extension ViewController : RecursiveDismissDelegate {
+    func dismissIt() {
+        
+    }
+    
+    func dismissOnLogin() {
+       prepareView()
+    }
+    
+    
+}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zN6-ob-YCk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5re-ii-qpW">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -180,13 +180,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="onD-XG-1lR"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2Ur-4P-NvN"/>
                     <connections>
-                        <segue destination="Rb9-7m-LQr" kind="presentation" identifier="goToSignIn" id="rpR-Lq-U9S"/>
+                        <segue destination="Rb9-7m-LQr" kind="show" identifier="goToSignIn" id="rpR-Lq-U9S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OrC-j6-27h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175.36231884057972" y="166.74107142857142"/>
+            <point key="canvasLocation" x="734.78260869565224" y="166.74107142857142"/>
         </scene>
         <!--Sign In Form-->
         <scene sceneID="C8I-RC-TmQ">
@@ -197,14 +198,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZP-Zv-KpA">
-                                <rect key="frame" x="35.5" y="324" width="343" height="248"/>
+                                <rect key="frame" x="35.5" y="273" width="343" height="350"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="g5C-qK-CZV">
-                                        <rect key="frame" x="95" y="185" width="0.0" height="28"/>
+                                        <rect key="frame" x="95" y="185" width="0.0" height="130"/>
                                         <color key="backgroundColor" red="0.2901960784" green="0.4039215686" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmF-MN-7NH" customClass="PMSuperButton" customModule="PMSuperButton">
-                                        <rect key="frame" x="17" y="190" width="309" height="41"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmF-MN-7NH" customClass="PMSuperButton" customModule="PMSuperButton">
+                                        <rect key="frame" x="17" y="208" width="309" height="41"/>
                                         <color key="backgroundColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="lnj-dI-exv"/>
@@ -273,9 +274,8 @@
                                     <constraint firstItem="0EN-gn-SZa" firstAttribute="trailing" secondItem="FmF-MN-7NH" secondAttribute="trailing" id="Qhr-Dh-pap"/>
                                     <constraint firstItem="FmF-MN-7NH" firstAttribute="centerX" secondItem="Mh0-Go-5rp" secondAttribute="centerX" id="R32-jL-G8s"/>
                                     <constraint firstItem="Uqj-ez-GVd" firstAttribute="leading" secondItem="5ZP-Zv-KpA" secondAttribute="leading" constant="15" id="RdL-Nn-sAx"/>
-                                    <constraint firstAttribute="height" constant="248" id="ZN9-DS-9la"/>
+                                    <constraint firstAttribute="height" constant="350" id="ZN9-DS-9la"/>
                                     <constraint firstItem="0EN-gn-SZa" firstAttribute="top" secondItem="Uqj-ez-GVd" secondAttribute="bottom" constant="38" id="aTe-SL-a9u"/>
-                                    <constraint firstItem="FmF-MN-7NH" firstAttribute="top" secondItem="0EN-gn-SZa" secondAttribute="bottom" constant="32" id="cSE-hu-q6C"/>
                                     <constraint firstItem="g5C-qK-CZV" firstAttribute="top" secondItem="0EN-gn-SZa" secondAttribute="bottom" constant="27" id="cmO-GA-KgM"/>
                                     <constraint firstItem="Mh0-Go-5rp" firstAttribute="centerX" secondItem="5ZP-Zv-KpA" secondAttribute="centerX" id="d6W-Uh-f1W"/>
                                     <constraint firstItem="0EN-gn-SZa" firstAttribute="centerX" secondItem="Uqj-ez-GVd" secondAttribute="centerX" id="k2B-ch-uOZ"/>
@@ -305,7 +305,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hg6-iD-Zb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="753.62318840579712" y="19.419642857142858"/>
+            <point key="canvasLocation" x="1663.7681159420292" y="19.419642857142858"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5hK-Dx-FeA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" navigationBarHidden="YES" id="5re-ii-qpW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vzj-3C-XU8">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zN6-ob-YCk" kind="relationship" relationship="rootViewController" id="N8E-UM-AA2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yxp-zT-oMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175.36231884057972" y="166.74107142857142"/>
         </scene>
     </scenes>
     <resources>

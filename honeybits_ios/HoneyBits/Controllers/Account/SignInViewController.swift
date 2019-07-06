@@ -30,7 +30,7 @@ class SignInViewController: UIViewController {
     
     @IBAction func SignInBtnPressed(_ sender: Any) {
         if validateForm() {
-            
+            dimissiveDelegate?.dismissIt()
         }
     }
     

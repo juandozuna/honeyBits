@@ -10,6 +10,13 @@ import Foundation
 import DependencyInjector
 
 class AccountService : IAccountService, Injectable {
+    var userIsLoggedIn: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "isLoggedIn")
+        }
+    }
+    
+    
     
     public required convenience init(injector: Injector, arguments: [String : Any]?) throws {
         self.init()
@@ -19,8 +26,12 @@ class AccountService : IAccountService, Injectable {
         
     }
     
+    //MARK- Variables
+    
+    //MARK:-  Methods
     func loginUser(email: String, password: String) -> Bool {
-        return true;
+        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+        return true
     }
     
 
