@@ -70,12 +70,14 @@ class SignInViewController: UIViewController {
             showErrorInTextfield(txtEmail, message: NSLocalizedString("ValidEmailAdress", comment: ""))
             return false
         }
-
+    
         return true
     }
     
     private func validateForm() -> Bool {
-        return validPassword() && validEmail()
+        let email = validEmail()
+        let password = validPassword()
+        return email && password
     }
     
     private func showErrorInTextfield(_ textfield: TextField, message: String) {
