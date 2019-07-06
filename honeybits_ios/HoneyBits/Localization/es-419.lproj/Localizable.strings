@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  HoneyBits
+
+  Created by Juan Daniel Ozuna Espinal on 7/4/19.
+  Copyright © 2019 Juan Daniel Ozuna Espinal. All rights reserved.
+*/
+
+
+"Sign in to Honey Bits" = "Iniciar sesión en Honey Bits";
+"Sign in with Google" = "Iniciar sesión con Google";
+"Sign in with Facebook" = "Iniciar sesión con Facebook";
+"Register" = "Registar";
+"Sign in" = "Iniciar Sesión";
+"RequiredField" = "Este es un campo requerido";
+"ValidEmailAdress" = "Debe de ingresar correo electrónico válido";

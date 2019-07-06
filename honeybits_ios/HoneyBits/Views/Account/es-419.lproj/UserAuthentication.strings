@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Sign in to Honey Bits"; ObjectID = "Ywu-C1-dlQ"; */
+"Ywu-C1-dlQ.text" = "Iniciar sesion en Honey Bits";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "czf-hX-a8X"; */
+"czf-hX-a8X.normalTitle" = "Registrar";
+
+/* Class = "UIButton"; normalTitle = "   Sign in with Google"; ObjectID = "dYg-EQ-yr0"; */
+"dYg-EQ-yr0.normalTitle" = " Iniciar Sesión con Google";
+
+/* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "eWp-9p-EVX"; */
+"eWp-9p-EVX.normalTitle" = "Iniciar Sesión";
+
+/* Class = "UIButton"; normalTitle = "   Sign in with Facebook"; ObjectID = "wk3-pi-M82"; */
+"wk3-pi-M82.normalTitle" = "  Iniciar Sesión con Facebook";
+
+/* Class = "UIViewController"; title = "Login Popup"; ObjectID = "zN6-ob-YCk"; */
+"zN6-ob-YCk.title" = "Login Popup";

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import DependencyInjector
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        IQKeyboardManager.shared.enable = true
+        
+        let modules = Module()
+        modules.bind(IAccountService.self).to(AccountService.self)
+        Injector.default.register(module: modules, with: "ID")
+        
         return true
     }
 

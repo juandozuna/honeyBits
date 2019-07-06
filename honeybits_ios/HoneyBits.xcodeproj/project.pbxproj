@@ -3,13 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0BD5BDC146488DC7AD00F8EA /* Pods_HoneyBits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E461E760B99B774FB47708 /* Pods_HoneyBits.framework */; };
 		1C0F3653B6F29A19D501CAAB /* Pods_HoneyBitsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C636D69A3D1DCE55F9C6D98 /* Pods_HoneyBitsTests.framework */; };
 		94689591791F5DCFE6CF9A41 /* Pods_HoneyBitsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3796716515E095C76664E6F2 /* Pods_HoneyBitsUITests.framework */; };
+		B272B8C222CED28500E124B4 /* UserAuthentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B272B8C422CED28500E124B4 /* UserAuthentication.storyboard */; };
+		B272B8CB22CED34900E124B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B272B8CD22CED34900E124B4 /* Localizable.strings */; };
+		B272B8D022CEE65A00E124B4 /* LoginSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272B8CF22CEE65A00E124B4 /* LoginSelectViewController.swift */; };
+		B272B8D222CEE66200E124B4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272B8D122CEE66200E124B4 /* SignInViewController.swift */; };
+		B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272B8D422CEE7E800E124B4 /* RecursiveDismissDelegate.swift */; };
+		B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5522D018A400CBBA4E /* IAccountService.swift */; };
+		B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5722D01AFA00CBBA4E /* AccountService.swift */; };
 		B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */; };
 		B2FC8EE822CA1FBD008CE65C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC8EE722CA1FBD008CE65C /* ViewController.swift */; };
 		B2FC8EEB22CA1FBD008CE65C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FC8EE922CA1FBD008CE65C /* Main.storyboard */; };
@@ -46,6 +53,18 @@
 		7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsUITests.release.xcconfig"; path = "Target Support Files/Pods-HoneyBitsUITests/Pods-HoneyBitsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		979A26B3C22A87F960576887 /* Pods-HoneyBitsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsTests.debug.xcconfig"; path = "Target Support Files/Pods-HoneyBitsTests/Pods-HoneyBitsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF08A3412DFB48B7CEC50E1A /* Pods-HoneyBits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBits.release.xcconfig"; path = "Target Support Files/Pods-HoneyBits/Pods-HoneyBits.release.xcconfig"; sourceTree = "<group>"; };
+		B272B8C022CED24F00E124B4 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Main.strings"; sourceTree = "<group>"; };
+		B272B8C122CED24F00E124B4 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		B272B8C322CED28500E124B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserAuthentication.storyboard; sourceTree = "<group>"; };
+		B272B8C622CED28E00E124B4 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/UserAuthentication.strings"; sourceTree = "<group>"; };
+		B272B8C822CED28F00E124B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UserAuthentication.strings; sourceTree = "<group>"; };
+		B272B8CC22CED34900E124B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B272B8CE22CED34E00E124B4 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B272B8CF22CEE65A00E124B4 /* LoginSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSelectViewController.swift; sourceTree = "<group>"; };
+		B272B8D122CEE66200E124B4 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B272B8D422CEE7E800E124B4 /* RecursiveDismissDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveDismissDelegate.swift; sourceTree = "<group>"; };
+		B2A91D5522D018A400CBBA4E /* IAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAccountService.swift; sourceTree = "<group>"; };
+		B2A91D5722D01AFA00CBBA4E /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		B2FC8EE222CA1FBD008CE65C /* HoneyBits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoneyBits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2FC8EE722CA1FBD008CE65C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,8 +118,89 @@
 				6E8B7938B853F1FCAA65E470 /* Pods-HoneyBitsUITests.debug.xcconfig */,
 				7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B272B8BD22CED19400E124B4 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				B272B8CD22CED34900E124B4 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		B272B8D322CEE7C900E124B4 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				B272B8D422CEE7E800E124B4 /* RecursiveDismissDelegate.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		B2A5813822CAD0F300C9C5D9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B2E13D3522CECFDB0074607C /* Account */,
+				B2FC8EE722CA1FBD008CE65C /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B2A5813922CAD0F900C9C5D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B2DD098322CAF8D100A98586 /* Account */,
+				B2FC8EE922CA1FBD008CE65C /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B2A5813A22CAD10100C9C5D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B2A91D5422D0184500CBBA4E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B272B8D322CEE7C900E124B4 /* Account */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		B2DD098322CAF8D100A98586 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				B272B8C422CED28500E124B4 /* UserAuthentication.storyboard */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		B2E13D3522CECFDB0074607C /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				B272B8CF22CEE65A00E124B4 /* LoginSelectViewController.swift */,
+				B272B8D122CEE66200E124B4 /* SignInViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		B2E13D3622CECFF30074607C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B2A91D5522D018A400CBBA4E /* IAccountService.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B2E13D3722CED07D0074607C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B2A91D5722D01AFA00CBBA4E /* AccountService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		B2FC8ED922CA1FBD008CE65C = {
@@ -109,7 +209,6 @@
 				B2FC8EE422CA1FBD008CE65C /* HoneyBits */,
 				B2FC8EF922CA1FBE008CE65C /* HoneyBitsTests */,
 				B2FC8F0422CA1FBE008CE65C /* HoneyBitsUITests */,
-				B2FC8EE322CA1FBD008CE65C /* Products */,
 				329A663C18D8431F8D5AA002 /* Pods */,
 				E7BE4C7547E88F5B785918BB /* Frameworks */,
 			);
@@ -123,17 +222,23 @@
 				B2FC8F0122CA1FBE008CE65C /* HoneyBitsUITests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		B2FC8EE422CA1FBD008CE65C /* HoneyBits */ = {
 			isa = PBXGroup;
 			children = (
-				B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */,
-				B2FC8EE722CA1FBD008CE65C /* ViewController.swift */,
-				B2FC8EE922CA1FBD008CE65C /* Main.storyboard */,
+				B2A91D5422D0184500CBBA4E /* Delegates */,
+				B272B8BD22CED19400E124B4 /* Localization */,
+				B2E13D3722CED07D0074607C /* Services */,
+				B2E13D3622CECFF30074607C /* Protocols */,
+				B2A5813A22CAD10100C9C5D9 /* Models */,
+				B2A5813922CAD0F900C9C5D9 /* Views */,
+				B2A5813822CAD0F300C9C5D9 /* Controllers */,
 				B2FC8EEC22CA1FBE008CE65C /* Assets.xcassets */,
 				B2FC8EEE22CA1FBE008CE65C /* LaunchScreen.storyboard */,
 				B2FC8EF122CA1FBE008CE65C /* Info.plist */,
+				B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */,
 			);
 			path = HoneyBits;
 			sourceTree = "<group>";
@@ -141,6 +246,7 @@
 		B2FC8EF922CA1FBE008CE65C /* HoneyBitsTests */ = {
 			isa = PBXGroup;
 			children = (
+				B2FC8EE322CA1FBD008CE65C /* Products */,
 				B2FC8EFA22CA1FBE008CE65C /* HoneyBitsTests.swift */,
 				B2FC8EFC22CA1FBE008CE65C /* Info.plist */,
 			);
@@ -256,6 +362,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = B2FC8ED922CA1FBD008CE65C;
 			productRefGroup = B2FC8EE322CA1FBD008CE65C /* Products */;
@@ -274,6 +381,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B272B8CB22CED34900E124B4 /* Localizable.strings in Resources */,
+				B272B8C222CED28500E124B4 /* UserAuthentication.storyboard in Resources */,
 				B2FC8EF022CA1FBE008CE65C /* LaunchScreen.storyboard in Resources */,
 				B2FC8EED22CA1FBE008CE65C /* Assets.xcassets in Resources */,
 				B2FC8EEB22CA1FBD008CE65C /* Main.storyboard in Resources */,
@@ -387,8 +496,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */,
 				B2FC8EE822CA1FBD008CE65C /* ViewController.swift in Sources */,
+				B272B8D022CEE65A00E124B4 /* LoginSelectViewController.swift in Sources */,
+				B272B8D222CEE66200E124B4 /* SignInViewController.swift in Sources */,
+				B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */,
 				B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */,
+				B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,10 +538,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B272B8C422CED28500E124B4 /* UserAuthentication.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B272B8C322CED28500E124B4 /* Base */,
+				B272B8C622CED28E00E124B4 /* es-419 */,
+				B272B8C822CED28F00E124B4 /* en */,
+			);
+			name = UserAuthentication.storyboard;
+			sourceTree = "<group>";
+		};
+		B272B8CD22CED34900E124B4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B272B8CC22CED34900E124B4 /* en */,
+				B272B8CE22CED34E00E124B4 /* es-419 */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		B2FC8EE922CA1FBD008CE65C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B2FC8EEA22CA1FBD008CE65C /* Base */,
+				B272B8C022CED24F00E124B4 /* es-419 */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -436,6 +570,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B2FC8EEF22CA1FBE008CE65C /* Base */,
+				B272B8C122CED24F00E124B4 /* es-419 */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -447,6 +582,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -494,7 +630,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -508,6 +644,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -549,7 +686,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -567,6 +704,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 755JV5Z68F;
 				INFOPLIST_FILE = HoneyBits/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,7 +712,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.juandozuna.HoneyBits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -586,6 +724,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 755JV5Z68F;
 				INFOPLIST_FILE = HoneyBits/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -593,7 +732,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.juandozuna.HoneyBits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
