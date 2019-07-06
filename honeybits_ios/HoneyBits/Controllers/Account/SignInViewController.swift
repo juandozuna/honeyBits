@@ -61,15 +61,16 @@ class SignInViewController: UIViewController {
         
         let requiredValidation = Validator.required().apply(text)
         if !requiredValidation {
-            showErrorInTextfield(txtEmail, message: NSLocalizedString("RequiredField", comment: "")
+            showErrorInTextfield(txtEmail, message: NSLocalizedString("RequiredField", comment: ""))
             return false
         }
         
         let emailValidation = Validator.isEmail().apply(text)
         if !emailValidation {
-            
+            showErrorInTextfield(txtEmail, message: NSLocalizedString("ValidEmailAdress", comment: ""))
+            return false
         }
-        
+
         return true
     }
     
