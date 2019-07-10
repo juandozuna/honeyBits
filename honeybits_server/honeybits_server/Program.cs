@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace honeybits_backend
+namespace honeybits_server
 {
     public class Program
     {
@@ -19,7 +19,6 @@ namespace honeybits_backend
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .UseUrls("http://localhost:5000");
+                .UseStartup<Startup>();
     }
 }
