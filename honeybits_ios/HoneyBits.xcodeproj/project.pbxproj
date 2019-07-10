@@ -15,6 +15,8 @@
 		B272B8D022CEE65A00E124B4 /* LoginSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272B8CF22CEE65A00E124B4 /* LoginSelectViewController.swift */; };
 		B272B8D222CEE66200E124B4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272B8D122CEE66200E124B4 /* SignInViewController.swift */; };
 		B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272B8D422CEE7E800E124B4 /* RecursiveDismissDelegate.swift */; };
+		B2745FD122D57EA500297A43 /* CustomerHomeGuestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2745FD022D57EA500297A43 /* CustomerHomeGuestView.xib */; };
+		B2745FD322D57EB500297A43 /* CustomerHomeGuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2745FD222D57EB500297A43 /* CustomerHomeGuestView.swift */; };
 		B27D794522D42BC80012F5CD /* CustomerSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794422D42BC80012F5CD /* CustomerSearch.storyboard */; };
 		B27D794722D42C5D0012F5CD /* CustomerYou.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794622D42C5D0012F5CD /* CustomerYou.storyboard */; };
 		B27D794922D42CEB0012F5CD /* CustomerCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794822D42CEB0012F5CD /* CustomerCart.storyboard */; };
@@ -22,6 +24,9 @@
 		B2A2E81B22D0D61800DFDAB3 /* CustomerFavorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A2E81A22D0D61800DFDAB3 /* CustomerFavorites.storyboard */; };
 		B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5522D018A400CBBA4E /* IAccountService.swift */; };
 		B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5722D01AFA00CBBA4E /* AccountService.swift */; };
+		B2F8358A22D6820900A9910C /* SignInDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8358922D6820900A9910C /* SignInDelegate.swift */; };
+		B2F8358E22D6837200A9910C /* CustomerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8358D22D6837200A9910C /* CustomerHomeViewController.swift */; };
+		B2F8359122D6882F00A9910C /* UiViewXibExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8359022D6882F00A9910C /* UiViewXibExtension.swift */; };
 		B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */; };
 		B2FC8EEB22CA1FBD008CE65C /* CustomerTabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FC8EE922CA1FBD008CE65C /* CustomerTabs.storyboard */; };
 		B2FC8EED22CA1FBE008CE65C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2FC8EEC22CA1FBE008CE65C /* Assets.xcassets */; };
@@ -57,16 +62,15 @@
 		7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsUITests.release.xcconfig"; path = "Target Support Files/Pods-HoneyBitsUITests/Pods-HoneyBitsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		979A26B3C22A87F960576887 /* Pods-HoneyBitsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsTests.debug.xcconfig"; path = "Target Support Files/Pods-HoneyBitsTests/Pods-HoneyBitsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF08A3412DFB48B7CEC50E1A /* Pods-HoneyBits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBits.release.xcconfig"; path = "Target Support Files/Pods-HoneyBits/Pods-HoneyBits.release.xcconfig"; sourceTree = "<group>"; };
-		B272B8C022CED24F00E124B4 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/CustomerTabs.strings"; sourceTree = "<group>"; };
 		B272B8C122CED24F00E124B4 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		B272B8C322CED28500E124B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserAuthentication.storyboard; sourceTree = "<group>"; };
-		B272B8C622CED28E00E124B4 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/UserAuthentication.strings"; sourceTree = "<group>"; };
-		B272B8C822CED28F00E124B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UserAuthentication.strings; sourceTree = "<group>"; };
 		B272B8CC22CED34900E124B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B272B8CE22CED34E00E124B4 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B272B8CF22CEE65A00E124B4 /* LoginSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSelectViewController.swift; sourceTree = "<group>"; };
 		B272B8D122CEE66200E124B4 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		B272B8D422CEE7E800E124B4 /* RecursiveDismissDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveDismissDelegate.swift; sourceTree = "<group>"; };
+		B2745FD022D57EA500297A43 /* CustomerHomeGuestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerHomeGuestView.xib; sourceTree = "<group>"; };
+		B2745FD222D57EB500297A43 /* CustomerHomeGuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeGuestView.swift; sourceTree = "<group>"; };
 		B27D794422D42BC80012F5CD /* CustomerSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerSearch.storyboard; sourceTree = "<group>"; };
 		B27D794622D42C5D0012F5CD /* CustomerYou.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerYou.storyboard; sourceTree = "<group>"; };
 		B27D794822D42CEB0012F5CD /* CustomerCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerCart.storyboard; sourceTree = "<group>"; };
@@ -74,6 +78,9 @@
 		B2A2E81A22D0D61800DFDAB3 /* CustomerFavorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerFavorites.storyboard; sourceTree = "<group>"; };
 		B2A91D5522D018A400CBBA4E /* IAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAccountService.swift; sourceTree = "<group>"; };
 		B2A91D5722D01AFA00CBBA4E /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		B2F8358922D6820900A9910C /* SignInDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDelegate.swift; sourceTree = "<group>"; };
+		B2F8358D22D6837200A9910C /* CustomerHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeViewController.swift; sourceTree = "<group>"; };
+		B2F8359022D6882F00A9910C /* UiViewXibExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewXibExtension.swift; sourceTree = "<group>"; };
 		B2FC8EE222CA1FBD008CE65C /* HoneyBits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoneyBits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2FC8EEA22CA1FBD008CE65C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CustomerTabs.storyboard; sourceTree = "<group>"; };
@@ -141,19 +148,85 @@
 			isa = PBXGroup;
 			children = (
 				B272B8D422CEE7E800E124B4 /* RecursiveDismissDelegate.swift */,
+				B2F8358922D6820900A9910C /* SignInDelegate.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		B2745FC522D57D2F00297A43 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B2745FCE22D57E4900297A43 /* Guest */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B2745FC922D57D9D00297A43 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B2A2E81822D0D51200DFDAB3 /* CustomerHome.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B2745FCA22D57DA200297A43 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				B2A2E81A22D0D61800DFDAB3 /* CustomerFavorites.storyboard */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		B2745FCB22D57DAD00297A43 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B27D794422D42BC80012F5CD /* CustomerSearch.storyboard */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		B2745FCC22D57DB100297A43 /* You */ = {
+			isa = PBXGroup;
+			children = (
+				B27D794622D42C5D0012F5CD /* CustomerYou.storyboard */,
+			);
+			path = You;
+			sourceTree = "<group>";
+		};
+		B2745FCD22D57DB500297A43 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				B27D794822D42CEB0012F5CD /* CustomerCart.storyboard */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		B2745FCE22D57E4900297A43 /* Guest */ = {
+			isa = PBXGroup;
+			children = (
+				B2745FCF22D57E5B00297A43 /* CustomerHomeGuest */,
+			);
+			path = Guest;
+			sourceTree = "<group>";
+		};
+		B2745FCF22D57E5B00297A43 /* CustomerHomeGuest */ = {
+			isa = PBXGroup;
+			children = (
+				B2745FD022D57EA500297A43 /* CustomerHomeGuestView.xib */,
+				B2745FD222D57EB500297A43 /* CustomerHomeGuestView.swift */,
+			);
+			path = CustomerHomeGuest;
 			sourceTree = "<group>";
 		};
 		B2A2E81622D0D4B200DFDAB3 /* Customer */ = {
 			isa = PBXGroup;
 			children = (
+				B2745FC922D57D9D00297A43 /* Home */,
+				B2745FCD22D57DB500297A43 /* Cart */,
+				B2745FCC22D57DB100297A43 /* You */,
+				B2745FCB22D57DAD00297A43 /* Search */,
+				B2745FCA22D57DA200297A43 /* Favorites */,
 				B2FC8EE922CA1FBD008CE65C /* CustomerTabs.storyboard */,
-				B2A2E81822D0D51200DFDAB3 /* CustomerHome.storyboard */,
-				B2A2E81A22D0D61800DFDAB3 /* CustomerFavorites.storyboard */,
-				B27D794422D42BC80012F5CD /* CustomerSearch.storyboard */,
-				B27D794622D42C5D0012F5CD /* CustomerYou.storyboard */,
-				B27D794822D42CEB0012F5CD /* CustomerCart.storyboard */,
 			);
 			path = Customer;
 			sourceTree = "<group>";
@@ -161,6 +234,7 @@
 		B2A5813822CAD0F300C9C5D9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B2F8358B22D6834F00A9910C /* Customer */,
 				B2E13D3522CECFDB0074607C /* Account */,
 			);
 			path = Controllers;
@@ -223,6 +297,30 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		B2F8358B22D6834F00A9910C /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				B2F8358C22D6835100A9910C /* Home */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		B2F8358C22D6835100A9910C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B2F8358D22D6837200A9910C /* CustomerHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B2F8358F22D6881F00A9910C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B2F8359022D6882F00A9910C /* UiViewXibExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B2FC8ED922CA1FBD008CE65C = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +346,7 @@
 		B2FC8EE422CA1FBD008CE65C /* HoneyBits */ = {
 			isa = PBXGroup;
 			children = (
+				B2F8358F22D6881F00A9910C /* Extensions */,
 				B2A91D5422D0184500CBBA4E /* Delegates */,
 				B272B8BD22CED19400E124B4 /* Localization */,
 				B2E13D3722CED07D0074607C /* Services */,
@@ -255,6 +354,7 @@
 				B2A5813A22CAD10100C9C5D9 /* Models */,
 				B2A5813922CAD0F900C9C5D9 /* Views */,
 				B2A5813822CAD0F300C9C5D9 /* Controllers */,
+				B2745FC522D57D2F00297A43 /* Components */,
 				B2FC8EEC22CA1FBE008CE65C /* Assets.xcassets */,
 				B2FC8EEE22CA1FBE008CE65C /* LaunchScreen.storyboard */,
 				B2FC8EF122CA1FBE008CE65C /* Info.plist */,
@@ -409,6 +509,7 @@
 				B2FC8EF022CA1FBE008CE65C /* LaunchScreen.storyboard in Resources */,
 				B2FC8EED22CA1FBE008CE65C /* Assets.xcassets in Resources */,
 				B27D794722D42C5D0012F5CD /* CustomerYou.storyboard in Resources */,
+				B2745FD122D57EA500297A43 /* CustomerHomeGuestView.xib in Resources */,
 				B2A2E81B22D0D61800DFDAB3 /* CustomerFavorites.storyboard in Resources */,
 				B2FC8EEB22CA1FBD008CE65C /* CustomerTabs.storyboard in Resources */,
 			);
@@ -521,10 +622,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F8359122D6882F00A9910C /* UiViewXibExtension.swift in Sources */,
 				B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */,
 				B272B8D022CEE65A00E124B4 /* LoginSelectViewController.swift in Sources */,
+				B2F8358A22D6820900A9910C /* SignInDelegate.swift in Sources */,
+				B2745FD322D57EB500297A43 /* CustomerHomeGuestView.swift in Sources */,
 				B272B8D222CEE66200E124B4 /* SignInViewController.swift in Sources */,
 				B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */,
+				B2F8358E22D6837200A9910C /* CustomerHomeViewController.swift in Sources */,
 				B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */,
 				B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */,
 			);
@@ -566,8 +671,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B272B8C322CED28500E124B4 /* Base */,
-				B272B8C622CED28E00E124B4 /* es-419 */,
-				B272B8C822CED28F00E124B4 /* en */,
 			);
 			name = UserAuthentication.storyboard;
 			sourceTree = "<group>";
@@ -585,7 +688,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B2FC8EEA22CA1FBD008CE65C /* Base */,
-				B272B8C022CED24F00E124B4 /* es-419 */,
 			);
 			name = CustomerTabs.storyboard;
 			sourceTree = "<group>";

@@ -10,7 +10,6 @@ import UIKit
 import Material
 import ChameleonFramework
 import PMSuperButton
-import DependencyInjector
 import SwiftValidators
 
 class SignInViewController: UIViewController {
@@ -19,7 +18,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var txtEmail: TextField!
     @IBOutlet weak var txtPassword: TextField!
     @IBOutlet weak var btnSignIn: PMSuperButton!
-    let accountService: IAccountService = try! Injector.default.inject(IAccountService.self)
+    let accountService: IAccountService = AccountService()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,7 +11,6 @@ target 'HoneyBits' do
   pod 'SwipeCellKit'
   pod 'SVProgressHUD'
   pod 'ChameleonFramework'
-  pod 'DependencyInjector' 
   pod 'Material'
   pod 'SwiftValidators'
   pod 'IQKeyboardManagerSwift'

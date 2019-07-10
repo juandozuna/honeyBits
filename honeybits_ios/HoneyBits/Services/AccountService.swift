@@ -7,20 +7,14 @@
 //
 
 import Foundation
-import DependencyInjector
 
-class AccountService : IAccountService, Injectable {
+class AccountService : IAccountService {
     var userIsLoggedIn: Bool {
         get {
             return UserDefaults.standard.bool(forKey: "isLoggedIn")
         }
     }
     
-    
-    
-    public required convenience init(injector: Injector, arguments: [String : Any]?) throws {
-        self.init()
-    }
     
     init() {
         

@@ -13,7 +13,7 @@
         <!--Login Popup-->
         <scene sceneID="qNq-Qh-ogG">
             <objects>
-                <viewController storyboardIdentifier="popup" title="Login Popup" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zN6-ob-YCk" customClass="LoginSelectViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popup" title="Login Popup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zN6-ob-YCk" customClass="LoginSelectViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CTN-hv-yQO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,20 +192,56 @@
         <!--Sign In Form-->
         <scene sceneID="C8I-RC-TmQ">
             <objects>
-                <viewController storyboardIdentifier="signInForm" title="Sign In Form" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rb9-7m-LQr" customClass="SignInViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signInForm" title="Sign In Form" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rb9-7m-LQr" customClass="SignInViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r8K-i2-gFy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kcY-su-4Gs">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.75311310279187815" green="0.75311310279187815" blue="0.75311310279187815" alpha="0.40844392123287671" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZP-Zv-KpA">
                                 <rect key="frame" x="35.5" y="273" width="343" height="350"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="g5C-qK-CZV">
-                                        <rect key="frame" x="95" y="185" width="0.0" height="130"/>
+                                        <rect key="frame" x="95" y="199" width="0.0" height="116"/>
                                         <color key="backgroundColor" red="0.2901960784" green="0.4039215686" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmF-MN-7NH" customClass="PMSuperButton" customModule="PMSuperButton">
-                                        <rect key="frame" x="17" y="208" width="309" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mh0-Go-5rp">
+                                        <rect key="frame" x="95" y="4" width="153" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="7hI-Nz-tQA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uqj-ez-GVd" customClass="TextField" customModule="Material">
+                                        <rect key="frame" x="15" y="67" width="311" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="Height">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0EN-gn-SZa" customClass="TextField" customModule="Material">
+                                        <rect key="frame" x="15" y="142" width="311" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="Height">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmF-MN-7NH" customClass="PMSuperButton" customModule="PMSuperButton">
+                                        <rect key="frame" x="17" y="230" width="309" height="41"/>
                                         <color key="backgroundColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="lnj-dI-exv"/>
@@ -231,43 +267,13 @@
                                             <action selector="SignInBtnPressed:" destination="Rb9-7m-LQr" eventType="touchUpInside" id="sdJ-5i-m9o"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mh0-Go-5rp">
-                                        <rect key="frame" x="95" y="4" width="153" height="42"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="42" id="7hI-Nz-tQA"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uqj-ez-GVd" customClass="TextField" customModule="Material">
-                                        <rect key="frame" x="15" y="60" width="311" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="Height">
-                                                <integer key="value" value="40"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0EN-gn-SZa" customClass="TextField" customModule="Material">
-                                        <rect key="frame" x="15" y="128" width="311" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="Height">
-                                                <integer key="value" value="40"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="0EN-gn-SZa" firstAttribute="leading" secondItem="Uqj-ez-GVd" secondAttribute="leading" id="4O0-hJ-iHj"/>
                                     <constraint firstAttribute="trailing" secondItem="g5C-qK-CZV" secondAttribute="trailing" constant="248" id="4Wa-f3-kzM"/>
-                                    <constraint firstItem="Uqj-ez-GVd" firstAttribute="top" secondItem="Mh0-Go-5rp" secondAttribute="bottom" constant="14" id="7lt-Zu-19C"/>
+                                    <constraint firstAttribute="bottom" secondItem="FmF-MN-7NH" secondAttribute="bottom" constant="79" id="5dE-KI-bNO"/>
+                                    <constraint firstItem="Uqj-ez-GVd" firstAttribute="top" secondItem="Mh0-Go-5rp" secondAttribute="bottom" constant="21" id="7lt-Zu-19C"/>
                                     <constraint firstItem="Mh0-Go-5rp" firstAttribute="top" secondItem="5ZP-Zv-KpA" secondAttribute="top" constant="4" id="8nL-wE-Uhm"/>
                                     <constraint firstAttribute="trailing" secondItem="Uqj-ez-GVd" secondAttribute="trailing" constant="17" id="Dsw-5u-wT3"/>
                                     <constraint firstItem="0EN-gn-SZa" firstAttribute="width" secondItem="Uqj-ez-GVd" secondAttribute="width" id="GpP-ri-MIG"/>
@@ -275,7 +281,7 @@
                                     <constraint firstItem="FmF-MN-7NH" firstAttribute="centerX" secondItem="Mh0-Go-5rp" secondAttribute="centerX" id="R32-jL-G8s"/>
                                     <constraint firstItem="Uqj-ez-GVd" firstAttribute="leading" secondItem="5ZP-Zv-KpA" secondAttribute="leading" constant="15" id="RdL-Nn-sAx"/>
                                     <constraint firstAttribute="height" constant="350" id="ZN9-DS-9la"/>
-                                    <constraint firstItem="0EN-gn-SZa" firstAttribute="top" secondItem="Uqj-ez-GVd" secondAttribute="bottom" constant="38" id="aTe-SL-a9u"/>
+                                    <constraint firstItem="0EN-gn-SZa" firstAttribute="top" secondItem="Uqj-ez-GVd" secondAttribute="bottom" constant="45" id="aTe-SL-a9u"/>
                                     <constraint firstItem="g5C-qK-CZV" firstAttribute="top" secondItem="0EN-gn-SZa" secondAttribute="bottom" constant="27" id="cmO-GA-KgM"/>
                                     <constraint firstItem="Mh0-Go-5rp" firstAttribute="centerX" secondItem="5ZP-Zv-KpA" secondAttribute="centerX" id="d6W-Uh-f1W"/>
                                     <constraint firstItem="0EN-gn-SZa" firstAttribute="centerX" secondItem="Uqj-ez-GVd" secondAttribute="centerX" id="k2B-ch-uOZ"/>
@@ -310,7 +316,7 @@
         <!--Navigation Controller-->
         <scene sceneID="5hK-Dx-FeA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" navigationBarHidden="YES" id="5re-ii-qpW" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overFullScreen" navigationBarHidden="YES" id="5re-ii-qpW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vzj-3C-XU8">
