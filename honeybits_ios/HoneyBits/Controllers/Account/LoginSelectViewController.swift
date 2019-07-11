@@ -10,6 +10,7 @@ import UIKit
 
 class LoginSelectViewController: UIViewController {
 
+    var delegate: LoginDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,20 +26,17 @@ class LoginSelectViewController: UIViewController {
         if segue.identifier == "goToSignIn" {
             let vc = segue.destination as! SignInViewController
             vc.dimissiveDelegate = self;
+            if let loginDelegate = delegate {
+                vc.delegate = loginDelegate
+            }
         }
-    }
-    
-    func goToSignIn(){
-        let sb = UIStoryboard(name: "UserAuthentication", bundle: nil)
-        let controller = sb.instantiateViewController(withIdentifier: "signInForm")
-        self.present(controller, animated: true, completion: nil)
     }
 
 }
 
 extension LoginSelectViewController : RecursiveDismissDelegate {
     func dismissOnLogin() {
-        
+    
     }
     
     func dismissIt() {

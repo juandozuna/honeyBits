@@ -20,6 +20,8 @@
 		B27D794522D42BC80012F5CD /* CustomerSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794422D42BC80012F5CD /* CustomerSearch.storyboard */; };
 		B27D794722D42C5D0012F5CD /* CustomerYou.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794622D42C5D0012F5CD /* CustomerYou.storyboard */; };
 		B27D794922D42CEB0012F5CD /* CustomerCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794822D42CEB0012F5CD /* CustomerCart.storyboard */; };
+		B28F419B22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F419A22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift */; };
+		B28F419D22D6DF7E00C7E2E6 /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F419C22D6DF7E00C7E2E6 /* LoginDelegate.swift */; };
 		B2A2E81922D0D51200DFDAB3 /* CustomerHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A2E81822D0D51200DFDAB3 /* CustomerHome.storyboard */; };
 		B2A2E81B22D0D61800DFDAB3 /* CustomerFavorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A2E81A22D0D61800DFDAB3 /* CustomerFavorites.storyboard */; };
 		B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5522D018A400CBBA4E /* IAccountService.swift */; };
@@ -74,6 +76,8 @@
 		B27D794422D42BC80012F5CD /* CustomerSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerSearch.storyboard; sourceTree = "<group>"; };
 		B27D794622D42C5D0012F5CD /* CustomerYou.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerYou.storyboard; sourceTree = "<group>"; };
 		B27D794822D42CEB0012F5CD /* CustomerCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerCart.storyboard; sourceTree = "<group>"; };
+		B28F419A22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationNavigationController.swift; sourceTree = "<group>"; };
+		B28F419C22D6DF7E00C7E2E6 /* LoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
 		B2A2E81822D0D51200DFDAB3 /* CustomerHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerHome.storyboard; sourceTree = "<group>"; };
 		B2A2E81A22D0D61800DFDAB3 /* CustomerFavorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerFavorites.storyboard; sourceTree = "<group>"; };
 		B2A91D5522D018A400CBBA4E /* IAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAccountService.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 			children = (
 				B272B8D422CEE7E800E124B4 /* RecursiveDismissDelegate.swift */,
 				B2F8358922D6820900A9910C /* SignInDelegate.swift */,
+				B28F419C22D6DF7E00C7E2E6 /* LoginDelegate.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 			children = (
 				B272B8CF22CEE65A00E124B4 /* LoginSelectViewController.swift */,
 				B272B8D122CEE66200E124B4 /* SignInViewController.swift */,
+				B28F419A22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -623,12 +629,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2F8359122D6882F00A9910C /* UiViewXibExtension.swift in Sources */,
+				B28F419B22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift in Sources */,
 				B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */,
 				B272B8D022CEE65A00E124B4 /* LoginSelectViewController.swift in Sources */,
 				B2F8358A22D6820900A9910C /* SignInDelegate.swift in Sources */,
 				B2745FD322D57EB500297A43 /* CustomerHomeGuestView.swift in Sources */,
 				B272B8D222CEE66200E124B4 /* SignInViewController.swift in Sources */,
 				B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */,
+				B28F419D22D6DF7E00C7E2E6 /* LoginDelegate.swift in Sources */,
 				B2F8358E22D6837200A9910C /* CustomerHomeViewController.swift in Sources */,
 				B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */,
 				B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */,

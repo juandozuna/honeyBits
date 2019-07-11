@@ -24,7 +24,8 @@ class AccountService : IAccountService {
     
     //MARK:-  Methods
     func loginUser(email: String, password: String) -> Bool {
-        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+        let res = UserDefaults.standard.bool(forKey: "isLoggedIn")
+        UserDefaults.standard.set(!res, forKey: "isLoggedIn")
         return true
     }
     

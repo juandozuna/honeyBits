@@ -19,6 +19,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vFr-bj-eDf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="29"/>
+                            <color key="textColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="hfy-mw-dQ1" kind="relationship" relationship="rootViewController" id="M9H-AR-E4v"/>
@@ -36,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="341" y="-233"/>
         </scene>
-        <!--Customer Home View Controller-->
+        <!--Honey Bits-->
         <scene sceneID="fIQ-iY-uW9">
             <objects>
                 <viewController id="hfy-mw-dQ1" customClass="CustomerHomeViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,6 +56,7 @@
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hmf-mS-Y2g" userLabel="User View">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="0.81335263324873097" green="0.61036657590775001" blue="0.0014084038848072653" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,7 +72,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UpR-ta-zuK"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7z9-rw-sJ5"/>
+                    <navigationItem key="navigationItem" title="Honey Bits" id="7z9-rw-sJ5"/>
                     <connections>
                         <outlet property="guestView" destination="V6X-LO-IgY" id="eKw-n1-LSP"/>
                         <outlet property="userView" destination="Hmf-mS-Y2g" id="57x-oO-Eh9"/>

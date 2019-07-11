@@ -15,6 +15,7 @@ import SwiftValidators
 class SignInViewController: UIViewController {
 
     var dimissiveDelegate: RecursiveDismissDelegate?
+    var delegate: LoginDelegate?
     @IBOutlet weak var txtEmail: TextField!
     @IBOutlet weak var txtPassword: TextField!
     @IBOutlet weak var btnSignIn: PMSuperButton!
@@ -29,7 +30,12 @@ class SignInViewController: UIViewController {
     
     @IBAction func SignInBtnPressed(_ sender: Any) {
         if validateForm() {
-            dimissiveDelegate?.dismissIt()
+            let loginSuccess = accountService.loginUser(email: txtEmail.text!, password: txtPassword.text!)
+            if loginSuccess {
+                print("login button")
+                delegate!.logIn()
+                dismiss(animated: true, completion: nil)
+            }
         }
     }
     

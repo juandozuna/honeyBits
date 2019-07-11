@@ -203,10 +203,10 @@
                                 <color key="backgroundColor" red="0.75311310279187815" green="0.75311310279187815" blue="0.75311310279187815" alpha="0.40844392123287671" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZP-Zv-KpA">
-                                <rect key="frame" x="35.5" y="273" width="343" height="350"/>
+                                <rect key="frame" x="35.5" y="291.5" width="343" height="313"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="g5C-qK-CZV">
-                                        <rect key="frame" x="95" y="199" width="0.0" height="116"/>
+                                        <rect key="frame" x="95" y="199" width="0.0" height="79"/>
                                         <color key="backgroundColor" red="0.2901960784" green="0.4039215686" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mh0-Go-5rp">
@@ -241,7 +241,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmF-MN-7NH" customClass="PMSuperButton" customModule="PMSuperButton">
-                                        <rect key="frame" x="17" y="230" width="309" height="41"/>
+                                        <rect key="frame" x="17" y="219" width="309" height="41"/>
                                         <color key="backgroundColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="lnj-dI-exv"/>
@@ -272,7 +272,7 @@
                                 <constraints>
                                     <constraint firstItem="0EN-gn-SZa" firstAttribute="leading" secondItem="Uqj-ez-GVd" secondAttribute="leading" id="4O0-hJ-iHj"/>
                                     <constraint firstAttribute="trailing" secondItem="g5C-qK-CZV" secondAttribute="trailing" constant="248" id="4Wa-f3-kzM"/>
-                                    <constraint firstAttribute="bottom" secondItem="FmF-MN-7NH" secondAttribute="bottom" constant="79" id="5dE-KI-bNO"/>
+                                    <constraint firstAttribute="bottom" secondItem="FmF-MN-7NH" secondAttribute="bottom" constant="53" id="5dE-KI-bNO"/>
                                     <constraint firstItem="Uqj-ez-GVd" firstAttribute="top" secondItem="Mh0-Go-5rp" secondAttribute="bottom" constant="21" id="7lt-Zu-19C"/>
                                     <constraint firstItem="Mh0-Go-5rp" firstAttribute="top" secondItem="5ZP-Zv-KpA" secondAttribute="top" constant="4" id="8nL-wE-Uhm"/>
                                     <constraint firstAttribute="trailing" secondItem="Uqj-ez-GVd" secondAttribute="trailing" constant="17" id="Dsw-5u-wT3"/>
@@ -280,7 +280,7 @@
                                     <constraint firstItem="0EN-gn-SZa" firstAttribute="trailing" secondItem="FmF-MN-7NH" secondAttribute="trailing" id="Qhr-Dh-pap"/>
                                     <constraint firstItem="FmF-MN-7NH" firstAttribute="centerX" secondItem="Mh0-Go-5rp" secondAttribute="centerX" id="R32-jL-G8s"/>
                                     <constraint firstItem="Uqj-ez-GVd" firstAttribute="leading" secondItem="5ZP-Zv-KpA" secondAttribute="leading" constant="15" id="RdL-Nn-sAx"/>
-                                    <constraint firstAttribute="height" constant="350" id="ZN9-DS-9la"/>
+                                    <constraint firstAttribute="height" constant="313" id="ZN9-DS-9la"/>
                                     <constraint firstItem="0EN-gn-SZa" firstAttribute="top" secondItem="Uqj-ez-GVd" secondAttribute="bottom" constant="45" id="aTe-SL-a9u"/>
                                     <constraint firstItem="g5C-qK-CZV" firstAttribute="top" secondItem="0EN-gn-SZa" secondAttribute="bottom" constant="27" id="cmO-GA-KgM"/>
                                     <constraint firstItem="Mh0-Go-5rp" firstAttribute="centerX" secondItem="5ZP-Zv-KpA" secondAttribute="centerX" id="d6W-Uh-f1W"/>
@@ -313,10 +313,10 @@
             </objects>
             <point key="canvasLocation" x="1663.7681159420292" y="19.419642857142858"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--User Authentication Navigation Controller-->
         <scene sceneID="5hK-Dx-FeA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overFullScreen" navigationBarHidden="YES" id="5re-ii-qpW" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overFullScreen" navigationBarHidden="YES" id="5re-ii-qpW" customClass="UserAuthenticationNavigationController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vzj-3C-XU8">

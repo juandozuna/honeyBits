@@ -29,11 +29,25 @@ class CustomerHomeViewController: UIViewController {
             guestView.delegate = self
         }
     }
-    
-    private func loadGuestNib() {
-        
-    }
 
+}
+
+extension CustomerHomeViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToSignIn" {
+            let navController = segue.destination as! UserAuthenticationNavigationController
+            let vc = navController.topViewController as! LoginSelectViewController
+            vc.delegate = self
+        }
+    }
+}
+
+
+extension CustomerHomeViewController : LoginDelegate {
+    func logIn() {
+        print("HEY I JUST LOGGED IN")
+        checkedIfLoggedIn()
+    }
 }
 
 
