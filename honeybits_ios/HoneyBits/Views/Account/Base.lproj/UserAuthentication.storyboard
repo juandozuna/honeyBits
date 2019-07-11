@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atX-QB-XFK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xy5-CN-aIi">
                                 <rect key="frame" x="51.5" y="331.5" width="311" height="233"/>
                                 <subviews>
@@ -175,13 +178,18 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.38920697773972601" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="atX-QB-XFK" secondAttribute="bottom" id="4k6-UZ-7tz"/>
+                            <constraint firstItem="onD-XG-1lR" firstAttribute="trailing" secondItem="atX-QB-XFK" secondAttribute="trailing" id="5U5-Qw-Eiz"/>
+                            <constraint firstItem="atX-QB-XFK" firstAttribute="leading" secondItem="onD-XG-1lR" secondAttribute="leading" id="RME-zI-g66"/>
                             <constraint firstItem="Xy5-CN-aIi" firstAttribute="centerY" secondItem="CTN-hv-yQO" secondAttribute="centerY" id="f8C-kE-cPO"/>
                             <constraint firstItem="Xy5-CN-aIi" firstAttribute="centerX" secondItem="CTN-hv-yQO" secondAttribute="centerX" id="rcc-ii-lPX"/>
+                            <constraint firstItem="atX-QB-XFK" firstAttribute="top" secondItem="CTN-hv-yQO" secondAttribute="top" id="tEl-IH-UJ0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="onD-XG-1lR"/>
                     </view>
                     <navigationItem key="navigationItem" id="2Ur-4P-NvN"/>
                     <connections>
+                        <outlet property="bgView" destination="atX-QB-XFK" id="iZ9-QN-acY"/>
                         <segue destination="Rb9-7m-LQr" kind="show" identifier="goToSignIn" id="rpR-Lq-U9S"/>
                     </connections>
                 </viewController>
@@ -304,6 +312,7 @@
                         <viewLayoutGuide key="safeArea" id="yVO-2U-nk7"/>
                     </view>
                     <connections>
+                        <outlet property="bgView" destination="kcY-su-4Gs" id="Bae-a1-uSw"/>
                         <outlet property="btnSignIn" destination="FmF-MN-7NH" id="y83-6a-klD"/>
                         <outlet property="txtEmail" destination="Uqj-ez-GVd" id="yCF-kr-aiG"/>
                         <outlet property="txtPassword" destination="0EN-gn-SZa" id="NC7-gB-FSa"/>

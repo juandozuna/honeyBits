@@ -10,4 +10,6 @@ import Foundation
 
 protocol LoginDelegate {
     func logIn()
+    
+    func logOut()
 }

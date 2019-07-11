@@ -8,14 +8,51 @@
 
 import UIKit
 
-class CustomerHomeView: UIView {
+@IBDesignable class CustomerHomeView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    let accountService: IAccountService = AccountService()
+    var delegate: LoginDelegate?
+    @IBOutlet weak var tableView: UITableView!
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        xibSetup()
+    
     }
-    */
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        xibSetup()
+    }
+    
+    
+    private func tableViewSetup() {
+        
+    }
 
+    @IBAction func btnTempPressed(_ sender: Any) {
+        accountService.signOut()
+        delegate?.logOut()
+    }
+}
+
+
+extension CustomerHomeView : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+
+}
+
+extension CustomerHomeView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let tc = UITableViewCell()
+        tc.textLabel?.text = "GOOD MORNING"
+        return tc
+    }
+    
+    
 }

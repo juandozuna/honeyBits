@@ -10,10 +10,11 @@ import UIKit
 
 class LoginSelectViewController: UIViewController {
 
+    @IBOutlet weak var bgView: UIView!
     var delegate: LoginDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setTapGestures()
         // Do any additional setup after loading the view.
     }
     
@@ -30,6 +31,15 @@ class LoginSelectViewController: UIViewController {
                 vc.delegate = loginDelegate
             }
         }
+    }
+    
+    @objc func dimsissView(_ gestureRecognizer: UITapGestureRecognizer) {
+        print("HEY THERE DISMISSINg")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func setTapGestures(){
+        bgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dimsissView(_:))))
     }
 
 }

@@ -10,7 +10,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GuestView" customModule="HoneyBits" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GuestView" customModule="HoneyBits" customModuleProvider="target">
+            <connections>
+                <outlet property="btn" destination="DDE-uK-8Kz" id="M2O-0K-DcA"/>
+                <outlet property="image" destination="cAh-6J-1BH" id="IEN-hJ-68M"/>
+                <outlet property="textLabel" destination="0Zq-tH-pWB" id="SkL-3n-5bv"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -60,19 +66,18 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uOY-Kl-0Yf">
                             <rect key="frame" x="0.0" y="131" width="404" height="132"/>
                             <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Sign in to save your favorites and see personalized recommendations" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gbt-29-8z3">
-                                    <rect key="frame" x="10" y="33" width="384" height="66"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="66" id="ZiG-El-EFW"/>
-                                    </constraints>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to save your favorites and see personalized recommendations" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zq-tH-pWB">
+                                    <rect key="frame" x="10" y="0.0" width="384" height="132"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="gbt-29-8z3" secondAttribute="trailing" constant="10" id="Dyh-er-CLb"/>
-                                <constraint firstItem="gbt-29-8z3" firstAttribute="centerY" secondItem="uOY-Kl-0Yf" secondAttribute="centerY" id="JlV-zV-vJD"/>
-                                <constraint firstItem="gbt-29-8z3" firstAttribute="leading" secondItem="uOY-Kl-0Yf" secondAttribute="leading" constant="10" id="YC3-pK-BwN"/>
+                                <constraint firstAttribute="trailing" secondItem="0Zq-tH-pWB" secondAttribute="trailing" constant="10" id="1ED-Vc-2Yx"/>
+                                <constraint firstItem="0Zq-tH-pWB" firstAttribute="leading" secondItem="uOY-Kl-0Yf" secondAttribute="leading" constant="10" id="4cq-h5-6FE"/>
+                                <constraint firstItem="0Zq-tH-pWB" firstAttribute="top" secondItem="uOY-Kl-0Yf" secondAttribute="top" id="J8o-KR-jJ0"/>
+                                <constraint firstAttribute="bottom" secondItem="0Zq-tH-pWB" secondAttribute="bottom" id="lXa-2R-jPb"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -98,7 +103,7 @@
                 <constraint firstItem="T33-FY-SRS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="i5b-tA-XzF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
+            <point key="canvasLocation" x="47.826086956521742" y="35.054347826086961"/>
         </view>
     </objects>
     <resources>

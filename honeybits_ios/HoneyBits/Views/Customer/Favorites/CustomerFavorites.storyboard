@@ -28,24 +28,54 @@
             </objects>
             <point key="canvasLocation" x="64" y="-180"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorites-->
         <scene sceneID="uD1-F9-qc7">
             <objects>
-                <viewController id="mJZ-1c-1ms" sceneMemberID="viewController">
+                <viewController id="mJZ-1c-1ms" customClass="CustomerFavoritesHomeViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qbc-W8-oR1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64v-Hr-nRj" userLabel="guest view" customClass="GuestView" customModule="HoneyBits" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="displayImage" value="favorite_ic"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="displayText" value="Sign in to save your favorite items and shops"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="Sign In"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="64v-Hr-nRj" firstAttribute="leading" secondItem="1P6-DD-mCt" secondAttribute="leading" id="5z5-0B-Dzr"/>
+                            <constraint firstItem="64v-Hr-nRj" firstAttribute="bottom" secondItem="1P6-DD-mCt" secondAttribute="bottom" id="fZF-ke-vyk"/>
+                            <constraint firstItem="64v-Hr-nRj" firstAttribute="trailing" secondItem="1P6-DD-mCt" secondAttribute="trailing" id="v1J-gt-SQP"/>
+                            <constraint firstItem="64v-Hr-nRj" firstAttribute="top" secondItem="1P6-DD-mCt" secondAttribute="top" id="x1q-ly-Zzy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1P6-DD-mCt"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ow5-ng-hsf"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="ow5-ng-hsf"/>
+                    <connections>
+                        <outlet property="guestView" destination="64v-Hr-nRj" id="RdL-d7-P6R"/>
+                        <segue destination="jSG-hJ-Xv8" kind="presentation" identifier="goToSignIn" id="WBH-Cf-RpS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zw8-Nr-qWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1159" y="-204"/>
+            <point key="canvasLocation" x="1157.9710144927537" y="-204.24107142857142"/>
+        </scene>
+        <!--UserAuthentication-->
+        <scene sceneID="crz-gY-itO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserAuthentication" id="jSG-hJ-Xv8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJ9-qI-bCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2093" y="-519"/>
         </scene>
     </scenes>
     <resources>
-        <image name="heartIcon" width="30" height="30"/>
+        <image name="favorite_ic" width="32" height="32"/>
+        <image name="heartIcon" width="15" height="15"/>
     </resources>
 </document>

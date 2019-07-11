@@ -51,12 +51,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6X-LO-IgY" customClass="CustomerHomeGuestView" customModule="HoneyBits" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6X-LO-IgY" customClass="GuestView" customModule="HoneyBits" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="displayImage" value="bee"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="displayText" value="Sign in to save your favorites and see personalized recommendations"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="Get Started"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hmf-mS-Y2g" userLabel="User View">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hmf-mS-Y2g" userLabel="User View" customClass="CustomerHomeView" customModule="HoneyBits" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" red="0.81335263324873097" green="0.61036657590775001" blue="0.0014084038848072653" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,6 +89,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bee" width="128" height="128"/>
         <image name="home" width="23" height="23"/>
     </resources>
 </document>

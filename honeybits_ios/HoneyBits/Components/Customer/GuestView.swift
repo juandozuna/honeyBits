@@ -7,10 +7,52 @@
 //
 
 import UIKit
+import PMSuperButton
 
 @IBDesignable class GuestView: UIView {
     
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var btn: PMSuperButton!
+    
     var delegate: SignInDeletegate?
+    
+    
+    @IBInspectable var imageIsHidden: Bool {
+        get {
+            return image.isHidden
+        }
+        set {
+            image.isHidden = newValue
+        }
+    }
+    
+    @IBInspectable var displayImage: UIImage {
+        get {
+            return image.image!
+        }
+        set {
+            image.image = newValue
+        }
+    }
+    
+    @IBInspectable var displayText: String {
+        get {
+            return textLabel.text!
+        } set {
+            textLabel.text = newValue
+        }
+    }
+    
+    @IBInspectable var buttonText: String {
+        get {
+            return btn.currentTitle!
+        }
+        set {
+            btn.setTitle(newValue, for: .normal)
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

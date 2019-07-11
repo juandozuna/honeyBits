@@ -8,51 +8,36 @@
 
 import UIKit
 
-class CustomerHomeViewController: UIViewController {
+class CustomerHomeViewController: CustomerLoginViewController {
 
-    let accountService: IAccountService = AccountService()
-    @IBOutlet weak var guestView: CustomerHomeGuestView!
-    @IBOutlet weak var userView: UIView!
+    @IBOutlet weak var guestView: GuestView!
+    @IBOutlet weak var userView: CustomerHomeView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkedIfLoggedIn()
-    
+        signInSegueIdentifier = "goToSignIn"
+        userView.delegate = self
+        guestView.delegate = self
+        
+        checkIfLoggedIn()
     }
     
-    private func checkedIfLoggedIn() {
+    
+    
+    override func checkIfLoggedIn() {
         if accountService.userIsLoggedIn {
-            guestView.isHidden = true
-            userView.isHidden = false
+            showGuestView(true)
         } else {
-            guestView.delegate = self
+            showGuestView(false)
         }
     }
-
-}
-
-extension CustomerHomeViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToSignIn" {
-            let navController = segue.destination as! UserAuthenticationNavigationController
-            let vc = navController.topViewController as! LoginSelectViewController
-            vc.delegate = self
-        }
+    
+    
+    private func showGuestView(_ value: Bool) {
+        guestView.isHidden = value
+        userView.isHidden = !value
     }
-}
+    
 
-
-extension CustomerHomeViewController : LoginDelegate {
-    func logIn() {
-        print("HEY I JUST LOGGED IN")
-        checkedIfLoggedIn()
-    }
-}
-
-
-extension CustomerHomeViewController : SignInDeletegate {
-    func signIn() {
-        performSegue(withIdentifier: "goToSignIn", sender: self)
-    }
 }

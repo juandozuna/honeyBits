@@ -8,21 +8,31 @@
 
 import UIKit
 
-class CustomerLoginViewController: UIViewController {
-    var segueIdentifier: String = ""
-    var loginDelegate: LoginDelegate?
-    
-    func goToLogin(identifier: String, sender: LoginDelegate) {
-        segueIdentifier = identifier
-        loginDelegate = sender
-       performSegue(withIdentifier: identifier, sender: sender)
-    }
+class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDeletegate {
+    var signInSegueIdentifier: String?
+    let accountService: IAccountService = AccountService()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == segueIdentifier {
+        if segue.identifier == signInSegueIdentifier! {
             let navController = segue.destination as! UserAuthenticationNavigationController
             let vc = navController.topViewController as! LoginSelectViewController
-            vc.delegate = loginDelegate
+            vc.delegate = self
         }
+    }
+    
+    func logIn() {
+        checkIfLoggedIn()
+    }
+    
+    func logOut() {
+        checkIfLoggedIn()
+    }
+    
+    func checkIfLoggedIn() {
+        
+    }
+    
+    func signIn() {
+        performSegue(withIdentifier: signInSegueIdentifier!, sender: self)
     }
 }

@@ -14,4 +14,6 @@ protocol IAccountService {
     var userIsLoggedIn: Bool { get }
     
     func loginUser(email: String, password: String) -> Bool
+    
+    func signOut() -> Void
 }

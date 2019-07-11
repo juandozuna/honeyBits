@@ -14,11 +14,13 @@ import SwiftValidators
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var bgView: UIView!
     var dimissiveDelegate: RecursiveDismissDelegate?
     var delegate: LoginDelegate?
     @IBOutlet weak var txtEmail: TextField!
     @IBOutlet weak var txtPassword: TextField!
     @IBOutlet weak var btnSignIn: PMSuperButton!
+    
     let accountService: IAccountService = AccountService()
     
     override func viewDidLoad() {
@@ -46,6 +48,12 @@ class SignInViewController: UIViewController {
         
         if txtEmail.isFirstResponder {
             txtEmail.resignFirstResponder()
+        }
+    }
+    
+    @objc func dimsissView(_ gestureRecognizer: UITapGestureRecognizer) {
+        dismiss(animated: true) {
+            self.navigationController?.popToRootViewController(animated: false)
         }
     }
     
@@ -102,6 +110,7 @@ class SignInViewController: UIViewController {
     //MARK:- Gesture listeners
     func setTapGestures(){
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tap(_:))))
+        bgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dimsissView(_:))))
     }
     
     //MARK:- Controls SETUP

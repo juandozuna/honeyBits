@@ -8,23 +8,22 @@
 
 import UIKit
 
-class CustomerFavoritesHomeViewController: UIViewController {
+class CustomerFavoritesHomeViewController: CustomerLoginViewController  {
 
+    @IBOutlet weak var guestView: GuestView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        signInSegueIdentifier = "goToSignIn"
+        guestView.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func checkIfLoggedIn(){
+       showGuestView(true)
     }
-    */
+    
+    private func showGuestView(_ value: Bool) {
+        guestView.isHidden = false
+    }
 
+    
 }
