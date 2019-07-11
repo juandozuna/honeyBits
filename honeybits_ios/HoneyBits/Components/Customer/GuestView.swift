@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class CustomerHomeGuestView: UIView {
+@IBDesignable class GuestView: UIView {
     
     var delegate: SignInDeletegate?
     
