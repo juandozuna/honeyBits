@@ -22,7 +22,6 @@ class LoginSelectViewController: UIViewController {
     
     @IBAction func SignInBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "goToSignIn", sender: self)
-        backdropDelegate?.isBackdropActive = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

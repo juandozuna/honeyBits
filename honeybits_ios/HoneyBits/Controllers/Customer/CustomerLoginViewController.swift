@@ -11,13 +11,30 @@ import UIKit
 class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDeletegate, AuthBackdropDelegate {
     var signInSegueIdentifier: String?
     let accountService: IAccountService = AccountService()
+    var backdropView: UIView?
     
     @objc var isBackdropActive: Bool {
         get {
-            return true
+            return !backdropView!.isHidden
         }
         set {
-            let _: Bool =  newValue
+            fadeBackdropView(newValue, duration: 0.35)
+        }
+    }
+    
+    private func fadeBackdropView(_ visible: Bool, duration: TimeInterval) {
+        if visible {
+            backdropView!.alpha = 0.0
+            backdropView!.isHidden = !visible
+            UIView.animate(withDuration: duration, animations: {
+                self.backdropView!.alpha = 1.0
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: duration, animations: {
+                self.backdropView!.alpha = 0.0
+            }) { (val) in
+                self.backdropView!.isHidden = !visible
+            }
         }
     }
     

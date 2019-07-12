@@ -12,29 +12,15 @@ class CustomerHomeViewController: CustomerLoginViewController {
 
     @IBOutlet weak var guestView: GuestView!
     @IBOutlet weak var userView: CustomerHomeView!
-    @IBOutlet weak var backdropView: UIView!
+    @IBOutlet weak var backdrop: UIView!
     
-    override var isBackdropActive: Bool {
-        get {
-            return !backdropView.isHidden
-        }
-        set {
-            UIView.animate(withDuration: 0.3, animations: {
-                self.backdropView.alpha = newValue ? 1.0 : 0.0
-            }) { (Bool) in
-                self.backdropView.isHidden = !newValue
-            }
-            
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         signInSegueIdentifier = "goToSignIn"
         userView.delegate = self
         guestView.delegate = self
-        
-        checkIfLoggedIn()
+        backdropView = backdrop
     }
     
     

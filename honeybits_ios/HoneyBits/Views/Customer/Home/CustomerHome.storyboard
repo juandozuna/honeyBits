@@ -86,7 +86,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Honey Bits" id="7z9-rw-sJ5"/>
                     <connections>
-                        <outlet property="backdropView" destination="Aey-aV-bvE" id="LWV-6g-b4d"/>
+                        <outlet property="backdrop" destination="Aey-aV-bvE" id="LWV-6g-b4d"/>
                         <outlet property="guestView" destination="V6X-LO-IgY" id="eKw-n1-LSP"/>
                         <outlet property="userView" destination="Hmf-mS-Y2g" id="57x-oO-Eh9"/>
                         <segue destination="wII-Ti-E3D" kind="presentation" identifier="goToSignIn" id="wOj-nM-WPT"/>

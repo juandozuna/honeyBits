@@ -17,7 +17,7 @@
                     <tabBarItem key="tabBarItem" title="Favorites" image="heartIcon" id="Sq9-hM-afe"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WDr-Bm-tpg">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -33,7 +33,7 @@
             <objects>
                 <viewController id="mJZ-1c-1ms" customClass="CustomerFavoritesHomeViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qbc-W8-oR1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64v-Hr-nRj" userLabel="guest view" customClass="GuestView" customModule="HoneyBits" customModuleProvider="target">
@@ -65,7 +65,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="ow5-ng-hsf"/>
                     <connections>
-                        <outlet property="backdropView" destination="NuF-MH-vSN" id="rz2-gt-tUd"/>
+                        <outlet property="backdrop" destination="NuF-MH-vSN" id="rz2-gt-tUd"/>
                         <outlet property="guestView" destination="64v-Hr-nRj" id="RdL-d7-P6R"/>
                         <segue destination="jSG-hJ-Xv8" kind="presentation" identifier="goToSignIn" id="WBH-Cf-RpS"/>
                     </connections>
