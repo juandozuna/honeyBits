@@ -11,6 +11,17 @@ import UIKit
 class CustomerFavoritesHomeViewController: CustomerLoginViewController  {
 
     @IBOutlet weak var guestView: GuestView!
+    @IBOutlet weak var backdropView: UIView!
+    
+    override var isBackdropActive: Bool {
+        get {
+            return !backdropView.isHidden
+        }
+        set {
+            backdropView.isHidden = !newValue
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         signInSegueIdentifier = "goToSignIn"

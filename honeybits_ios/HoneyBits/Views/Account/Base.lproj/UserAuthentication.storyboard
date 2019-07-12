@@ -176,7 +176,6 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.38920697773972601" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="atX-QB-XFK" secondAttribute="bottom" id="4k6-UZ-7tz"/>
                             <constraint firstItem="onD-XG-1lR" firstAttribute="trailing" secondItem="atX-QB-XFK" secondAttribute="trailing" id="5U5-Qw-Eiz"/>
@@ -205,10 +204,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kcY-su-4Gs">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcY-su-4Gs">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.75311310279187815" green="0.75311310279187815" blue="0.75311310279187815" alpha="0.40844392123287671" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZP-Zv-KpA">
                                 <rect key="frame" x="35.5" y="291.5" width="343" height="313"/>
@@ -304,13 +301,17 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.38920697770000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5ZP-Zv-KpA" firstAttribute="centerX" secondItem="r8K-i2-gFy" secondAttribute="centerX" id="96W-wS-29p"/>
+                            <constraint firstItem="kcY-su-4Gs" firstAttribute="leading" secondItem="yVO-2U-nk7" secondAttribute="leading" id="Q1t-7B-wZ2"/>
                             <constraint firstItem="5ZP-Zv-KpA" firstAttribute="centerY" secondItem="r8K-i2-gFy" secondAttribute="centerY" id="d2q-00-v8F"/>
+                            <constraint firstItem="kcY-su-4Gs" firstAttribute="top" secondItem="r8K-i2-gFy" secondAttribute="top" id="iO7-OP-tvG"/>
+                            <constraint firstItem="kcY-su-4Gs" firstAttribute="trailing" secondItem="yVO-2U-nk7" secondAttribute="trailing" id="nHs-xh-y0U"/>
+                            <constraint firstAttribute="bottom" secondItem="kcY-su-4Gs" secondAttribute="bottom" id="zBN-wx-S5w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yVO-2U-nk7"/>
                     </view>
+                    <navigationItem key="navigationItem" id="DE6-vK-oSj"/>
                     <connections>
                         <outlet property="bgView" destination="kcY-su-4Gs" id="Bae-a1-uSw"/>
                         <outlet property="btnSignIn" destination="FmF-MN-7NH" id="y83-6a-klD"/>

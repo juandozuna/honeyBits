@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="29"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                             <color key="textColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
@@ -51,6 +51,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hmf-mS-Y2g" userLabel="User View" customClass="CustomerHomeView" customModule="HoneyBits" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6X-LO-IgY" customClass="GuestView" customModule="HoneyBits" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <userDefinedRuntimeAttributes>
@@ -59,8 +62,9 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="Get Started"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hmf-mS-Y2g" userLabel="User View" customClass="CustomerHomeView" customModule="HoneyBits" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aey-aV-bvE" userLabel="Backdrop View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.4353328339041096" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,6 +75,10 @@
                             <constraint firstItem="UpR-ta-zuK" firstAttribute="bottom" secondItem="V6X-LO-IgY" secondAttribute="bottom" id="FJN-XB-9OA"/>
                             <constraint firstItem="UpR-ta-zuK" firstAttribute="bottom" secondItem="Hmf-mS-Y2g" secondAttribute="bottom" id="UUf-Wg-m2M"/>
                             <constraint firstItem="UpR-ta-zuK" firstAttribute="trailing" secondItem="V6X-LO-IgY" secondAttribute="trailing" id="c3y-hs-ubJ"/>
+                            <constraint firstItem="Aey-aV-bvE" firstAttribute="trailing" secondItem="UpR-ta-zuK" secondAttribute="trailing" id="fQX-78-1Pk"/>
+                            <constraint firstItem="Aey-aV-bvE" firstAttribute="top" secondItem="WvO-8a-BHK" secondAttribute="top" id="gNk-b3-EzY"/>
+                            <constraint firstItem="UpR-ta-zuK" firstAttribute="bottom" secondItem="Aey-aV-bvE" secondAttribute="bottom" id="nvK-ht-RHF"/>
+                            <constraint firstItem="Aey-aV-bvE" firstAttribute="leading" secondItem="UpR-ta-zuK" secondAttribute="leading" id="p8h-vF-dEJ"/>
                             <constraint firstItem="V6X-LO-IgY" firstAttribute="leading" secondItem="UpR-ta-zuK" secondAttribute="leading" id="xZu-4g-aSO"/>
                             <constraint firstItem="Hmf-mS-Y2g" firstAttribute="top" secondItem="UpR-ta-zuK" secondAttribute="top" id="yvv-1l-pJS"/>
                         </constraints>
@@ -78,6 +86,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Honey Bits" id="7z9-rw-sJ5"/>
                     <connections>
+                        <outlet property="backdropView" destination="Aey-aV-bvE" id="LWV-6g-b4d"/>
                         <outlet property="guestView" destination="V6X-LO-IgY" id="eKw-n1-LSP"/>
                         <outlet property="userView" destination="Hmf-mS-Y2g" id="57x-oO-Eh9"/>
                         <segue destination="wII-Ti-E3D" kind="presentation" identifier="goToSignIn" id="wOj-nM-WPT"/>

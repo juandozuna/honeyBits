@@ -17,6 +17,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var bgView: UIView!
     var dimissiveDelegate: RecursiveDismissDelegate?
     var delegate: LoginDelegate?
+    var backdropDelegate: AuthBackdropDelegate?
+    
     @IBOutlet weak var txtEmail: TextField!
     @IBOutlet weak var txtPassword: TextField!
     @IBOutlet weak var btnSignIn: PMSuperButton!
@@ -36,7 +38,7 @@ class SignInViewController: UIViewController {
             if loginSuccess {
                 print("login button")
                 delegate!.logIn()
-                dismiss(animated: true, completion: nil)
+                dismissIt()
             }
         }
     }
@@ -52,6 +54,11 @@ class SignInViewController: UIViewController {
     }
     
     @objc func dimsissView(_ gestureRecognizer: UITapGestureRecognizer) {
+        dismissIt()
+    }
+    
+    private func dismissIt() {
+        backdropDelegate?.isBackdropActive = false
         dismiss(animated: true) {
             self.navigationController?.popToRootViewController(animated: false)
         }

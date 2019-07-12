@@ -8,9 +8,18 @@
 
 import UIKit
 
-class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDeletegate {
+class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDeletegate, AuthBackdropDelegate {
     var signInSegueIdentifier: String?
     let accountService: IAccountService = AccountService()
+    
+    @objc var isBackdropActive: Bool {
+        get {
+            return true
+        }
+        set {
+            let _: Bool =  newValue
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +31,7 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
             let navController = segue.destination as! UserAuthenticationNavigationController
             let vc = navController.topViewController as! LoginSelectViewController
             vc.delegate = self
+            vc.backdropDelegate = self
         }
     }
     

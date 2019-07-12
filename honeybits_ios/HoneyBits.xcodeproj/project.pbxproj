@@ -28,6 +28,7 @@
 		B28F41A622D7A88C00C7E2E6 /* CustomerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F41A522D7A88C00C7E2E6 /* CustomerLoginViewController.swift */; };
 		B28F41A922D7B34E00C7E2E6 /* CustomerSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F41A822D7B34E00C7E2E6 /* CustomerSearchViewController.swift */; };
 		B28F41AC22D80CD900C7E2E6 /* CustomerYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F41AB22D80CD900C7E2E6 /* CustomerYouViewController.swift */; };
+		B28F41AE22D8141600C7E2E6 /* AuthBackdropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F41AD22D8141600C7E2E6 /* AuthBackdropDelegate.swift */; };
 		B2A2E81922D0D51200DFDAB3 /* CustomerHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A2E81822D0D51200DFDAB3 /* CustomerHome.storyboard */; };
 		B2A2E81B22D0D61800DFDAB3 /* CustomerFavorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A2E81A22D0D61800DFDAB3 /* CustomerFavorites.storyboard */; };
 		B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5522D018A400CBBA4E /* IAccountService.swift */; };
@@ -90,6 +91,7 @@
 		B28F41A522D7A88C00C7E2E6 /* CustomerLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerLoginViewController.swift; sourceTree = "<group>"; };
 		B28F41A822D7B34E00C7E2E6 /* CustomerSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSearchViewController.swift; sourceTree = "<group>"; };
 		B28F41AB22D80CD900C7E2E6 /* CustomerYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerYouViewController.swift; sourceTree = "<group>"; };
+		B28F41AD22D8141600C7E2E6 /* AuthBackdropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBackdropDelegate.swift; sourceTree = "<group>"; };
 		B2A2E81822D0D51200DFDAB3 /* CustomerHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerHome.storyboard; sourceTree = "<group>"; };
 		B2A2E81A22D0D61800DFDAB3 /* CustomerFavorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerFavorites.storyboard; sourceTree = "<group>"; };
 		B2A91D5522D018A400CBBA4E /* IAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAccountService.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				B272B8D422CEE7E800E124B4 /* RecursiveDismissDelegate.swift */,
 				B2F8358922D6820900A9910C /* SignInDelegate.swift */,
 				B28F419C22D6DF7E00C7E2E6 /* LoginDelegate.swift */,
+				B28F41AD22D8141600C7E2E6 /* AuthBackdropDelegate.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				B28F419D22D6DF7E00C7E2E6 /* LoginDelegate.swift in Sources */,
 				B2F8358E22D6837200A9910C /* CustomerHomeViewController.swift in Sources */,
 				B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */,
+				B28F41AE22D8141600C7E2E6 /* AuthBackdropDelegate.swift in Sources */,
 				B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

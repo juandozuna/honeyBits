@@ -12,30 +12,30 @@ class LoginSelectViewController: UIViewController {
 
     @IBOutlet weak var bgView: UIView!
     var delegate: LoginDelegate?
+    var backdropDelegate: AuthBackdropDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         setTapGestures()
-        // Do any additional setup after loading the view.
+        backdropDelegate?.isBackdropActive = true
     }
     
     
     @IBAction func SignInBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "goToSignIn", sender: self)
+        backdropDelegate?.isBackdropActive = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSignIn" {
             let vc = segue.destination as! SignInViewController
             vc.dimissiveDelegate = self;
-            if let loginDelegate = delegate {
-                vc.delegate = loginDelegate
-            }
+            vc.delegate = delegate
+            vc.backdropDelegate = backdropDelegate
         }
     }
     
     @objc func dimsissView(_ gestureRecognizer: UITapGestureRecognizer) {
-        print("HEY THERE DISMISSINg")
-        dismiss(animated: true, completion: nil)
+        dismissIt()
     }
     
     func setTapGestures(){
@@ -50,6 +50,9 @@ extension LoginSelectViewController : RecursiveDismissDelegate {
     }
     
     func dismissIt() {
+        backdropDelegate?.isBackdropActive = false
         dismiss(animated: true, completion: nil)
     }
 }
+
+
