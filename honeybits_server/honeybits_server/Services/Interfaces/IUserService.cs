@@ -10,8 +10,10 @@ namespace honeybits_server.Services.Interfaces
     {
         Token Authenticate(string username, string password);
         Users Create(Users user);
-        Users Delete(int id);
+        bool Delete(int id);
         Users Get(int id);
         IEnumerable<Users> GetAll();
+        Role GetRole(int id); 
+        IEnumerable<Role> GetAllRoles();
     }
 }
