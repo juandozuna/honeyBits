@@ -47,6 +47,19 @@ namespace honeybits_server.Models
                     .HasColumnType("timestamp")
                     .HasDefaultValueSql("'CURRENT_TIMESTAMP'");
 
+                entity.Property(e => e.DeletedBy)
+                    .HasColumnName("deleted_by")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.DeletedDate)
+                    .HasColumnName("deleted_date")
+                    .HasColumnType("timestamp");
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasColumnType("bit(1)")
+                    .HasDefaultValueSql("'b\\'0\\''");
+
                 entity.Property(e => e.ProductCategoryId)
                     .HasColumnName("product_category_id")
                     .HasColumnType("int(11)");
@@ -82,6 +95,19 @@ namespace honeybits_server.Models
                     .HasColumnType("timestamp")
                     .HasDefaultValueSql("'CURRENT_TIMESTAMP'");
 
+                entity.Property(e => e.DeletedBy)
+                    .HasColumnName("deleted_by")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.DeletedDate)
+                    .HasColumnName("deleted_date")
+                    .HasColumnType("timestamp");
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasColumnType("bit(1)")
+                    .HasDefaultValueSql("'b\\'0\\''");
+
                 entity.Property(e => e.ProductCategoryDescription)
                     .IsRequired()
                     .HasColumnName("product_category_description")
@@ -108,10 +134,23 @@ namespace honeybits_server.Models
                     .HasColumnType("timestamp")
                     .HasDefaultValueSql("'CURRENT_TIMESTAMP'");
 
+                entity.Property(e => e.DeletedBy)
+                    .HasColumnName("deleted_by")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.DeletedDate)
+                    .HasColumnName("deleted_date")
+                    .HasColumnType("timestamp");
+
                 entity.Property(e => e.Description)
                     .IsRequired()
                     .HasColumnName("description")
                     .HasColumnType("varchar(255)");
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasColumnType("bit(1)")
+                    .HasDefaultValueSql("'b\\'0\\''");
             });
 
             modelBuilder.Entity<Shop>(entity =>
@@ -134,6 +173,19 @@ namespace honeybits_server.Models
                     .HasColumnName("created_date")
                     .HasColumnType("timestamp")
                     .HasDefaultValueSql("'CURRENT_TIMESTAMP'");
+
+                entity.Property(e => e.DeletedBy)
+                    .HasColumnName("deleted_by")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.DeletedDate)
+                    .HasColumnName("deleted_date")
+                    .HasColumnType("timestamp");
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasColumnType("bit(1)")
+                    .HasDefaultValueSql("'b\\'0\\''");
 
                 entity.Property(e => e.OwnerId)
                     .HasColumnName("owner_id")
@@ -167,6 +219,19 @@ namespace honeybits_server.Models
                     .HasColumnType("timestamp")
                     .HasDefaultValueSql("'CURRENT_TIMESTAMP'");
 
+                entity.Property(e => e.DeletedBy)
+                    .HasColumnName("deleted_by")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.DeletedDate)
+                    .HasColumnName("deleted_date")
+                    .HasColumnType("timestamp");
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasColumnType("bit(1)")
+                    .HasDefaultValueSql("'b\\'0\\''");
+
                 entity.Property(e => e.ProductId)
                     .HasColumnName("product_id")
                     .HasColumnType("int(11)");
@@ -198,6 +263,14 @@ namespace honeybits_server.Models
                     .HasColumnType("timestamp")
                     .HasDefaultValueSql("'CURRENT_TIMESTAMP'");
 
+                entity.Property(e => e.DeletedBy)
+                    .HasColumnName("deleted_by")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.DeletedDate)
+                    .HasColumnName("deleted_date")
+                    .HasColumnType("timestamp");
+
                 entity.Property(e => e.Email)
                     .IsRequired()
                     .HasColumnName("email")
@@ -207,6 +280,11 @@ namespace honeybits_server.Models
                     .IsRequired()
                     .HasColumnName("first_name")
                     .HasColumnType("varchar(255)");
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasColumnType("bit(1)")
+                    .HasDefaultValueSql("'b\\'0\\''");
 
                 entity.Property(e => e.LastName)
                     .IsRequired()
