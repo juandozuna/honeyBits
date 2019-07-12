@@ -28,5 +28,10 @@ namespace honeybits_server.Services
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<ShopProduct> GetAllShopsProductsByShopId(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

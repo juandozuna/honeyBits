@@ -12,5 +12,6 @@ namespace honeybits_server.Services.Interfaces
         Shop Create(Shop shop);
         bool Delete(int id);
         IEnumerable<Shop> GetAll();
+        IEnumerable<ShopProduct> GetAllShopsProductsByShopId(int id);
     }
 }
