@@ -51,6 +51,12 @@ namespace honeybits_server.Controllers
             return Ok(product);
         }
 
+        [HttpPost("{id}")]
+        public IActionResult Delete(int id)
+        {
+            return Ok(true);
+        }
+
         [HttpGet("all")]
         public IActionResult GetAll() => Ok(_productService.GetAll());
     }
