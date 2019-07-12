@@ -51,6 +51,21 @@ namespace honeybits_server.Services
             };
         }
 
+        public Users Create(Users user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Users Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Users Get(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Users> GetAll() => _context.Users.ToList();
     }
 }
