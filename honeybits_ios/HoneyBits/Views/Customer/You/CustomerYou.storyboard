@@ -31,30 +31,62 @@
         <!--You-->
         <scene sceneID="lcZ-Xt-8aU">
             <objects>
-                <viewController id="9in-1N-YRt" sceneMemberID="viewController">
+                <viewController id="9in-1N-YRt" customClass="CustomerYouViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Eh-hH-Ilw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YQd-n3-krN" customClass="GuestView" customModule="HoneyBits" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="239"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOE-zh-EWR">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQd-n3-krN" userLabel="GuestViewComponent" customClass="GuestView" customModule="HoneyBits" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-102" width="414" height="338"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="338" id="7HV-Q1-v2j"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="imageIsHidden" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="displayText" value="Sign in to contact sellers, track purchases, and see personalized recommendations"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="Sign In"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="imageIsHidden" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="displayText" value="Sign in to contact sellers, track purchases, and see personalized recommendations"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="Sign In"/>
-                                </userDefinedRuntimeAttributes>
+                                <constraints>
+                                    <constraint firstItem="YQd-n3-krN" firstAttribute="leading" secondItem="AOE-zh-EWR" secondAttribute="leading" id="Bvd-Rl-85G"/>
+                                    <constraint firstItem="YQd-n3-krN" firstAttribute="top" secondItem="AOE-zh-EWR" secondAttribute="top" constant="-102" id="w7l-SC-a34"/>
+                                    <constraint firstAttribute="trailing" secondItem="YQd-n3-krN" secondAttribute="trailing" id="zTT-z2-bbm"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AOE-zh-EWR" firstAttribute="leading" secondItem="aFZ-5d-PrR" secondAttribute="leading" id="OS9-pH-bm8"/>
+                            <constraint firstItem="aFZ-5d-PrR" firstAttribute="bottom" secondItem="AOE-zh-EWR" secondAttribute="bottom" id="iky-7z-tdI"/>
+                            <constraint firstItem="aFZ-5d-PrR" firstAttribute="trailing" secondItem="AOE-zh-EWR" secondAttribute="trailing" id="z8d-kb-aGq"/>
+                            <constraint firstItem="AOE-zh-EWR" firstAttribute="top" secondItem="aFZ-5d-PrR" secondAttribute="top" id="zhW-mQ-jhM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aFZ-5d-PrR"/>
                     </view>
                     <navigationItem key="navigationItem" title="You" id="prq-qo-73x"/>
+                    <connections>
+                        <outlet property="guestView" destination="AOE-zh-EWR" id="8eb-j3-f6r"/>
+                        <outlet property="guestViewComponent" destination="YQd-n3-krN" id="u5V-pE-22i"/>
+                        <segue destination="lzu-Ih-Bv5" kind="presentation" identifier="goToSignIn" id="wI9-2v-4Eb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQG-vA-7p4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1031.8840579710145" y="-171.42857142857142"/>
+        </scene>
+        <!--UserAuthentication-->
+        <scene sceneID="Eua-Ck-63W">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserAuthentication" id="lzu-Ih-Bv5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ALP-8V-ODE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1747" y="-463"/>
         </scene>
     </scenes>
     <resources>

@@ -1,5 +1,5 @@
 //
-//  CustomerFavoritesHomeViewController.swift
+//  CustomerYouViewController.swift
 //  HoneyBits
 //
 //  Created by Juan Daniel Ozuna Espinal on 7/11/19.
@@ -8,22 +8,23 @@
 
 import UIKit
 
-class CustomerFavoritesHomeViewController: CustomerLoginViewController  {
+class CustomerYouViewController: CustomerLoginViewController {
 
-    @IBOutlet weak var guestView: GuestView!
+    @IBOutlet weak var guestView: UIView!
+    @IBOutlet weak var guestViewComponent: GuestView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        guestViewComponent.delegate = self
         signInSegueIdentifier = "goToSignIn"
-        guestView.delegate = self
     }
     
-    override func checkIfLoggedIn(){
-       showGuestView(true)
+    override func checkIfLoggedIn() {
+        showGuestView(true)
     }
     
     private func showGuestView(_ value: Bool) {
         guestView.isHidden = !value
     }
 
-    
+
 }

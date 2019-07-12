@@ -26,7 +26,7 @@ class CustomerHomeViewController: CustomerLoginViewController {
     
     
     override func checkIfLoggedIn() {
-        if accountService.userIsLoggedIn {
+        if !accountService.userIsLoggedIn {
             showGuestView(true)
         } else {
             showGuestView(false)
@@ -35,8 +35,8 @@ class CustomerHomeViewController: CustomerLoginViewController {
     
     
     private func showGuestView(_ value: Bool) {
-        guestView.isHidden = value
-        userView.isHidden = !value
+        guestView.isHidden = !value
+        userView.isHidden = value
     }
     
 

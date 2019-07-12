@@ -12,6 +12,11 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     var signInSegueIdentifier: String?
     let accountService: IAccountService = AccountService()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        checkIfLoggedIn()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == signInSegueIdentifier! {
             let navController = segue.destination as! UserAuthenticationNavigationController

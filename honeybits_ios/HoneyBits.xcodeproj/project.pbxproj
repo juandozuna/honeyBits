@@ -27,6 +27,7 @@
 		B28F41A422D783BE00C7E2E6 /* CustomerFavoritesHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F41A322D783BE00C7E2E6 /* CustomerFavoritesHomeViewController.swift */; };
 		B28F41A622D7A88C00C7E2E6 /* CustomerLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F41A522D7A88C00C7E2E6 /* CustomerLoginViewController.swift */; };
 		B28F41A922D7B34E00C7E2E6 /* CustomerSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F41A822D7B34E00C7E2E6 /* CustomerSearchViewController.swift */; };
+		B28F41AC22D80CD900C7E2E6 /* CustomerYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F41AB22D80CD900C7E2E6 /* CustomerYouViewController.swift */; };
 		B2A2E81922D0D51200DFDAB3 /* CustomerHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A2E81822D0D51200DFDAB3 /* CustomerHome.storyboard */; };
 		B2A2E81B22D0D61800DFDAB3 /* CustomerFavorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A2E81A22D0D61800DFDAB3 /* CustomerFavorites.storyboard */; };
 		B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5522D018A400CBBA4E /* IAccountService.swift */; };
@@ -88,6 +89,7 @@
 		B28F41A322D783BE00C7E2E6 /* CustomerFavoritesHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerFavoritesHomeViewController.swift; sourceTree = "<group>"; };
 		B28F41A522D7A88C00C7E2E6 /* CustomerLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerLoginViewController.swift; sourceTree = "<group>"; };
 		B28F41A822D7B34E00C7E2E6 /* CustomerSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSearchViewController.swift; sourceTree = "<group>"; };
+		B28F41AB22D80CD900C7E2E6 /* CustomerYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerYouViewController.swift; sourceTree = "<group>"; };
 		B2A2E81822D0D51200DFDAB3 /* CustomerHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerHome.storyboard; sourceTree = "<group>"; };
 		B2A2E81A22D0D61800DFDAB3 /* CustomerFavorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerFavorites.storyboard; sourceTree = "<group>"; };
 		B2A91D5522D018A400CBBA4E /* IAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAccountService.swift; sourceTree = "<group>"; };
@@ -251,6 +253,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		B28F41AA22D80CC600C7E2E6 /* You */ = {
+			isa = PBXGroup;
+			children = (
+				B28F41AB22D80CD900C7E2E6 /* CustomerYouViewController.swift */,
+			);
+			path = You;
+			sourceTree = "<group>";
+		};
 		B2A2E81622D0D4B200DFDAB3 /* Customer */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +344,7 @@
 		B2F8358B22D6834F00A9910C /* Customer */ = {
 			isa = PBXGroup;
 			children = (
+				B28F41AA22D80CC600C7E2E6 /* You */,
 				B28F41A722D7B34100C7E2E6 /* Search */,
 				B28F41A522D7A88C00C7E2E6 /* CustomerLoginViewController.swift */,
 				B28F41A222D783A300C7E2E6 /* Favorites */,
@@ -662,6 +673,7 @@
 			files = (
 				B2F8359122D6882F00A9910C /* UiViewXibExtension.swift in Sources */,
 				B28F419B22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift in Sources */,
+				B28F41AC22D80CD900C7E2E6 /* CustomerYouViewController.swift in Sources */,
 				B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */,
 				B28F41A622D7A88C00C7E2E6 /* CustomerLoginViewController.swift in Sources */,
 				B28F41A922D7B34E00C7E2E6 /* CustomerSearchViewController.swift in Sources */,
