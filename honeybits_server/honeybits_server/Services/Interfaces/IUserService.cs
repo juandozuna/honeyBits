@@ -9,6 +9,11 @@ namespace honeybits_server.Services.Interfaces
     public interface IUserService
     {
         Token Authenticate(string username, string password);
+        Users Create(Users user);
+        bool Delete(int id);
+        Users Get(int id);
         IEnumerable<Users> GetAll();
+        Role GetRole(int id); 
+        IEnumerable<Role> GetAllRoles();
     }
 }

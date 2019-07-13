@@ -13,7 +13,10 @@ namespace honeybits_server.Services
 
         public Product Create(Product product)
         {
-            throw new NotImplementedException();
+            _context.Product.Add(product);
+            _context.SaveChanges();
+
+            return product;
         }
 
         public void Delete(int id)
@@ -21,7 +24,7 @@ namespace honeybits_server.Services
             throw new NotImplementedException();
         }
 
-        public Product Get(int id) => _context.Product.Find(id);
+        public Product Get(int id) => _context.Product.Find((uint)id);
 
         public IEnumerable<Product> GetAll() => _context.Product.ToList();
     }

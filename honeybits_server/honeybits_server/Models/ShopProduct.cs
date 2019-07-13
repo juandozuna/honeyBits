@@ -10,5 +10,8 @@ namespace honeybits_server.Models
         public int ProductId { get; set; }
         public int CreatedBy { get; set; }
         public DateTime? CreatedDate { get; set; }
+        public bool? IsDeleted { get; set; }
+        public int? DeletedBy { get; set; }
+        public DateTime? DeletedDate { get; set; }
     }
 }

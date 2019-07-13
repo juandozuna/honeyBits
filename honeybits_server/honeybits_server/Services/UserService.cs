@@ -51,6 +51,34 @@ namespace honeybits_server.Services
             };
         }
 
+        public Users Create(Users user)
+        {
+            _context.Users.Add(user);
+            _context.SaveChanges();
+            return user;
+        }
+
+        public bool Delete(int id)
+        {
+            _context.Users.Remove(_context.Users.Find(id));
+            var r = _context.SaveChanges();
+            return r > 0;
+        }
+
+        public Users Get(int id) => _context.Users.Find(id);
+
         public IEnumerable<Users> GetAll() => _context.Users.ToList();
+
+        public Role GetRole(int id)
+        {
+            var rol = _context.Role.Find(id);
+
+            if (rol == null)
+                return null;
+
+            return rol;
+        }
+
+        public IEnumerable<Role> GetAllRoles() => _context.Role.ToList();
     }
 }
