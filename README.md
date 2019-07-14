@@ -18,11 +18,11 @@ URL base: http://honeybits.azurewebsites.net/
 
 ##### Products
 
-|            URL           | Require token? | Parameters |    Result    |
-|:------------------------:|:--------------:|------------|:------------:|
-|    api/products/create   |       Yes      |            |    Product   |
-| api/products/delete/{id} |       Yes      | id -> int  |    Product   |
-|     api/products/{id}    |       Yes      | id -> int  |     bool     |
-|     api/products/all     |       Yes      | None       | All Products |
+|            URL           | Require token? | Parameters                                                                                               |    Result    |
+|:------------------------:|:--------------:|----------------------------------------------------------------------------------------------------------|:------------:|
+|    api/products/create   |       Yes      | productName -> string; productCategoryId -> int;  productDescription -> string;  productPrice -> decimal |    Product   |
+| api/products/delete/{id} |       Yes      | id -> int                                                                                                |    Product   |
+|     api/products/{id}    |       Yes      | id -> int                                                                                                |     bool     |
+|     api/products/all     |       Yes      | None                                                                                                     | All Products |
 
 ####
