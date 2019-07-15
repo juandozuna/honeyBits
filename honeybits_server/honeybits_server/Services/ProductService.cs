@@ -19,9 +19,14 @@ namespace honeybits_server.Services
             return product;
         }
 
-        public void Delete(int id)
+        public bool Delete(Product product)
         {
-            throw new NotImplementedException();
+            product.CreatedDate = DateTime.Now;
+            product.IsDeleted = true;
+
+            var results = _context.SaveChanges();
+
+            return results > 0;
         }
 
         public Product Get(int id) => _context.Product.Find((uint)id);

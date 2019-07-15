@@ -10,7 +10,7 @@ namespace honeybits_server.Services.Interfaces
     {
         Product Get(int id);
         Product Create(Product product);
-        void Delete(int id);
+        bool Delete(Product product);
         IEnumerable<Product> GetAll();
     }
 }
