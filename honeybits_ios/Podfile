@@ -15,6 +15,7 @@ target 'HoneyBits' do
   pod 'SwiftValidators'
   pod 'IQKeyboardManagerSwift'
   pod 'SwipeViewController'
+  pod 'SwiftyJSON'
 
   target 'HoneyBitsTests' do
     inherit! :search_paths

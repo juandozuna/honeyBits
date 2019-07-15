@@ -10,6 +10,10 @@
 		0BD5BDC146488DC7AD00F8EA /* Pods_HoneyBits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E461E760B99B774FB47708 /* Pods_HoneyBits.framework */; };
 		1C0F3653B6F29A19D501CAAB /* Pods_HoneyBitsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C636D69A3D1DCE55F9C6D98 /* Pods_HoneyBitsTests.framework */; };
 		94689591791F5DCFE6CF9A41 /* Pods_HoneyBitsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3796716515E095C76664E6F2 /* Pods_HoneyBitsUITests.framework */; };
+		B262AF4A22DBF14900ABF311 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AF4922DBF14900ABF311 /* BaseService.swift */; };
+		B262AF4C22DBF86600ABF311 /* UserTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AF4B22DBF86600ABF311 /* UserTokenModel.swift */; };
+		B262AF4F22DBF94D00ABF311 /* RequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AF4E22DBF94D00ABF311 /* RequestStatus.swift */; };
+		B262AF5122DBFA6000ABF311 /* CodableToJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AF5022DBFA6000ABF311 /* CodableToJson.swift */; };
 		B272B8C222CED28500E124B4 /* UserAuthentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B272B8C422CED28500E124B4 /* UserAuthentication.storyboard */; };
 		B272B8CB22CED34900E124B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B272B8CD22CED34900E124B4 /* Localizable.strings */; };
 		B272B8D022CEE65A00E124B4 /* LoginSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272B8CF22CEE65A00E124B4 /* LoginSelectViewController.swift */; };
@@ -74,6 +78,10 @@
 		7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsUITests.release.xcconfig"; path = "Target Support Files/Pods-HoneyBitsUITests/Pods-HoneyBitsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		979A26B3C22A87F960576887 /* Pods-HoneyBitsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsTests.debug.xcconfig"; path = "Target Support Files/Pods-HoneyBitsTests/Pods-HoneyBitsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF08A3412DFB48B7CEC50E1A /* Pods-HoneyBits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBits.release.xcconfig"; path = "Target Support Files/Pods-HoneyBits/Pods-HoneyBits.release.xcconfig"; sourceTree = "<group>"; };
+		B262AF4922DBF14900ABF311 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		B262AF4B22DBF86600ABF311 /* UserTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenModel.swift; sourceTree = "<group>"; };
+		B262AF4E22DBF94D00ABF311 /* RequestStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatus.swift; sourceTree = "<group>"; };
+		B262AF5022DBFA6000ABF311 /* CodableToJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableToJson.swift; sourceTree = "<group>"; };
 		B272B8C122CED24F00E124B4 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		B272B8C322CED28500E124B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserAuthentication.storyboard; sourceTree = "<group>"; };
 		B272B8CC22CED34900E124B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -158,6 +166,14 @@
 				7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B262AF4D22DBF8E900ABF311 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B262AF4E22DBF94D00ABF311 /* RequestStatus.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		B272B8BD22CED19400E124B4 /* Localization */ = {
@@ -306,6 +322,7 @@
 		B2A5813A22CAD10100C9C5D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B262AF4B22DBF86600ABF311 /* UserTokenModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				B2A91D5722D01AFA00CBBA4E /* AccountService.swift */,
+				B262AF4922DBF14900ABF311 /* BaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -385,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				B2F8359022D6882F00A9910C /* UiViewXibExtension.swift */,
+				B262AF5022DBFA6000ABF311 /* CodableToJson.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -419,6 +438,7 @@
 				B272B8BD22CED19400E124B4 /* Localization */,
 				B2E13D3722CED07D0074607C /* Services */,
 				B2E13D3622CECFF30074607C /* Protocols */,
+				B262AF4D22DBF8E900ABF311 /* Enums */,
 				B2A5813A22CAD10100C9C5D9 /* Models */,
 				B2A5813922CAD0F900C9C5D9 /* Views */,
 				B2A5813822CAD0F300C9C5D9 /* Controllers */,
@@ -701,9 +721,13 @@
 				B28F41A922D7B34E00C7E2E6 /* CustomerSearchViewController.swift in Sources */,
 				B272B8D022CEE65A00E124B4 /* LoginSelectViewController.swift in Sources */,
 				B2F8358A22D6820900A9910C /* SignInDelegate.swift in Sources */,
+				B262AF4A22DBF14900ABF311 /* BaseService.swift in Sources */,
+				B262AF4F22DBF94D00ABF311 /* RequestStatus.swift in Sources */,
+				B262AF4C22DBF86600ABF311 /* UserTokenModel.swift in Sources */,
 				B28F41A422D783BE00C7E2E6 /* CustomerFavoritesHomeViewController.swift in Sources */,
 				B2745FD322D57EB500297A43 /* GuestView.swift in Sources */,
 				B272B8D222CEE66200E124B4 /* SignInViewController.swift in Sources */,
+				B262AF5122DBFA6000ABF311 /* CodableToJson.swift in Sources */,
 				B28F41A122D7604200C7E2E6 /* CustomerHomeView.swift in Sources */,
 				B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */,
 				B28F419D22D6DF7E00C7E2E6 /* LoginDelegate.swift in Sources */,
@@ -906,6 +930,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 633F27CAC33C5B685297B670 /* Pods-HoneyBits.debug.xcconfig */;
 			buildSettings = {
+				API_ENDPOINT_BASE_URL = "http://honeybits.azurewebsites.net/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 755JV5Z68F;
@@ -926,6 +951,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AF08A3412DFB48B7CEC50E1A /* Pods-HoneyBits.release.xcconfig */;
 			buildSettings = {
+				API_ENDPOINT_BASE_URL = "http://honeybits.azurewebsites.net/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 755JV5Z68F;
@@ -1038,7 +1064,7 @@
 				B2FC8F0922CA1FBE008CE65C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		B2FC8F0A22CA1FBE008CE65C /* Build configuration list for PBXNativeTarget "HoneyBits" */ = {
 			isa = XCConfigurationList;
@@ -1047,7 +1073,7 @@
 				B2FC8F0C22CA1FBE008CE65C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		B2FC8F0D22CA1FBE008CE65C /* Build configuration list for PBXNativeTarget "HoneyBitsTests" */ = {
 			isa = XCConfigurationList;
@@ -1056,7 +1082,7 @@
 				B2FC8F0F22CA1FBE008CE65C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		B2FC8F1022CA1FBE008CE65C /* Build configuration list for PBXNativeTarget "HoneyBitsUITests" */ = {
 			isa = XCConfigurationList;
@@ -1065,7 +1091,7 @@
 				B2FC8F1222CA1FBE008CE65C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
