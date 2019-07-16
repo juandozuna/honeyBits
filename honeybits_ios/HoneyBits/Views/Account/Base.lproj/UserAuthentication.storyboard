@@ -207,7 +207,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcY-su-4Gs">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZP-Zv-KpA">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ZP-Zv-KpA" userLabel="Form view">
                                 <rect key="frame" x="35.5" y="291.5" width="343" height="313"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="g5C-qK-CZV">
@@ -300,10 +300,18 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Sf2-aP-0dR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="color" red="0.99482471449999998" green="0.58095096130000001" blue="0.34970351300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="5ZP-Zv-KpA" firstAttribute="centerX" secondItem="r8K-i2-gFy" secondAttribute="centerX" id="96W-wS-29p"/>
+                            <constraint firstItem="yVO-2U-nk7" firstAttribute="bottom" secondItem="Sf2-aP-0dR" secondAttribute="bottom" id="IzG-2E-jXO"/>
+                            <constraint firstItem="Sf2-aP-0dR" firstAttribute="top" secondItem="yVO-2U-nk7" secondAttribute="top" id="Mld-YM-OTh"/>
                             <constraint firstItem="kcY-su-4Gs" firstAttribute="leading" secondItem="yVO-2U-nk7" secondAttribute="leading" id="Q1t-7B-wZ2"/>
+                            <constraint firstItem="Sf2-aP-0dR" firstAttribute="leading" secondItem="yVO-2U-nk7" secondAttribute="leading" id="YI2-Ww-PwG"/>
+                            <constraint firstItem="yVO-2U-nk7" firstAttribute="trailing" secondItem="Sf2-aP-0dR" secondAttribute="trailing" id="bcG-v5-8Nz"/>
                             <constraint firstItem="5ZP-Zv-KpA" firstAttribute="centerY" secondItem="r8K-i2-gFy" secondAttribute="centerY" id="d2q-00-v8F"/>
                             <constraint firstItem="kcY-su-4Gs" firstAttribute="top" secondItem="r8K-i2-gFy" secondAttribute="top" id="iO7-OP-tvG"/>
                             <constraint firstItem="kcY-su-4Gs" firstAttribute="trailing" secondItem="yVO-2U-nk7" secondAttribute="trailing" id="nHs-xh-y0U"/>
@@ -313,10 +321,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="DE6-vK-oSj"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Sf2-aP-0dR" id="Zj3-Ge-Hl2"/>
                         <outlet property="bgView" destination="kcY-su-4Gs" id="Bae-a1-uSw"/>
                         <outlet property="btnSignIn" destination="FmF-MN-7NH" id="y83-6a-klD"/>
-                        <outlet property="txtEmail" destination="Uqj-ez-GVd" id="yCF-kr-aiG"/>
                         <outlet property="txtPassword" destination="0EN-gn-SZa" id="NC7-gB-FSa"/>
+                        <outlet property="txtUsername" destination="Uqj-ez-GVd" id="yCF-kr-aiG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hg6-iD-Zb5" userLabel="First Responder" sceneMemberID="firstResponder"/>

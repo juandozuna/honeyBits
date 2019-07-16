@@ -11,9 +11,11 @@ import Foundation
 
 protocol IAccountService {
     
+    typealias CompletedRequestVoid = (RequestStatus) -> Void
+    
     var userIsLoggedIn: Bool { get }
     
-    func loginUser(email: String, password: String) -> Bool
+    func authenticateUser(user: UserTokenModel, completion: @escaping CompletedRequestVoid) -> Void
     
     func signOut() -> Void
 }

@@ -8,8 +8,14 @@
 
 import Foundation
 
-struct UserTokenModel : Codable {
-    var username: String
-    var password: String
-    var token: String
+struct UserTokenModel: Codable {
+    var username: String?
+    var password: String?
+    var token: String?
+    
+    init() {
+        username = nil
+        password = nil
+        token = nil
+    }
 }

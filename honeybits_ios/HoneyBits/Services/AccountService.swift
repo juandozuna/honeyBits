@@ -14,43 +14,49 @@ class AccountService : BaseService, IAccountService {
     let baseUserService: String = "api/users/"
     var userIsLoggedIn: Bool {
         get {
-            let res = UserDefaults.standard.string(forKey: "access_token")
-            return (res != nil || res != "")
+            let res = UserDefaults.standard.object(forKey: "authentication_user") as? Data
+            return res != nil
         }
     }
     
     //MARK- Variables
     
     //MARK:-  Methods
-    func loginUser(email: String, password: String) -> Bool {
-        return true;
+    func authenticateUser(user: UserTokenModel, completion: @escaping (RequestStatus) -> Void) {
+        let parameters: Parameters = [
+            "username": user.username!,
+            "password": user.password!
+        ]
+        
+        let url = "\(baseEndpoint)\(baseUserService)authenticate"
+        
+        urlRequest(url, method: .post, parameters: parameters) { (status, data) in
+            if status == .Success {
+                let jsonDecoder = JSONDecoder()
+                do {
+                    var decodedUser = try jsonDecoder.decode(UserTokenModel.self, from: data!)
+                    print(decodedUser)
+                    decodedUser.username = user.username!
+                    decodedUser.password = user.password!
+                    self.storeAuthenticationToken(decodedUser)
+                } catch {
+                    completion(.Failure)
+                    print(error)
+                    return
+                }
+            }
+            completion(status)
+        }
     }
     
-    func authenticateUser(user: UserTokenModel, completion: @escaping (RequestStatus) -> Void) {
-        guard let json = try? JSONEncoder().encode(user) else {
-            print("There was an error converting model to JSON")
-            return
-        }
-        
-        guard let params = try? JSONSerialization.jsonObject(with: json, options: .allowFragments) as? [String: Any] else {
-            print("Error parsing to params array")
-            return
-        }
-        
-        Alamofire.request("\(baseEndpoint)\(baseUserService)authentication",
-            method: .post, parameters: params,
-            encoding: JSONEncoding.default).responseJSON { (data) in
-                if !(data.error != nil) {
-                    completion(.Success)
-                } else {
-                    completion(.Failure)
-                }
-        }
-    }
     
     func signOut() {
-        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+        UserDefaults.standard.set(nil, forKey: "authentication_user")
     }
     
+    private func storeAuthenticationToken(_ user: UserTokenModel) {
+        let encoded = try! JSONEncoder().encode(user)
+        UserDefaults.standard.set(encoded, forKey: "authentication_user")
+    }
 
 }

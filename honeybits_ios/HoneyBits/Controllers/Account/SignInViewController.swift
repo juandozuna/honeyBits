@@ -19,37 +19,45 @@ class SignInViewController: UIViewController {
     var delegate: LoginDelegate?
     var backdropDelegate: AuthBackdropDelegate?
     
-    @IBOutlet weak var txtEmail: TextField!
+    @IBOutlet weak var txtUsername: TextField!
     @IBOutlet weak var txtPassword: TextField!
     @IBOutlet weak var btnSignIn: PMSuperButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let accountService: IAccountService = AccountService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        screenIsLoading(false)
         setTapGestures()
         setFormTextFields()
     }
     
     @IBAction func SignInBtnPressed(_ sender: Any) {
         if validateForm() {
-            let loginSuccess = accountService.loginUser(email: txtEmail.text!, password: txtPassword.text!)
-            if loginSuccess {
-                print("login button")
-                delegate!.logIn()
-                dismissIt()
+            screenIsLoading(true)
+            var user = UserTokenModel()
+            user.password = txtPassword.text!
+            user.username = txtUsername.text!
+            accountService.authenticateUser(user: user) { (status) in
+                if status == .Success {
+                   self.successfulLogin()
+                } else {
+                    self.failedLogin()
+                    self.showAlertMessage("There was an error while performing the sign in operation", title: "Sign In Error")
+                }
             }
         }
     }
+    
     
     @objc func tap(_ gestureRecognizer: UITapGestureRecognizer){
         if txtPassword.isFirstResponder {
             txtPassword.resignFirstResponder()
         }
         
-        if txtEmail.isFirstResponder {
-            txtEmail.resignFirstResponder()
+        if txtUsername.isFirstResponder {
+            txtUsername.resignFirstResponder()
         }
     }
     
@@ -62,6 +70,33 @@ class SignInViewController: UIViewController {
         dismiss(animated: true) {
             self.navigationController?.popToRootViewController(animated: false)
         }
+    }
+    
+    private func successfulLogin() {
+        DispatchQueue.main.async {
+            self.delegate!.logIn()
+            self.dismissIt()
+            self.screenIsLoading(false)
+        }
+    }
+    
+    private func failedLogin() {
+        DispatchQueue.main.async {
+            self.screenIsLoading(false)
+        }
+    }
+    
+    private func screenIsLoading(_ isLoading: Bool) {
+        activityIndicator.isHidden = !isLoading
+        
+        if isLoading {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+        txtPassword.isHidden = isLoading
+        txtUsername.isHidden = isLoading
+        btnSignIn.isEnabled = !isLoading
     }
     
     //MARK:- Validations
@@ -77,17 +112,11 @@ class SignInViewController: UIViewController {
     }
     
     private func validEmail() -> Bool {
-        let text = txtEmail.text!
+        let text = txtUsername.text!
         
         let requiredValidation = Validator.required().apply(text)
         if !requiredValidation {
-            showErrorInTextfield(txtEmail, message: NSLocalizedString("RequiredField", comment: ""))
-            return false
-        }
-        
-        let emailValidation = Validator.isEmail().apply(text)
-        if !emailValidation {
-            showErrorInTextfield(txtEmail, message: NSLocalizedString("ValidEmailAdress", comment: ""))
+            showErrorInTextfield(txtUsername, message: NSLocalizedString("RequiredField", comment: ""))
             return false
         }
     
@@ -122,18 +151,18 @@ class SignInViewController: UIViewController {
     
     //MARK:- Controls SETUP
     func setFormTextFields(){
-        txtEmail.placeholder = "Email"
+        txtUsername.placeholder = "Username"
         txtPassword.placeholder = "Password"
         
-        txtEmail.autocorrectionType = .no
-        txtEmail.keyboardType = .emailAddress
+        txtUsername.autocorrectionType = .no
+        txtUsername.keyboardType = .emailAddress
         txtPassword.isSecureTextEntry = true
         
         txtPassword.delegate = self
-        txtEmail.delegate = self
+        txtUsername.delegate = self
         
-        txtEmail.dividerActiveColor = UIColor.flatOrange()
-        txtEmail.placeholderActiveColor = UIColor.flatOrange()
+        txtUsername.dividerActiveColor = UIColor.flatOrange()
+        txtUsername.placeholderActiveColor = UIColor.flatOrange()
         txtPassword.dividerActiveColor = UIColor.flatOrange()
         txtPassword.placeholderActiveColor = UIColor.flatOrange()
         btnSignIn.backgroundColor = UIColor.flatOrange()
