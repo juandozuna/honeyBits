@@ -45,16 +45,21 @@ namespace honeybits_server.Controllers
             if (product == null)
                 return NotFound();
 
-            var user = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-
             return Ok(product);
         }
 
         [HttpPost("{id}")]
         public IActionResult Delete(int id)
         {
-            return Ok(true);
+            var product = _productService.Get(id);
+            if (product == null)
+                return NotFound();
+
+            var user = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            product.DeletedBy = int.Parse(user);
+            
+
+            return Ok(_productService.Delete(product));
         }
 
         [HttpGet("all")]
