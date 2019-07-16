@@ -9,25 +9,28 @@ namespace honeybits_server.Services
 {
     public class ShopService : IShopService
     {
+        private honeybitsContext _context = new honeybitsContext();
+
         public Shop Create(Shop shop)
         {
-            throw new NotImplementedException();
+            _context.Shop.Add(shop);
+            _context.SaveChanges();
+
+            return shop;
         }
 
-        public bool Delete(int id)
+        public bool Delete(Shop shop)
         {
-            throw new NotImplementedException();
+            shop.IsDeleted = true;
+            shop.DeletedDate = DateTime.Now;
+            var result = _context.SaveChanges();
+
+            return result > 0;
         }
 
-        public Shop Get(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public Shop Get(int id) => _context.Shop.Find(id);
 
-        public IEnumerable<Shop> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+        public IEnumerable<Shop> GetAll() => _context.Shop.ToList();
 
         public IEnumerable<ShopProduct> GetAllShopsProductsByShopId(int id)
         {
