@@ -29,7 +29,7 @@ namespace honeybits_server.Services
             return results > 0;
         }
 
-        public Product Get(int id) => _context.Product.Find((uint)id);
+        public Product Get(int id) => _context.Product.Where(x => x.IsDeleted == false).FirstOrDefault();
 
         public IEnumerable<Product> GetAll() => _context.Product.ToList();
     }
