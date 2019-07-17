@@ -35,13 +35,28 @@
             </objects>
             <point key="canvasLocation" x="-1299" y="139"/>
         </scene>
+        <!--Honey Bits-->
+        <scene sceneID="cql-ob-B3W">
+            <objects>
+                <viewController title="Honey Bits" id="57f-cR-k9h" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V4s-a3-5KF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="nyi-JF-f9C"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="31B-2b-V0C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-233" y="391"/>
+        </scene>
         <!--UserAuthentication-->
         <scene sceneID="plV-YG-2Rj">
             <objects>
                 <viewControllerPlaceholder storyboardName="UserAuthentication" id="wII-Ti-E3D" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCD-BH-vGd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="341" y="-233"/>
+            <point key="canvasLocation" x="641" y="-455"/>
         </scene>
         <!--Honey Bits-->
         <scene sceneID="fIQ-iY-uW9">
@@ -94,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTH-m9-Aqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-325" y="139"/>
+            <point key="canvasLocation" x="-232" y="-311"/>
         </scene>
     </scenes>
     <resources>

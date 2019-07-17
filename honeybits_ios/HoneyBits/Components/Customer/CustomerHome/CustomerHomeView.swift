@@ -13,9 +13,12 @@ import UIKit
     let accountService: IAccountService = AccountService()
     var delegate: LoginDelegate?
     @IBOutlet weak var tableView: UITableView!
+    let shops = ["Shop 1", "Shop 2", "Shop 3"]
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
+        tableView.dataSource = self
     
     }
     
@@ -45,13 +48,13 @@ extension CustomerHomeView : UITableViewDelegate {
 
 extension CustomerHomeView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return shops.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tc = UITableViewCell()
-        tc.textLabel?.text = "GOOD MORNING"
-        return tc
+        let cell = ShopTableViewCell()
+        
+        return cell
     }
     
     

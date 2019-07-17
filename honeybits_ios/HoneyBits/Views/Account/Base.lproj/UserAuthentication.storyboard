@@ -302,20 +302,21 @@
                             </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Sf2-aP-0dR">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.4668771404109589" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="color" red="0.99482471449999998" green="0.58095096130000001" blue="0.34970351300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="5ZP-Zv-KpA" firstAttribute="centerX" secondItem="r8K-i2-gFy" secondAttribute="centerX" id="96W-wS-29p"/>
-                            <constraint firstItem="yVO-2U-nk7" firstAttribute="bottom" secondItem="Sf2-aP-0dR" secondAttribute="bottom" id="IzG-2E-jXO"/>
-                            <constraint firstItem="Sf2-aP-0dR" firstAttribute="top" secondItem="yVO-2U-nk7" secondAttribute="top" id="Mld-YM-OTh"/>
+                            <constraint firstItem="yVO-2U-nk7" firstAttribute="bottom" secondItem="Sf2-aP-0dR" secondAttribute="bottom" id="GZk-f1-2Dc"/>
                             <constraint firstItem="kcY-su-4Gs" firstAttribute="leading" secondItem="yVO-2U-nk7" secondAttribute="leading" id="Q1t-7B-wZ2"/>
-                            <constraint firstItem="Sf2-aP-0dR" firstAttribute="leading" secondItem="yVO-2U-nk7" secondAttribute="leading" id="YI2-Ww-PwG"/>
-                            <constraint firstItem="yVO-2U-nk7" firstAttribute="trailing" secondItem="Sf2-aP-0dR" secondAttribute="trailing" id="bcG-v5-8Nz"/>
+                            <constraint firstItem="yVO-2U-nk7" firstAttribute="trailing" secondItem="Sf2-aP-0dR" secondAttribute="trailing" id="Tdh-Sy-AfL"/>
                             <constraint firstItem="5ZP-Zv-KpA" firstAttribute="centerY" secondItem="r8K-i2-gFy" secondAttribute="centerY" id="d2q-00-v8F"/>
                             <constraint firstItem="kcY-su-4Gs" firstAttribute="top" secondItem="r8K-i2-gFy" secondAttribute="top" id="iO7-OP-tvG"/>
                             <constraint firstItem="kcY-su-4Gs" firstAttribute="trailing" secondItem="yVO-2U-nk7" secondAttribute="trailing" id="nHs-xh-y0U"/>
+                            <constraint firstItem="Sf2-aP-0dR" firstAttribute="leading" secondItem="yVO-2U-nk7" secondAttribute="leading" id="oUg-Yf-F8m"/>
                             <constraint firstAttribute="bottom" secondItem="kcY-su-4Gs" secondAttribute="bottom" id="zBN-wx-S5w"/>
+                            <constraint firstItem="Sf2-aP-0dR" firstAttribute="top" secondItem="yVO-2U-nk7" secondAttribute="top" id="zGL-iR-jue"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yVO-2U-nk7"/>
                     </view>
@@ -331,6 +332,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hg6-iD-Zb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1663.7681159420292" y="19.419642857142858"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ich-fJ-oiU">
+            <objects>
+                <viewController id="qmW-KP-V5y" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jqm-mv-LE1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Csu-Ep-BfM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fBq-J4-ChR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2631" y="-96"/>
         </scene>
         <!--User Authentication Navigation Controller-->
         <scene sceneID="5hK-Dx-FeA">
