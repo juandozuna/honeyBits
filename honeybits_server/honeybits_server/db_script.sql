@@ -85,6 +85,27 @@ CREATE TABLE product_image (
 	deleted_date	TIMESTAMP
 );
 
+CREATE TABLE shop_follower (
+	shop_follower_id		INT AUTO_INCREMENT PRIMARY KEY,
+	shop_id					INT NOT NULL,
+	user_id					INT NOT NULL,
+	created_by		INT NOT NULL,
+	created_date	TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	is_deleted		BIT	DEFAULT 0,
+	deleted_by		INT,
+	deleted_date	TIMESTAMP
+);
+
+CREATE TABLE product_like (
+	product_like_id			INT AUTO_INCREMENT PRIMARY KEY,
+	user_id					INT NOT NULL,
+	product_id				INT NOT NULL,
+	created_by				INT NOT NULL,
+	created_date			TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	is_deleted				BIT	DEFAULT 0,
+	deleted_by				INT,
+	deleted_date			TIMESTAMP
+);
 
 
 -- INSERT Statements
@@ -119,13 +140,29 @@ INSERT INTO `honeybits`.`product_image` (`product_id`, `product_image_name`, `pr
 INSERT INTO `honeybits`.`product_image` (`product_id`, `product_image_name`, `product_image_description`, `product_image_type`, `created_by`) VALUES ( 3, 'product_image_3', 'Image for the third product', '.jpeg', 4);
 INSERT INTO `honeybits`.`product_image` (`product_id`, `product_image_name`, `product_image_description`, `product_image_type`, `created_by`) VALUES ( 4, 'product_image_4', 'Image for the fourth product', '.jpeg', 4);
 
-
 -- Shop Table
 INSERT INTO `honeybits`.`shop` (`owner_id`, `shop_name`, `shop_description`, `created_by`) VALUES (1, 'First Shop', 'First shop for testing purposes.', 1);
 INSERT INTO `honeybits`.`shop` (`owner_id`, `shop_name`, `shop_description`, `created_by`) VALUES (4, 'Second Shop', 'Second shop for testing purposes.', 4);
+
+-- Shop_follower Table
+INSERT INTO `honeybits`.`shop_follower` (`shop_id`, `user_id`, `created_by`) VALUES (1, 2, 2);
+INSERT INTO `honeybits`.`shop_follower` (`shop_id`, `user_id`, `created_by`) VALUES (2, 2, 2);
+INSERT INTO `honeybits`.`shop_follower` (`shop_id`, `user_id`, `created_by`) VALUES (1, 3, 3);
+INSERT INTO `honeybits`.`shop_follower` (`shop_id`, `user_id`, `created_by`) VALUES (2, 3, 3);
 
 -- Shop_Product Table
 INSERT INTO `honeybits`.`shop_product` (`shop_id`, `product_id`, `created_by`) VALUES (1, 1, 1);
 INSERT INTO `honeybits`.`shop_product` (`shop_id`, `product_id`, `created_by`) VALUES (2, 2, 4);
 INSERT INTO `honeybits`.`shop_product` (`shop_id`, `product_id`, `created_by`) VALUES (2, 3, 4);
 INSERT INTO `honeybits`.`shop_product` (`shop_id`, `product_id`, `created_by`) VALUES (2, 4, 4);
+
+-- Product_like Table
+INSERT INTO `honeybits`.`product_like` (`user_id`, `product_id`, `created_by`) VALUES (3, 1, 3);
+INSERT INTO `honeybits`.`product_like` (`user_id`, `product_id`, `created_by`) VALUES (3, 2, 3);
+INSERT INTO `honeybits`.`product_like` (`user_id`, `product_id`, `created_by`) VALUES (3, 3, 3);
+INSERT INTO `honeybits`.`product_like` (`user_id`, `product_id`, `created_by`) VALUES (3, 4, 3);
+INSERT INTO `honeybits`.`product_like` (`user_id`, `product_id`, `created_by`) VALUES (1, 1, 1);
+INSERT INTO `honeybits`.`product_like` (`user_id`, `product_id`, `created_by`) VALUES (1, 2, 1);
+INSERT INTO `honeybits`.`product_like` (`user_id`, `product_id`, `created_by`) VALUES (1, 3, 1);
+INSERT INTO `honeybits`.`product_like` (`user_id`, `product_id`, `created_by`) VALUES (1, 4, 1);
+
