@@ -72,6 +72,21 @@ CREATE TABLE shop_product (
 	deleted_date	TIMESTAMP
 );
 
+CREATE TABLE product_image (
+	product_image_id		INT AUTO_INCREMENT PRIMARY KEY,
+	product_id				INT NOT NULL,
+	product_image_name		VARCHAR(255) NOT NULL,
+	product_image_description	VARCHAR(500),
+	product_image_type	VARCHAR(15) NOT NULL,
+	created_by		INT NOT NULL,
+	created_date	TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	is_deleted		BIT	DEFAULT 0,
+	deleted_by		INT,
+	deleted_date	TIMESTAMP
+);
+
+
+
 -- INSERT Statements
 
 -- Role Table
@@ -97,6 +112,13 @@ INSERT INTO `honeybits`.`product`(`product_name`, `product_description`, `produc
 INSERT INTO `honeybits`.`product`(`product_name`, `product_description`, `product_price`, `created_by`) VALUES ('Product 2', 'Product 2 description', 12.89, 4);
 INSERT INTO `honeybits`.`product`(`product_name`, `product_description`, `product_price`, `created_by`) VALUES ('Product 3', 'Product 3 description', 13.79, 4);
 INSERT INTO `honeybits`.`product`(`product_name`, `product_description`, `product_price`, `created_by`) VALUES ('Product 4', 'Product 4 description', 14.69, 4);
+
+-- Product_image Table
+INSERT INTO `honeybits`.`product_image` (`product_id`, `product_image_name`, `product_image_description`, `product_image_type`, `created_by`) VALUES ( 1, 'product_image_1', 'Image for the first product', '.jpeg', 1);
+INSERT INTO `honeybits`.`product_image` (`product_id`, `product_image_name`, `product_image_description`, `product_image_type`, `created_by`) VALUES ( 2, 'product_image_2', 'Image for the second product', '.jpeg', 4);
+INSERT INTO `honeybits`.`product_image` (`product_id`, `product_image_name`, `product_image_description`, `product_image_type`, `created_by`) VALUES ( 3, 'product_image_3', 'Image for the third product', '.jpeg', 4);
+INSERT INTO `honeybits`.`product_image` (`product_id`, `product_image_name`, `product_image_description`, `product_image_type`, `created_by`) VALUES ( 4, 'product_image_4', 'Image for the fourth product', '.jpeg', 4);
+
 
 -- Shop Table
 INSERT INTO `honeybits`.`shop` (`owner_id`, `shop_name`, `shop_description`, `created_by`) VALUES (1, 'First Shop', 'First shop for testing purposes.', 1);
