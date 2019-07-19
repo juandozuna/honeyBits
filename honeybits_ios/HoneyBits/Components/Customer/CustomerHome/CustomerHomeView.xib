@@ -21,51 +21,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2aa-YY-ioC">
-                    <rect key="frame" x="0.0" y="44" width="414" height="500"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="500" id="wVX-2d-gjr"/>
-                    </constraints>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQ5-tS-4da">
-                    <rect key="frame" x="0.0" y="554" width="414" height="308"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Sv-3B-tIN" customClass="PMSuperButton" customModule="PMSuperButton">
-                            <rect key="frame" x="115.5" y="122.5" width="183" height="63"/>
-                            <color key="backgroundColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="63" id="HVZ-JO-AIv"/>
-                                <constraint firstAttribute="width" constant="183" id="TRT-KU-w5X"/>
-                            </constraints>
-                            <state key="normal" title="Log Out">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="5"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="btnTempPressed:" destination="-1" eventType="touchUpInside" id="cY4-TO-Y0g"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="6Sv-3B-tIN" firstAttribute="centerX" secondItem="OQ5-tS-4da" secondAttribute="centerX" id="3do-Ad-Bhr"/>
-                        <constraint firstItem="6Sv-3B-tIN" firstAttribute="centerY" secondItem="OQ5-tS-4da" secondAttribute="centerY" id="eKN-LK-fEb"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="2aa-YY-ioC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="4WC-DW-Egp"/>
-                <constraint firstItem="OQ5-tS-4da" firstAttribute="top" secondItem="2aa-YY-ioC" secondAttribute="bottom" constant="10" id="7YS-VF-J8b"/>
-                <constraint firstItem="2aa-YY-ioC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="AfR-2f-nFh"/>
-                <constraint firstItem="OQ5-tS-4da" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ks5-By-fI7"/>
-                <constraint firstItem="2aa-YY-ioC" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Pce-FL-ai0"/>
-                <constraint firstItem="OQ5-tS-4da" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="rUz-Rx-6hU"/>
-                <constraint firstItem="OQ5-tS-4da" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="yJi-d4-usc"/>
+                <constraint firstItem="2aa-YY-ioC" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="8uR-HF-hfZ"/>
+                <constraint firstItem="2aa-YY-ioC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="GVE-6f-qDE"/>
+                <constraint firstItem="2aa-YY-ioC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TAD-PP-VPl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="2aa-YY-ioC" secondAttribute="bottom" id="gmP-Ud-pgB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>

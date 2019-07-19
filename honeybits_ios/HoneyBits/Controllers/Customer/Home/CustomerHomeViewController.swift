@@ -24,6 +24,12 @@ class CustomerHomeViewController: CustomerLoginViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkIfLoggedIn()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         checkIfLoggedIn()
     }
     

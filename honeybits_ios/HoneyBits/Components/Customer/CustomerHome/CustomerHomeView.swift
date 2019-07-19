@@ -8,40 +8,37 @@
 
 import UIKit
 
-@IBDesignable class CustomerHomeView: UIView {
+class CustomerHomeView: UIView {
 
-    let accountService: IAccountService = AccountService()
     var delegate: LoginDelegate?
     @IBOutlet weak var tableView: UITableView!
     let shops = ["Shop 1", "Shop 2", "Shop 3"]
     
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
-        tableView.dataSource = self
-    
+        tableViewSetup()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
+        tableViewSetup()
     }
     
     
     private func tableViewSetup() {
-        
-    }
-
-    @IBAction func btnTempPressed(_ sender: Any) {
-        accountService.signOut()
-        delegate?.logOut()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib.init(nibName: "ShopTableViewCell", bundle: nil), forCellReuseIdentifier: "shopTableCell")
     }
 }
 
 
 extension CustomerHomeView : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.cellForRow(at: indexPath)?.setSelected(false, animated: false)
     }
 
 }
@@ -52,8 +49,8 @@ extension CustomerHomeView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ShopTableViewCell()
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "shopTableCell", for: indexPath) as! ShopTableViewCell
+        cell.lb.text = shops[indexPath.row]
         return cell
     }
     

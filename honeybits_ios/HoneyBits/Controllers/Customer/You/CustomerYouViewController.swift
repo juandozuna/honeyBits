@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import PMSuperButton
 
 class CustomerYouViewController: CustomerLoginViewController {
 
     @IBOutlet weak var guestView: UIView!
     @IBOutlet weak var guestViewComponent: GuestView!
     @IBOutlet weak var backdrop: UIView!
+    @IBOutlet weak var signOutBtn: PMSuperButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +23,27 @@ class CustomerYouViewController: CustomerLoginViewController {
         self.backdropView = backdrop 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkIfLoggedIn()
+    }
+    
     override func checkIfLoggedIn() {
         showGuestView(true)
+        if accountService.userIsLoggedIn {
+            signOutBtn.isHidden = false
+        } else {
+            signOutBtn.isHidden = true
+        }
     }
     
     private func showGuestView(_ value: Bool) {
         guestView.isHidden = !value
     }
 
-
+    @IBAction func signOutBtnPressed(_ sender: Any) {
+        accountService.signOut()
+        checkIfLoggedIn()
+    }
+    
 }

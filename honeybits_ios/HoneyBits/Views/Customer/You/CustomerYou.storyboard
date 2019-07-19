@@ -52,10 +52,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="uOO-yM-SFh">
-                                        <rect key="frame" x="15" y="276" width="384" height="105"/>
+                                        <rect key="frame" x="15" y="276" width="384" height="138"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="je6-MC-UAb" customClass="PMSuperButton" customModule="PMSuperButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="384" height="52"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="45.5"/>
                                                 <color key="backgroundColor" red="0.96821462560000005" green="0.96821462560000005" blue="0.96821462560000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -76,7 +76,28 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJj-8G-YDJ" customClass="PMSuperButton" customModule="PMSuperButton">
-                                                <rect key="frame" x="0.0" y="53" width="384" height="52"/>
+                                                <rect key="frame" x="0.0" y="46.5" width="384" height="45"/>
+                                                <color key="backgroundColor" red="0.96821462560000005" green="0.96821462560000005" blue="0.96821462560000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Sign Out">
+                                                    <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                        <color key="value" red="0.91092956849999995" green="0.91092956849999995" blue="0.91092956849999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="signOutBtnPressed:" destination="9in-1N-YRt" eventType="touchUpInside" id="mOX-lc-WVW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wd7-mB-y3A" customClass="PMSuperButton" customModule="PMSuperButton">
+                                                <rect key="frame" x="0.0" y="92.5" width="384" height="45.5"/>
                                                 <color key="backgroundColor" red="0.96821462560000005" green="0.96821462560000005" blue="0.96821462560000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -95,7 +116,7 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="105" id="5ah-3m-E0E"/>
+                                            <constraint firstAttribute="height" constant="138" id="5ah-3m-E0E"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isDividerHidden" value="YES"/>
@@ -138,6 +159,7 @@
                         <outlet property="backdrop" destination="ffj-QH-6oO" id="lmp-kK-8d9"/>
                         <outlet property="guestView" destination="AOE-zh-EWR" id="8eb-j3-f6r"/>
                         <outlet property="guestViewComponent" destination="YQd-n3-krN" id="u5V-pE-22i"/>
+                        <outlet property="signOutBtn" destination="UJj-8G-YDJ" id="tfi-fZ-s3F"/>
                         <segue destination="lzu-Ih-Bv5" kind="presentation" identifier="goToSignIn" id="wI9-2v-4Eb"/>
                     </connections>
                 </viewController>

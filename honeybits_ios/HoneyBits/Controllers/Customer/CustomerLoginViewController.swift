@@ -43,6 +43,11 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
         checkIfLoggedIn()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkIfLoggedIn()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == signInSegueIdentifier! {
             let navController = segue.destination as! UserAuthenticationNavigationController
