@@ -25,6 +25,9 @@
 		B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272B8D422CEE7E800E124B4 /* RecursiveDismissDelegate.swift */; };
 		B2745FD122D57EA500297A43 /* GuestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2745FD022D57EA500297A43 /* GuestView.xib */; };
 		B2745FD322D57EB500297A43 /* GuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2745FD222D57EB500297A43 /* GuestView.swift */; };
+		B27C9F5922E23A2600B4AFE3 /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C9F5822E23A2600B4AFE3 /* ShopModel.swift */; };
+		B27C9F5B22E23B0900B4AFE3 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C9F5A22E23B0900B4AFE3 /* ProductModel.swift */; };
+		B27C9F5D22E23BC200B4AFE3 /* ProductCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C9F5C22E23BC200B4AFE3 /* ProductCategoryModel.swift */; };
 		B27D794522D42BC80012F5CD /* CustomerSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794422D42BC80012F5CD /* CustomerSearch.storyboard */; };
 		B27D794722D42C5D0012F5CD /* CustomerYou.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794622D42C5D0012F5CD /* CustomerYou.storyboard */; };
 		B27D794922D42CEB0012F5CD /* CustomerCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794822D42CEB0012F5CD /* CustomerCart.storyboard */; };
@@ -99,6 +102,9 @@
 		B272B8D422CEE7E800E124B4 /* RecursiveDismissDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveDismissDelegate.swift; sourceTree = "<group>"; };
 		B2745FD022D57EA500297A43 /* GuestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuestView.xib; sourceTree = "<group>"; };
 		B2745FD222D57EB500297A43 /* GuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestView.swift; sourceTree = "<group>"; };
+		B27C9F5822E23A2600B4AFE3 /* ShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
+		B27C9F5A22E23B0900B4AFE3 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		B27C9F5C22E23BC200B4AFE3 /* ProductCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategoryModel.swift; sourceTree = "<group>"; };
 		B27D794422D42BC80012F5CD /* CustomerSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerSearch.storyboard; sourceTree = "<group>"; };
 		B27D794622D42C5D0012F5CD /* CustomerYou.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerYou.storyboard; sourceTree = "<group>"; };
 		B27D794822D42CEB0012F5CD /* CustomerCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerCart.storyboard; sourceTree = "<group>"; };
@@ -341,6 +347,9 @@
 			isa = PBXGroup;
 			children = (
 				B262AF4B22DBF86600ABF311 /* UserTokenModel.swift */,
+				B27C9F5822E23A2600B4AFE3 /* ShopModel.swift */,
+				B27C9F5A22E23B0900B4AFE3 /* ProductModel.swift */,
+				B27C9F5C22E23BC200B4AFE3 /* ProductCategoryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -736,10 +745,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2F8359122D6882F00A9910C /* UiViewXibExtension.swift in Sources */,
+				B27C9F5D22E23BC200B4AFE3 /* ProductCategoryModel.swift in Sources */,
 				B28F419B22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift in Sources */,
 				B28F41AC22D80CD900C7E2E6 /* CustomerYouViewController.swift in Sources */,
 				B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */,
+				B27C9F5B22E23B0900B4AFE3 /* ProductModel.swift in Sources */,
 				B28F41A622D7A88C00C7E2E6 /* CustomerLoginViewController.swift in Sources */,
+				B27C9F5922E23A2600B4AFE3 /* ShopModel.swift in Sources */,
 				B28F41A922D7B34E00C7E2E6 /* CustomerSearchViewController.swift in Sources */,
 				B272B8D022CEE65A00E124B4 /* LoginSelectViewController.swift in Sources */,
 				B2F8358A22D6820900A9910C /* SignInDelegate.swift in Sources */,
