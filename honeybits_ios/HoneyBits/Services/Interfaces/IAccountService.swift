@@ -15,6 +15,8 @@ protocol IAccountService {
     
     var userIsLoggedIn: Bool { get }
     
+    var isUserFirstTime: Bool { get }
+    
     func authenticateUser(user: UserTokenModel, completion: @escaping CompletedRequestVoid) -> Void
     
     func signOut() -> Void

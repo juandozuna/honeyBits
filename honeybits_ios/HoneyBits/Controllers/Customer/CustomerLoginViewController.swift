@@ -57,6 +57,10 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
         }
     }
     
+    func setRootViewControllerDependingOnLoggedUserRole() {
+        //TODO: Implement this controller after building the desired screen
+    }
+    
     func logIn() {
         checkIfLoggedIn()
     }
@@ -66,7 +70,7 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     }
     
     func checkIfLoggedIn() {
-        
+        setRootViewControllerDependingOnLoggedUserRole()
     }
     
     func signIn() {

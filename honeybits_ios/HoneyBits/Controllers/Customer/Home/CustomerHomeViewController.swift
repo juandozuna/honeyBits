@@ -39,6 +39,7 @@ class CustomerHomeViewController: CustomerLoginViewController {
         } else {
             showGuestView(false)
         }
+        super.checkIfLoggedIn()
     }
     
     

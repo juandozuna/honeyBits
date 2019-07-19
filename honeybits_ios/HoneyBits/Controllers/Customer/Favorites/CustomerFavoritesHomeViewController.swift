@@ -23,6 +23,7 @@ class CustomerFavoritesHomeViewController: CustomerLoginViewController  {
     
     override func checkIfLoggedIn(){
        showGuestView(true)
+        super.checkIfLoggedIn()
     }
     
     private func showGuestView(_ value: Bool) {

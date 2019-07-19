@@ -12,16 +12,28 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Aih-5Y-aqn">
-            <rect key="frame" x="0.0" y="0.0" width="226" height="150"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Aih-5Y-aqn" customClass="ShopProductCollectionCell" customModule="HoneyBits" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="241" height="184"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="226" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="241" height="184"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMg-0G-xgr">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="184"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="PMg-0G-xgr" firstAttribute="top" secondItem="Aih-5Y-aqn" secondAttribute="top" id="0No-i8-j3a"/>
+                <constraint firstAttribute="trailing" secondItem="PMg-0G-xgr" secondAttribute="trailing" constant="1" id="9nW-or-TGU"/>
+                <constraint firstItem="PMg-0G-xgr" firstAttribute="leading" secondItem="Aih-5Y-aqn" secondAttribute="leading" id="CtC-b2-36B"/>
+                <constraint firstAttribute="bottom" secondItem="PMg-0G-xgr" secondAttribute="bottom" id="tj0-h3-6ve"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="TAQ-Qv-znT"/>
-            <size key="customSize" width="226" height="150"/>
-            <point key="canvasLocation" x="285.50724637681162" y="127.23214285714285"/>
+            <size key="customSize" width="241" height="184"/>
+            <point key="canvasLocation" x="296.37681159420293" y="138.61607142857142"/>
         </collectionViewCell>
     </objects>
 </document>

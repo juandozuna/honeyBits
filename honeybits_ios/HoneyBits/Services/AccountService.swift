@@ -19,6 +19,13 @@ class AccountService : BaseService, IAccountService {
         }
     }
     
+    var isUserFirstTime: Bool {
+        get {
+            let res = UserDefaults.standard.object(forKey: "authentications") as? Int
+            return res == nil
+        }
+    }
+    
     //MARK- Variables
     
     //MARK:-  Methods
@@ -57,6 +64,15 @@ class AccountService : BaseService, IAccountService {
     private func storeAuthenticationToken(_ user: UserTokenModel) {
         let encoded = try! JSONEncoder().encode(user)
         UserDefaults.standard.set(encoded, forKey: "authentication_user")
+    }
+    
+    private func updateSuccesfulLoginNumber() {
+        let number = UserDefaults.standard.object(forKey: "authentications") as? Int
+        if number == nil {
+            UserDefaults.standard.set(1, forKey: "authentications")
+        } else {
+            UserDefaults.standard.set(number! + 1, forKey: "authentications")
+        }
     }
 
 }

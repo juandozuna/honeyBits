@@ -35,6 +35,7 @@ class CustomerYouViewController: CustomerLoginViewController {
         } else {
             signOutBtn.isHidden = true
         }
+        super.checkIfLoggedIn()
     }
     
     private func showGuestView(_ value: Bool) {

@@ -28,6 +28,8 @@
 		B27C9F5922E23A2600B4AFE3 /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C9F5822E23A2600B4AFE3 /* ShopModel.swift */; };
 		B27C9F5B22E23B0900B4AFE3 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C9F5A22E23B0900B4AFE3 /* ProductModel.swift */; };
 		B27C9F5D22E23BC200B4AFE3 /* ProductCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C9F5C22E23BC200B4AFE3 /* ProductCategoryModel.swift */; };
+		B27C9F5F22E23CAD00B4AFE3 /* ShopProductCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C9F5E22E23CAD00B4AFE3 /* ShopProductCollectionCell.swift */; };
+		B27C9F6122E23EE500B4AFE3 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27C9F6022E23EE500B4AFE3 /* main.storyboard */; };
 		B27D794522D42BC80012F5CD /* CustomerSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794422D42BC80012F5CD /* CustomerSearch.storyboard */; };
 		B27D794722D42C5D0012F5CD /* CustomerYou.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794622D42C5D0012F5CD /* CustomerYou.storyboard */; };
 		B27D794922D42CEB0012F5CD /* CustomerCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794822D42CEB0012F5CD /* CustomerCart.storyboard */; };
@@ -105,6 +107,8 @@
 		B27C9F5822E23A2600B4AFE3 /* ShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
 		B27C9F5A22E23B0900B4AFE3 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		B27C9F5C22E23BC200B4AFE3 /* ProductCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategoryModel.swift; sourceTree = "<group>"; };
+		B27C9F5E22E23CAD00B4AFE3 /* ShopProductCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopProductCollectionCell.swift; sourceTree = "<group>"; };
+		B27C9F6022E23EE500B4AFE3 /* main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		B27D794422D42BC80012F5CD /* CustomerSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerSearch.storyboard; sourceTree = "<group>"; };
 		B27D794622D42C5D0012F5CD /* CustomerYou.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerYou.storyboard; sourceTree = "<group>"; };
 		B27D794822D42CEB0012F5CD /* CustomerCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerCart.storyboard; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 				B204A0E122DE8D9000305A7E /* ShopTableViewCell.xib */,
 				B204A0E522DE90A300305A7E /* ShopTableViewCell.swift */,
 				B204A0E322DE8DAC00305A7E /* ShopProductCollectionCell.xib */,
+				B27C9F5E22E23CAD00B4AFE3 /* ShopProductCollectionCell.swift */,
 			);
 			path = Customer;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 				B2EE6A8522D8FDB100350BBA /* General */,
 				B2A2E81622D0D4B200DFDAB3 /* Customer */,
 				B2DD098322CAF8D100A98586 /* Account */,
+				B27C9F6022E23EE500B4AFE3 /* main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -623,6 +629,7 @@
 				B204A0E222DE8D9000305A7E /* ShopTableViewCell.xib in Resources */,
 				B272B8CB22CED34900E124B4 /* Localizable.strings in Resources */,
 				B2A2E81922D0D51200DFDAB3 /* CustomerHome.storyboard in Resources */,
+				B27C9F6122E23EE500B4AFE3 /* main.storyboard in Resources */,
 				B204A0E422DE8DAC00305A7E /* ShopProductCollectionCell.xib in Resources */,
 				B272B8C222CED28500E124B4 /* UserAuthentication.storyboard in Resources */,
 				B27D794922D42CEB0012F5CD /* CustomerCart.storyboard in Resources */,
@@ -749,6 +756,7 @@
 				B28F419B22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift in Sources */,
 				B28F41AC22D80CD900C7E2E6 /* CustomerYouViewController.swift in Sources */,
 				B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */,
+				B27C9F5F22E23CAD00B4AFE3 /* ShopProductCollectionCell.swift in Sources */,
 				B27C9F5B22E23B0900B4AFE3 /* ProductModel.swift in Sources */,
 				B28F41A622D7A88C00C7E2E6 /* CustomerLoginViewController.swift in Sources */,
 				B27C9F5922E23A2600B4AFE3 /* ShopModel.swift in Sources */,

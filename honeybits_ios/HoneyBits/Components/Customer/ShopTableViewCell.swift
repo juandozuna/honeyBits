@@ -10,6 +10,7 @@ import UIKit
 
 class ShopTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var productsCollectionView: UICollectionView!
     @IBOutlet weak var lb: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
