@@ -9,9 +9,16 @@
 import UIKit
 
 class UserAuthenticationNavigationController: UINavigationController {
+    
+    var backdropDelegate: AuthBackdropDelegate?
+    var loginDelegate: LoginDelegate?
 
-    var signInDelegate: LoginDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let vc = viewControllerFromStoryboard(storyboard: "UserAuthentication", withIdentifier: "firstTimeView") as! FirstTimeLoginViewController
+        vc.backdropDelegate = backdropDelegate
+        vc.delegate = loginDelegate
+        viewControllers = [vc]
     }
+    
 }

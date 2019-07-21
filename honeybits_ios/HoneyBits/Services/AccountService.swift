@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class AccountService : BaseService, IAccountService {
+    //MARK:- Variables
     let baseUserService: String = "api/users/"
     var userIsLoggedIn: Bool {
         get {
@@ -25,8 +26,6 @@ class AccountService : BaseService, IAccountService {
             return res == nil
         }
     }
-    
-    //MARK- Variables
     
     //MARK:-  Methods
     func authenticateUser(user: UserTokenModel, completion: @escaping (RequestStatus) -> Void) {

@@ -12,10 +12,12 @@ struct UserTokenModel: Codable {
     var username: String?
     var password: String?
     var token: String?
+    var rol: UserRoles?
     
     init() {
         username = nil
         password = nil
         token = nil
+        rol = nil
     }
 }

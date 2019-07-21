@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Customer Tab Bar Controller-->
         <scene sceneID="tlH-FX-GME">
             <objects>
-                <tabBarController id="q1j-u1-sav" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="customerTabController" id="q1j-u1-sav" customClass="CustomerTabBarController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PAm-kj-8tI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

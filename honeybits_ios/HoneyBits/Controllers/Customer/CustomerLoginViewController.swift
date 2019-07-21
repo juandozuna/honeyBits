@@ -51,6 +51,8 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == signInSegueIdentifier! {
             let navController = segue.destination as! UserAuthenticationNavigationController
+            navController.backdropDelegate = self
+            navController.loginDelegate = self
             let vc = navController.topViewController as! LoginSelectViewController
             vc.delegate = self
             vc.backdropDelegate = self
