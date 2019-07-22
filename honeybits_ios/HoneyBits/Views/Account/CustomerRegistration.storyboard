@@ -10,20 +10,172 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Customer Registration Form View Controller-->
         <scene sceneID="bia-Od-xA6">
             <objects>
-                <viewController id="yYd-Ot-FLW" sceneMemberID="viewController">
+                <viewController id="yYd-Ot-FLW" customClass="CustomerRegistrationFormViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KRa-K8-rRP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tkq-cM-UzO">
-                                <rect key="frame" x="30" y="280" width="364" height="285"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tkq-cM-UzO">
+                                <rect key="frame" x="15" y="254.5" width="384" height="387"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUh-XW-yTe">
+                                        <rect key="frame" x="10" y="0.0" width="364" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="Usg-tE-VWK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="dividerThickness">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isDividerHidden" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
+                                                <color key="value" white="0.66666666669999997" alpha="0.52201947770000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61L-cV-5wa" userLabel="Bottom">
+                                        <rect key="frame" x="0.0" y="332" width="384" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="mdK-MX-wXz"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaE-fw-f71" userLabel="Divider">
+                                        <rect key="frame" x="0.0" y="320" width="384" height="6"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="6" id="Qx0-wJ-Zuv"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isDividerHidden" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="dividerThickness">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
+                                                <color key="value" white="0.66666666669999997" alpha="0.52201947770000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGE-VN-gem" userLabel="Body">
+                                        <rect key="frame" x="0.0" y="57" width="384" height="263"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="nBq-kR-NzE">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="215"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="OoZ-FA-rfP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="40.5"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9sZ-Ga-k3w" customClass="TextField" customModule="Material">
+                                                                <rect key="frame" x="0.0" y="0.0" width="186.5" height="40.5"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="First Name"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="udk-uh-And" customClass="TextField" customModule="Material">
+                                                                <rect key="frame" x="197.5" y="0.0" width="186.5" height="40.5"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Last Name"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OvL-Od-hrR" customClass="TextField" customModule="Material">
+                                                        <rect key="frame" x="0.0" y="58.5" width="384" height="40"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email Address"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Uk-wR-qAI" customClass="TextField" customModule="Material">
+                                                        <rect key="frame" x="0.0" y="116.5" width="384" height="40.5"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fX-0V-iIb" customClass="PMSuperButton" customModule="PMSuperButton">
+                                                        <rect key="frame" x="0.0" y="175" width="384" height="40"/>
+                                                        <color key="backgroundColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <state key="normal" title="Register">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWv-bJ-qpN">
+                                                <rect key="frame" x="5" y="215" width="374" height="48"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="Uam-gc-90w"/>
+                                                </constraints>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="By registering, you confirm that you accept out Terms of Use and Privacy Policy">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="14"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="nBq-kR-NzE" firstAttribute="leading" secondItem="dGE-VN-gem" secondAttribute="leading" id="KmG-gB-Al2"/>
+                                            <constraint firstItem="hWv-bJ-qpN" firstAttribute="leading" secondItem="dGE-VN-gem" secondAttribute="leading" constant="5" id="Qw9-6l-fvk"/>
+                                            <constraint firstAttribute="trailing" secondItem="hWv-bJ-qpN" secondAttribute="trailing" constant="5" id="U1x-4t-vYZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="hWv-bJ-qpN" secondAttribute="bottom" id="fjH-Zw-iW2"/>
+                                            <constraint firstItem="hWv-bJ-qpN" firstAttribute="top" secondItem="nBq-kR-NzE" secondAttribute="bottom" id="fu0-kc-err"/>
+                                            <constraint firstAttribute="trailing" secondItem="nBq-kR-NzE" secondAttribute="trailing" id="ldB-RI-dMI"/>
+                                            <constraint firstItem="nBq-kR-NzE" firstAttribute="top" secondItem="dGE-VN-gem" secondAttribute="top" id="ujK-Rb-qIZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="pUh-XW-yTe" secondAttribute="trailing" constant="10" id="0CR-8f-bY2"/>
+                                    <constraint firstAttribute="trailing" secondItem="eaE-fw-f71" secondAttribute="trailing" id="4Lp-2a-WqO"/>
+                                    <constraint firstAttribute="height" constant="387" id="6fe-xl-05i"/>
+                                    <constraint firstItem="pUh-XW-yTe" firstAttribute="leading" secondItem="tkq-cM-UzO" secondAttribute="leading" constant="10" id="Bxy-hE-ens"/>
+                                    <constraint firstAttribute="trailing" secondItem="61L-cV-5wa" secondAttribute="trailing" id="CZu-Y7-huC"/>
+                                    <constraint firstItem="dGE-VN-gem" firstAttribute="leading" secondItem="tkq-cM-UzO" secondAttribute="leading" id="FVq-WL-lp4"/>
+                                    <constraint firstItem="61L-cV-5wa" firstAttribute="leading" secondItem="tkq-cM-UzO" secondAttribute="leading" id="K0A-v2-HT5"/>
+                                    <constraint firstItem="pUh-XW-yTe" firstAttribute="top" secondItem="tkq-cM-UzO" secondAttribute="top" id="LKy-0g-rOf"/>
+                                    <constraint firstItem="dGE-VN-gem" firstAttribute="top" secondItem="pUh-XW-yTe" secondAttribute="bottom" constant="5" id="OBa-tk-Fsh"/>
+                                    <constraint firstItem="eaE-fw-f71" firstAttribute="leading" secondItem="tkq-cM-UzO" secondAttribute="leading" id="T2P-V7-TnG"/>
+                                    <constraint firstAttribute="trailing" secondItem="dGE-VN-gem" secondAttribute="trailing" id="kMp-vh-8ga"/>
+                                    <constraint firstAttribute="bottom" secondItem="61L-cV-5wa" secondAttribute="bottom" id="lgf-MQ-j41"/>
+                                    <constraint firstItem="eaE-fw-f71" firstAttribute="top" secondItem="dGE-VN-gem" secondAttribute="bottom" id="ngB-mM-w3U"/>
+                                    <constraint firstItem="61L-cV-5wa" firstAttribute="top" secondItem="eaE-fw-f71" secondAttribute="bottom" constant="6" id="xuF-R6-Igh"/>
+                                </constraints>
                             </view>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="hbV-fT-Hj7" firstAttribute="trailing" secondItem="tkq-cM-UzO" secondAttribute="trailing" constant="15" id="6Uz-eK-Tqj"/>
+                            <constraint firstItem="tkq-cM-UzO" firstAttribute="centerY" secondItem="KRa-K8-rRP" secondAttribute="centerY" id="QuD-Ao-A3u"/>
+                            <constraint firstItem="tkq-cM-UzO" firstAttribute="leading" secondItem="hbV-fT-Hj7" secondAttribute="leading" constant="15" id="WPE-Yz-5WZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hbV-fT-Hj7"/>
                     </view>
                 </viewController>

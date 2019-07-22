@@ -18,6 +18,7 @@
 		B22B908622E3E5E900D0B449 /* FirstTimeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B908522E3E5E900D0B449 /* FirstTimeLoginViewController.swift */; };
 		B22B908822E4E73100D0B449 /* CustomerRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22B908722E4E73100D0B449 /* CustomerRegistration.storyboard */; };
 		B22B908A22E4E73E00D0B449 /* KeeperRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22B908922E4E73E00D0B449 /* KeeperRegistration.storyboard */; };
+		B22B909022E5517E00D0B449 /* CustomerRegistrationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B908F22E5517E00D0B449 /* CustomerRegistrationFormViewController.swift */; };
 		B2398A3422DD36280042C764 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2398A3322DD36280042C764 /* UIViewControllerExtension.swift */; };
 		B2398A3622DD5B230042C764 /* EncodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2398A3522DD5B230042C764 /* EncodableExtensions.swift */; };
 		B25D46A722E398C700F3E644 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25D46A622E398C700F3E644 /* NSObjectExtensions.swift */; };
@@ -103,6 +104,7 @@
 		B22B908522E3E5E900D0B449 /* FirstTimeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeLoginViewController.swift; sourceTree = "<group>"; };
 		B22B908722E4E73100D0B449 /* CustomerRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerRegistration.storyboard; sourceTree = "<group>"; };
 		B22B908922E4E73E00D0B449 /* KeeperRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperRegistration.storyboard; sourceTree = "<group>"; };
+		B22B908F22E5517E00D0B449 /* CustomerRegistrationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRegistrationFormViewController.swift; sourceTree = "<group>"; };
 		B2398A3322DD36280042C764 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B2398A3522DD5B230042C764 /* EncodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtensions.swift; sourceTree = "<group>"; };
 		B25D46A622E398C700F3E644 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
@@ -208,6 +210,23 @@
 				B21957EF22E24C78008AEBA0 /* KeeperMain.storyboard */,
 			);
 			path = Keeper;
+			sourceTree = "<group>";
+		};
+		B22B908D22E5514900D0B449 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				B22B908F22E5517E00D0B449 /* CustomerRegistrationFormViewController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		B22B908E22E5515400D0B449 /* Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				B272B8CF22CEE65A00E124B4 /* LoginSelectViewController.swift */,
+				B272B8D122CEE66200E124B4 /* SignInViewController.swift */,
+			);
+			path = "Sign In";
 			sourceTree = "<group>";
 		};
 		B2398A3022DCB39F0042C764 /* Networking */ = {
@@ -408,8 +427,8 @@
 		B2E13D3522CECFDB0074607C /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				B272B8CF22CEE65A00E124B4 /* LoginSelectViewController.swift */,
-				B272B8D122CEE66200E124B4 /* SignInViewController.swift */,
+				B22B908E22E5515400D0B449 /* Sign In */,
+				B22B908D22E5514900D0B449 /* Registration */,
 				B28F419A22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift */,
 				B22B908522E3E5E900D0B449 /* FirstTimeLoginViewController.swift */,
 			);
@@ -820,6 +839,7 @@
 				B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */,
 				B28F41AE22D8141600C7E2E6 /* AuthBackdropDelegate.swift in Sources */,
 				B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */,
+				B22B909022E5517E00D0B449 /* CustomerRegistrationFormViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
