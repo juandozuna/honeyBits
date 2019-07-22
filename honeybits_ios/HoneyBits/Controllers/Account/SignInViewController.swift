@@ -50,6 +50,12 @@ class SignInViewController: UIViewController {
         }
     }
     
+    @IBAction func forgotPassBtnPressed(_ sender: Any) {
+    }
+    
+    @IBAction func registerBtnPressed(_ sender: Any) {
+    }
+    
     
     @objc func tap(_ gestureRecognizer: UITapGestureRecognizer){
         if txtPassword.isFirstResponder {

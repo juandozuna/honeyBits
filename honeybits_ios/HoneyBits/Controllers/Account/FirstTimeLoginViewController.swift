@@ -18,6 +18,7 @@ class FirstTimeLoginViewController: UIViewController {
         
         configureNavController()
         
+        backdropDelegate?.isBackdropActive = true
     }
     
     @IBAction func normalSignInBtn(_ sender: Any) {
