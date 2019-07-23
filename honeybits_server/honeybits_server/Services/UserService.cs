@@ -47,7 +47,8 @@ namespace honeybits_server.Services
 
             return new Token
             {
-                token = tokenHandler.WriteToken(token)
+                token = tokenHandler.WriteToken(token),
+                Rol = user.RoleId
             };
         }
 
