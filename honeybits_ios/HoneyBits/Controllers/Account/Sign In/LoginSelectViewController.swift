@@ -24,11 +24,21 @@ class LoginSelectViewController: UIViewController {
         performSegue(withIdentifier: "goToSignIn", sender: self)
     }
     
+    
+    @IBAction func registerBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "goToCustomerRegister", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSignIn" {
             let vc = segue.destination as! SignInViewController
             vc.dimissiveDelegate = self;
             vc.delegate = delegate
+            vc.backdropDelegate = backdropDelegate
+        }
+        
+        if segue.identifier == "goToCustomerRegister" {
+            let vc = segue.destination as! CustomerRegistrationFormViewController
             vc.backdropDelegate = backdropDelegate
         }
     }

@@ -19,6 +19,7 @@
 		B22B908822E4E73100D0B449 /* CustomerRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22B908722E4E73100D0B449 /* CustomerRegistration.storyboard */; };
 		B22B908A22E4E73E00D0B449 /* KeeperRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22B908922E4E73E00D0B449 /* KeeperRegistration.storyboard */; };
 		B22B909022E5517E00D0B449 /* CustomerRegistrationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B908F22E5517E00D0B449 /* CustomerRegistrationFormViewController.swift */; };
+		B22B909322E6AC2400D0B449 /* ScaleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B909222E6AC2400D0B449 /* ScaleSegue.swift */; };
 		B2398A3422DD36280042C764 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2398A3322DD36280042C764 /* UIViewControllerExtension.swift */; };
 		B2398A3622DD5B230042C764 /* EncodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2398A3522DD5B230042C764 /* EncodableExtensions.swift */; };
 		B25D46A722E398C700F3E644 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25D46A622E398C700F3E644 /* NSObjectExtensions.swift */; };
@@ -105,6 +106,7 @@
 		B22B908722E4E73100D0B449 /* CustomerRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerRegistration.storyboard; sourceTree = "<group>"; };
 		B22B908922E4E73E00D0B449 /* KeeperRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperRegistration.storyboard; sourceTree = "<group>"; };
 		B22B908F22E5517E00D0B449 /* CustomerRegistrationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRegistrationFormViewController.swift; sourceTree = "<group>"; };
+		B22B909222E6AC2400D0B449 /* ScaleSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleSegue.swift; sourceTree = "<group>"; };
 		B2398A3322DD36280042C764 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B2398A3522DD5B230042C764 /* EncodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtensions.swift; sourceTree = "<group>"; };
 		B25D46A622E398C700F3E644 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
@@ -227,6 +229,14 @@
 				B272B8D122CEE66200E124B4 /* SignInViewController.swift */,
 			);
 			path = "Sign In";
+			sourceTree = "<group>";
+		};
+		B22B909122E6ABDC00D0B449 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				B22B909222E6AC2400D0B449 /* ScaleSegue.swift */,
+			);
+			path = Segues;
 			sourceTree = "<group>";
 		};
 		B2398A3022DCB39F0042C764 /* Networking */ = {
@@ -376,6 +386,7 @@
 		B2A5813822CAD0F300C9C5D9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B22B909122E6ABDC00D0B449 /* Segues */,
 				B2F8358B22D6834F00A9910C /* Customer */,
 				B2E13D3522CECFDB0074607C /* Account */,
 				B26CEB3422E257EB00814889 /* MainNavigationController.swift */,
@@ -825,6 +836,7 @@
 				B262AF4C22DBF86600ABF311 /* UserTokenModel.swift in Sources */,
 				B28F41A422D783BE00C7E2E6 /* CustomerFavoritesHomeViewController.swift in Sources */,
 				B2745FD322D57EB500297A43 /* GuestView.swift in Sources */,
+				B22B909322E6AC2400D0B449 /* ScaleSegue.swift in Sources */,
 				B22B908622E3E5E900D0B449 /* FirstTimeLoginViewController.swift in Sources */,
 				B272B8D222CEE66200E124B4 /* SignInViewController.swift in Sources */,
 				B26CEB3522E257EB00814889 /* MainNavigationController.swift in Sources */,

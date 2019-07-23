@@ -11,23 +11,28 @@ import Material
 import ChameleonFramework
 import PMSuperButton
 import SwiftValidators
+import IHKeyboardAvoiding
 
 class SignInViewController: UIViewController {
 
-    @IBOutlet weak var bgView: UIView!
+    
     var dimissiveDelegate: RecursiveDismissDelegate?
     var delegate: LoginDelegate?
     var backdropDelegate: AuthBackdropDelegate?
-    
+    @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var txtUsername: TextField!
     @IBOutlet weak var txtPassword: TextField!
     @IBOutlet weak var btnSignIn: PMSuperButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var formView: UIView!
     
     let accountService: IAccountService = AccountService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        KeyboardAvoiding.avoidingView = formView
+        
         screenIsLoading(false)
         setTapGestures()
         setFormTextFields()
@@ -54,6 +59,9 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func registerBtnPressed(_ sender: Any) {
+        let registerVc = viewControllerFromStoryboard(storyboard: "CustomerRegistration", withIdentifier: "customerRegisterForm") as! CustomerRegistrationFormViewController
+        registerVc.backdropDelegate = backdropDelegate
+        navigationController?.pushViewController(registerVc, animated: true)
     }
     
     
@@ -133,20 +141,6 @@ class SignInViewController: UIViewController {
         let email = validEmail()
         let password = validPassword()
         return email && password
-    }
-    
-    private func showErrorInTextfield(_ textfield: TextField, message: String) {
-        textfield.detailColor = UIColor.flatRed()
-        textfield.detail = message
-        textfield.dividerNormalColor = UIColor.flatRed()
-        textfield.placeholderNormalColor = UIColor.flatRed()
-    }
-    
-    private func resetTextfield(_ textfield: TextField){
-        textfield.detail = ""
-        textfield.dividerNormalColor = UIColor.flatGray()
-        textfield.placeholderNormalColor = UIColor.flatGray()
-        textfield.detailColor = UIColor.flatGray()
     }
     
     //MARK:- Gesture listeners

@@ -126,6 +126,9 @@
                                                         <real key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="registerBtnPressed:" destination="zN6-ob-YCk" eventType="touchUpInside" id="gqA-tC-tpB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWp-9p-EVX" customClass="PMSuperButton" customModule="PMSuperButton">
                                                 <rect key="frame" x="148.5" y="0.0" width="142.5" height="44"/>
@@ -221,11 +224,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Sf2-aP-0dR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.4668771404109589" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="color" red="0.99482471449999998" green="0.58095096130000001" blue="0.34970351300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcY-su-4Gs">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </view>
@@ -336,15 +334,27 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2wU-14-Ijz">
                                         <rect key="frame" x="0.0" y="255" width="343" height="58"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93d-5G-SBM">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="93d-5G-SBM">
                                                 <rect key="frame" x="8" y="8" width="327" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="327" id="Gwi-q3-wGB"/>
                                                     <constraint firstAttribute="height" constant="42" id="dtf-A6-pkf"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="Don't have an account? Register">
-                                                    <color key="titleColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Don't have an account? ">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="17" name="Arial-BoldMT"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="Register">
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="0.43441106797142925" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <font key="NSFont" size="17" name="Arial-BoldMT"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                 </state>
                                                 <connections>
                                                     <action selector="registerBtnPressed:" destination="Rb9-7m-LQr" eventType="touchUpInside" id="olq-PB-IrB"/>
@@ -392,6 +402,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Sf2-aP-0dR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.4668771404109589" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="color" red="0.99482471449999998" green="0.58095096130000001" blue="0.34970351300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="5ZP-Zv-KpA" firstAttribute="centerX" secondItem="r8K-i2-gFy" secondAttribute="centerX" id="96W-wS-29p"/>
@@ -412,6 +427,7 @@
                         <outlet property="activityIndicator" destination="Sf2-aP-0dR" id="Zj3-Ge-Hl2"/>
                         <outlet property="bgView" destination="kcY-su-4Gs" id="Bae-a1-uSw"/>
                         <outlet property="btnSignIn" destination="FmF-MN-7NH" id="y83-6a-klD"/>
+                        <outlet property="formView" destination="5ZP-Zv-KpA" id="IAf-Hx-QRT"/>
                         <outlet property="txtPassword" destination="0EN-gn-SZa" id="NC7-gB-FSa"/>
                         <outlet property="txtUsername" destination="Uqj-ez-GVd" id="yCF-kr-aiG"/>
                     </connections>
