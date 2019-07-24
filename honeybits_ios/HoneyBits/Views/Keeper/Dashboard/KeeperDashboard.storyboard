@@ -10,12 +10,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Dashboard-->
         <scene sceneID="oJ8-ja-W7v">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wcp-pO-SQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="O5t-OF-xuy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="dashboard" id="MMQ-HF-p1y"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard" id="MMQ-HF-p1y"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xj6-px-qAn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
