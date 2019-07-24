@@ -15,7 +15,7 @@ class AccountService : BaseService, IAccountService {
     let baseUserService: String = "api/users/"
     var userIsLoggedIn: Bool {
         get {
-            let res = UserDefaults.standard.object(forKey: "authentication_user") as? Data
+            let res = getUserDataFromDefaults()
             return res != nil
         }
     }
@@ -24,6 +24,12 @@ class AccountService : BaseService, IAccountService {
         get {
             let res = UserDefaults.standard.object(forKey: "authentications") as? Int
             return res == nil
+        }
+    }
+    
+    var loggedUser: UserTokenModel? {
+        get {
+            return getUserFromDefaults()
         }
     }
     
@@ -45,6 +51,7 @@ class AccountService : BaseService, IAccountService {
                     decodedUser.username = user.username!
                     decodedUser.password = user.password!
                     self.storeAuthenticationToken(decodedUser)
+                    self.updateSuccesfulLoginNumber()
                 } catch {
                     completion(.Failure)
                     print(error)
@@ -59,6 +66,26 @@ class AccountService : BaseService, IAccountService {
     func signOut() {
         UserDefaults.standard.set(nil, forKey: "authentication_user")
     }
+    
+    private func getUserFromDefaults() -> UserTokenModel? {
+        if userIsLoggedIn {
+            let userData = getUserDataFromDefaults()
+            let jsonDecoder = JSONDecoder()
+            do {
+                let decodedUser = try jsonDecoder.decode(UserTokenModel.self, from: userData!)
+                return decodedUser
+            }catch {
+                print(error)
+                return nil
+            }
+        }
+        return nil
+    }
+    
+    private func getUserDataFromDefaults() -> Data? {
+        return UserDefaults.standard.object(forKey: "authentication_user") as? Data
+    }
+    
     
     private func storeAuthenticationToken(_ user: UserTokenModel) {
         let encoded = try! JSONEncoder().encode(user)

@@ -13,6 +13,10 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     let accountService: IAccountService = AccountService()
     var backdropView: UIView?
     
+    private var appDelegate: AppDelegate? {
+        return UIApplication.shared.delegate as? AppDelegate
+    }
+    
     @objc var isBackdropActive: Bool {
         get {
             return !backdropView!.isHidden
@@ -60,7 +64,17 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     }
     
     func setRootViewControllerDependingOnLoggedUserRole() {
-        //TODO: Implement this controller after building the desired screen
+        if let user = accountService.loggedUser {
+            if user.rol == UserRoles.Keeper {
+                setRootViewToKeeperMainController()
+            }
+        }
+    }
+    
+    func setRootViewToKeeperMainController() {
+        let mainKeeperController = viewControllerFromStoryboard(storyboard: "KeeperMain", withIdentifier: "keeperMainTabController")
+        let mainNavController = appDelegate!.window?.rootViewController as! MainNavigationController
+        mainNavController.viewControllers = [mainKeeperController]
     }
     
     func logIn() {
@@ -72,7 +86,9 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     }
     
     func checkIfLoggedIn() {
-        setRootViewControllerDependingOnLoggedUserRole()
+        if accountService.userIsLoggedIn {
+            setRootViewControllerDependingOnLoggedUserRole()
+        }
     }
     
     func signIn() {

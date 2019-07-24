@@ -31,7 +31,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        KeyboardAvoiding.avoidingView = formView
+        //KeyboardAvoiding.avoidingView = formView
         
         screenIsLoading(false)
         setTapGestures()
@@ -172,6 +172,10 @@ class SignInViewController: UIViewController {
 extension SignInViewController : TextFieldDelegate {
     func textField(textField: TextField, didChange text: String?) {
         resetTextfield(textField)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        KeyboardAvoiding.avoidingView = textField
     }
 }
 

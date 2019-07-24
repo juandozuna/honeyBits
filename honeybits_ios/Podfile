@@ -13,6 +13,7 @@ target 'HoneyBits' do
   pod 'ChameleonFramework'
   pod 'Material'
   pod 'SwiftValidators'
+  pod "TabPageViewController"
   #pod 'IQKeyboardManagerSwift'
   pod 'IHKeyboardAvoiding'
   #pod 'UnderKeyboard', '~> 13.0'

@@ -17,6 +17,7 @@ PODS:
   - SwiftyJSON (5.0.0)
   - SwipeCellKit (2.6.0)
   - SwipeViewController (1.1.1)
+  - TabPageViewController (0.2.7)
 
 DEPENDENCIES:
   - Alamofire
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - SwiftyJSON
   - SwipeCellKit
   - SwipeViewController
+  - TabPageViewController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -43,6 +45,7 @@ SPEC REPOS:
     - SwiftyJSON
     - SwipeCellKit
     - SwipeViewController
+    - TabPageViewController
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -56,7 +59,8 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
   SwipeViewController: 48eef0f9959b795ab4687b95428122597bce3f27
+  TabPageViewController: c37a1257a50c2b50712dde61bf499768eee95b67
 
-PODFILE CHECKSUM: ac5a7eff70a3fefcf33c92e427f835ded7588285
+PODFILE CHECKSUM: 9a9ce1f52337f3b264030c2b3d9c07e2fb4f866e
 
 COCOAPODS: 1.7.1

@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2AE6498163839D0268759D257B77AF2A"
-               BuildableName = "SwiftValidators.framework"
-               BlueprintName = "SwiftValidators"
+               BlueprintIdentifier = "A8FC063C02570126EC381CC16BC4B40F"
+               BuildableName = "TabPageViewController.framework"
+               BlueprintName = "TabPageViewController"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
