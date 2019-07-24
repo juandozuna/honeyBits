@@ -10,4 +10,3 @@ ${BUILT_PRODUCTS_DIR}/SwiftValidators/SwiftValidators.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
 ${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework
 ${BUILT_PRODUCTS_DIR}/SwipeViewController/SwipeViewController.framework
-${BUILT_PRODUCTS_DIR}/TabPageViewController/TabPageViewController.framework
