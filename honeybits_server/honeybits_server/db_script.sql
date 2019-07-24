@@ -1,4 +1,7 @@
 USE honeybits;
+----------------------------------------
+-- CREATE Statement
+----------------------------------------
 
 CREATE TABLE role (
 	role_id 		INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -107,8 +110,65 @@ CREATE TABLE product_like (
 	deleted_date			TIMESTAMP
 );
 
+CREATE TABLE transaction_type (
+	transaction_type_id		INT AUTO_INCREMENT PRIMARY KEY,
+	transaction_type		VARCHAR(250) NOT NULL,
+	transaction_type_description	VARCHAR(500),
+	created_by				INT NOT NULL,
+	created_date			TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	is_deleted				BIT	DEFAULT 0,
+	deleted_by				INT,
+	deleted_date			TIMESTAMP
+);
 
+CREATE TABLE bee_transaction (
+	bee_transaction_id		INT AUTO_INCREMENT PRIMARY KEY,
+	user_id					INT NOT NULL,
+	transaction_type_id		INT NOT NULL,
+	bee_amount				INT NOT NULL,
+	created_by				INT NOT NULL,
+	created_date			TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	is_deleted				BIT	DEFAULT 0,
+	deleted_by				INT,
+	deleted_date			TIMESTAMP
+);
+
+----------------------------------------
+-- Tables Constraints
+----------------------------------------
+
+-- User Table
+ALTER TABLE users
+ADD FOREIGN KEY (role_id) REFERENCES role(role_id)
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+
+-- Role Table
+ALTER TABLE role
+ADD FOREIGN KEY (created_by) REFERENCES users(user_id)
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+
+-- product_category Table
+ALTER TABLE product_category
+ADD FOREIGN KEY (created_by) REFERENCES users(user_id)
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+
+-- product Table
+ALTER TABLE product
+ADD FOREIGN KEY (product_category_id) REFERENCES product_category(product_category_id)
+ADD FOREIGN KEY (created_by) REFERENCES users(user_id)
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+
+-- Shop Table
+ALTER TABLE shop
+ADD FOREIGN KEY (owner_id) REFERENCES users(user_id)
+ADD FOREIGN KEY (created_by) REFERENCES users(user_id)
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+
+
+
+----------------------------------------
 -- INSERT Statements
+----------------------------------------
 
 -- Role Table
 INSERT INTO `honeybits`.`role` (`description`, `created_by`) VALUES ('Administrator', 1);
