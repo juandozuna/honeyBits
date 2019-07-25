@@ -11,15 +11,27 @@ import Alamofire
 import SwiftyJSON
 
 class AccountService : BaseService, IAccountService {
+    //MARK:- Variables
     let baseUserService: String = "api/users/"
     var userIsLoggedIn: Bool {
         get {
-            let res = UserDefaults.standard.object(forKey: "authentication_user") as? Data
+            let res = getUserDataFromDefaults()
             return res != nil
         }
     }
     
-    //MARK- Variables
+    var isUserFirstTime: Bool {
+        get {
+            let res = UserDefaults.standard.object(forKey: "authentications") as? Int
+            return res == nil
+        }
+    }
+    
+    var loggedUser: UserTokenModel? {
+        get {
+            return getUserFromDefaults()
+        }
+    }
     
     //MARK:-  Methods
     func authenticateUser(user: UserTokenModel, completion: @escaping (RequestStatus) -> Void) {
@@ -39,6 +51,7 @@ class AccountService : BaseService, IAccountService {
                     decodedUser.username = user.username!
                     decodedUser.password = user.password!
                     self.storeAuthenticationToken(decodedUser)
+                    self.updateSuccesfulLoginNumber()
                 } catch {
                     completion(.Failure)
                     print(error)
@@ -54,9 +67,38 @@ class AccountService : BaseService, IAccountService {
         UserDefaults.standard.set(nil, forKey: "authentication_user")
     }
     
+    private func getUserFromDefaults() -> UserTokenModel? {
+        if userIsLoggedIn {
+            let userData = getUserDataFromDefaults()
+            let jsonDecoder = JSONDecoder()
+            do {
+                let decodedUser = try jsonDecoder.decode(UserTokenModel.self, from: userData!)
+                return decodedUser
+            }catch {
+                print(error)
+                return nil
+            }
+        }
+        return nil
+    }
+    
+    private func getUserDataFromDefaults() -> Data? {
+        return UserDefaults.standard.object(forKey: "authentication_user") as? Data
+    }
+    
+    
     private func storeAuthenticationToken(_ user: UserTokenModel) {
         let encoded = try! JSONEncoder().encode(user)
         UserDefaults.standard.set(encoded, forKey: "authentication_user")
+    }
+    
+    private func updateSuccesfulLoginNumber() {
+        let number = UserDefaults.standard.object(forKey: "authentications") as? Int
+        if number == nil {
+            UserDefaults.standard.set(1, forKey: "authentications")
+        } else {
+            UserDefaults.standard.set(number! + 1, forKey: "authentications")
+        }
     }
 
 }

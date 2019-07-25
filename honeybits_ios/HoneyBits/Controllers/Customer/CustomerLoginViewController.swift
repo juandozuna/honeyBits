@@ -13,6 +13,10 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     let accountService: IAccountService = AccountService()
     var backdropView: UIView?
     
+    private var appDelegate: AppDelegate? {
+        return UIApplication.shared.delegate as? AppDelegate
+    }
+    
     @objc var isBackdropActive: Bool {
         get {
             return !backdropView!.isHidden
@@ -43,13 +47,34 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
         checkIfLoggedIn()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkIfLoggedIn()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == signInSegueIdentifier! {
             let navController = segue.destination as! UserAuthenticationNavigationController
+            navController.backdropDelegate = self
+            navController.loginDelegate = self
             let vc = navController.topViewController as! LoginSelectViewController
             vc.delegate = self
             vc.backdropDelegate = self
         }
+    }
+    
+    func setRootViewControllerDependingOnLoggedUserRole() {
+        if let user = accountService.loggedUser {
+            if user.rol == UserRoles.Keeper {
+                setRootViewToKeeperMainController()
+            }
+        }
+    }
+    
+    func setRootViewToKeeperMainController() {
+        let mainKeeperController = viewControllerFromStoryboard(storyboard: "KeeperMain", withIdentifier: "keeperMainTabController")
+        let mainNavController = appDelegate!.window?.rootViewController as! MainNavigationController
+        mainNavController.viewControllers = [mainKeeperController]
     }
     
     func logIn() {
@@ -61,7 +86,9 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     }
     
     func checkIfLoggedIn() {
-        
+        if accountService.userIsLoggedIn {
+            setRootViewControllerDependingOnLoggedUserRole()
+        }
     }
     
     func signIn() {

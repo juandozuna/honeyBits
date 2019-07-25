@@ -1,12 +1,13 @@
-## HoneyBits Project
+# HoneyBits Project
 
-### Web API
+## Web API
 
 Routes
 
 URL base: http://honeybits.azurewebsites.net/
 
-##### Users
+### Users
+
 
 |           URL          | Require token? | Parameters                                                                                                                            |  Returns  |
 |:----------------------:|:--------------:|---------------------------------------------------------------------------------------------------------------------------------------|:---------:|
@@ -16,7 +17,18 @@ URL base: http://honeybits.azurewebsites.net/
 |   api/users/get/{id}   |       Yes      | id -> int                                                                                                                             |    bool   |
 |      api/users/all     |       Yes      | None                                                                                                                                  | all users |
 
-##### Products
+###### Usuarios de Prueba
+
+Cada uno de los usuarios posee un rol diferente.
+
+| username  | passwd |
+|-----------|--------|
+| admin     | 123456 |
+| developer | 123456 |
+| customer  | 123456 |
+| keeper    | 123456 |
+
+## Products
 
 |            URL           | Require token? | Parameters                                                                                               |    Result    |
 |:------------------------:|:--------------:|----------------------------------------------------------------------------------------------------------|:------------:|

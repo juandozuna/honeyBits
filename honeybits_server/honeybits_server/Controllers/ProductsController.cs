@@ -29,9 +29,7 @@ namespace honeybits_server.Controllers
             if(!ModelState.IsValid)
                 return BadRequest();
 
-            var user = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-            product.CreatedBy = int.Parse(user);
+            product.CreatedBy = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             product.CreatedDate = DateTime.Now;
 
             return Ok(_productService.Create(product));
@@ -45,16 +43,21 @@ namespace honeybits_server.Controllers
             if (product == null)
                 return NotFound();
 
-            var user = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-
             return Ok(product);
         }
 
-        [HttpPost("{id}")]
+        [HttpPost("delete/{id}")]
         public IActionResult Delete(int id)
         {
-            return Ok(true);
+            var product = _productService.Get(id);
+            if (product == null)
+                return NotFound();
+
+            var user = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            product.DeletedBy = int.Parse(user);
+            
+
+            return Ok(_productService.Delete(product));
         }
 
         [HttpGet("all")]

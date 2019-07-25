@@ -23,7 +23,15 @@ class CustomerHomeViewController: CustomerLoginViewController {
         backdropView = backdrop
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkIfLoggedIn()
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkIfLoggedIn()
+    }
     
     override func checkIfLoggedIn() {
         if !accountService.userIsLoggedIn {
@@ -31,6 +39,7 @@ class CustomerHomeViewController: CustomerLoginViewController {
         } else {
             showGuestView(false)
         }
+        super.checkIfLoggedIn()
     }
     
     

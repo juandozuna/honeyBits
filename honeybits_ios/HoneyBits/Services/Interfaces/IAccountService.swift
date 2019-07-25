@@ -15,6 +15,10 @@ protocol IAccountService {
     
     var userIsLoggedIn: Bool { get }
     
+    var isUserFirstTime: Bool { get }
+    
+    var loggedUser: UserTokenModel? { get }
+    
     func authenticateUser(user: UserTokenModel, completion: @escaping CompletedRequestVoid) -> Void
     
     func signOut() -> Void
