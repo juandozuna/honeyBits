@@ -13,9 +13,13 @@ class MainNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.isHidden = true
-        let tabbarVc = viewControllerFromStoryboard(storyboard: "CustomerTabs", withIdentifier: "customerTabController")
-        viewControllers = [tabbarVc]
+        loadMainView()
     }
     
+    
+    func loadMainView(animated: Bool = false) {
+        let tabbarVc = viewControllerFromStoryboard(storyboard: "CustomerTabs", withIdentifier: "customerTabController")
+        setViewControllers([tabbarVc], animated: animated)
+    }
     
 }
