@@ -10,12 +10,10 @@ import UIKit
 
 class KeeperSettingsViewController: UITableViewController {
 
+    private var accountService: IAccountService = AccountService()
     private var appDelegate: AppDelegate? {
         return UIApplication.shared.delegate as? AppDelegate
     }
-    
-    
-    private var accountService: IAccountService = AccountService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +22,6 @@ class KeeperSettingsViewController: UITableViewController {
     @IBAction func signOutBtn(_ sender: Any) {
         signOutKeeper()
     }
-    
     
     private func signOutKeeper() {
         accountService.signOut()
