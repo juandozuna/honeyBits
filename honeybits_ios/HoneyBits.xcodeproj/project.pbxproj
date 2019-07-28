@@ -60,6 +60,7 @@
 		B28F41AE22D8141600C7E2E6 /* AuthBackdropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F41AD22D8141600C7E2E6 /* AuthBackdropDelegate.swift */; };
 		B2A2E81922D0D51200DFDAB3 /* CustomerHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A2E81822D0D51200DFDAB3 /* CustomerHome.storyboard */; };
 		B2A2E81B22D0D61800DFDAB3 /* CustomerFavorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A2E81A22D0D61800DFDAB3 /* CustomerFavorites.storyboard */; };
+		B2A898B022EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A898AF22EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift */; };
 		B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5522D018A400CBBA4E /* IAccountService.swift */; };
 		B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5722D01AFA00CBBA4E /* AccountService.swift */; };
 		B2EE6A8422D8E54900350BBA /* CustomerGuestSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */; };
@@ -155,6 +156,7 @@
 		B28F41AD22D8141600C7E2E6 /* AuthBackdropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBackdropDelegate.swift; sourceTree = "<group>"; };
 		B2A2E81822D0D51200DFDAB3 /* CustomerHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerHome.storyboard; sourceTree = "<group>"; };
 		B2A2E81A22D0D61800DFDAB3 /* CustomerFavorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerFavorites.storyboard; sourceTree = "<group>"; };
+		B2A898AF22EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperDashboardTabBarController.swift; sourceTree = "<group>"; };
 		B2A91D5522D018A400CBBA4E /* IAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAccountService.swift; sourceTree = "<group>"; };
 		B2A91D5722D01AFA00CBBA4E /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerGuestSettingsViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 		B25FCB9022E94E6A006BDD0C /* Keeper */ = {
 			isa = PBXGroup;
 			children = (
+				B2A898AE22EDF080009F87A4 /* Dashboard */,
 				B25FCB9122E94FB5006BDD0C /* Settings */,
 			);
 			path = Keeper;
@@ -489,6 +492,14 @@
 				B27C9F5C22E23BC200B4AFE3 /* ProductCategoryModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B2A898AE22EDF080009F87A4 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				B2A898AF22EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		B2A91D5422D0184500CBBA4E /* Delegates */ = {
@@ -931,6 +942,7 @@
 				B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */,
 				B28F41AE22D8141600C7E2E6 /* AuthBackdropDelegate.swift in Sources */,
 				B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */,
+				B2A898B022EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift in Sources */,
 				B22B909022E5517E00D0B449 /* CustomerRegistrationFormViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
