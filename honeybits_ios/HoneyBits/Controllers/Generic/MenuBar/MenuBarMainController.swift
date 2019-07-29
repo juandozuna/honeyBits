@@ -15,7 +15,8 @@ class MenuBarMainController : UIViewController {
             navigationItem.title = self.navTitle
         }
     }
-    @IBInspectable var menuBarHeight: Int = 50
+    @IBInspectable var menuBarHeight: Int = 30
+    @IBInspectable var accentColor: UIColor = UIColor.flatYellow()
     var viewControllers: [UIViewController] = []
     var contentController: MenuContentController?
     var menuBar: MenuBarView = {
@@ -96,6 +97,7 @@ extension MenuBarMainController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuBarView.cellId, for: indexPath) as! MenuBarItemCell
         cell.item = viewControllers[indexPath.item].title ?? "Title"
+        cell.accentColor = accentColor
         return cell
     }
     
