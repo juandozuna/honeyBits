@@ -23,6 +23,7 @@ class MenuBarMainController : UIViewController {
         let mb = MenuBarView()
         return mb
     }()
+    var indicatorViewLeftConstraint: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,8 @@ class MenuBarMainController : UIViewController {
         let multiplierWidth = (1/controllersAmount)
         
         horizontalView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: multiplierWidth).isActive = true
-        horizontalView.leftAnchor.constraint(equalTo: menuBar.leftAnchor, constant: 0).isActive = true
+        indicatorViewLeftConstraint = horizontalView.leftAnchor.constraint(equalTo: menuBar.leftAnchor, constant: 0)
+        indicatorViewLeftConstraint?.isActive = true
         selectDefaultView()
         
     }
@@ -111,6 +113,18 @@ extension MenuBarMainController: UICollectionViewDataSource {
         cell.item = viewControllers[indexPath.item].title ?? "Title"
         cell.accentColor = accentColor
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = CGFloat(indexPath.item)
+        let items = CGFloat(viewControllers.count)
+        let displacement = index * (menuBar.frame.width / items)
+        
+        UIView.animate(withDuration: 0.76, delay: 0.0, options: [], animations: {
+             self.indicatorViewLeftConstraint?.constant = displacement
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
     }
     
     
