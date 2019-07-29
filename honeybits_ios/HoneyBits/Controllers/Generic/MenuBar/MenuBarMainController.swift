@@ -87,6 +87,16 @@ class MenuBarMainController : UIViewController {
         containerView.addConstraintsWithFormat("V:|[v0]|", views: controller.view)
         contentController = controller
     }
+    
+    func moveIndicatorViewToSelectedItem(to index: Int) {
+        let items = CGFloat(viewControllers.count)
+        let displacement = CGFloat(index) * (menuBar.frame.width / items)
+        
+        UIView.animate(withDuration: 0.35, delay: 0.0, options: [], animations: {
+            self.indicatorViewLeftConstraint?.constant = displacement
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
 }
 
 
@@ -116,15 +126,8 @@ extension MenuBarMainController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let index = CGFloat(indexPath.item)
-        let items = CGFloat(viewControllers.count)
-        let displacement = index * (menuBar.frame.width / items)
-        
-        UIView.animate(withDuration: 0.76, delay: 0.0, options: [], animations: {
-             self.indicatorViewLeftConstraint?.constant = displacement
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-        
+        let index = indexPath.item
+        moveIndicatorViewToSelectedItem(to: index)
     }
     
     
