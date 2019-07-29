@@ -13,31 +13,40 @@
         <!--Dashboard-->
         <scene sceneID="oJ8-ja-W7v">
             <objects>
-                <navigationController id="O5t-OF-xuy" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="O5t-OF-xuy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard" id="MMQ-HF-p1y"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xj6-px-qAn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="xj6-px-qAn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="88T-bg-5du">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="IIk-Qn-xvp" kind="relationship" relationship="rootViewController" id="AhJ-2p-JfB"/>
+                        <segue destination="IIk-Qn-xvp" kind="relationship" relationship="rootViewController" id="dbu-4x-Z9x"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wcp-pO-SQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1693" y="-261"/>
         </scene>
-        <!--Keeper Dashboard Tab Bar Controller-->
+        <!--Home-->
         <scene sceneID="Ekd-0X-QZj">
             <objects>
-                <tabBarController id="IIk-Qn-xvp" customClass="KeeperDashboardTabBarController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="36S-Kv-uLn"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GIV-Cx-ZHp">
+                <tabBarController storyboardIdentifier="tabBarController" title="Home" id="IIk-Qn-xvp" customClass="TopTabBarController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Home" id="36S-Kv-uLn"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="GIV-Cx-ZHp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="tabBarHeight">
+                            <real key="value" value="40"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="PGY-zO-td2" kind="relationship" relationship="viewControllers" id="uPQ-Xk-yfM"/>
                         <segue destination="YKD-Tj-4LJ" kind="relationship" relationship="viewControllers" id="9yS-qV-R5Y"/>
@@ -50,23 +59,32 @@
         <!--Dashboard-->
         <scene sceneID="Abo-5J-MMC">
             <objects>
-                <viewController id="YKD-Tj-4LJ" sceneMemberID="viewController">
+                <viewController title="Dashboard" id="YKD-Tj-4LJ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="On9-lt-d7J">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q68-0c-pdF">
-                                <rect key="frame" x="186" y="394" width="84" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q68-0c-pdF">
+                                <rect key="frame" x="107" y="182.5" width="200" height="360"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="h5G-9W-JvK"/>
+                                    <constraint firstAttribute="height" constant="360" id="kQ0-cR-7hg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.89246906729999997" green="0.36151764019999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Q68-0c-pdF" firstAttribute="centerX" secondItem="On9-lt-d7J" secondAttribute="centerX" id="h78-fB-biK"/>
+                            <constraint firstItem="Q68-0c-pdF" firstAttribute="centerY" secondItem="On9-lt-d7J" secondAttribute="centerY" id="hGz-SG-Bgu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZCz-WA-IEE"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="QML-an-ZiS"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" id="QML-an-ZiS">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="vmv-Qh-NFf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yna-Hp-deJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -76,27 +94,36 @@
         <!--Notifications-->
         <scene sceneID="k4N-Rc-Tzh">
             <objects>
-                <viewController id="PGY-zO-td2" sceneMemberID="viewController">
+                <viewController title="Notifications" id="PGY-zO-td2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TNn-DZ-QpW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv6-pz-xiw">
-                                <rect key="frame" x="171" y="438" width="97" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv6-pz-xiw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="l0v-is-92N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="47"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.044739867109999998" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Pv6-pz-xiw" firstAttribute="leading" secondItem="eTd-MC-DEp" secondAttribute="leading" id="7xh-fN-IYo"/>
+                            <constraint firstItem="Pv6-pz-xiw" firstAttribute="top" secondItem="eTd-MC-DEp" secondAttribute="top" id="IiH-kW-Q6m"/>
+                            <constraint firstItem="eTd-MC-DEp" firstAttribute="trailing" secondItem="Pv6-pz-xiw" secondAttribute="trailing" id="QLg-xe-tRV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eTd-MC-DEp"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Notifications" id="VMi-6n-VR0"/>
+                    <tabBarItem key="tabBarItem" title="Notifications" id="VMi-6n-VR0">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q8C-mJ-Hws" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1045" y="-598"/>
+            <point key="canvasLocation" x="1044.9275362318842" y="-598.66071428571422"/>
         </scene>
     </scenes>
     <resources>

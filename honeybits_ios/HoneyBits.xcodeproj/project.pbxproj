@@ -63,6 +63,8 @@
 		B2A898B022EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A898AF22EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift */; };
 		B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5522D018A400CBBA4E /* IAccountService.swift */; };
 		B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5722D01AFA00CBBA4E /* AccountService.swift */; };
+		B2D9A7CD22EE7FDD00A59E3D /* TopTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D9A7CC22EE7FDD00A59E3D /* TopTabBarController.swift */; };
+		B2D9A7CF22EE80A900A59E3D /* KeeperDashboardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D9A7CE22EE80A900A59E3D /* KeeperDashboardNavigationController.swift */; };
 		B2EE6A8422D8E54900350BBA /* CustomerGuestSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */; };
 		B2EE6A8722D8FDBF00350BBA /* AboutApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EE6A8622D8FDBF00350BBA /* AboutApp.storyboard */; };
 		B2EE6A8922D8FE8500350BBA /* LegalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EE6A8822D8FE8500350BBA /* LegalData.storyboard */; };
@@ -159,6 +161,8 @@
 		B2A898AF22EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperDashboardTabBarController.swift; sourceTree = "<group>"; };
 		B2A91D5522D018A400CBBA4E /* IAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAccountService.swift; sourceTree = "<group>"; };
 		B2A91D5722D01AFA00CBBA4E /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		B2D9A7CC22EE7FDD00A59E3D /* TopTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarController.swift; sourceTree = "<group>"; };
+		B2D9A7CE22EE80A900A59E3D /* KeeperDashboardNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperDashboardNavigationController.swift; sourceTree = "<group>"; };
 		B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerGuestSettingsViewController.swift; sourceTree = "<group>"; };
 		B2EE6A8622D8FDBF00350BBA /* AboutApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutApp.storyboard; sourceTree = "<group>"; };
 		B2EE6A8822D8FE8500350BBA /* LegalData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LegalData.storyboard; sourceTree = "<group>"; };
@@ -462,6 +466,7 @@
 		B2A5813822CAD0F300C9C5D9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B2D9A7CB22EE7FCA00A59E3D /* Generic */,
 				B25FCB9022E94E6A006BDD0C /* Keeper */,
 				B22B909122E6ABDC00D0B449 /* Segues */,
 				B2F8358B22D6834F00A9910C /* Customer */,
@@ -498,6 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				B2A898AF22EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift */,
+				B2D9A7CE22EE80A900A59E3D /* KeeperDashboardNavigationController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -508,6 +514,14 @@
 				B272B8D322CEE7C900E124B4 /* Account */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		B2D9A7CB22EE7FCA00A59E3D /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				B2D9A7CC22EE7FDD00A59E3D /* TopTabBarController.swift */,
+			);
+			path = Generic;
 			sourceTree = "<group>";
 		};
 		B2DD098322CAF8D100A98586 /* Account */ = {
@@ -920,6 +934,7 @@
 				B27C9F5922E23A2600B4AFE3 /* ShopModel.swift in Sources */,
 				B28F41A922D7B34E00C7E2E6 /* CustomerSearchViewController.swift in Sources */,
 				B272B8D022CEE65A00E124B4 /* LoginSelectViewController.swift in Sources */,
+				B2D9A7CD22EE7FDD00A59E3D /* TopTabBarController.swift in Sources */,
 				B2F8358A22D6820900A9910C /* SignInDelegate.swift in Sources */,
 				B262AF4A22DBF14900ABF311 /* BaseService.swift in Sources */,
 				B2398A3622DD5B230042C764 /* EncodableExtensions.swift in Sources */,
@@ -941,6 +956,7 @@
 				B2398A3422DD36280042C764 /* UIViewControllerExtension.swift in Sources */,
 				B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */,
 				B28F41AE22D8141600C7E2E6 /* AuthBackdropDelegate.swift in Sources */,
+				B2D9A7CF22EE80A900A59E3D /* KeeperDashboardNavigationController.swift in Sources */,
 				B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */,
 				B2A898B022EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift in Sources */,
 				B22B909022E5517E00D0B449 /* CustomerRegistrationFormViewController.swift in Sources */,
