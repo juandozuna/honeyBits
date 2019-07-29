@@ -11,7 +11,8 @@ import UIKit
 class MenuContentController: UIViewController {
     
     var viewControllers: [UIViewController] = []
-    var contentCollection: MenuContentCollectionView = {
+    var parentController: MenuBarMainController?
+    var contentCollectionView: MenuContentCollectionView = {
         let cv = MenuContentCollectionView()
         return cv
     }()
@@ -22,17 +23,25 @@ class MenuContentController: UIViewController {
         setupView()
     }
     
+    func scroll(to position: Int) {
+        let indexPath = IndexPath(item: position, section: 0)
+        contentCollectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition(rawValue: 0), animated: true)
+    }
+    
     private func setupView() {
-        view.backgroundColor = UIColor.green
+        contentCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(contentCollectionView)
+        view.addConstraintsWithFormat("H:|[v0]|", views: contentCollectionView)
+        view.addConstraintsWithFormat("V:|[v0]|", views: contentCollectionView)
     }
 
     
     private func setupController() {
         addChildControllers()
         
-        contentCollection.dataSource = self
-        contentCollection.delegate = self
-        contentCollection.isPagingEnabled = true
+        contentCollectionView.dataSource = self
+        contentCollectionView.delegate = self
+        contentCollectionView.isPagingEnabled = true
     }
     
     private func addChildControllers() {
@@ -40,8 +49,6 @@ class MenuContentController: UIViewController {
             addChild(vc)
         }
     }
-    
-
 
 }
 
@@ -68,5 +75,15 @@ extension MenuContentController : UICollectionViewDelegate, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let frame = view.frame
         return CGSize(width: frame.width, height: frame.height)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollOffsetX = scrollView.contentOffset.x
+        parentController?.contentViewScrolling(offset: scrollOffsetX)
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let index = Int(targetContentOffset.pointee.x / view.frame.width)
+        parentController?.setActiveMenuBarItem(at: index)
     }
 }

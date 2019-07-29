@@ -18,6 +18,9 @@ class MenuBarMainController : UIViewController {
     @IBInspectable var menuBarHeight: Int = 30
     @IBInspectable var accentColor: UIColor = UIColor.flatYellow()
     var viewControllers: [UIViewController] = []
+    var viewControllersCount: CGFloat {
+        return CGFloat(viewControllers.count)
+    }
     var contentController: MenuContentController?
     var menuBar: MenuBarView = {
         let mb = MenuBarView()
@@ -27,10 +30,24 @@ class MenuBarMainController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+        setupController()
         setupMenuBar()
         setupContentChildViewController()
         
+    }
+    
+    func contentViewScrolling(offset: CGFloat) {
+        indicatorViewLeftConstraint?.constant = offset / viewControllersCount
+    }
+    
+    func setActiveMenuBarItem(at index: Int) {
+        let indexPath = IndexPath(item: index, section: 0)
+        menuBar.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionView.ScrollPosition(rawValue: 0))
+    }
+    
+    private func setupController() {
+        view.backgroundColor = UIColor.white
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     private func setupMenuBar() {
@@ -47,8 +64,7 @@ class MenuBarMainController : UIViewController {
         view.addSubview(horizontalView)
         view.addConstraintsWithFormat("V:|-\(menuBarHeight-3)-[v0(3)]", views: horizontalView)
         
-        let controllersAmount = CGFloat(viewControllers.count)
-        let multiplierWidth = (1/controllersAmount)
+        let multiplierWidth = (1/viewControllersCount)
         
         horizontalView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: multiplierWidth).isActive = true
         indicatorViewLeftConstraint = horizontalView.leftAnchor.constraint(equalTo: menuBar.leftAnchor, constant: 0)
@@ -79,6 +95,7 @@ class MenuBarMainController : UIViewController {
         
         let controller = MenuContentController()
         controller.viewControllers = viewControllers
+        controller.parentController = self
         addChild(controller)
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(controller.view)
@@ -88,14 +105,8 @@ class MenuBarMainController : UIViewController {
         contentController = controller
     }
     
-    func moveIndicatorViewToSelectedItem(to index: Int) {
-        let items = CGFloat(viewControllers.count)
-        let displacement = CGFloat(index) * (menuBar.frame.width / items)
-        
-        UIView.animate(withDuration: 0.35, delay: 0.0, options: [], animations: {
-            self.indicatorViewLeftConstraint?.constant = displacement
-            self.view.layoutIfNeeded()
-        }, completion: nil)
+    private func moveIndicatorViewToSelectedItem(to index: Int) {
+        contentController?.scroll(to: index)
     }
 }
 
@@ -104,7 +115,7 @@ class MenuBarMainController : UIViewController {
 extension MenuBarMainController : UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let frame = menuBar.frame
-        let width = frame.width / CGFloat(viewControllers.count)
+        let width = frame.width / viewControllersCount
         return CGSize(width: width, height: frame.height)
     }
     
