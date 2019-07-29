@@ -14,6 +14,8 @@ class MenuBarItemCell: UICollectionViewCell {
         return lb
     }()
     
+    var accentColor: UIColor?
+    
     override var isSelected: Bool {
         didSet {
             if self.isSelected {
@@ -45,12 +47,12 @@ class MenuBarItemCell: UICollectionViewCell {
     private func cellSetup() {
         setItemLabel()
         
-        backgroundColor = UIColor.flatYellow()
+        backgroundColor = UIColor.white
     }
     
     private func setItemLabel() {
         itemLabel.translatesAutoresizingMaskIntoConstraints = false
-        itemLabel.fontSize = 17.0
+        itemLabel.fontSize = 15.0
         itemLabel.textAlignment = .center
         
         contentView.addSubview(itemLabel)
@@ -59,7 +61,7 @@ class MenuBarItemCell: UICollectionViewCell {
     }
     
     private func activateCell() {
-        itemLabel.textColor = UIColor.white
+        itemLabel.textColor = accentColor ?? UIColor.flatOrange()
     }
     
     private func deactivateCell() {

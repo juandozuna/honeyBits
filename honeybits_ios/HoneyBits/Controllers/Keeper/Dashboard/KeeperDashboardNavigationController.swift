@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class KeeperDashboardNavigationController : UINavigationController {
     
+    @IBInspectable var accentColor: UIColor = UIColor.flatOrange()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,7 @@ class KeeperDashboardNavigationController : UINavigationController {
         
         let menuBarController = MenuBarMainController()
         menuBarController.navTitle = "Keeper Home"
+        menuBarController.accentColor = accentColor
         menuBarController.viewControllers = [dashboardView, notificationVc]
         
         return menuBarController
