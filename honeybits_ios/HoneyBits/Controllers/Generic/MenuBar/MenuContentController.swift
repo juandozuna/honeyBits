@@ -37,17 +37,9 @@ class MenuContentController: UIViewController {
 
     
     private func setupController() {
-        addChildControllers()
-        
         contentCollectionView.dataSource = self
         contentCollectionView.delegate = self
         contentCollectionView.isPagingEnabled = true
-    }
-    
-    private func addChildControllers() {
-        for vc in viewControllers {
-            addChild(vc)
-        }
     }
 
 }
@@ -60,8 +52,12 @@ extension MenuContentController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuContentCollectionView.cellId, for: indexPath) as! MenuContentCell
-        cell.viewController = viewControllers[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuContentCollectionView.cellId, for: indexPath)
+        let vc = viewControllers[indexPath.item]
+        addChild(vc)
+        cell.contentView.addSubview(vc.view)
+        cell.contentView.addConstraintsWithFormat("H:|[v0]|", views: vc.view)
+        cell.contentView.addConstraintsWithFormat("V:|[v0]|", views: vc.view)
         return cell
     }
     
