@@ -11,6 +11,25 @@ import ChameleonFramework
 
 class KeeperDashboardTabBarController: UITabBarController {
 
+    var tabColor: UIColor {
+        set {
+            tabBar.backgroundColor = newValue
+        }
+        get {
+            return tabBar.backgroundColor ?? UIColor.clear
+        }
+    }
+    
+    
+    var tabItemColor: UIColor {
+        get {
+            return tabBar.tintColor
+        }
+        set {
+            tabBar.tintColor = newValue
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,14 +41,12 @@ class KeeperDashboardTabBarController: UITabBarController {
     }
     
     private func tabBarPositioning() {
-        var topPosition: CGFloat = -4
+        var topPosition: CGFloat = 0
         if let navCtrl = navigationController {
-           topPosition = navCtrl.navigationBar.bounds.height
+           topPosition = navCtrl.navigationBar.bounds.height - 10
         }
-        
-        
         tabBar.frame = CGRect(x: 0, y: topPosition, width: UIScreen.main.bounds.width, height: 50)
-        tabBar.itemPositioning = .centered
-        tabBar.backgroundColor = UIColor.flatYellow()
+        tabColor = UIColor.white
+        tabItemColor = UIColor.flatOrange()
     }
 }
