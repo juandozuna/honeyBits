@@ -23,7 +23,7 @@ class MenuContentController: UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.green
     }
 
     

@@ -39,6 +39,18 @@ class MenuBarMainController : UIViewController {
         view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
         view.addConstraintsWithFormat("V:|[v0(\(menuBarHeight))]", views: menuBar)
         
+        
+        let horizontalView = UIView()
+        horizontalView.translatesAutoresizingMaskIntoConstraints = false
+        horizontalView.backgroundColor = accentColor
+        view.addSubview(horizontalView)
+        view.addConstraintsWithFormat("V:|-\(menuBarHeight-3)-[v0(3)]", views: horizontalView)
+        
+        let controllersAmount = CGFloat(viewControllers.count)
+        let multiplierWidth = (1/controllersAmount)
+        
+        horizontalView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: multiplierWidth).isActive = true
+        horizontalView.leftAnchor.constraint(equalTo: menuBar.leftAnchor, constant: 0).isActive = true
         selectDefaultView()
         
     }
