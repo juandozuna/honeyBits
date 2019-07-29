@@ -13,6 +13,12 @@
 		B204A0E222DE8D9000305A7E /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B204A0E122DE8D9000305A7E /* ShopTableViewCell.xib */; };
 		B204A0E422DE8DAC00305A7E /* ShopProductCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B204A0E322DE8DAC00305A7E /* ShopProductCollectionCell.xib */; };
 		B204A0E622DE90A300305A7E /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A0E522DE90A300305A7E /* ShopTableViewCell.swift */; };
+		B211EC2222EF30B2006B5A82 /* MenuBarMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2122EF30B2006B5A82 /* MenuBarMainController.swift */; };
+		B211EC2422EF3F7E006B5A82 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2322EF3F7E006B5A82 /* MenuBarView.swift */; };
+		B211EC2622EF47B9006B5A82 /* MenuBarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2522EF47B9006B5A82 /* MenuBarItemCell.swift */; };
+		B211EC2A22EF6E1D006B5A82 /* MenuContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2922EF6E1D006B5A82 /* MenuContentController.swift */; };
+		B211EC2C22EF6FFF006B5A82 /* MenuContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2B22EF6FFF006B5A82 /* MenuContentCollectionView.swift */; };
+		B211EC2E22EF7083006B5A82 /* MenuContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2D22EF7083006B5A82 /* MenuContentCell.swift */; };
 		B21957ED22E24AD9008AEBA0 /* Roles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21957EC22E24AD9008AEBA0 /* Roles.swift */; };
 		B21957F022E24C78008AEBA0 /* KeeperMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21957EF22E24C78008AEBA0 /* KeeperMain.storyboard */; };
 		B22B908622E3E5E900D0B449 /* FirstTimeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B908522E3E5E900D0B449 /* FirstTimeLoginViewController.swift */; };
@@ -70,7 +76,7 @@
 		B2EE6A8922D8FE8500350BBA /* LegalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EE6A8822D8FE8500350BBA /* LegalData.storyboard */; };
 		B2F8358A22D6820900A9910C /* SignInDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8358922D6820900A9910C /* SignInDelegate.swift */; };
 		B2F8358E22D6837200A9910C /* CustomerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8358D22D6837200A9910C /* CustomerHomeViewController.swift */; };
-		B2F8359122D6882F00A9910C /* UiViewXibExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8359022D6882F00A9910C /* UiViewXibExtension.swift */; };
+		B2F8359122D6882F00A9910C /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8359022D6882F00A9910C /* UiViewExtension.swift */; };
 		B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */; };
 		B2FC8EEB22CA1FBD008CE65C /* CustomerTabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FC8EE922CA1FBD008CE65C /* CustomerTabs.storyboard */; };
 		B2FC8EED22CA1FBE008CE65C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2FC8EEC22CA1FBE008CE65C /* Assets.xcassets */; };
@@ -109,6 +115,12 @@
 		B204A0E122DE8D9000305A7E /* ShopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
 		B204A0E322DE8DAC00305A7E /* ShopProductCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopProductCollectionCell.xib; sourceTree = "<group>"; };
 		B204A0E522DE90A300305A7E /* ShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTableViewCell.swift; sourceTree = "<group>"; };
+		B211EC2122EF30B2006B5A82 /* MenuBarMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarMainController.swift; sourceTree = "<group>"; };
+		B211EC2322EF3F7E006B5A82 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		B211EC2522EF47B9006B5A82 /* MenuBarItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarItemCell.swift; sourceTree = "<group>"; };
+		B211EC2922EF6E1D006B5A82 /* MenuContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentController.swift; sourceTree = "<group>"; };
+		B211EC2B22EF6FFF006B5A82 /* MenuContentCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentCollectionView.swift; sourceTree = "<group>"; };
+		B211EC2D22EF7083006B5A82 /* MenuContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentCell.swift; sourceTree = "<group>"; };
 		B21957EC22E24AD9008AEBA0 /* Roles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roles.swift; sourceTree = "<group>"; };
 		B21957EF22E24C78008AEBA0 /* KeeperMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperMain.storyboard; sourceTree = "<group>"; };
 		B22B908522E3E5E900D0B449 /* FirstTimeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeLoginViewController.swift; sourceTree = "<group>"; };
@@ -168,7 +180,7 @@
 		B2EE6A8822D8FE8500350BBA /* LegalData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LegalData.storyboard; sourceTree = "<group>"; };
 		B2F8358922D6820900A9910C /* SignInDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDelegate.swift; sourceTree = "<group>"; };
 		B2F8358D22D6837200A9910C /* CustomerHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeViewController.swift; sourceTree = "<group>"; };
-		B2F8359022D6882F00A9910C /* UiViewXibExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewXibExtension.swift; sourceTree = "<group>"; };
+		B2F8359022D6882F00A9910C /* UiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExtension.swift; sourceTree = "<group>"; };
 		B2FC8EE222CA1FBD008CE65C /* HoneyBits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoneyBits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2FC8EEA22CA1FBD008CE65C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CustomerTabs.storyboard; sourceTree = "<group>"; };
@@ -222,6 +234,19 @@
 				7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B211EC2022EF3096006B5A82 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				B211EC2122EF30B2006B5A82 /* MenuBarMainController.swift */,
+				B211EC2322EF3F7E006B5A82 /* MenuBarView.swift */,
+				B211EC2522EF47B9006B5A82 /* MenuBarItemCell.swift */,
+				B211EC2922EF6E1D006B5A82 /* MenuContentController.swift */,
+				B211EC2B22EF6FFF006B5A82 /* MenuContentCollectionView.swift */,
+				B211EC2D22EF7083006B5A82 /* MenuContentCell.swift */,
+			);
+			path = MenuBar;
 			sourceTree = "<group>";
 		};
 		B21957EE22E24C64008AEBA0 /* Keeper */ = {
@@ -519,6 +544,7 @@
 		B2D9A7CB22EE7FCA00A59E3D /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				B211EC2022EF3096006B5A82 /* MenuBar */,
 				B2D9A7CC22EE7FDD00A59E3D /* TopTabBarController.swift */,
 			);
 			path = Generic;
@@ -596,7 +622,7 @@
 		B2F8358F22D6881F00A9910C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				B2F8359022D6882F00A9910C /* UiViewXibExtension.swift */,
+				B2F8359022D6882F00A9910C /* UiViewExtension.swift */,
 				B2398A3322DD36280042C764 /* UIViewControllerExtension.swift */,
 				B2398A3522DD5B230042C764 /* EncodableExtensions.swift */,
 				B25D46A622E398C700F3E644 /* NSObjectExtensions.swift */,
@@ -920,7 +946,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2F8359122D6882F00A9910C /* UiViewXibExtension.swift in Sources */,
+				B2F8359122D6882F00A9910C /* UiViewExtension.swift in Sources */,
 				B27C9F5D22E23BC200B4AFE3 /* ProductCategoryModel.swift in Sources */,
 				B25D46A722E398C700F3E644 /* NSObjectExtensions.swift in Sources */,
 				B28F419B22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift in Sources */,
@@ -931,6 +957,7 @@
 				B27C9F5B22E23B0900B4AFE3 /* ProductModel.swift in Sources */,
 				B28F41A622D7A88C00C7E2E6 /* CustomerLoginViewController.swift in Sources */,
 				B26CEB3722E25E3B00814889 /* CustomerTabBarController.swift in Sources */,
+				B211EC2222EF30B2006B5A82 /* MenuBarMainController.swift in Sources */,
 				B27C9F5922E23A2600B4AFE3 /* ShopModel.swift in Sources */,
 				B28F41A922D7B34E00C7E2E6 /* CustomerSearchViewController.swift in Sources */,
 				B272B8D022CEE65A00E124B4 /* LoginSelectViewController.swift in Sources */,
@@ -940,6 +967,7 @@
 				B2398A3622DD5B230042C764 /* EncodableExtensions.swift in Sources */,
 				B262AF4F22DBF94D00ABF311 /* RequestStatus.swift in Sources */,
 				B262AF4C22DBF86600ABF311 /* UserTokenModel.swift in Sources */,
+				B211EC2422EF3F7E006B5A82 /* MenuBarView.swift in Sources */,
 				B28F41A422D783BE00C7E2E6 /* CustomerFavoritesHomeViewController.swift in Sources */,
 				B2745FD322D57EB500297A43 /* GuestView.swift in Sources */,
 				B22B909322E6AC2400D0B449 /* ScaleSegue.swift in Sources */,
@@ -948,9 +976,13 @@
 				B26CEB3522E257EB00814889 /* MainNavigationController.swift in Sources */,
 				B204A0E622DE90A300305A7E /* ShopTableViewCell.swift in Sources */,
 				B28F41A122D7604200C7E2E6 /* CustomerHomeView.swift in Sources */,
+				B211EC2E22EF7083006B5A82 /* MenuContentCell.swift in Sources */,
 				B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */,
 				B28F419D22D6DF7E00C7E2E6 /* LoginDelegate.swift in Sources */,
+				B211EC2C22EF6FFF006B5A82 /* MenuContentCollectionView.swift in Sources */,
 				B21957ED22E24AD9008AEBA0 /* Roles.swift in Sources */,
+				B211EC2622EF47B9006B5A82 /* MenuBarItemCell.swift in Sources */,
+				B211EC2A22EF6E1D006B5A82 /* MenuContentController.swift in Sources */,
 				B2F8358E22D6837200A9910C /* CustomerHomeViewController.swift in Sources */,
 				B2EE6A8422D8E54900350BBA /* CustomerGuestSettingsViewController.swift in Sources */,
 				B2398A3422DD36280042C764 /* UIViewControllerExtension.swift in Sources */,

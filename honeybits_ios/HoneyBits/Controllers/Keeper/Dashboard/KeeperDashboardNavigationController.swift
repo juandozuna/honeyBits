@@ -7,38 +7,38 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class KeeperDashboardNavigationController : UINavigationController {
     
+    @IBInspectable var accentColor: UIColor = UIColor.flatOrange()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        controllerSetup()
+        setRootController()
+        setNavigationBarTitle()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        controllerSetup()
-    }
-    
-    private func controllerSetup() {
+    private func setMenuBarController() -> UIViewController {
+        let notificationVc = viewControllerFromStoryboard(storyboard: "KeeperDashboard", withIdentifier: "notificationsView")
+        let dashboardView = viewControllerFromStoryboard(storyboard: "KeeperDashboard", withIdentifier: "dashboardView")
         
-       setRootTabbarController()
+        let menuBarController = MenuBarMainController()
+        menuBarController.navTitle = "Keeper Home"
+        menuBarController.accentColor = accentColor
+        menuBarController.viewControllers = [dashboardView, notificationVc]
+        
+        return menuBarController
     }
     
-    private func setRootTabbarController() {
-        let tabBarController = loadTabBarController()
-        
-        //setViewControllers([tabBarController], animated: false)
+    private func setRootController() {
+        let mainController = setMenuBarController()
+        viewControllers = [mainController]
     }
     
-    private func loadTabBarController() -> UITabBarController {
-        guard let tbc = viewControllerFromStoryboard(storyboard: "KeeperDashboard", withIdentifier: "tabBarController") as? TopTabBarController else {
-            print ("Error trying to load controller from storyboard")
-            return UITabBarController()
-        }
-        
-        return tbc
+    private func setNavigationBarTitle(to title: String = "Home") {
+        self.title = title
     }
+
 }
 
