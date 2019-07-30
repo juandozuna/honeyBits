@@ -46,7 +46,8 @@ class MenuBarItemCell: UICollectionViewCell {
     
     private func cellSetup() {
         setItemLabel()
-        
+        dividerColor = .clear
+        isDividerHidden = true
         backgroundColor = UIColor.white
     }
     

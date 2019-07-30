@@ -17,7 +17,12 @@ class MenuBarMainController : UIViewController {
     }
     @IBInspectable var menuBarHeight: Int = 30
     @IBInspectable var accentColor: UIColor = UIColor.flatYellow()
-    var viewControllers: [UIViewController] = []
+    @IBInspectable var backgroundColor: UIColor? = UIColor(red: 0.969, green: 0.969, blue: 0.969, alpha: 1.0) {
+        didSet {
+            changeColorToMenuBarCells()
+        }
+    }
+    var viewControllers: [UIViewController?] = []
     var viewControllersCount: CGFloat {
         return CGFloat(viewControllers.count)
     }
@@ -60,7 +65,7 @@ class MenuBarMainController : UIViewController {
         menuBar.dataSource = self
         view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
         view.addConstraintsWithFormat("V:|[v0(\(menuBarHeight))]", views: menuBar)
-        
+        menuBar.backgroundColor = backgroundColor
         
         let horizontalView = UIView()
         horizontalView.translatesAutoresizingMaskIntoConstraints = false
@@ -85,7 +90,9 @@ class MenuBarMainController : UIViewController {
     private func getTitlesFromControllers() -> [String] {
         var titles = [String]()
         for vc in viewControllers {
-            titles.append(vc.title ?? " ")
+            if let v = vc {
+                titles.append(v.title ?? " ")
+            }
         }
         return titles
     }
@@ -111,7 +118,13 @@ class MenuBarMainController : UIViewController {
     
     private func moveIndicatorViewToSelectedItem(to index: Int) {
         contentController?.scroll(to: index)
-        
+    }
+    
+    private func changeColorToMenuBarCells() {
+        let cells = menuBar.visibleCells
+        for cell in cells {
+            cell.backgroundColor = backgroundColor
+        }
     }
 }
 
@@ -136,14 +149,24 @@ extension MenuBarMainController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuBarView.cellId, for: indexPath) as! MenuBarItemCell
-        cell.item = viewControllers[indexPath.item].title ?? "Title"
-        cell.accentColor = accentColor
+        cell.backgroundColor = backgroundColor
+        if let vc = viewControllers[indexPath.item] {
+            cell.item = vc.title ?? "Title"
+            cell.accentColor = accentColor
+        } else {
+            cell.accentColor = backgroundColor
+            cell.backgroundColor = backgroundColor
+            cell.tintColor = backgroundColor
+            cell.shadowColor = backgroundColor
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.item
-        moveIndicatorViewToSelectedItem(to: index)
+        if viewControllers[index] != nil {
+            moveIndicatorViewToSelectedItem(to: index)
+        }
     }
     
     

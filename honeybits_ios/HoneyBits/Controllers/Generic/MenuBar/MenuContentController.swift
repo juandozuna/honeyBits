@@ -10,7 +10,7 @@ import UIKit
 
 class MenuContentController: UIViewController {
     
-    var viewControllers: [UIViewController] = []
+    var viewControllers: [UIViewController?] = []
     var parentController: MenuBarMainController?
     var contentCollectionView: MenuContentCollectionView = {
         let cv = MenuContentCollectionView()
@@ -48,16 +48,23 @@ class MenuContentController: UIViewController {
 //MARK:- Collection View Datasource and Delegate methods
 extension MenuContentController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewControllers.count
+        var count = 0
+        for v in viewControllers {
+            if v != nil {
+                count += 1
+            }
+        }
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuContentCollectionView.cellId, for: indexPath)
-        let vc = viewControllers[indexPath.item]
-        addChild(vc)
-        cell.contentView.addSubview(vc.view)
-        cell.contentView.addConstraintsWithFormat("H:|[v0]|", views: vc.view)
-        cell.contentView.addConstraintsWithFormat("V:|[v0]|", views: vc.view)
+        if let vc = viewControllers[indexPath.item] {
+            addChild(vc)
+            cell.contentView.addSubview(vc.view)
+            cell.contentView.addConstraintsWithFormat("H:|[v0]|", views: vc.view)
+            cell.contentView.addConstraintsWithFormat("V:|[v0]|", views: vc.view)
+        }
         return cell
     }
     

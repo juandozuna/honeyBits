@@ -31,7 +31,7 @@ class MenuBarView : UICollectionView{
     
     private func viewSetup() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.blue
+        isDividerHidden = true
     }
 }
 
