@@ -26,7 +26,7 @@ class MenuContentCollectionView: UICollectionView {
     }
     
     private func viewSetup() {
-        
+        showsHorizontalScrollIndicator = false  
     }
     
     

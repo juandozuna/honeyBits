@@ -26,7 +26,7 @@ class KeeperDashboardNavigationController : UINavigationController {
         let menuBarController = MenuBarMainController()
         menuBarController.navTitle = "Keeper Home"
         menuBarController.accentColor = accentColor
-        menuBarController.viewControllers = [dashboardView, notificationVc, test]
+        menuBarController.viewControllers = [dashboardView, notificationVc]
         
         return menuBarController
     }

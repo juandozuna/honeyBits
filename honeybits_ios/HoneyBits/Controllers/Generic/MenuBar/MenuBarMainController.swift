@@ -42,7 +42,11 @@ class MenuBarMainController : UIViewController {
     
     func setActiveMenuBarItem(at index: Int) {
         let indexPath = IndexPath(item: index, section: 0)
-        menuBar.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionView.ScrollPosition(rawValue: 0))
+        menuBar.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition(rawValue: 0))
+        
+        UIView.animate(withDuration: 0.6) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     private func setupController() {
@@ -75,7 +79,7 @@ class MenuBarMainController : UIViewController {
     
     private func selectDefaultView() {
         let indexPath = IndexPath(item: 0, section: 0)
-        menuBar.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionView.ScrollPosition(rawValue: 0))
+        menuBar.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition(rawValue: 0))
     }
     
     private func getTitlesFromControllers() -> [String] {
@@ -107,6 +111,7 @@ class MenuBarMainController : UIViewController {
     
     private func moveIndicatorViewToSelectedItem(to index: Int) {
         contentController?.scroll(to: index)
+        
     }
 }
 

@@ -61,14 +61,16 @@ class MenuBarItemCell: UICollectionViewCell {
     }
     
     private func activateCell() {
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.6) {
             self.itemLabel.textColor = self.accentColor ?? UIColor.flatOrange()
+            self.layoutIfNeeded()
         }
     }
     
     private func deactivateCell() {
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.6) {
             self.itemLabel.textColor = UIColor.black
+            self.layoutIfNeeded()
         }
     }
 }
