@@ -1,10 +1,12 @@
+CREATE SCHEMA `honeybits` ;
+
 USE honeybits;
-----------------------------------------
+-- --------------------------------------
 -- CREATE Statement
-----------------------------------------
+-- --------------------------------------
 
 CREATE TABLE role (
-	role_id 		INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	role_id 		INT AUTO_INCREMENT PRIMARY KEY,
 	description		VARCHAR(255) NOT NULL,
 	created_by		INT NOT NULL,
 	created_date	TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -14,7 +16,7 @@ CREATE TABLE role (
 );
 
 CREATE TABLE users (
-	user_id			INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	user_id			INT AUTO_INCREMENT PRIMARY KEY,
 	first_name		VARCHAR(255) NOT NULL,
 	last_name		VARCHAR(255) NOT NULL,
 	email			VARCHAR(255) NOT NULL UNIQUE,
@@ -40,7 +42,7 @@ CREATE TABLE product_category (
 );
 
 CREATE TABLE product (
-	product_id		INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	product_id		INT AUTO_INCREMENT PRIMARY KEY,
 	product_name	VARCHAR(255) NOT NULL,
 	product_category_id	INT NOT NULL,
 	product_description	VARCHAR(1000),
@@ -133,42 +135,9 @@ CREATE TABLE bee_transaction (
 	deleted_date			TIMESTAMP
 );
 
-----------------------------------------
--- Tables Constraints
-----------------------------------------
-
--- User Table
-ALTER TABLE users
-ADD FOREIGN KEY (role_id) REFERENCES role(role_id)
-ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
-
--- Role Table
-ALTER TABLE role
-ADD FOREIGN KEY (created_by) REFERENCES users(user_id)
-ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
-
--- product_category Table
-ALTER TABLE product_category
-ADD FOREIGN KEY (created_by) REFERENCES users(user_id)
-ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
-
--- product Table
-ALTER TABLE product
-ADD FOREIGN KEY (product_category_id) REFERENCES product_category(product_category_id)
-ADD FOREIGN KEY (created_by) REFERENCES users(user_id)
-ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
-
--- Shop Table
-ALTER TABLE shop
-ADD FOREIGN KEY (owner_id) REFERENCES users(user_id)
-ADD FOREIGN KEY (created_by) REFERENCES users(user_id)
-ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
-
-
-
-----------------------------------------
+-- --------------------------------------
 -- INSERT Statements
-----------------------------------------
+-- --------------------------------------
 
 -- Role Table
 INSERT INTO `honeybits`.`role` (`description`, `created_by`) VALUES ('Administrator', 1);
@@ -189,10 +158,10 @@ INSERT INTO `honeybits`.`product_category` (`product_category_name`, `product_ca
 INSERT INTO `honeybits`.`product_category` (`product_category_name`, `product_category_description`, `created_by`) VALUES ('Clothes', 'Products that are clothes.', 1);
 
 -- Product Table
-INSERT INTO `honeybits`.`product`(`product_name`, `product_description`, `product_price`, `created_by`) VALUES ('Product 1', 'Product 1 description', 10.99, 1);
-INSERT INTO `honeybits`.`product`(`product_name`, `product_description`, `product_price`, `created_by`) VALUES ('Product 2', 'Product 2 description', 12.89, 4);
-INSERT INTO `honeybits`.`product`(`product_name`, `product_description`, `product_price`, `created_by`) VALUES ('Product 3', 'Product 3 description', 13.79, 4);
-INSERT INTO `honeybits`.`product`(`product_name`, `product_description`, `product_price`, `created_by`) VALUES ('Product 4', 'Product 4 description', 14.69, 4);
+INSERT INTO `honeybits`.`product`(`product_name`, `product_description`, `product_category_id`, `product_price`, `created_by`) VALUES ('Product 1', 'Product 1 description', 1, 10.99, 1);
+INSERT INTO `honeybits`.`product`(`product_name`, `product_description`, `product_category_id`, `product_price`, `created_by`) VALUES ('Product 2', 'Product 2 description', 2, 12.89, 4);
+INSERT INTO `honeybits`.`product`(`product_name`, `product_description`, `product_category_id`, `product_price`, `created_by`) VALUES ('Product 3', 'Product 3 description', 3, 13.79, 4);
+INSERT INTO `honeybits`.`product`(`product_name`, `product_description`, `product_category_id`, `product_price`, `created_by`) VALUES ('Product 4', 'Product 4 description', 4, 14.69, 4);
 
 -- Product_image Table
 INSERT INTO `honeybits`.`product_image` (`product_id`, `product_image_name`, `product_image_description`, `product_image_type`, `created_by`) VALUES ( 1, 'product_image_1', 'Image for the first product', '.jpeg', 1);
@@ -226,3 +195,80 @@ INSERT INTO `honeybits`.`product_like` (`user_id`, `product_id`, `created_by`) V
 INSERT INTO `honeybits`.`product_like` (`user_id`, `product_id`, `created_by`) VALUES (1, 3, 1);
 INSERT INTO `honeybits`.`product_like` (`user_id`, `product_id`, `created_by`) VALUES (1, 4, 1);
 
+-- Transaction_type Table
+INSERT INTO `honeybits`.`transaction_type` (`transaction_type`, `transaction_type_description`, `created_by`) VALUES ('Credit', 'Amount given to account.', 1);
+INSERT INTO `honeybits`.`transaction_type` (`transaction_type`, `transaction_type_description`, `created_by`) VALUES ('Debit', 'Amount taken from acount.', 1);
+
+
+-- --------------------------------------
+-- Tables Constraints
+-- --------------------------------------
+
+-- User Table
+ALTER TABLE users
+ADD FOREIGN KEY (role_id) REFERENCES role(role_id),
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+;
+
+-- Role Table
+ALTER TABLE role
+ADD FOREIGN KEY (created_by) REFERENCES users(user_id),
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+;
+
+-- product_category Table
+ALTER TABLE product_category
+ADD FOREIGN KEY (created_by) REFERENCES users(user_id),
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+;
+
+-- product Table
+ALTER TABLE product
+ADD FOREIGN KEY (product_category_id) REFERENCES product_category(product_category_id),
+ADD FOREIGN KEY (created_by) REFERENCES users(user_id),
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+;
+
+-- product_image Table
+ALTER TABLE product_image
+ADD FOREIGN KEY (product_id) REFERENCES product(product_id),
+ADD FOREIGN KEY (created_by) REFERENCES users(user_id),
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+;
+
+-- Shop Table
+ALTER TABLE shop
+ADD FOREIGN KEY (owner_id) REFERENCES users(user_id),
+ADD FOREIGN KEY (created_by) REFERENCES users(user_id),
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+;
+
+-- shop_follower Table
+ALTER TABLE shop_follower
+ADD FOREIGN KEY (user_id) REFERENCES users(user_id),
+ADD FOREIGN KEY (shop_id) REFERENCES shop(shop_id),
+ADD FOREIGN KEY (created_by) REFERENCES users(user_id),
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+;
+
+-- Product_like Table
+ALTER TABLE product_like
+ADD FOREIGN KEY (user_id) REFERENCES users(user_id),
+ADD FOREIGN KEY (product_id) REFERENCES product(product_id),
+ADD FOREIGN KEY (created_by) REFERENCES users(user_id),
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+;
+
+-- Transaction_type Table
+ALTER TABLE transaction_type
+ADD FOREIGN KEY (created_by) REFERENCES users(user_id),
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+;
+
+-- Bee_transaction Table
+ALTER TABLE bee_transaction
+ADD FOREIGN KEY (user_id) REFERENCES users(user_id),
+ADD FOREIGN KEY (transaction_type_id) REFERENCES transaction_type(transaction_type_id),
+ADD FOREIGN KEY (created_by) REFERENCES users(user_id),
+ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+;
