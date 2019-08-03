@@ -12,6 +12,7 @@ namespace honeybits_server.Services.Interfaces
         Users Create(Users user);
         bool Delete(int id);
         Users Get(int id);
+        IEnumerable<Users> Search(string value);
         IEnumerable<Users> GetAll();
         Role GetRole(int id); 
         IEnumerable<Role> GetAllRoles();

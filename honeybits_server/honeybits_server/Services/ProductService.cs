@@ -32,5 +32,10 @@ namespace honeybits_server.Services
         public Product Get(int id) => _context.Product.Where(x => x.IsDeleted == false).FirstOrDefault();
 
         public IEnumerable<Product> GetAll() => _context.Product.ToList();
+
+        public IEnumerable<Product> Search(string value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

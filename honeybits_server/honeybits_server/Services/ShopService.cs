@@ -36,5 +36,10 @@ namespace honeybits_server.Services
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<Shop> Search(string value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

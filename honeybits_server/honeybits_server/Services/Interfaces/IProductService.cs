@@ -12,5 +12,6 @@ namespace honeybits_server.Services.Interfaces
         Product Create(Product product);
         bool Delete(Product product);
         IEnumerable<Product> GetAll();
+        IEnumerable<Product> Search(string value);
     }
 }

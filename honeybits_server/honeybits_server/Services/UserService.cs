@@ -81,5 +81,10 @@ namespace honeybits_server.Services
         }
 
         public IEnumerable<Role> GetAllRoles() => _context.Role.ToList();
+
+        public IEnumerable<Users> Search(string value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
