@@ -10,6 +10,7 @@ namespace honeybits_server.Services.Interfaces
     {
         Shop Get(int id);
         Shop Create(Shop shop);
+        Shop Update(Shop shop);
         bool Delete(Shop shop);
         IEnumerable<Shop> GetAll();
         IEnumerable<ShopProduct> GetAllShopsProductsByShopId(int id);
