@@ -5,6 +5,11 @@ namespace honeybits_server.Models
 {
     public partial class ProductCategory
     {
+        public ProductCategory()
+        {
+            Product = new HashSet<Product>();
+        }
+
         public int ProductCategoryId { get; set; }
         public string ProductCategoryName { get; set; }
         public string ProductCategoryDescription { get; set; }
@@ -13,5 +18,9 @@ namespace honeybits_server.Models
         public bool? IsDeleted { get; set; }
         public int? DeletedBy { get; set; }
         public DateTime? DeletedDate { get; set; }
+
+        public virtual Users CreatedByNavigation { get; set; }
+        public virtual Users DeletedByNavigation { get; set; }
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

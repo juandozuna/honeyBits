@@ -3,15 +3,13 @@ using System.Collections.Generic;
 
 namespace honeybits_server.Models
 {
-    public partial class Role
+    public partial class ProductImage
     {
-        public Role()
-        {
-            Users = new HashSet<Users>();
-        }
-
-        public int RoleId { get; set; }
-        public string Description { get; set; }
+        public int ProductImageId { get; set; }
+        public int ProductId { get; set; }
+        public string ProductImageName { get; set; }
+        public string ProductImageDescription { get; set; }
+        public string ProductImageType { get; set; }
         public int CreatedBy { get; set; }
         public DateTime? CreatedDate { get; set; }
         public bool? IsDeleted { get; set; }
@@ -20,6 +18,6 @@ namespace honeybits_server.Models
 
         public virtual Users CreatedByNavigation { get; set; }
         public virtual Users DeletedByNavigation { get; set; }
-        public virtual ICollection<Users> Users { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

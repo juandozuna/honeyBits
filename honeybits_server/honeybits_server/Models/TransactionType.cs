@@ -3,15 +3,16 @@ using System.Collections.Generic;
 
 namespace honeybits_server.Models
 {
-    public partial class Role
+    public partial class TransactionType
     {
-        public Role()
+        public TransactionType()
         {
-            Users = new HashSet<Users>();
+            BeeTransaction = new HashSet<BeeTransaction>();
         }
 
-        public int RoleId { get; set; }
-        public string Description { get; set; }
+        public int TransactionTypeId { get; set; }
+        public string TransactionType1 { get; set; }
+        public string TransactionTypeDescription { get; set; }
         public int CreatedBy { get; set; }
         public DateTime? CreatedDate { get; set; }
         public bool? IsDeleted { get; set; }
@@ -20,6 +21,6 @@ namespace honeybits_server.Models
 
         public virtual Users CreatedByNavigation { get; set; }
         public virtual Users DeletedByNavigation { get; set; }
-        public virtual ICollection<Users> Users { get; set; }
+        public virtual ICollection<BeeTransaction> BeeTransaction { get; set; }
     }
 }
