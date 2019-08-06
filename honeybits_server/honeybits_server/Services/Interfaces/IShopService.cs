@@ -15,5 +15,6 @@ namespace honeybits_server.Services.Interfaces
         IEnumerable<Shop> GetAll();
         IEnumerable<ShopProduct> GetAllShopsProductsByShopId(int id);
         IEnumerable<Shop> Search(string value);
+        IEnumerable<ShopFollower> GetShopFollowers(int id);
     }
 }
