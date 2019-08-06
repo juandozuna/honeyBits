@@ -37,7 +37,17 @@ namespace honeybits_server.Services
             throw new NotImplementedException();
         }
 
+        public IEnumerable<ShopFollower> GetShopFollowers(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Shop> Search(string value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Shop Update(Shop shop)
         {
             throw new NotImplementedException();
         }
