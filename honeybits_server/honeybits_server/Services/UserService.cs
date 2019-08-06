@@ -86,5 +86,15 @@ namespace honeybits_server.Services
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<ProductLike> GetAllLikedProducts()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<BeeTransaction> GetUserBeeTransactions(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
