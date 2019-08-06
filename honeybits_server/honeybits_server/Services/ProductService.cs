@@ -33,6 +33,11 @@ namespace honeybits_server.Services
 
         public IEnumerable<Product> GetAll() => _context.Product.ToList();
 
+        public IEnumerable<ProductLike> GetProductLikes(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Product> Search(string value)
         {
             throw new NotImplementedException();
