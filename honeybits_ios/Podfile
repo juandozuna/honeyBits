@@ -17,6 +17,7 @@ target 'HoneyBits' do
   #pod 'IQKeyboardManagerSwift'
   pod 'IHKeyboardAvoiding'
   #pod 'UnderKeyboard', '~> 13.0'
+  pod 'FontAwesome.swift'
   pod 'SwipeViewController'
   pod 'SwiftyJSON'
 
