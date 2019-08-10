@@ -28,7 +28,31 @@ class CustomerHomeView: UIView {
     }
     
     private func viewSetup() {
-        
+        collectionViewSetup()
     }
+    
+    private func collectionViewSetup() {
+        
+        
+        addSubview(collectionView)
+        addConstraintsWithFormat("H:|[v0]|", views: collectionView)
+        addConstraintsWithFormat("V:|[v0]|", views: collectionView)
+    }
+    
+}
+
+extension CustomerHomeView:  UICollectionViewDelegate {
+    	
+}
+
+extension CustomerHomeView : UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+    
     
 }

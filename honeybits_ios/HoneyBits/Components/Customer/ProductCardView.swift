@@ -11,6 +11,9 @@ import UIKit
 class ProductCardView : UIView {
     
     
+    var productViewModel: ProductCardViewModel?
+    
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var favoriteBtn: UIButton!
     var isFavorite = false {
         didSet {
@@ -31,11 +34,24 @@ class ProductCardView : UIView {
     }
     
     @IBAction func favoriteBtnPressed(_ sender: Any) {
-        isFavorite = !isFavorite
+        productViewModel!.isLiked = !productViewModel!.isLiked
+        isFavorite = productViewModel!.isLiked
+    }
+    
+    @IBAction func mainViewBtnPressed(_ sender: Any) {
+        
     }
     
     private func viewSetup() {
         setBtnImageIfFavorite()
+        setBackgroundImage()
+    }
+    
+    private func setBackgroundImage() {
+        let url = NSURL(string: productViewModel!.image)
+        if let imageData: NSData = NSData(contentsOf: url! as URL) {
+            backgroundImage.image = UIImage(data: imageData as Data)
+        }
     }
     
     private func setBtnImageIfFavorite() {

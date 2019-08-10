@@ -27,6 +27,8 @@
 		B2398A3622DD5B230042C764 /* EncodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2398A3522DD5B230042C764 /* EncodableExtensions.swift */; };
 		B23FEA9822F0F74F001E8B32 /* ProductCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23FEA9722F0F74F001E8B32 /* ProductCardView.xib */; };
 		B23FEA9A22F10078001E8B32 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23FEA9922F10078001E8B32 /* ProductCardView.swift */; };
+		B23FEA9C22F1BFE4001E8B32 /* CustomerHomeUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23FEA9B22F1BFE4001E8B32 /* CustomerHomeUserController.swift */; };
+		B23FEA9E22F1C26D001E8B32 /* CustomerHomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23FEA9D22F1C26D001E8B32 /* CustomerHomeHeaderCell.swift */; };
 		B24BEE2422E7FF3500C1E5FB /* KeeperDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24BEE2322E7FF3500C1E5FB /* KeeperDashboard.storyboard */; };
 		B24BEE2722E801C000C1E5FB /* KeeperDeals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24BEE2622E801C000C1E5FB /* KeeperDeals.storyboard */; };
 		B24BEE2A22E8039100C1E5FB /* KeeperShopSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24BEE2922E8039100C1E5FB /* KeeperShopSettings.storyboard */; };
@@ -69,6 +71,8 @@
 		B2A898B022EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A898AF22EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift */; };
 		B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5522D018A400CBBA4E /* IAccountService.swift */; };
 		B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5722D01AFA00CBBA4E /* AccountService.swift */; };
+		B2BC92B122F3E1C600D128B4 /* ProductCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC92B022F3E1C600D128B4 /* ProductCardCollectionView.swift */; };
+		B2BC92B322F3E61500D128B4 /* ProductCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC92B222F3E61500D128B4 /* ProductCardViewModel.swift */; };
 		B2C2CB6322EFF08C00F2EA30 /* CustomerFavoriteUserBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C2CB6222EFF08C00F2EA30 /* CustomerFavoriteUserBaseController.swift */; };
 		B2D9A7CF22EE80A900A59E3D /* KeeperDashboardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D9A7CE22EE80A900A59E3D /* KeeperDashboardNavigationController.swift */; };
 		B2EE6A8422D8E54900350BBA /* CustomerGuestSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */; };
@@ -129,6 +133,8 @@
 		B2398A3522DD5B230042C764 /* EncodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtensions.swift; sourceTree = "<group>"; };
 		B23FEA9722F0F74F001E8B32 /* ProductCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCardView.xib; sourceTree = "<group>"; };
 		B23FEA9922F10078001E8B32 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
+		B23FEA9B22F1BFE4001E8B32 /* CustomerHomeUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeUserController.swift; sourceTree = "<group>"; };
+		B23FEA9D22F1C26D001E8B32 /* CustomerHomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeHeaderCell.swift; sourceTree = "<group>"; };
 		B24BEE2322E7FF3500C1E5FB /* KeeperDashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperDashboard.storyboard; sourceTree = "<group>"; };
 		B24BEE2622E801C000C1E5FB /* KeeperDeals.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperDeals.storyboard; sourceTree = "<group>"; };
 		B24BEE2922E8039100C1E5FB /* KeeperShopSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperShopSettings.storyboard; sourceTree = "<group>"; };
@@ -173,6 +179,8 @@
 		B2A898AF22EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperDashboardTabBarController.swift; sourceTree = "<group>"; };
 		B2A91D5522D018A400CBBA4E /* IAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAccountService.swift; sourceTree = "<group>"; };
 		B2A91D5722D01AFA00CBBA4E /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		B2BC92B022F3E1C600D128B4 /* ProductCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardCollectionView.swift; sourceTree = "<group>"; };
+		B2BC92B222F3E61500D128B4 /* ProductCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardViewModel.swift; sourceTree = "<group>"; };
 		B2C2CB6222EFF08C00F2EA30 /* CustomerFavoriteUserBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerFavoriteUserBaseController.swift; sourceTree = "<group>"; };
 		B2D9A7CE22EE80A900A59E3D /* KeeperDashboardNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperDashboardNavigationController.swift; sourceTree = "<group>"; };
 		B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerGuestSettingsViewController.swift; sourceTree = "<group>"; };
@@ -453,6 +461,7 @@
 				B2745FCF22D57E5B00297A43 /* CustomerHome */,
 				B23FEA9722F0F74F001E8B32 /* ProductCardView.xib */,
 				B23FEA9922F10078001E8B32 /* ProductCardView.swift */,
+				B2BC92B022F3E1C600D128B4 /* ProductCardCollectionView.swift */,
 			);
 			path = Customer;
 			sourceTree = "<group>";
@@ -462,6 +471,7 @@
 			children = (
 				B28F419E22D7603200C7E2E6 /* CustomerHomeView.xib */,
 				B28F41A022D7604200C7E2E6 /* CustomerHomeView.swift */,
+				B23FEA9D22F1C26D001E8B32 /* CustomerHomeHeaderCell.swift */,
 			);
 			path = CustomerHome;
 			sourceTree = "<group>";
@@ -537,6 +547,7 @@
 				B27C9F5822E23A2600B4AFE3 /* ShopModel.swift */,
 				B27C9F5A22E23B0900B4AFE3 /* ProductModel.swift */,
 				B27C9F5C22E23BC200B4AFE3 /* ProductCategoryModel.swift */,
+				B2BC92B222F3E61500D128B4 /* ProductCardViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -631,6 +642,7 @@
 			isa = PBXGroup;
 			children = (
 				B2F8358D22D6837200A9910C /* CustomerHomeViewController.swift */,
+				B23FEA9B22F1BFE4001E8B32 /* CustomerHomeUserController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -967,11 +979,13 @@
 				B27C9F5D22E23BC200B4AFE3 /* ProductCategoryModel.swift in Sources */,
 				B25D46A722E398C700F3E644 /* NSObjectExtensions.swift in Sources */,
 				B28F419B22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift in Sources */,
+				B23FEA9C22F1BFE4001E8B32 /* CustomerHomeUserController.swift in Sources */,
 				B28F41AC22D80CD900C7E2E6 /* CustomerYouViewController.swift in Sources */,
 				B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */,
 				B25FCB9322E94FCB006BDD0C /* KeeperSettingsViewController.swift in Sources */,
 				B27C9F5B22E23B0900B4AFE3 /* ProductModel.swift in Sources */,
 				B28F41A622D7A88C00C7E2E6 /* CustomerLoginViewController.swift in Sources */,
+				B23FEA9E22F1C26D001E8B32 /* CustomerHomeHeaderCell.swift in Sources */,
 				B26CEB3722E25E3B00814889 /* CustomerTabBarController.swift in Sources */,
 				B211EC2222EF30B2006B5A82 /* MenuBarMainController.swift in Sources */,
 				B27C9F5922E23A2600B4AFE3 /* ShopModel.swift in Sources */,
@@ -980,6 +994,7 @@
 				B2F8358A22D6820900A9910C /* SignInDelegate.swift in Sources */,
 				B262AF4A22DBF14900ABF311 /* BaseService.swift in Sources */,
 				B2398A3622DD5B230042C764 /* EncodableExtensions.swift in Sources */,
+				B2BC92B322F3E61500D128B4 /* ProductCardViewModel.swift in Sources */,
 				B262AF4F22DBF94D00ABF311 /* RequestStatus.swift in Sources */,
 				B262AF4C22DBF86600ABF311 /* UserTokenModel.swift in Sources */,
 				B211EC2422EF3F7E006B5A82 /* MenuBarView.swift in Sources */,
@@ -991,6 +1006,7 @@
 				B26CEB3522E257EB00814889 /* MainNavigationController.swift in Sources */,
 				B28F41A122D7604200C7E2E6 /* CustomerHomeView.swift in Sources */,
 				B211EC2E22EF7083006B5A82 /* MenuContentCell.swift in Sources */,
+				B2BC92B122F3E1C600D128B4 /* ProductCardCollectionView.swift in Sources */,
 				B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */,
 				B28F419D22D6DF7E00C7E2E6 /* LoginDelegate.swift in Sources */,
 				B211EC2C22EF6FFF006B5A82 /* MenuContentCollectionView.swift in Sources */,

@@ -10,17 +10,12 @@ import UIKit
 
 class CustomerHomeViewController: CustomerLoginViewController {
 
-    @IBOutlet weak var guestView: GuestView!
-    @IBOutlet weak var userView: CustomerHomeView!
-    @IBOutlet weak var backdrop: UIView!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         signInSegueIdentifier = "goToSignIn"
-        userView.delegate = self
-        guestView.delegate = self
-        backdropView = backdrop
+        
+        //setupUserView()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,21 +26,6 @@ class CustomerHomeViewController: CustomerLoginViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkIfLoggedIn()
-    }
-    
-    override func checkIfLoggedIn() {
-        if !accountService.userIsLoggedIn {
-            showGuestView(true)
-        } else {
-            showGuestView(false)
-        }
-        super.checkIfLoggedIn()
-    }
-    
-    
-    private func showGuestView(_ value: Bool) {
-        guestView.isHidden = !value
-        userView.isHidden = value
     }
     
 
