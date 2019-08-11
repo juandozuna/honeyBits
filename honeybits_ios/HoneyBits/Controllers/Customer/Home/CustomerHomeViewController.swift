@@ -10,6 +10,7 @@ import UIKit
 
 class CustomerHomeViewController: CustomerLoginViewController {
 
+    @IBOutlet weak var guestView: GuestView!
     override func viewDidLoad() {
         super.viewDidLoad()
         signInSegueIdentifier = "goToSignIn"
@@ -28,5 +29,13 @@ class CustomerHomeViewController: CustomerLoginViewController {
         checkIfLoggedIn()
     }
     
+    override func checkIfLoggedIn() {
+        showGuestView(accountService.userIsLoggedIn)
+        
+    }
+    
+    private func showGuestView(_ visible: Bool) {
+        guestView.isHidden = !visible
+    }
 
 }
