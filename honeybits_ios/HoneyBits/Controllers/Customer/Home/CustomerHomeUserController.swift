@@ -10,13 +10,9 @@ import UIKit
 
 class CustomerHomeUserController : UIViewController {
     
-    var collectionView: UICollectionView = {
-        let cv = UICollectionView()
-        return cv
-    }()
-    
     private var headerCellId: String = "headerCell"
     private var colViewContainerCell: String = "contentCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         controllerSetup()

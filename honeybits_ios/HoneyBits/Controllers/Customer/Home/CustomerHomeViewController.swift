@@ -10,12 +10,16 @@ import UIKit
 
 class CustomerHomeViewController: CustomerLoginViewController {
 
+    @IBOutlet weak var guestView: GuestView!
+    
+    var userView: UIView?
+    var userController: CustomerHomeUserController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         signInSegueIdentifier = "goToSignIn"
         
-        //setupUserView()
-
+        guestView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -28,5 +32,41 @@ class CustomerHomeViewController: CustomerLoginViewController {
         checkIfLoggedIn()
     }
     
+    override func checkIfLoggedIn() {
+        showUserView(accountService.userIsLoggedIn)
+        
+    }
+    
+    private func showUserView(_ visible: Bool) {
+        if visible {
+            setupUserView()
+        }
+        guestView.isHidden = visible
+        userView?.isHidden = !visible
+    }
+    
+    private func setupUserView() {
+        if userView == nil {
+            userView = createUserView()
+            userView?.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(userView!)
+            view.addConstraintsWithFormat("H:|[v0]|", views: userView!)
+            view.addConstraintsWithFormat("V:|[v0]|", views: userView!)
+        }
+    }
+    
+    private func createUserView() -> UIView {
+        let uv = UIView()
+        uv.translatesAutoresizingMaskIntoConstraints = false
+        
+        userController = CustomerHomeUserController()
+        addChild(userController!)
+        let userControllerView = userController!.view!
+        userControllerView.translatesAutoresizingMaskIntoConstraints = false
+        uv.addSubview(userControllerView)
+        uv.addConstraintsWithFormat("H:|[v0]|", views: userControllerView)
+        uv.addConstraintsWithFormat("V:|[v0]|", views: userControllerView)
+        return uv
+    }
 
 }

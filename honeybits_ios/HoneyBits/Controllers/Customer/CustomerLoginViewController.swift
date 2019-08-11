@@ -27,6 +27,7 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     }
     
     private func fadeBackdropView(_ visible: Bool, duration: TimeInterval) {
+        setupBackdropView(isHidden: !visible)
         if visible {
             backdropView!.alpha = 0.0
             backdropView!.isHidden = !visible
@@ -60,6 +61,20 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
             let vc = navController.topViewController as! LoginSelectViewController
             vc.delegate = self
             vc.backdropDelegate = self
+        }
+    }
+    
+    private func setupBackdropView(isHidden: Bool) {
+        if backdropView == nil {
+            backdropView = UIView();
+            backdropView?.translatesAutoresizingMaskIntoConstraints = false
+            backdropView?.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+            backdropView?.isHidden = isHidden
+            
+            let backView = backdropView!
+            view.addSubview(backView)
+            view.addConstraintsWithFormat("H:|[v0]|", views: backView)
+            view.addConstraintsWithFormat("V:|[v0]|", views: backView)
         }
     }
     
