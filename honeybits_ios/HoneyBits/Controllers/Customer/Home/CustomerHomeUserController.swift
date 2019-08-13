@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class CustomerHomeUserController : UIViewController {
     
     private var headerCellId: String = "headerCell"
     private var colViewContainerCell: String = "contentCell"
+    
+    var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        return cv
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +32,40 @@ class CustomerHomeUserController : UIViewController {
     }
     
     private func configureCollectionView() {
-        view.backgroundColor = .blue
+        collectionView.backgroundColor = .white
+        view.addSubview(collectionView)
+        view.addConstraintsWithFormat("H:|[v0]|", views: collectionView)
+        view.addConstraintsWithFormat("V:|[v0]|", views: collectionView)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(ProductCardCollectionView.self, forCellWithReuseIdentifier: colViewContainerCell)
+
     }
 
 }
 
+
+extension CustomerHomeUserController : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: colViewContainerCell, for: indexPath) as! ProductCardCollectionView
+        cell.backgroundColor = UIColor.randomFlat()
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = view.frame.width
+        return CGSize(width: width, height: 140.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 3
+    }
+    
+}
 
 
