@@ -33,6 +33,7 @@ class CustomerHomeViewController: CustomerLoginViewController {
     }
     
     override func checkIfLoggedIn() {
+        super.checkIfLoggedIn()
         showUserView(accountService.userIsLoggedIn)
         
     }

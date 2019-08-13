@@ -102,7 +102,7 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     
     func checkIfLoggedIn() {
         if accountService.userIsLoggedIn {
-            setRootViewControllerDependingOnLoggedUserRole()
+            		setRootViewControllerDependingOnLoggedUserRole()
         }
     }
     

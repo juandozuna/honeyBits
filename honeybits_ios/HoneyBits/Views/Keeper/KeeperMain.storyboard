@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Keeper Tab Bar Controller-->
         <scene sceneID="j5O-Ui-2aB">
             <objects>
-                <tabBarController storyboardIdentifier="keeperMainTabController" id="iWM-tJ-yEG" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="keeperMainTabController" id="iWM-tJ-yEG" customClass="KeeperTabBarController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="hYZ-Ya-Bvj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -80,7 +80,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Nn-3s-aID" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-290" y="42"/>
+            <point key="canvasLocation" x="-343" y="73"/>
         </scene>
     </scenes>
 </document>

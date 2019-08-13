@@ -50,6 +50,7 @@
 		B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272B8D422CEE7E800E124B4 /* RecursiveDismissDelegate.swift */; };
 		B2745FD122D57EA500297A43 /* GuestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2745FD022D57EA500297A43 /* GuestView.xib */; };
 		B2745FD322D57EB500297A43 /* GuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2745FD222D57EB500297A43 /* GuestView.swift */; };
+		B277C3132302435F00EEFBC9 /* KeeperTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B277C3122302435F00EEFBC9 /* KeeperTabBarController.swift */; };
 		B27C9F5922E23A2600B4AFE3 /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C9F5822E23A2600B4AFE3 /* ShopModel.swift */; };
 		B27C9F5B22E23B0900B4AFE3 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C9F5A22E23B0900B4AFE3 /* ProductModel.swift */; };
 		B27C9F5D22E23BC200B4AFE3 /* ProductCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C9F5C22E23BC200B4AFE3 /* ProductCategoryModel.swift */; };
@@ -158,6 +159,7 @@
 		B272B8D422CEE7E800E124B4 /* RecursiveDismissDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecursiveDismissDelegate.swift; sourceTree = "<group>"; };
 		B2745FD022D57EA500297A43 /* GuestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuestView.xib; sourceTree = "<group>"; };
 		B2745FD222D57EB500297A43 /* GuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestView.swift; sourceTree = "<group>"; };
+		B277C3122302435F00EEFBC9 /* KeeperTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperTabBarController.swift; sourceTree = "<group>"; };
 		B27C9F5822E23A2600B4AFE3 /* ShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
 		B27C9F5A22E23B0900B4AFE3 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		B27C9F5C22E23BC200B4AFE3 /* ProductCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategoryModel.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			children = (
 				B2A898AE22EDF080009F87A4 /* Dashboard */,
 				B25FCB9122E94FB5006BDD0C /* Settings */,
+				B277C3122302435F00EEFBC9 /* KeeperTabBarController.swift */,
 			);
 			path = Keeper;
 			sourceTree = "<group>";
@@ -1023,6 +1026,7 @@
 				B2512DBB22F0D7E700E1BA9E /* TextWithBackgroundView.swift in Sources */,
 				B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */,
 				B2A898B022EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift in Sources */,
+				B277C3132302435F00EEFBC9 /* KeeperTabBarController.swift in Sources */,
 				B22B909022E5517E00D0B449 /* CustomerRegistrationFormViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
