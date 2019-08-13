@@ -12,8 +12,6 @@ class KeeperTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        moreNavigationController.navigationBar.items = []
     }
     
 

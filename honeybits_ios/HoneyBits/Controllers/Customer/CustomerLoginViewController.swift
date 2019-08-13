@@ -87,7 +87,8 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     }
     
     func setRootViewToKeeperMainController() {
-        let mainKeeperController = viewControllerFromStoryboard(storyboard: "KeeperMain", withIdentifier: "keeperMainTabController")
+        let mainKeeperController = viewControllerFromStoryboard(storyboard: "KeeperMain", withIdentifier: "keeperMainTabController") as! KeeperTabBarController
+        mainKeeperController.customizableViewControllers = []
         let mainNavController = appDelegate!.window?.rootViewController as! MainNavigationController
         mainNavController.setViewControllers([mainKeeperController], animated: true)
     }
