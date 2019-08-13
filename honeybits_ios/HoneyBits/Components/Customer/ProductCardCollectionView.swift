@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class ProductCardCollectionView : UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
@@ -17,7 +18,7 @@ class ProductCardCollectionView : UICollectionViewCell, UICollectionViewDelegate
         ProductCardViewModel(image: "https://media.wired.com/photos/5b899992404e112d2df1e94e/master/pass/trash2-01.jpg", isLiked: false)
     ]
     var collectionView: UICollectionView!
-    
+    var randomColor: UIColor = UIColor.randomFlat()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,6 +41,7 @@ class ProductCardCollectionView : UICollectionViewCell, UICollectionViewDelegate
     }
     
     private func addCollectionView() {
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(collectionView)
         contentView.addConstraintsWithFormat("H:|[v0]|", views: collectionView)
         contentView.addConstraintsWithFormat("V:|[v0]|", views: collectionView)
@@ -49,19 +51,28 @@ class ProductCardCollectionView : UICollectionViewCell, UICollectionViewDelegate
 
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.backgroundColor = .white
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: productCardId)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productCardId, for: indexPath)
-        let productCardView = ProductCardView(frame: .zero);
-        cell.contentView.addSubview(productCardView)
-        cell.contentView.addConstraintsWithFormat("H:|[v0]|", views: productCardView)
-        cell.contentView.addConstraintsWithFormat("V:|[v0]|", views: productCardView)
+        
+        cell.backgroundColor = randomColor
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height = frame.height
+        return CGSize(width: 140, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 2
     }
 }
