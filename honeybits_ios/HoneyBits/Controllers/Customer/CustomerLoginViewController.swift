@@ -26,23 +26,6 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
         }
     }
     
-    private func fadeBackdropView(_ visible: Bool, duration: TimeInterval) {
-        setupBackdropView(isHidden: !visible)
-        if visible {
-            backdropView!.alpha = 0.0
-            backdropView!.isHidden = !visible
-            UIView.animate(withDuration: duration, animations: {
-                self.backdropView!.alpha = 1.0
-            }, completion: nil)
-        } else {
-            UIView.animate(withDuration: duration, animations: {
-                self.backdropView!.alpha = 0.0
-            }) { (val) in
-                self.backdropView!.isHidden = !visible
-            }
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfLoggedIn()
@@ -64,28 +47,6 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
         }
     }
     
-    private func setupBackdropView(isHidden: Bool) {
-        if backdropView == nil {
-            backdropView = UIView();
-            backdropView?.translatesAutoresizingMaskIntoConstraints = false
-            backdropView?.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
-            backdropView?.isHidden = isHidden
-            
-            let backView = backdropView!
-            view.addSubview(backView)
-            view.addConstraintsWithFormat("H:|[v0]|", views: backView)
-            view.addConstraintsWithFormat("V:|[v0]|", views: backView)
-        }
-    }
-    
-    func setRootViewControllerDependingOnLoggedUserRole() {
-        if let user = accountService.loggedUser {
-            if user.rol == UserRoles.Keeper {
-                setRootViewToKeeperMainController()
-            }
-        }
-    }
-    
     func setRootViewToKeeperMainController() {
         let mainKeeperController = viewControllerFromStoryboard(storyboard: "KeeperMain", withIdentifier: "keeperMainTabController") as! KeeperTabBarController
         mainKeeperController.customizableViewControllers = []
@@ -103,11 +64,53 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     
     func checkIfLoggedIn() {
         if accountService.userIsLoggedIn {
-            		setRootViewControllerDependingOnLoggedUserRole()
+            setRootViewControllerDependingOnLoggedUserRole()
         }
     }
     
     func signIn() {
         performSegue(withIdentifier: signInSegueIdentifier!, sender: self)
+    }
+    
+    func setRootViewControllerDependingOnLoggedUserRole() {
+        if let user = accountService.loggedUser {
+            if user.rol == UserRoles.Keeper {
+                setRootViewToKeeperMainController()
+            }
+        }
+    }
+    
+    
+    
+    private func setupBackdropView(isHidden: Bool) {
+        if backdropView == nil {
+            backdropView = UIView();
+            backdropView?.translatesAutoresizingMaskIntoConstraints = false
+            backdropView?.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+            backdropView?.isHidden = isHidden
+            
+            let backView = backdropView!
+            view.addSubview(backView)
+            view.addConstraintsWithFormat("H:|[v0]|", views: backView)
+            view.addConstraintsWithFormat("V:|[v0]|", views: backView)
+        }
+    }
+    
+    
+    private func fadeBackdropView(_ visible: Bool, duration: TimeInterval) {
+        setupBackdropView(isHidden: !visible)
+        if visible {
+            backdropView!.alpha = 0.0
+            backdropView!.isHidden = !visible
+            UIView.animate(withDuration: duration, animations: {
+                self.backdropView!.alpha = 1.0
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: duration, animations: {
+                self.backdropView!.alpha = 0.0
+            }) { (val) in
+                self.backdropView!.isHidden = !visible
+            }
+        }
     }
 }

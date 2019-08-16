@@ -232,11 +232,101 @@
                         <outlet property="txtFirstName" destination="9sZ-Ga-k3w" id="F7q-cJ-Zph"/>
                         <outlet property="txtLastName" destination="udk-uh-And" id="YJO-yq-Mh7"/>
                         <outlet property="txtPassword" destination="3Uk-wR-qAI" id="Pkz-qR-Dq7"/>
+                        <segue destination="W44-GM-lnb" kind="show" identifier="goToUserRoleSelector" id="RMh-oJ-goi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCU-2s-54l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1652.1739130434785" y="121.875"/>
+        </scene>
+        <!--User Registration Type Selection Controller-->
+        <scene sceneID="a5X-Dt-B4p">
+            <objects>
+                <viewController id="W44-GM-lnb" customClass="UserRegistrationTypeSelectionController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dpf-Cy-Soe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9if-c3-XMy">
+                                <rect key="frame" x="10" y="238.5" width="394" height="419"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your profile type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aY5-PQ-7qQ">
+                                        <rect key="frame" x="20" y="17" width="354" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="xny-sI-46I"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbB-hQ-Jew" customClass="PMSuperButton" customModule="PMSuperButton">
+                                        <rect key="frame" x="32" y="261" width="331" height="66"/>
+                                        <color key="backgroundColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="I am a Beekeper">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                <color key="value" red="0.89246906729999997" green="0.36151764019999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="keeperBtnPressed:" destination="W44-GM-lnb" eventType="touchUpInside" id="yXm-Rv-n4K"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPM-8i-oSM" customClass="PMSuperButton" customModule="PMSuperButton">
+                                        <rect key="frame" x="30" y="111" width="334" height="65"/>
+                                        <color key="backgroundColor" red="0.89246906729999997" green="0.36151764019999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="g4m-OE-l8W"/>
+                                        </constraints>
+                                        <state key="normal" title="I am a new Customer">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                <color key="value" red="0.99482471449999998" green="0.58095096130000001" blue="0.34970351300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="customerBtnPressed:" destination="W44-GM-lnb" eventType="touchUpInside" id="TsT-85-huO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="nbB-hQ-Jew" firstAttribute="leading" secondItem="bPM-8i-oSM" secondAttribute="leading" constant="2" id="4aE-7V-npb"/>
+                                    <constraint firstItem="aY5-PQ-7qQ" firstAttribute="top" secondItem="9if-c3-XMy" secondAttribute="top" constant="17" id="9lk-Dg-0rM"/>
+                                    <constraint firstItem="bPM-8i-oSM" firstAttribute="leading" secondItem="9if-c3-XMy" secondAttribute="leading" constant="30" id="GAV-k9-O1f"/>
+                                    <constraint firstAttribute="trailing" secondItem="bPM-8i-oSM" secondAttribute="trailing" constant="30" id="Oqe-e7-FlW"/>
+                                    <constraint firstItem="bPM-8i-oSM" firstAttribute="top" secondItem="aY5-PQ-7qQ" secondAttribute="bottom" constant="64" id="V3W-hJ-uIO"/>
+                                    <constraint firstItem="nbB-hQ-Jew" firstAttribute="top" secondItem="bPM-8i-oSM" secondAttribute="bottom" constant="85" id="Y09-rG-3oa"/>
+                                    <constraint firstItem="aY5-PQ-7qQ" firstAttribute="leading" secondItem="9if-c3-XMy" secondAttribute="leading" constant="20" id="c6G-jb-IsS"/>
+                                    <constraint firstItem="nbB-hQ-Jew" firstAttribute="trailing" secondItem="bPM-8i-oSM" secondAttribute="trailing" constant="-1" id="jVq-OV-aRP"/>
+                                    <constraint firstItem="nbB-hQ-Jew" firstAttribute="height" secondItem="bPM-8i-oSM" secondAttribute="height" constant="1" id="rTv-pG-51p"/>
+                                    <constraint firstAttribute="height" constant="419" id="xef-Kv-dzO"/>
+                                    <constraint firstAttribute="trailing" secondItem="aY5-PQ-7qQ" secondAttribute="trailing" constant="20" id="xwj-cF-sUc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="tintColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9if-c3-XMy" firstAttribute="centerY" secondItem="Dpf-Cy-Soe" secondAttribute="centerY" id="Qct-aU-FW7"/>
+                            <constraint firstItem="hjg-wk-fnC" firstAttribute="trailing" secondItem="9if-c3-XMy" secondAttribute="trailing" constant="10" id="syH-BC-yHc"/>
+                            <constraint firstItem="9if-c3-XMy" firstAttribute="leading" secondItem="hjg-wk-fnC" secondAttribute="leading" constant="10" id="xGG-Aa-e6z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hjg-wk-fnC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zqY-xi-wI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-728.98550724637687" y="118.52678571428571"/>
         </scene>
     </scenes>
 </document>

@@ -58,6 +58,8 @@
 		B27D794522D42BC80012F5CD /* CustomerSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794422D42BC80012F5CD /* CustomerSearch.storyboard */; };
 		B27D794722D42C5D0012F5CD /* CustomerYou.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794622D42C5D0012F5CD /* CustomerYou.storyboard */; };
 		B27D794922D42CEB0012F5CD /* CustomerCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794822D42CEB0012F5CD /* CustomerCart.storyboard */; };
+		B2829F17230632B00050C45E /* UserRegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2829F16230632B00050C45E /* UserRegistrationModel.swift */; };
+		B2829F192306361C0050C45E /* UserRegistrationTypeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2829F182306361C0050C45E /* UserRegistrationTypeSelection.swift */; };
 		B28F419B22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F419A22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift */; };
 		B28F419D22D6DF7E00C7E2E6 /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F419C22D6DF7E00C7E2E6 /* LoginDelegate.swift */; };
 		B28F419F22D7603200C7E2E6 /* CustomerHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28F419E22D7603200C7E2E6 /* CustomerHomeView.xib */; };
@@ -167,6 +169,8 @@
 		B27D794422D42BC80012F5CD /* CustomerSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerSearch.storyboard; sourceTree = "<group>"; };
 		B27D794622D42C5D0012F5CD /* CustomerYou.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerYou.storyboard; sourceTree = "<group>"; };
 		B27D794822D42CEB0012F5CD /* CustomerCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerCart.storyboard; sourceTree = "<group>"; };
+		B2829F16230632B00050C45E /* UserRegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationModel.swift; sourceTree = "<group>"; };
+		B2829F182306361C0050C45E /* UserRegistrationTypeSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationTypeSelection.swift; sourceTree = "<group>"; };
 		B28F419A22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationNavigationController.swift; sourceTree = "<group>"; };
 		B28F419C22D6DF7E00C7E2E6 /* LoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
 		B28F419E22D7603200C7E2E6 /* CustomerHomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerHomeView.xib; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				B22B908F22E5517E00D0B449 /* CustomerRegistrationFormViewController.swift */,
+				B2829F182306361C0050C45E /* UserRegistrationTypeSelection.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -551,6 +556,7 @@
 				B27C9F5A22E23B0900B4AFE3 /* ProductModel.swift */,
 				B27C9F5C22E23BC200B4AFE3 /* ProductCategoryModel.swift */,
 				B2BC92B222F3E61500D128B4 /* ProductCardViewModel.swift */,
+				B2829F16230632B00050C45E /* UserRegistrationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1022,12 +1028,14 @@
 				B2398A3422DD36280042C764 /* UIViewControllerExtension.swift in Sources */,
 				B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */,
 				B28F41AE22D8141600C7E2E6 /* AuthBackdropDelegate.swift in Sources */,
+				B2829F17230632B00050C45E /* UserRegistrationModel.swift in Sources */,
 				B2D9A7CF22EE80A900A59E3D /* KeeperDashboardNavigationController.swift in Sources */,
 				B2512DBB22F0D7E700E1BA9E /* TextWithBackgroundView.swift in Sources */,
 				B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */,
 				B2A898B022EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift in Sources */,
 				B277C3132302435F00EEFBC9 /* KeeperTabBarController.swift in Sources */,
 				B22B909022E5517E00D0B449 /* CustomerRegistrationFormViewController.swift in Sources */,
+				B2829F192306361C0050C45E /* UserRegistrationTypeSelection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

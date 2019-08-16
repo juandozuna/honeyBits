@@ -55,6 +55,15 @@ class CustomerRegistrationFormViewController: UIViewController {
         dismissModalView()
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToUserRoleSelector" {
+            let vc = segue.destination as! UserRegistrationTypeSelectionController
+            vc.backdropDelegate = backdropDelegate
+            vc.registrationUserModel = createRegistrationModel()
+        }
+    }
+    
     private func dismissModalView() {
         backdropDelegate?.isBackdropActive = false
         dismiss(animated: true) {
@@ -70,7 +79,7 @@ class CustomerRegistrationFormViewController: UIViewController {
     
     private func submitForm() {
         if formIsValid() {
-            showAlertMessage("Eureka it is a valid form", title: "Success")
+            performSegue(withIdentifier: "goToUserRoleSelector", sender: self)      
         }
     }
     
@@ -111,6 +120,16 @@ class CustomerRegistrationFormViewController: UIViewController {
         if textField.isFirstResponder {
             textField.resignFirstResponder()
         }
+    }
+    
+    private func createRegistrationModel() -> UserRegistrationModel {
+        let firstName = txtFirstName.text!
+        let lastName = txtLastName.text!
+        let email = txtEmail.text!
+        let password = txtPassword.text!
+        
+        let registrationModel = UserRegistrationModel(firstName: firstName, lastName: lastName, email: email, password: password, rol: nil)
+        return registrationModel
     }
 }
 

@@ -12,10 +12,11 @@ import ChameleonFramework
 import SwiftValidators
 
 extension UIViewController {
-    func showAlertMessage(_ message: String, title: String) {
+    func showAlertMessage(_ message: String, title: String, completion: (()->Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+            completion?()
             alert.dismiss(animated: true, completion: nil)
         }))
         

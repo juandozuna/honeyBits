@@ -31,7 +31,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //KeyboardAvoiding.avoidingView = formView
+        KeyboardAvoiding.avoidingView = formView
         
         screenIsLoading(false)
         setTapGestures()
