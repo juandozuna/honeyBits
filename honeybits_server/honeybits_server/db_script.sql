@@ -135,6 +135,13 @@ CREATE TABLE bee_transaction (
 	deleted_date			TIMESTAMP
 );
 
+CREATE TABLE access_log(
+	access_log_id			INT AUTO_INCREMENT PRIMARY KEY,
+	user_id					INT NOT NULL,
+	ip_address				VARCHAR(255),
+	access_date				TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- --------------------------------------
 -- INSERT Statements
 -- --------------------------------------
@@ -271,4 +278,9 @@ ADD FOREIGN KEY (user_id) REFERENCES users(user_id),
 ADD FOREIGN KEY (transaction_type_id) REFERENCES transaction_type(transaction_type_id),
 ADD FOREIGN KEY (created_by) REFERENCES users(user_id),
 ADD FOREIGN KEY (deleted_by) REFERENCES users(user_id)
+;
+
+-- Access_Log Table
+ALTER TABLE access_log
+ADD FOREIGN KEY (user_id) REFERENCES users(user_id)
 ;
