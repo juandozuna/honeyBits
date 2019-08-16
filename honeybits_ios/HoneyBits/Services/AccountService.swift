@@ -11,6 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class AccountService : BaseService, IAccountService {
+
+    
     //MARK:- Variables
     let baseUserService: String = "api/users/"
     var userIsLoggedIn: Bool {
@@ -62,6 +64,20 @@ class AccountService : BaseService, IAccountService {
         }
     }
     
+    func registerUser(registration: UserRegistrationModel, completion: @escaping (RequestStatus) -> Void) {
+        let url = "\(baseEndpoint)\(baseUserService)registrer"
+        let registrationData = try! JSONEncoder().encode(registration)
+        let json = try! JSONSerialization.jsonObject(with: registrationData, options: [])
+        if let parameters = json as? Parameters {
+            urlRequest(url, method: .post, parameters: parameters) { (status, data) in
+                do {
+                    
+                } catch {
+                    
+                }
+            }
+        }
+    }
     
     func signOut() {
         UserDefaults.standard.set(nil, forKey: "authentication_user")

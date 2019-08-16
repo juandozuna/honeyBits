@@ -21,5 +21,7 @@ protocol IAccountService {
     
     func authenticateUser(user: UserTokenModel, completion: @escaping CompletedRequestVoid) -> Void
     
+    func registerUser(registration: UserRegistrationModel, completion: @escaping CompletedRequestVoid) -> Void
+    
     func signOut() -> Void
 }
