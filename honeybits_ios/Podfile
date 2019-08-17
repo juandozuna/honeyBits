@@ -17,7 +17,7 @@ target 'HoneyBits' do
   pod 'FontAwesome.swift'
   pod 'SwipeViewController'
   pod 'SwiftyJSON'
-  pod 'Swinject'
+  pod 'DITranquillity'
 
   target 'HoneyBitsTests' do
     inherit! :search_paths
