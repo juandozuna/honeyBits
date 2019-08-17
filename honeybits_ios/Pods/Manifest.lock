@@ -16,6 +16,7 @@ PODS:
   - SVProgressHUD (2.2.5)
   - SwiftValidators (9.0.1)
   - SwiftyJSON (5.0.0)
+  - Swinject (2.6.1)
   - SwipeCellKit (2.6.0)
   - SwipeViewController (1.1.1)
 
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - SVProgressHUD
   - SwiftValidators
   - SwiftyJSON
+  - Swinject
   - SwipeCellKit
   - SwipeViewController
 
@@ -44,6 +46,7 @@ SPEC REPOS:
     - SVProgressHUD
     - SwiftValidators
     - SwiftyJSON
+    - Swinject
     - SwipeCellKit
     - SwipeViewController
 
@@ -58,9 +61,10 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftValidators: 8389e5dd12516d228f9648c20501a23e63a5252a
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Swinject: b624462f47b635a64f89a60a247baa5fccec14e1
   SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
   SwipeViewController: 48eef0f9959b795ab4687b95428122597bce3f27
 
-PODFILE CHECKSUM: 51b7a59336de2c7436c31fe01d76e96babbc4271
+PODFILE CHECKSUM: d2c404a141429e8139ebdbbe9d0c7a1b4bdf81a6
 
 COCOAPODS: 1.7.1

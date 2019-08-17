@@ -30,7 +30,7 @@ class UserRegistrationTypeSelectionController : UIViewController {
     }
     
     func registerUser() {
-        accountService.registerUser(registration: registrationUserModel!) { (status) in
+        accountService.registerUser(registration: registrationUserModel!) { (status, result) in
             self.backdropDelegate?.isBackdropActive = false
             self.dismiss(animated: true, completion: nil)
         }

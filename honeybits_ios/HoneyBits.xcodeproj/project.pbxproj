@@ -10,6 +10,7 @@
 		0BD5BDC146488DC7AD00F8EA /* Pods_HoneyBits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E461E760B99B774FB47708 /* Pods_HoneyBits.framework */; };
 		1C0F3653B6F29A19D501CAAB /* Pods_HoneyBitsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C636D69A3D1DCE55F9C6D98 /* Pods_HoneyBitsTests.framework */; };
 		94689591791F5DCFE6CF9A41 /* Pods_HoneyBitsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3796716515E095C76664E6F2 /* Pods_HoneyBitsUITests.framework */; };
+		B2093E9323083D45006CA976 /* IGenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2093E9223083D45006CA976 /* IGenericService.swift */; };
 		B211EC2222EF30B2006B5A82 /* MenuBarMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2122EF30B2006B5A82 /* MenuBarMainController.swift */; };
 		B211EC2422EF3F7E006B5A82 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2322EF3F7E006B5A82 /* MenuBarView.swift */; };
 		B211EC2622EF47B9006B5A82 /* MenuBarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2522EF47B9006B5A82 /* MenuBarItemCell.swift */; };
@@ -119,6 +120,7 @@
 		7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsUITests.release.xcconfig"; path = "Target Support Files/Pods-HoneyBitsUITests/Pods-HoneyBitsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		979A26B3C22A87F960576887 /* Pods-HoneyBitsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsTests.debug.xcconfig"; path = "Target Support Files/Pods-HoneyBitsTests/Pods-HoneyBitsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF08A3412DFB48B7CEC50E1A /* Pods-HoneyBits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBits.release.xcconfig"; path = "Target Support Files/Pods-HoneyBits/Pods-HoneyBits.release.xcconfig"; sourceTree = "<group>"; };
+		B2093E9223083D45006CA976 /* IGenericService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGenericService.swift; sourceTree = "<group>"; };
 		B211EC2122EF30B2006B5A82 /* MenuBarMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarMainController.swift; sourceTree = "<group>"; };
 		B211EC2322EF3F7E006B5A82 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		B211EC2522EF47B9006B5A82 /* MenuBarItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarItemCell.swift; sourceTree = "<group>"; };
@@ -611,6 +613,7 @@
 			isa = PBXGroup;
 			children = (
 				B2A91D5522D018A400CBBA4E /* IAccountService.swift */,
+				B2093E9223083D45006CA976 /* IGenericService.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -1010,6 +1013,7 @@
 				B28F41A422D783BE00C7E2E6 /* CustomerFavoritesHomeViewController.swift in Sources */,
 				B2745FD322D57EB500297A43 /* GuestView.swift in Sources */,
 				B22B909322E6AC2400D0B449 /* ScaleSegue.swift in Sources */,
+				B2093E9323083D45006CA976 /* IGenericService.swift in Sources */,
 				B22B908622E3E5E900D0B449 /* FirstTimeLoginViewController.swift in Sources */,
 				B272B8D222CEE66200E124B4 /* SignInViewController.swift in Sources */,
 				B26CEB3522E257EB00814889 /* MainNavigationController.swift in Sources */,
