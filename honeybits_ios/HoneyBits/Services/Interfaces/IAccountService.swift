@@ -9,17 +9,17 @@
 import Foundation
 
 
-protocol IAccountService {
-    
-    typealias CompletedRequestVoid = (RequestStatus) -> Void
-    
+protocol IAccountService : IGenericService {
+        
     var userIsLoggedIn: Bool { get }
     
     var isUserFirstTime: Bool { get }
     
     var loggedUser: UserTokenModel? { get }
     
-    func authenticateUser(user: UserTokenModel, completion: @escaping CompletedRequestVoid) -> Void
+    func authenticateUser(user: UserTokenModel, completion: @escaping CompletedRequestVoid<Bool?>) -> Void
+    
+    func registerUser(registration: UserRegistrationModel, completion: @escaping CompletedRequestVoid<Bool?>) -> Void
     
     func signOut() -> Void
 }

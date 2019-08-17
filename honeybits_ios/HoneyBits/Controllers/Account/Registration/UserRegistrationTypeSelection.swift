@@ -12,22 +12,25 @@ class UserRegistrationTypeSelectionController : UIViewController {
     
     var backdropDelegate: AuthBackdropDelegate?
     var registrationUserModel: UserRegistrationModel?
+    var accountService: IAccountService = AccountService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func customerBtnPressed(_ sender: Any) {
-        showAlertMessage("Customer btn Pressed", title: "Success!") {
-            self.backdropDelegate?.isBackdropActive = false
-            self.dismiss(animated: true, completion: nil)
-        }
+        registrationUserModel?.rol = .Customer
+        registerUser()
         
     }
     
     @IBAction func keeperBtnPressed(_ sender: Any) {
-        showAlertMessage("Keeper btn Pressed", title: "Success!")
-        dismiss(animated: true) {
+        registrationUserModel?.rol = .Keeper
+        registerUser()
+    }
+    
+    func registerUser() {
+        accountService.registerUser(registration: registrationUserModel!) { (status, result) in
             self.backdropDelegate?.isBackdropActive = false
             self.dismiss(animated: true, completion: nil)
         }

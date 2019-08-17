@@ -44,7 +44,7 @@ class SignInViewController: UIViewController {
             var user = UserTokenModel()
             user.password = txtPassword.text!
             user.username = txtUsername.text!
-            accountService.authenticateUser(user: user) { (status) in
+            accountService.authenticateUser(user: user) { (status, result) in
                 if status == .Success {
                    self.successfulLogin()
                 } else {
