@@ -105,12 +105,22 @@ class CustomerRegistrationFormViewController: UIViewController {
         
         txtEmail.keyboardType = .emailAddress
         
-        setTextFieldColor(to: txtEmail)
-        setTextFieldColor(to: txtFirstName)
-        setTextFieldColor(to: txtLastName)
-        setTextFieldColor(to: txtPassword)
+        setColor(to: txtEmail)
+        setColor(to: txtFirstName)
+        setColor(to: txtLastName)
+        setColor(to: txtPassword)
     }
     
+    private func setColor(to textField: TextField) {
+        textField.dividerActiveColor = UIColor.flatOrange()
+        textField.placeholderActiveColor = UIColor.flatOrange()
+    }
+    
+    private func resignResponder(for textField: TextField) {
+        if textField.isFirstResponder {
+            textField.resignFirstResponder()
+        }
+    }
     
     private func createRegistrationModel() -> UserRegistrationModel {
         let firstName = txtFirstName.text!

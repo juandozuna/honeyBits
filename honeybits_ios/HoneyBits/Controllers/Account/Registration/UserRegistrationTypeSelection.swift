@@ -21,7 +21,6 @@ class UserRegistrationTypeSelectionController : UIViewController {
     @IBAction func customerBtnPressed(_ sender: Any) {
         registrationUserModel?.rol = .Customer
         registerUser()
-        
     }
     
     @IBAction func keeperBtnPressed(_ sender: Any) {

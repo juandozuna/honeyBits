@@ -49,6 +49,20 @@ extension UIViewController {
         return validation
     }
     
+    
+    //MARK:- Material Text Field
+    func setTextFieldColor(to textField: TextField) {
+        textField.dividerActiveColor = UIColor.flatOrange()
+        textField.placeholderActiveColor = UIColor.flatOrange()
+    }
+    
+    func resignResponder(for textField: UITextField) {
+        if textField.isFirstResponder {
+            textField.resignFirstResponder()
+        }
+    }
+    
+    
     func emailValidation(for textfield:TextField) -> Bool {
         let text = textfield.text!
         let validation = Validator.isEmail().apply(text)
