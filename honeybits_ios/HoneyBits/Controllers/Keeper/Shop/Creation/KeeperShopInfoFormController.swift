@@ -49,6 +49,10 @@ class KeeperShopInfoFormController: UIViewController {
         resignResponderForFields()
     }
     
+    @IBAction func continueBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "goToLogoController", sender: self)
+    }
+    
 }
 
 extension KeeperShopInfoFormController : UITextFieldDelegate {

@@ -32,7 +32,7 @@
             </objects>
             <point key="canvasLocation" x="-465" y="-324"/>
         </scene>
-        <!--Shop Building-->
+        <!--Info-->
         <scene sceneID="oTA-X1-Vce">
             <objects>
                 <viewController id="wIq-dD-xTD" customClass="KeeperShopInfoFormController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,6 +104,9 @@
                                                 <color key="value" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continueBtnPressed:" destination="wIq-dD-xTD" eventType="touchUpInside" id="akQ-Fo-dJq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -129,16 +132,32 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bdu-dW-LPP"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Shop Building" id="b7c-EI-G0H"/>
+                    <navigationItem key="navigationItem" title="Info" id="b7c-EI-G0H"/>
                     <connections>
                         <outlet property="bgView" destination="lVT-d2-Uu4" id="qLQ-bo-nOf"/>
                         <outlet property="continueBtn" destination="WfB-wV-YOK" id="9WT-2M-Guw"/>
                         <outlet property="shopNameTxt" destination="tqn-pl-Jge" id="ZmD-GO-0fy"/>
+                        <segue destination="Ri5-ak-JAB" kind="show" identifier="goToLogoController" id="UZ7-Ef-Jqg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acL-Sa-WBq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="382.60869565217394" y="-316.07142857142856"/>
+        </scene>
+        <!--Logo-->
+        <scene sceneID="SXl-eA-AbQ">
+            <objects>
+                <viewController title="Logo" id="Ri5-ak-JAB" customClass="KeeperShopLogoFormController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aMO-Ci-ZQ3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="iQu-25-Rjs"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FkI-x7-qUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1372" y="-312"/>
         </scene>
     </scenes>
     <resources>

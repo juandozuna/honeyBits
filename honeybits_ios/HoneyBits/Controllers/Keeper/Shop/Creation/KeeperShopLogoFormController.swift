@@ -6,4 +6,8 @@
 //  Copyright © 2019 Juan Daniel Ozuna Espinal. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class KeeperShopLogoFormController : UIViewController {
+    
+}

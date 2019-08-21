@@ -41,6 +41,7 @@
 		B24BEE3022E8059900C1E5FB /* KeeperHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24BEE2F22E8059900C1E5FB /* KeeperHistory.storyboard */; };
 		B2512DBB22F0D7E700E1BA9E /* TextWithBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2512DBA22F0D7E700E1BA9E /* TextWithBackgroundView.swift */; };
 		B2512DBD22F0D82800E1BA9E /* TextWithBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2512DBC22F0D82800E1BA9E /* TextWithBackgroundView.xib */; };
+		B25AE9A3230CF30B002E7D67 /* KeeperShopLogoFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AE9A2230CF30B002E7D67 /* KeeperShopLogoFormController.swift */; };
 		B25D46A722E398C700F3E644 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25D46A622E398C700F3E644 /* NSObjectExtensions.swift */; };
 		B25FCB9322E94FCB006BDD0C /* KeeperSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25FCB9222E94FCB006BDD0C /* KeeperSettingsViewController.swift */; };
 		B262AF4A22DBF14900ABF311 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AF4922DBF14900ABF311 /* BaseService.swift */; };
@@ -157,6 +158,7 @@
 		B24BEE2F22E8059900C1E5FB /* KeeperHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperHistory.storyboard; sourceTree = "<group>"; };
 		B2512DBA22F0D7E700E1BA9E /* TextWithBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithBackgroundView.swift; sourceTree = "<group>"; };
 		B2512DBC22F0D82800E1BA9E /* TextWithBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextWithBackgroundView.xib; sourceTree = "<group>"; };
+		B25AE9A2230CF30B002E7D67 /* KeeperShopLogoFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperShopLogoFormController.swift; sourceTree = "<group>"; };
 		B25D46A622E398C700F3E644 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
 		B25FCB9222E94FCB006BDD0C /* KeeperSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperSettingsViewController.swift; sourceTree = "<group>"; };
 		B262AF4922DBF14900ABF311 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				B289AE15230B5BE20010F8C9 /* KeeperShopInfoFormController.swift */,
+				B25AE9A2230CF30B002E7D67 /* KeeperShopLogoFormController.swift */,
 			);
 			path = Creation;
 			sourceTree = "<group>";
@@ -1049,6 +1052,7 @@
 				B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */,
 				B25FCB9322E94FCB006BDD0C /* KeeperSettingsViewController.swift in Sources */,
 				B27C9F5B22E23B0900B4AFE3 /* ProductModel.swift in Sources */,
+				B25AE9A3230CF30B002E7D67 /* KeeperShopLogoFormController.swift in Sources */,
 				B28F41A622D7A88C00C7E2E6 /* CustomerLoginViewController.swift in Sources */,
 				B23FEA9E22F1C26D001E8B32 /* CustomerHomeHeaderCell.swift in Sources */,
 				B237E9662309FDB700DD8E39 /* KeeperNoShopView.swift in Sources */,
