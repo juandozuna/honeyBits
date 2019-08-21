@@ -25,6 +25,15 @@ class KeeperShopInfoFormController: UIViewController {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToLogoController" {
+            if let vc = segue.destination as? KeeperShopLogoFormController {
+                
+            }
+        }
+    }
+    
+    
     private func controllerSetup() {
         continueBtn.isEnabled = false
         configureTextfields()

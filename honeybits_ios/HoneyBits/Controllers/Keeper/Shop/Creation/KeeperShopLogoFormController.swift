@@ -10,4 +10,10 @@ import UIKit
 
 class KeeperShopLogoFormController : UIViewController {
     
+    
+    @IBOutlet weak var tempLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
