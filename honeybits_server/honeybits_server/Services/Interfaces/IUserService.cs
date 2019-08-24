@@ -14,7 +14,6 @@ namespace honeybits_server.Services.Interfaces
         Users Get(int id);
         IEnumerable<Users> Search(string value);
         IEnumerable<Users> GetAll();
-        Role GetRole(int id); 
         IEnumerable<ProductLike> GetAllLikedProducts();
         IEnumerable<BeeTransaction> GetUserBeeTransactions(int id);
     }
