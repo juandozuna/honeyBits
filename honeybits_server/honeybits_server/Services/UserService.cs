@@ -68,17 +68,7 @@ namespace honeybits_server.Services
 
         public Users Get(int id) => _context.Users.Find(id);
 
-        public IEnumerable<Users> GetAll() => _context.Users.ToList();
-
-        public Role GetRole(int id)
-        {
-            var rol = _context.Role.Find(id);
-
-            if (rol == null)
-                return null;
-
-            return rol;
-        }
+        public IEnumerable<Users> GetAll() => _context.Users.Where(u => u.IsDeleted == false).ToList();
 
         public IEnumerable<Users> Search(string value)
         {
