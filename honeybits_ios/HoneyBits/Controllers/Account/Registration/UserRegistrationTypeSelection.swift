@@ -12,7 +12,6 @@ class UserRegistrationTypeSelectionController : UIViewController {
     
     var backdropDelegate: AuthBackdropDelegate?
     var registrationUserModel: UserRegistrationModel?
-    var accountService: IAccountService = AccountService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +28,14 @@ class UserRegistrationTypeSelectionController : UIViewController {
     }
     
     func registerUser() {
-        accountService.registerUser(registration: registrationUserModel!) { (status, result) in
-            self.backdropDelegate?.isBackdropActive = false
-            self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "goToUsername", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToUsername" {
+            let vc = segue.destination as! RegistrationUsernameSelectionController
+            vc.registrationUserModel = registrationUserModel
+            vc.backdropDelegate = backdropDelegate
         }
     }
     

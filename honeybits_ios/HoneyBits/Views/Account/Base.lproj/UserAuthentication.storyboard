@@ -208,14 +208,6 @@
             </objects>
             <point key="canvasLocation" x="1027" y="871"/>
         </scene>
-        <!--KeeperRegistration-->
-        <scene sceneID="3gr-m1-1Bi">
-            <objects>
-                <viewControllerPlaceholder storyboardName="KeeperRegistration" id="SEE-P7-brn" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xDL-Pc-ckU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="957" y="1012"/>
-        </scene>
         <!--Sign In Form-->
         <scene sceneID="C8I-RC-TmQ">
             <objects>
@@ -555,7 +547,6 @@
                     <connections>
                         <segue destination="zN6-ob-YCk" kind="show" identifier="goToSignIn" animates="NO" id="Bce-HI-eb4"/>
                         <segue destination="Dwd-NM-5JH" kind="show" identifier="goToCustomerRegister" id="gfW-0r-DFx"/>
-                        <segue destination="SEE-P7-brn" kind="show" identifier="goToKeeperRegistration" id="TWx-86-mFG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d88-es-QqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -568,7 +559,7 @@
         <image name="googleLogo" width="15" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yFq-9P-8Sf"/>
+        <segue reference="gfW-0r-DFx"/>
         <segue reference="Bce-HI-eb4"/>
     </inferredMetricsTieBreakers>
 </document>

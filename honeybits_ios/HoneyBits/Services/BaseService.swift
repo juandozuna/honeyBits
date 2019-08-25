@@ -41,35 +41,52 @@ class BaseService {
     
     
     
-    func urlRequest(_ url: URLConvertible, method: HTTPMethod?, parameters: Parameters?,
+    func urlRequestWithParams(_ url: URLConvertible, method: HTTPMethod?, parameters: Parameters?,
                     completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
           Alamofire.request(url,
                           method: method ?? .get,
                           parameters: parameters,
                           encoding: JSONEncoding.default,
                           headers: setHeaders()).responseJSON { (response) in
-                            
-                            if let error = response.error {
-                                completion(.Failure, nil)
-                                print(error)
-                                return
-                            }
-                            
-                            if response.result.isFailure {
-                                completion(.Failure, nil)
-                                return
-                            }
-                            
-                            let json = response.result.value! as! [String: Any]
-                            guard let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) else {
-                                completion(.Failure, nil)
-                                return
-                            }
-                            
-                            let jsonString = String(data: jsonData, encoding: .utf8)
-                            let data = jsonString?.data(using: .utf8)
-                            completion(.Success, data)
-                            
+                            self.handleResponse(response: response, completion: completion)
                         }
+    }
+    
+    func jsonRequest(_ url: URLConvertible, jsonData: Data, method: HTTPMethod, completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
+        guard var request = try? URLRequest(url: url, method: method, headers: setHeaders()) else {
+            print("Error building request")
+            return
+        }
+        request.httpBody = jsonData
+        
+        Alamofire.request(request).responseJSON { (response) in
+            self.handleResponse(response: response, completion: completion)
+        }
+    }
+    
+    
+    private func handleResponse(response: DataResponse<Any>, completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
+        print(response)
+        
+        if let error = response.error {
+            completion(.Failure, nil)
+            print(error)
+            return
+        }
+        
+        if response.result.isFailure {
+            completion(.Failure, nil)
+            return
+        }
+        
+        let json = response.result.value! as! [String: Any]
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) else {
+            completion(.Failure, nil)
+            return
+        }
+        
+        let jsonString = String(data: jsonData, encoding: .utf8)
+        let data = jsonString?.data(using: .utf8)
+        completion(.Success, data)
     }
 }

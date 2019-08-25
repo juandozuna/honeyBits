@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
-class ShopService {
+class ShopService : BaseService{
+    
     
 }

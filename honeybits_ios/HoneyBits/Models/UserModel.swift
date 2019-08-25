@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+
+struct UserModel: Codable {
+    var userId: Int
+    var firstName: String
+    var lastName: String
+    var email: String
+    var birthdate: String
+    var roleId: UserRoles
+    var username: String
+    var passwd: String
+    var isDeleted: Bool
+}

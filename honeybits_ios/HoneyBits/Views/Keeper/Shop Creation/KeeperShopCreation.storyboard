@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="asl-ba-bDV">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <navigationController storyboardIdentifier="shopFormNav" id="asl-ba-bDV" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9ZB-WQ-zuM">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -35,22 +35,22 @@
         <!--Info-->
         <scene sceneID="oTA-X1-Vce">
             <objects>
-                <viewController id="wIq-dD-xTD" customClass="KeeperShopInfoFormController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wIq-dD-xTD" customClass="KeeperShopNameFormController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lVT-d2-Uu4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VzM-x6-xeH">
-                                <rect key="frame" x="0.0" y="88" width="414" height="167"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="167"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the name of your shop?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmm-mr-iNt">
-                                        <rect key="frame" x="8" y="15" width="398" height="25.5"/>
+                                        <rect key="frame" x="8" y="15.000000000000002" width="398" height="25.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shop Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tqn-pl-Jge" customClass="TextField" customModule="Material">
-                                        <rect key="frame" x="15" y="55.5" width="384" height="47"/>
+                                        <rect key="frame" x="15" y="55.666666666666671" width="384" height="47"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="CvY-SH-4Az"/>
                                         </constraints>
@@ -74,7 +74,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxh-Ei-jFi" userLabel="BtnContainer">
-                                <rect key="frame" x="20" y="260" width="374" height="435"/>
+                                <rect key="frame" x="20" y="236" width="374" height="435"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="honey-pot-bar" translatesAutoresizingMaskIntoConstraints="NO" id="OG3-mF-H5o">
                                         <rect key="frame" x="10" y="0.0" width="354" height="349"/>
@@ -144,27 +144,125 @@
             </objects>
             <point key="canvasLocation" x="382.60869565217394" y="-316.07142857142856"/>
         </scene>
-        <!--Logo-->
+        <!--Description-->
         <scene sceneID="SXl-eA-AbQ">
             <objects>
-                <viewController title="Logo" id="Ri5-ak-JAB" customClass="KeeperShopLogoFormController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Description" id="Ri5-ak-JAB" customClass="KeeperShopDescriptionFormController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aMO-Ci-ZQ3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDh-89-WUx">
-                                <rect key="frame" x="116" y="238" width="122" height="106"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpo-rQ-GJd">
+                                <rect key="frame" x="0.0" y="64" width="414" height="210"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write a description for your shop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="s74-AR-tXJ">
+                                        <rect key="frame" x="20" y="10" width="374" height="26"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlS-1e-ee6">
+                                        <rect key="frame" x="5" y="45" width="404" height="160"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gYS-ds-xPe">
+                                                <rect key="frame" x="3" y="3" width="398" height="154"/>
+                                                <color key="backgroundColor" red="1" green="0.94117647058823528" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write Description Inside Box" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCr-rq-aB9">
+                                                <rect key="frame" x="69" y="68" width="266" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="0.54256742294520544" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.72516239030503371" blue="0.57820120196583913" alpha="0.58802440068493156" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="gYS-ds-xPe" secondAttribute="trailing" constant="3" id="4Sk-eT-hU1"/>
+                                            <constraint firstItem="gYS-ds-xPe" firstAttribute="top" secondItem="HlS-1e-ee6" secondAttribute="top" constant="3" id="Kaw-9u-N9E"/>
+                                            <constraint firstItem="gYS-ds-xPe" firstAttribute="leading" secondItem="HlS-1e-ee6" secondAttribute="leading" constant="3" id="XsH-Th-XUs"/>
+                                            <constraint firstAttribute="bottom" secondItem="gYS-ds-xPe" secondAttribute="bottom" constant="3" id="Ydj-78-cSh"/>
+                                            <constraint firstItem="OCr-rq-aB9" firstAttribute="centerX" secondItem="HlS-1e-ee6" secondAttribute="centerX" id="mbI-ek-eOK"/>
+                                            <constraint firstItem="OCr-rq-aB9" firstAttribute="centerY" secondItem="HlS-1e-ee6" secondAttribute="centerY" id="yLt-AC-k4L"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="EBk-J0-hrE"/>
+                                    <constraint firstItem="HlS-1e-ee6" firstAttribute="top" secondItem="s74-AR-tXJ" secondAttribute="bottom" constant="9" id="G08-h7-uND"/>
+                                    <constraint firstAttribute="bottom" secondItem="HlS-1e-ee6" secondAttribute="bottom" constant="5" id="TIc-Zq-jah"/>
+                                    <constraint firstItem="HlS-1e-ee6" firstAttribute="leading" secondItem="jpo-rQ-GJd" secondAttribute="leading" constant="5" id="ZhZ-2c-lzg"/>
+                                    <constraint firstItem="s74-AR-tXJ" firstAttribute="top" secondItem="jpo-rQ-GJd" secondAttribute="top" constant="10" id="fyf-IT-bfM"/>
+                                    <constraint firstItem="s74-AR-tXJ" firstAttribute="leading" secondItem="jpo-rQ-GJd" secondAttribute="leading" constant="20" id="pWx-EO-y1P"/>
+                                    <constraint firstAttribute="trailing" secondItem="s74-AR-tXJ" secondAttribute="trailing" constant="20" id="tT0-51-Vra"/>
+                                    <constraint firstAttribute="trailing" secondItem="HlS-1e-ee6" secondAttribute="trailing" constant="5" id="xn9-bo-DaS"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAY-RH-JGF" userLabel="BtnContainer">
+                                <rect key="frame" x="5" y="279" width="404" height="348"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop-icon" translatesAutoresizingMaskIntoConstraints="NO" id="hUT-8j-ouM">
+                                        <rect key="frame" x="58" y="50" width="288" height="173"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="173" id="8Ef-6A-GxR"/>
+                                            <constraint firstAttribute="width" constant="288" id="uob-3M-VFv"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpY-y8-W7Z" customClass="PMSuperButton" customModule="PMSuperButton">
+                                        <rect key="frame" x="30" y="209" width="344" height="70"/>
+                                        <color key="backgroundColor" red="0.99482471449999998" green="0.58095096130000001" blue="0.34970351300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="RMp-tH-JTR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <state key="normal" title="Create Shop">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="35"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                                <color key="value" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continueBtnPressed:" destination="wIq-dD-xTD" eventType="touchUpInside" id="qyX-Lo-ed9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="lpY-y8-W7Z" firstAttribute="leading" secondItem="AAY-RH-JGF" secondAttribute="leading" constant="30" id="KKg-u4-iT4"/>
+                                    <constraint firstItem="hUT-8j-ouM" firstAttribute="centerX" secondItem="AAY-RH-JGF" secondAttribute="centerX" id="R2i-f5-qPZ"/>
+                                    <constraint firstItem="hUT-8j-ouM" firstAttribute="top" secondItem="AAY-RH-JGF" secondAttribute="top" constant="50" id="UzO-Ae-SfC"/>
+                                    <constraint firstItem="lpY-y8-W7Z" firstAttribute="top" secondItem="hUT-8j-ouM" secondAttribute="bottom" constant="-14" id="X16-Ah-hA3"/>
+                                    <constraint firstAttribute="trailing" secondItem="lpY-y8-W7Z" secondAttribute="trailing" constant="30" id="eAX-1L-w6O"/>
+                                    <constraint firstAttribute="height" constant="348" id="lk7-fu-PTX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AAY-RH-JGF" firstAttribute="top" secondItem="jpo-rQ-GJd" secondAttribute="bottom" constant="5" id="MIv-v8-25h"/>
+                            <constraint firstItem="jpo-rQ-GJd" firstAttribute="trailing" secondItem="iQu-25-Rjs" secondAttribute="trailing" id="Z2Z-cT-tOv"/>
+                            <constraint firstItem="jpo-rQ-GJd" firstAttribute="top" secondItem="iQu-25-Rjs" secondAttribute="top" id="ZnU-yM-awW"/>
+                            <constraint firstItem="iQu-25-Rjs" firstAttribute="trailing" secondItem="AAY-RH-JGF" secondAttribute="trailing" constant="5" id="aFt-Sz-dSG"/>
+                            <constraint firstItem="AAY-RH-JGF" firstAttribute="leading" secondItem="iQu-25-Rjs" secondAttribute="leading" constant="5" id="eyl-6V-Nb4"/>
+                            <constraint firstItem="jpo-rQ-GJd" firstAttribute="leading" secondItem="iQu-25-Rjs" secondAttribute="leading" id="nl8-Ve-yx3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iQu-25-Rjs"/>
                     </view>
                     <connections>
-                        <outlet property="tempLabel" destination="VDh-89-WUx" id="ONn-tz-ejl"/>
+                        <outlet property="bgView" destination="aMO-Ci-ZQ3" id="rKv-lw-Grx"/>
+                        <outlet property="descriptionContainerView" destination="HlS-1e-ee6" id="bZj-FZ-G5x"/>
+                        <outlet property="descriptionTv" destination="gYS-ds-xPe" id="8Nu-9R-Lz2"/>
+                        <outlet property="noTextView" destination="OCr-rq-aB9" id="Aj0-M5-NXZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FkI-x7-qUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,6 +271,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="honey-pot-bar" width="56" height="85.5"/>
+        <image name="honey-pot-bar" width="56" height="85.333335876464844"/>
+        <image name="shop-icon" width="50" height="50"/>
     </resources>
 </document>

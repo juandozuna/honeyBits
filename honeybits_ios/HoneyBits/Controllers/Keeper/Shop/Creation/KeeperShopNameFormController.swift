@@ -11,7 +11,7 @@ import Material
 import SwiftValidators
 import PMSuperButton
 
-class KeeperShopInfoFormController: UIViewController {
+class KeeperShopNameFormController: UIViewController {
 
     @IBOutlet weak var shopNameTxt: TextField!
     @IBOutlet var bgView: UIView!
@@ -27,7 +27,7 @@ class KeeperShopInfoFormController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToLogoController" {
-            if let vc = segue.destination as? KeeperShopLogoFormController {
+            if let vc = segue.destination as? KeeperShopDescriptionFormController {
                 
             }
         }
@@ -64,7 +64,7 @@ class KeeperShopInfoFormController: UIViewController {
     
 }
 
-extension KeeperShopInfoFormController : UITextFieldDelegate {
+extension KeeperShopNameFormController : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateBtnStatus()
     }

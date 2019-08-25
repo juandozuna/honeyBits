@@ -19,7 +19,7 @@ protocol IAccountService : IGenericService {
     
     func authenticateUser(user: UserTokenModel, completion: @escaping CompletedRequestVoid<Bool?>) -> Void
     
-    func registerUser(registration: UserRegistrationModel, completion: @escaping CompletedRequestVoid<Bool?>) -> Void
+    func registerUser(registration: UserRegistrationModel, completion: @escaping CompletedRequestVoid<UserModel?>) -> Void
     
     func signOut() -> Void
 }
