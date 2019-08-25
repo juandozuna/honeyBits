@@ -228,11 +228,13 @@
                     <connections>
                         <outlet property="bgView" destination="amF-jm-a5S" id="I5T-km-pGq"/>
                         <outlet property="formContainerView" destination="tkq-cM-UzO" id="Hdr-xU-PyF"/>
+                        <outlet property="signInBtn" destination="KsJ-jf-yxM" id="hWA-o5-Cl0"/>
                         <outlet property="txtEmail" destination="OvL-Od-hrR" id="MIC-t2-7EZ"/>
                         <outlet property="txtFirstName" destination="9sZ-Ga-k3w" id="F7q-cJ-Zph"/>
                         <outlet property="txtLastName" destination="udk-uh-And" id="YJO-yq-Mh7"/>
                         <outlet property="txtPassword" destination="3Uk-wR-qAI" id="Pkz-qR-Dq7"/>
                         <segue destination="W44-GM-lnb" kind="show" identifier="goToUserRoleSelector" id="RMh-oJ-goi"/>
+                        <segue destination="9q5-gm-0PG" kind="show" identifier="goToUsernameDirectly" id="Tii-U3-8Fz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCU-2s-54l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -324,6 +326,8 @@
                         <viewLayoutGuide key="safeArea" id="hjg-wk-fnC"/>
                     </view>
                     <connections>
+                        <outlet property="bgView" destination="Dpf-Cy-Soe" id="9LW-8p-Pkm"/>
+                        <outlet property="containerView" destination="9if-c3-XMy" id="E3w-We-eow"/>
                         <segue destination="9q5-gm-0PG" kind="show" identifier="goToUsername" id="6En-jV-2aU"/>
                     </connections>
                 </viewController>
@@ -410,6 +414,7 @@
                     </view>
                     <connections>
                         <outlet property="bgView" destination="6DE-hU-C6v" id="gkg-Ik-azB"/>
+                        <outlet property="containerView" destination="ztW-qH-gER" id="eG4-O1-MCT"/>
                         <outlet property="txtUsername" destination="2mC-gY-euZ" id="Uq1-Gl-fAc"/>
                     </connections>
                 </viewController>
@@ -421,4 +426,7 @@
     <resources>
         <image name="complete-form-icon" width="66" height="66"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="6En-jV-2aU"/>
+    </inferredMetricsTieBreakers>
 </document>

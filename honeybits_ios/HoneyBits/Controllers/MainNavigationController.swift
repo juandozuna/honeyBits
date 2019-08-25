@@ -22,4 +22,9 @@ class MainNavigationController: UINavigationController {
         setViewControllers([tabbarVc], animated: animated)
     }
     
+    func loadKeeperController(animated: Bool = false) {
+        let mainKeeperController = viewControllerFromStoryboard(storyboard: "KeeperMain", withIdentifier: "keeperMainTabController")
+        setViewControllers([mainKeeperController], animated: animated)
+    }
+    
 }

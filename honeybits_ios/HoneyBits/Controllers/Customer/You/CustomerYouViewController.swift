@@ -11,12 +11,14 @@ import PMSuperButton
 
 class CustomerYouViewController: CustomerLoginViewController {
 
+    @IBOutlet var bgView: UIView!
     @IBOutlet weak var guestView: UIView!
     @IBOutlet weak var guestViewComponent: GuestView!
     @IBOutlet weak var signOutBtn: PMSuperButton!
     @IBOutlet weak var keeperViewBtn: PMSuperButton!
     @IBOutlet weak var svHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var btnsStackView: UIStackView!
+    @IBOutlet weak var svTopConstraint: NSLayoutConstraint!
     
     private var oneBtnHeight: Int = 47
    
@@ -36,9 +38,11 @@ class CustomerYouViewController: CustomerLoginViewController {
         showGuestView(isLogged)
         if isLogged {
             signOutBtn.isHidden = false
+            svTopConstraint.constant = -235
         } else {
             signOutBtn.isHidden = true
             keeperViewBtn.isHidden = true
+            svTopConstraint.constant = 10
         }
         
         if let user = accountService.loggedUser {

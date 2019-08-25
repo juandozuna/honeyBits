@@ -457,11 +457,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rca-A9-vtC">
                                 <rect key="frame" x="10" y="181" width="394" height="627"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rW-Bk-ZHI" customClass="PMSuperButton" customModule="PMSuperButton">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rW-Bk-ZHI" customClass="PMSuperButton" customModule="PMSuperButton">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="280"/>
                                         <color key="backgroundColor" red="0.99482471449999998" green="0.58095096130000001" blue="0.34970351300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Register as a Client">
+                                        <state key="normal" title="Register as a Customer">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -481,8 +481,11 @@
                                                 <real key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continueRegistration:" destination="FHd-Tg-1WE" eventType="touchUpInside" id="hsI-EY-PE2"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMm-Me-mQ6" customClass="PMSuperButton" customModule="PMSuperButton">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMm-Me-mQ6" customClass="PMSuperButton" customModule="PMSuperButton">
                                         <rect key="frame" x="0.0" y="290" width="394" height="337"/>
                                         <color key="backgroundColor" red="0.78555282360406098" green="0.4464405388276827" blue="0.29224740026888801" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -545,6 +548,8 @@
                         <viewLayoutGuide key="safeArea" id="RN4-UC-nhe"/>
                     </view>
                     <connections>
+                        <outlet property="clientBtn" destination="5rW-Bk-ZHI" id="laU-mY-Xs6"/>
+                        <outlet property="keeperBtn" destination="UMm-Me-mQ6" id="Im9-m8-90r"/>
                         <segue destination="zN6-ob-YCk" kind="show" identifier="goToSignIn" animates="NO" id="Bce-HI-eb4"/>
                         <segue destination="Dwd-NM-5JH" kind="show" identifier="goToCustomerRegister" id="gfW-0r-DFx"/>
                     </connections>

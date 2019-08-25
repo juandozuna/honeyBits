@@ -151,12 +151,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="You" id="prq-qo-73x"/>
                     <connections>
+                        <outlet property="bgView" destination="9Eh-hH-Ilw" id="cZ1-gx-2dt"/>
                         <outlet property="btnsStackView" destination="uOO-yM-SFh" id="ZdN-er-jYd"/>
                         <outlet property="guestView" destination="AOE-zh-EWR" id="8eb-j3-f6r"/>
                         <outlet property="guestViewComponent" destination="YQd-n3-krN" id="u5V-pE-22i"/>
                         <outlet property="keeperViewBtn" destination="Wd7-mB-y3A" id="nI6-Xy-QBT"/>
                         <outlet property="signOutBtn" destination="UJj-8G-YDJ" id="tfi-fZ-s3F"/>
                         <outlet property="svHeightConstraint" destination="rn3-RD-Gzz" id="T4C-8i-NNA"/>
+                        <outlet property="svTopConstraint" destination="Aeq-QI-8Ct" id="8Qi-5K-fVb"/>
                         <segue destination="lzu-Ih-Bv5" kind="presentation" identifier="goToSignIn" id="wI9-2v-4Eb"/>
                     </connections>
                 </viewController>

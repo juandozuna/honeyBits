@@ -31,7 +31,6 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfLoggedIn()
-        setRootViewControllerDependingOnLoggedUserRole()
     }
     
     override func viewDidAppear(_ animated: Bool) {

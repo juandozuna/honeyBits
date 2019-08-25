@@ -28,6 +28,7 @@ class RegistrationUsernameSelectionController: UIViewController {
     var delegate: LoginDelegate?
     var registrationUserModel: UserRegistrationModel?
     private var accountService: IAccountService = AccountService()
+    @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,7 @@ class RegistrationUsernameSelectionController: UIViewController {
     
     private func bgViewSetup() {
         bgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissController(_:))))
+        containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissController(_:))))
     }
     
     @objc func dismissController(_ sender: UITapGestureRecognizer) {

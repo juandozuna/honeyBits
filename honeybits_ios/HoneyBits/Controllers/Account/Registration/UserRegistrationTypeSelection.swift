@@ -13,9 +13,15 @@ class UserRegistrationTypeSelectionController : UIViewController {
     var backdropDelegate: AuthBackdropDelegate?
     var delegate: LoginDelegate?
     var registrationUserModel: UserRegistrationModel?
+    @IBOutlet var bgView: UIView!
+    @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissController(_:))))
+        containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissController(_:))))
+        
     }
     
     @IBAction func customerBtnPressed(_ sender: Any) {
@@ -26,6 +32,10 @@ class UserRegistrationTypeSelectionController : UIViewController {
     @IBAction func keeperBtnPressed(_ sender: Any) {
         registrationUserModel?.roleId = .Keeper
         registerUser()
+    }
+    
+   @objc func dismissController(_ sender: UITapGestureRecognizer) {
+        dismiss(animated: true, completion: nil)
     }
     
     func registerUser() {

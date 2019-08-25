@@ -21,6 +21,9 @@ class CustomerRegistrationFormViewController: UIViewController {
     @IBOutlet weak var formContainerView: UIView!
     @IBOutlet weak var bgView: UIView!
     
+    @IBOutlet weak var signInBtn: UIButton!
+    var userType: UserRoles?
+    
     var backdropDelegate: AuthBackdropDelegate?
     var delegate: LoginDelegate?
     
@@ -63,6 +66,13 @@ class CustomerRegistrationFormViewController: UIViewController {
             vc.registrationUserModel = createRegistrationModel()
             vc.delegate = delegate
         }
+        
+        if segue.identifier == "goToUsernameDirectly" {
+            let vc = segue.destination as! RegistrationUsernameSelectionController
+            vc.backdropDelegate = backdropDelegate
+            vc.registrationUserModel = createRegistrationModel()
+            vc.delegate = delegate
+        }
     }
     
     private func dismissModalView() {
@@ -80,7 +90,11 @@ class CustomerRegistrationFormViewController: UIViewController {
     
     private func submitForm() {
         if formIsValid() {
-            performSegue(withIdentifier: "goToUserRoleSelector", sender: self)      
+            if userType == nil {
+                performSegue(withIdentifier: "goToUserRoleSelector", sender: self)
+            } else {
+                performSegue(withIdentifier: "goToUsernameDirectly", sender: self)
+            }
         }
     }
     
@@ -118,8 +132,9 @@ class CustomerRegistrationFormViewController: UIViewController {
         let lastName = txtLastName.text!
         let email = txtEmail.text!
         let password = txtPassword.text!
+        let rol: UserRoles = userType != nil ? userType! : .Customer
         
-        let registrationModel = UserRegistrationModel(firstName: firstName, lastName: lastName, email: email, username: email, passwd: password, roleId: .Customer)
+        let registrationModel = UserRegistrationModel(firstName: firstName, lastName: lastName, email: email, username: email, passwd: password, roleId: rol)
         return registrationModel
     }
 }
