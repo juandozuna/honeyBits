@@ -63,22 +63,15 @@ class AccountService : BaseService, IAccountService {
         }
     }
     
-    func registerUser(registration: UserRegistrationModel, completion: @escaping AccountService.CompletedRequestVoid<UserModel?>) {
+    func registerUser(registration: UserRegistrationModel, completion: @escaping AccountService.CompletedRequestVoid<UserModel>) {
         let url = "\(baseEndpoint)\(baseUserService)create"
         let registrationData = try! JSONEncoder().encode(registration)
         
         jsonRequest(url, jsonData: registrationData, method: .post) { (status, data) in
-            let stirng = String(data: data!, encoding: .utf8)
-            print(stirng)
             if status == .Success {
-                guard var userModel = try? JSONDecoder().decode(UserModel.self, from: data!) else {
-                    completion(.Failure, nil)
-                    return
-                }
+                var userModel = try! JSONDecoder().decode(UserModel.self, from: data!)
                 
-                print(userModel)
                 completion(.Success, userModel)
-                userModel.passwd = registration.passwd
                 return
             }
             

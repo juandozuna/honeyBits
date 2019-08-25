@@ -13,6 +13,8 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     let accountService: IAccountService = AccountService()
     var backdropView: UIView?
     
+    var setControllerAutomatically = true
+    
     private var appDelegate: AppDelegate? {
         return UIApplication.shared.delegate as? AppDelegate
     }
@@ -29,6 +31,7 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfLoggedIn()
+        setRootViewControllerDependingOnLoggedUserRole()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,6 +59,7 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     
     func logIn() {
         checkIfLoggedIn()
+        setRootViewControllerDependingOnLoggedUserRole()
     }
     
     func logOut() {
@@ -63,9 +67,6 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     }
     
     func checkIfLoggedIn() {
-        if accountService.userIsLoggedIn {
-            setRootViewControllerDependingOnLoggedUserRole()
-        }
     }
     
     func signIn() {
@@ -74,7 +75,7 @@ class CustomerLoginViewController: UIViewController, LoginDelegate, SignInDelete
     
     func setRootViewControllerDependingOnLoggedUserRole() {
         if let user = accountService.loggedUser {
-            if user.rol == UserRoles.Keeper {
+            if user.rol == UserRoles.Keeper && setControllerAutomatically{
                 setRootViewToKeeperMainController()
             }
         }

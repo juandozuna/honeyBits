@@ -26,9 +26,6 @@
                         <segue destination="yVT-NA-jxg" kind="relationship" relationship="viewControllers" id="ITm-Ut-Jrm"/>
                         <segue destination="XBJ-EQ-JJx" kind="relationship" relationship="viewControllers" id="rVl-83-LBa"/>
                         <segue destination="904-to-y2p" kind="relationship" relationship="viewControllers" id="pxx-W1-LPv"/>
-                        <segue destination="QFA-DR-EWH" kind="relationship" relationship="viewControllers" id="g11-5g-CSD"/>
-                        <segue destination="9Gz-yQ-TmR" kind="relationship" relationship="viewControllers" id="KtZ-Yd-RY3"/>
-                        <segue destination="w8p-go-x2f" kind="relationship" relationship="viewControllers" id="CEg-rZ-muw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zzc-uY-8EX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -84,36 +81,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Nn-3s-aID" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-343" y="73"/>
-        </scene>
-        <!--KeeperHistory-->
-        <scene sceneID="vnC-mz-ydi">
-            <objects>
-                <viewControllerPlaceholder storyboardName="KeeperHistory" id="QFA-DR-EWH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="tOY-aQ-A9v"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="99L-id-gEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-348" y="140"/>
-        </scene>
-        <!--KeeperHistory-->
-        <scene sceneID="4GB-eY-ZGZ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="KeeperHistory" id="9Gz-yQ-TmR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ho2-WE-DbI"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="649-yv-N4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-348" y="186"/>
-        </scene>
-        <!--KeeperHistory-->
-        <scene sceneID="Y02-40-caG">
-            <objects>
-                <viewControllerPlaceholder storyboardName="KeeperHistory" id="w8p-go-x2f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="j16-Lw-F9p"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FrT-Mb-RyD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-351" y="218"/>
         </scene>
     </scenes>
 </document>

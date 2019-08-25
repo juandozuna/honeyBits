@@ -33,7 +33,7 @@ class BaseService {
         
         if let userData = getAuthenticationUser() {
             let token = userData.token 
-            headers.updateValue("Bearer \(token)", forKey: "Authorization")
+            headers.updateValue("Bearer \(String(describing: token))", forKey: "Authorization")
         }
         
         return headers
@@ -61,6 +61,11 @@ class BaseService {
         
     }
     
+    func jsonRequest(_ url: URLConvertible, method: HTTPMethod, completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
+        Alamofire.request(url, method: method, parameters: nil, encoding: JSONEncoding.prettyPrinted, headers: setHeaders()).responseJSON { (response) in
+            self.handleResponse(response: response, completion: completion)
+        }
+    }
     
     private func handleResponse(response: DataResponse<Any>, completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
         print(response)

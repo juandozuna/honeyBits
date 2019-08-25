@@ -22,7 +22,7 @@ class CustomerRegistrationFormViewController: UIViewController {
     @IBOutlet weak var bgView: UIView!
     
     var backdropDelegate: AuthBackdropDelegate?
-    
+    var delegate: LoginDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +61,7 @@ class CustomerRegistrationFormViewController: UIViewController {
             let vc = segue.destination as! UserRegistrationTypeSelectionController
             vc.backdropDelegate = backdropDelegate
             vc.registrationUserModel = createRegistrationModel()
+            vc.delegate = delegate
         }
     }
     

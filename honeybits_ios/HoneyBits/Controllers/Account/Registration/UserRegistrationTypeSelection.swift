@@ -11,6 +11,7 @@ import UIKit
 class UserRegistrationTypeSelectionController : UIViewController {
     
     var backdropDelegate: AuthBackdropDelegate?
+    var delegate: LoginDelegate?
     var registrationUserModel: UserRegistrationModel?
     
     override func viewDidLoad() {
@@ -36,6 +37,7 @@ class UserRegistrationTypeSelectionController : UIViewController {
             let vc = segue.destination as! RegistrationUsernameSelectionController
             vc.registrationUserModel = registrationUserModel
             vc.backdropDelegate = backdropDelegate
+            vc.delegate = delegate
         }
     }
     
