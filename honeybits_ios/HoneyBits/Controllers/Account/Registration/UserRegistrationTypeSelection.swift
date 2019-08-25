@@ -18,12 +18,12 @@ class UserRegistrationTypeSelectionController : UIViewController {
     }
     
     @IBAction func customerBtnPressed(_ sender: Any) {
-        registrationUserModel?.rol = .Customer
+        registrationUserModel?.roleId = .Customer
         registerUser()
     }
     
     @IBAction func keeperBtnPressed(_ sender: Any) {
-        registrationUserModel?.rol = .Keeper
+        registrationUserModel?.roleId = .Keeper
         registerUser()
     }
     

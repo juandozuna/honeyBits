@@ -118,7 +118,7 @@ class CustomerRegistrationFormViewController: UIViewController {
         let email = txtEmail.text!
         let password = txtPassword.text!
         
-        let registrationModel = UserRegistrationModel(firstName: firstName, lastName: lastName, email: email, username: email, passwd: password, rol: nil)
+        let registrationModel = UserRegistrationModel(firstName: firstName, lastName: lastName, email: email, username: email, passwd: password, roleId: .Customer)
         return registrationModel
     }
 }

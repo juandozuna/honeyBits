@@ -13,6 +13,7 @@ import ChameleonFramework
 class RegistrationUsernameSelectionController: UIViewController {
     
     
+    
     var activityIndicatorView: UIActivityIndicatorView = {
        let aiv = UIActivityIndicatorView()
         aiv.translatesAutoresizingMaskIntoConstraints = false
@@ -22,6 +23,7 @@ class RegistrationUsernameSelectionController: UIViewController {
         return aiv;
     }()
     @IBOutlet weak var txtUsername: TextField!
+    @IBOutlet var bgView: UIView!
     var backdropDelegate: AuthBackdropDelegate?
     var registrationUserModel: UserRegistrationModel?
     private var accountService: IAccountService = AccountService()
@@ -50,6 +52,15 @@ class RegistrationUsernameSelectionController: UIViewController {
         stopLoading()
     }
     
+    private func bgViewSetup() {
+        bgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissController(_:))))
+    }
+    
+    @objc func dismissController(_ sender: UITapGestureRecognizer) {
+        self.backdropDelegate?.isBackdropActive = false
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     private func startLoading() {
         activityIndicatorView.isHidden = false
         activityIndicatorView.startAnimating()
@@ -62,12 +73,15 @@ class RegistrationUsernameSelectionController: UIViewController {
     
     @IBAction func completeRegistrationBtnPressed(_ sender: Any) {
         startLoading()
+        registrationUserModel?.username = txtUsername.text!
         accountService.registerUser(registration: registrationUserModel!) { (status, success) in
-            if status == .Success {
-                self.backdropDelegate?.isBackdropActive = false
-                self.dismiss(animated: true, completion: nil)
+            DispatchQueue.main.async {
+                if status == .Success {
+                    self.backdropDelegate?.isBackdropActive = false
+                    self.dismiss(animated: true, completion: nil)
+                }
+                self.stopLoading()
             }
-            self.stopLoading()
         }
     }
 }

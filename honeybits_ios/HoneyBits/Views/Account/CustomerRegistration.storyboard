@@ -351,7 +351,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vXX-xY-IZf">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="complete-form-icon" translatesAutoresizingMaskIntoConstraints="NO" id="vXX-xY-IZf">
                                         <rect key="frame" x="20" y="130" width="295" height="177"/>
                                     </imageView>
                                     <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2mC-gY-euZ" customClass="TextField" customModule="Material">
@@ -409,6 +409,7 @@
                         <viewLayoutGuide key="safeArea" id="Sa5-YB-0Fe"/>
                     </view>
                     <connections>
+                        <outlet property="bgView" destination="6DE-hU-C6v" id="gkg-Ik-azB"/>
                         <outlet property="txtUsername" destination="2mC-gY-euZ" id="Uq1-Gl-fAc"/>
                     </connections>
                 </viewController>
@@ -417,4 +418,7 @@
             <point key="canvasLocation" x="317.60000000000002" y="118.29085457271366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="complete-form-icon" width="66" height="66"/>
+    </resources>
 </document>

@@ -15,5 +15,5 @@ struct UserRegistrationModel : Codable {
     var email: String
     var username: String
     var passwd: String
-    var rol: UserRoles?
+    var roleId: UserRoles
 }

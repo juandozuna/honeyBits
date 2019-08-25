@@ -68,6 +68,8 @@ class AccountService : BaseService, IAccountService {
         let registrationData = try! JSONEncoder().encode(registration)
         
         jsonRequest(url, jsonData: registrationData, method: .post) { (status, data) in
+            let stirng = String(data: data!, encoding: .utf8)
+            print(stirng)
             if status == .Success {
                 guard var userModel = try? JSONDecoder().decode(UserModel.self, from: data!) else {
                     completion(.Failure, nil)
