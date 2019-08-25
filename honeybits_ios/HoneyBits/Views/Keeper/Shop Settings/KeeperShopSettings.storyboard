@@ -6,38 +6,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="B8c-FE-fyw">
-            <objects>
-                <tableViewController id="oCU-Su-RWO" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WJH-fG-ajx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YjO-1r-c13">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YjO-1r-c13" id="yPD-fx-mwb">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="oCU-Su-RWO" id="SKj-6j-gIZ"/>
-                            <outlet property="delegate" destination="oCU-Su-RWO" id="ptr-2Q-Izv"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="5fZ-J4-oIa"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cdn-0N-jao" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-186" y="103"/>
-        </scene>
         <!--Shop Setup-->
         <scene sceneID="ma3-fY-waq">
             <objects>
@@ -49,12 +21,44 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="oCU-Su-RWO" kind="relationship" relationship="rootViewController" id="lF9-nD-423"/>
+                        <segue destination="hhr-7a-AhW" kind="relationship" relationship="rootViewController" id="287-90-AJO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTt-tU-1FS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1104" y="103"/>
+        </scene>
+        <!--Main Keeper Shop View Controller-->
+        <scene sceneID="bKx-2z-QCn">
+            <objects>
+                <viewController id="hhr-7a-AhW" customClass="MainKeeperShopViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Bh-HU-T1Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIe-5j-2d8" customClass="KeeperNoShopView" customModule="HoneyBits" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QIe-5j-2d8" firstAttribute="leading" secondItem="MKN-Ha-uif" secondAttribute="leading" id="2R3-Hg-MD8"/>
+                            <constraint firstItem="QIe-5j-2d8" firstAttribute="top" secondItem="MKN-Ha-uif" secondAttribute="top" id="eVy-tl-byQ"/>
+                            <constraint firstItem="QIe-5j-2d8" firstAttribute="bottom" secondItem="MKN-Ha-uif" secondAttribute="bottom" id="gHq-Ar-GD6"/>
+                            <constraint firstItem="MKN-Ha-uif" firstAttribute="trailing" secondItem="QIe-5j-2d8" secondAttribute="trailing" id="uA2-Dh-OIc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MKN-Ha-uif"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Itj-bM-CuX"/>
+                    <connections>
+                        <outlet property="baseView" destination="1Bh-HU-T1Y" id="JSH-RG-Uqg"/>
+                        <outlet property="noShopView" destination="QIe-5j-2d8" id="EHg-Wh-Yt4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sVW-m7-9Uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-115.94202898550725" y="104.46428571428571"/>
         </scene>
     </scenes>
     <resources>

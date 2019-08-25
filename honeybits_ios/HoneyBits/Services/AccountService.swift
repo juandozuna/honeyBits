@@ -12,7 +12,6 @@ import SwiftyJSON
 
 class AccountService : BaseService, IAccountService {
     
-
     //MARK:- Variables
     let baseUserService: String = "api/users/"
     var userIsLoggedIn: Bool {
@@ -44,7 +43,7 @@ class AccountService : BaseService, IAccountService {
         
         let url = "\(baseEndpoint)\(baseUserService)authenticate"
         
-        urlRequest(url, method: .post, parameters: parameters) { (status, data) in
+        urlRequestWithParams(url, method: .post, parameters: parameters) { (status, data) in
             if status == .Success {
                 let jsonDecoder = JSONDecoder()
                 do {
@@ -64,19 +63,21 @@ class AccountService : BaseService, IAccountService {
         }
     }
     
-    func registerUser(registration: UserRegistrationModel, completion: @escaping AccountService.CompletedRequestVoid<Bool?>) {
-        let url = "\(baseEndpoint)\(baseUserService)registrer"
+    func registerUser(registration: UserRegistrationModel, completion: @escaping AccountService.CompletedRequestVoid<UserModel>) {
+        let url = "\(baseEndpoint)\(baseUserService)create"
         let registrationData = try! JSONEncoder().encode(registration)
-        let json = try! JSONSerialization.jsonObject(with: registrationData, options: [])
-        if let parameters = json as? Parameters {
-            urlRequest(url, method: .post, parameters: parameters) { (status, data) in
-                do {
-                    
-                } catch {
-                    
-                }
+        
+        jsonRequest(url, jsonData: registrationData, method: .post) { (status, data) in
+            if status == .Success {
+                var userModel = try! JSONDecoder().decode(UserModel.self, from: data!)
+                
+                completion(.Success, userModel)
+                return
             }
+            
+            completion(.Failure, nil)
         }
+        
     }
     
     func signOut() {

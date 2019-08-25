@@ -11,28 +11,43 @@ import UIKit
 class UserRegistrationTypeSelectionController : UIViewController {
     
     var backdropDelegate: AuthBackdropDelegate?
+    var delegate: LoginDelegate?
     var registrationUserModel: UserRegistrationModel?
-    var accountService: IAccountService = AccountService()
+    @IBOutlet var bgView: UIView!
+    @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    @IBAction func customerBtnPressed(_ sender: Any) {
-        registrationUserModel?.rol = .Customer
-        registerUser()
+        
+        bgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissController(_:))))
+        containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissController(_:))))
         
     }
     
-    @IBAction func keeperBtnPressed(_ sender: Any) {
-        registrationUserModel?.rol = .Keeper
+    @IBAction func customerBtnPressed(_ sender: Any) {
+        registrationUserModel?.roleId = .Customer
         registerUser()
     }
     
+    @IBAction func keeperBtnPressed(_ sender: Any) {
+        registrationUserModel?.roleId = .Keeper
+        registerUser()
+    }
+    
+   @objc func dismissController(_ sender: UITapGestureRecognizer) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func registerUser() {
-        accountService.registerUser(registration: registrationUserModel!) { (status, result) in
-            self.backdropDelegate?.isBackdropActive = false
-            self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "goToUsername", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToUsername" {
+            let vc = segue.destination as! RegistrationUsernameSelectionController
+            vc.registrationUserModel = registrationUserModel
+            vc.backdropDelegate = backdropDelegate
+            vc.delegate = delegate
         }
     }
     

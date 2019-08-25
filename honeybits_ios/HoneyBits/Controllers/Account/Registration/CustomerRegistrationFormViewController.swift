@@ -21,8 +21,11 @@ class CustomerRegistrationFormViewController: UIViewController {
     @IBOutlet weak var formContainerView: UIView!
     @IBOutlet weak var bgView: UIView!
     
-    var backdropDelegate: AuthBackdropDelegate?
+    @IBOutlet weak var signInBtn: UIButton!
+    var userType: UserRoles?
     
+    var backdropDelegate: AuthBackdropDelegate?
+    var delegate: LoginDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +64,14 @@ class CustomerRegistrationFormViewController: UIViewController {
             let vc = segue.destination as! UserRegistrationTypeSelectionController
             vc.backdropDelegate = backdropDelegate
             vc.registrationUserModel = createRegistrationModel()
+            vc.delegate = delegate
+        }
+        
+        if segue.identifier == "goToUsernameDirectly" {
+            let vc = segue.destination as! RegistrationUsernameSelectionController
+            vc.backdropDelegate = backdropDelegate
+            vc.registrationUserModel = createRegistrationModel()
+            vc.delegate = delegate
         }
     }
     
@@ -79,7 +90,11 @@ class CustomerRegistrationFormViewController: UIViewController {
     
     private func submitForm() {
         if formIsValid() {
-            performSegue(withIdentifier: "goToUserRoleSelector", sender: self)      
+            if userType == nil {
+                performSegue(withIdentifier: "goToUserRoleSelector", sender: self)
+            } else {
+                performSegue(withIdentifier: "goToUsernameDirectly", sender: self)
+            }
         }
     }
     
@@ -105,30 +120,21 @@ class CustomerRegistrationFormViewController: UIViewController {
         
         txtEmail.keyboardType = .emailAddress
         
-        setColor(to: txtEmail)
-        setColor(to: txtFirstName)
-        setColor(to: txtLastName)
-        setColor(to: txtPassword)
+        setTextFieldColor(to: txtEmail)
+        setTextFieldColor(to: txtFirstName)
+        setTextFieldColor(to: txtLastName)
+        setTextFieldColor(to: txtPassword)
     }
     
-    private func setColor(to textField: TextField) {
-        textField.dividerActiveColor = UIColor.flatOrange()
-        textField.placeholderActiveColor = UIColor.flatOrange()
-    }
-    
-    private func resignResponder(for textField: TextField) {
-        if textField.isFirstResponder {
-            textField.resignFirstResponder()
-        }
-    }
     
     private func createRegistrationModel() -> UserRegistrationModel {
         let firstName = txtFirstName.text!
         let lastName = txtLastName.text!
         let email = txtEmail.text!
         let password = txtPassword.text!
+        let rol: UserRoles = userType != nil ? userType! : .Customer
         
-        let registrationModel = UserRegistrationModel(firstName: firstName, lastName: lastName, email: email, password: password, rol: nil)
+        let registrationModel = UserRegistrationModel(firstName: firstName, lastName: lastName, email: email, username: email, passwd: password, roleId: rol)
         return registrationModel
     }
 }

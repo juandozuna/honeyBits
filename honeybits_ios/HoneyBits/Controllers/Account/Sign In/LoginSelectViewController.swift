@@ -40,6 +40,7 @@ class LoginSelectViewController: UIViewController {
         if segue.identifier == "goToCustomerRegister" {
             let vc = segue.destination as! CustomerRegistrationFormViewController
             vc.backdropDelegate = backdropDelegate
+            vc.delegate = delegate
         }
     }
     

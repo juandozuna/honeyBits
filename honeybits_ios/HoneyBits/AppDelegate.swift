@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var accountService: IAccountService = AccountService()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -20,7 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        window?.rootViewController = MainNavigationController()
+        let mainNavController = MainNavigationController()
+        
+        window?.rootViewController = mainNavController
+        
+        if let user = accountService.loggedUser {
+            if user.rol! == .Keeper {
+                mainNavController.loadKeeperController()
+            }
+        }
         
         return true
     }

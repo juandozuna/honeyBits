@@ -23,6 +23,18 @@ class KeeperSettingsViewController: UITableViewController {
         signOutKeeper()
     }
     
+    @IBAction func customerViewBtn(_ sender: Any) {
+        goToCustomerController()
+    }
+    
+    private func goToCustomerController() {
+        let customerTabController = viewControllerFromStoryboard(storyboard: "CustomerTabs", withIdentifier: "customerTabController") as! CustomerTabBarController
+        customerTabController.customizableViewControllers = []
+        
+        let mainNavController = appDelegate!.window?.rootViewController as! MainNavigationController
+        mainNavController.setViewControllers([customerTabController], animated: true)
+    }
+    
     private func signOutKeeper() {
         accountService.signOut()
         reloadMainNavController()
@@ -32,5 +44,5 @@ class KeeperSettingsViewController: UITableViewController {
         let navCtrl = appDelegate?.window?.rootViewController as! MainNavigationController
         navCtrl.loadMainView(animated: true)
     }
-
+    
 }

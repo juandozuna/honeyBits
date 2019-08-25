@@ -108,8 +108,8 @@ class SignInViewController: UIViewController {
         } else {
             activityIndicator.stopAnimating()
         }
-        txtPassword.isHidden = isLoading
-        txtUsername.isHidden = isLoading
+//        txtPassword.isHidden = isLoading
+//        txtUsername.isHidden = isLoading
         btnSignIn.isEnabled = !isLoading
     }
     
