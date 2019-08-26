@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="-1104" y="103"/>
         </scene>
-        <!--Main Keeper Shop View Controller-->
+        <!--Shop Settings-->
         <scene sceneID="bKx-2z-QCn">
             <objects>
                 <viewController id="hhr-7a-AhW" customClass="MainKeeperShopViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,9 +50,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MKN-Ha-uif"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Itj-bM-CuX"/>
+                    <navigationItem key="navigationItem" title="Shop Settings" id="Itj-bM-CuX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WBo-X1-3WP">
+                            <color key="tintColor" red="0.89246906729999997" green="0.36151764019999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="addShopBtnPressed:" destination="hhr-7a-AhW" id="MR0-qK-9Nr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="barAddBtn" destination="WBo-X1-3WP" id="q0L-lQ-UIj"/>
                         <outlet property="baseView" destination="1Bh-HU-T1Y" id="JSH-RG-Uqg"/>
+                        <outlet property="bgView" destination="1Bh-HU-T1Y" id="Ebq-Yb-Heg"/>
                         <outlet property="noShopView" destination="QIe-5j-2d8" id="EHg-Wh-Yt4"/>
                     </connections>
                 </viewController>

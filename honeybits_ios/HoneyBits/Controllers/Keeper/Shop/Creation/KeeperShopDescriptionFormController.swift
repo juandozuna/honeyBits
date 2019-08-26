@@ -120,9 +120,14 @@ class KeeperShopDescriptionFormController : UIViewController {
             if status == .Success {
                 print(shopModel!)
                 self.delegate?.shopCreated()
+                self.dismiss(animated: true, completion: nil)
+                self.stopLoading()
+            } else if status == .ServerError {
+                self.showAlertMessage("Server Error", title: "There was an error trying to comunicate with server", completion: {
+                    self.dismiss(animated: true, completion: nil)
+                    self.stopLoading()
+                })
             }
-            self.dismiss(animated: true, completion: nil)
-            self.stopLoading()
         }
     }
     

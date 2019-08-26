@@ -12,4 +12,5 @@ enum RequestStatus {
     case Success
     case Failure
     case Unauthorized
+    case ServerError
 }

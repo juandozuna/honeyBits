@@ -76,6 +76,12 @@ class BaseService {
                 //TODO: Implement method to execute login again
                 return
             }
+            
+            if statusCode == 500 {
+                completion(.ServerError, nil)
+                //TODO: Implement method to execute login again
+                return
+            }
         }
         
         if let error = response.error {
@@ -88,9 +94,6 @@ class BaseService {
             completion(.Failure, nil)
             return
         }
-        
-        //let json = response.result.value! as! [String: Any]
-        //let json = response.data!
         
         guard let jsonData = response.data else {
             completion(.Failure, nil)

@@ -41,8 +41,10 @@ class ShopService : BaseService, IShopService{
                     completion(.Success, parsedData )
                 } catch {
                     print(error)
-                    completion(.Failure, nil)
+                    completion(status, nil)
                 }
+            } else {
+                completion(status, nil)
             }
         }
     }
