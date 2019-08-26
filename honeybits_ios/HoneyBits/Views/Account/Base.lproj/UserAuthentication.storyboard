@@ -509,6 +509,9 @@
                                                 <real key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continueRegistration:" destination="FHd-Tg-1WE" eventType="touchUpInside" id="ZFE-SO-5pj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

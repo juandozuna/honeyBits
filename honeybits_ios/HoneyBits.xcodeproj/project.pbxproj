@@ -76,6 +76,9 @@
 		B28F41A922D7B34E00C7E2E6 /* CustomerSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F41A822D7B34E00C7E2E6 /* CustomerSearchViewController.swift */; };
 		B28F41AC22D80CD900C7E2E6 /* CustomerYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F41AB22D80CD900C7E2E6 /* CustomerYouViewController.swift */; };
 		B28F41AE22D8141600C7E2E6 /* AuthBackdropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F41AD22D8141600C7E2E6 /* AuthBackdropDelegate.swift */; };
+		B29479F323135502002F2147 /* IShopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29479F223135502002F2147 /* IShopService.swift */; };
+		B29479F523135A5B002F2147 /* ShopModelRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29479F423135A5B002F2147 /* ShopModelRegistration.swift */; };
+		B29479F823136698002F2147 /* CreateShopDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29479F723136698002F2147 /* CreateShopDelegate.swift */; };
 		B2A2E81922D0D51200DFDAB3 /* CustomerHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A2E81822D0D51200DFDAB3 /* CustomerHome.storyboard */; };
 		B2A2E81B22D0D61800DFDAB3 /* CustomerFavorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A2E81A22D0D61800DFDAB3 /* CustomerFavorites.storyboard */; };
 		B2A898B022EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A898AF22EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift */; };
@@ -85,6 +88,7 @@
 		B2BC92B322F3E61500D128B4 /* ProductCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC92B222F3E61500D128B4 /* ProductCardViewModel.swift */; };
 		B2C2CB6322EFF08C00F2EA30 /* CustomerFavoriteUserBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C2CB6222EFF08C00F2EA30 /* CustomerFavoriteUserBaseController.swift */; };
 		B2D9A7CF22EE80A900A59E3D /* KeeperDashboardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D9A7CE22EE80A900A59E3D /* KeeperDashboardNavigationController.swift */; };
+		B2E6FDFF23149C0100A69001 /* KeeperShopTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E6FDFE23149C0100A69001 /* KeeperShopTableCell.xib */; };
 		B2EE6A8422D8E54900350BBA /* CustomerGuestSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */; };
 		B2EE6A8722D8FDBF00350BBA /* AboutApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EE6A8622D8FDBF00350BBA /* AboutApp.storyboard */; };
 		B2EE6A8922D8FE8500350BBA /* LegalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EE6A8822D8FE8500350BBA /* LegalData.storyboard */; };
@@ -196,6 +200,9 @@
 		B28F41A822D7B34E00C7E2E6 /* CustomerSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSearchViewController.swift; sourceTree = "<group>"; };
 		B28F41AB22D80CD900C7E2E6 /* CustomerYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerYouViewController.swift; sourceTree = "<group>"; };
 		B28F41AD22D8141600C7E2E6 /* AuthBackdropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBackdropDelegate.swift; sourceTree = "<group>"; };
+		B29479F223135502002F2147 /* IShopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IShopService.swift; sourceTree = "<group>"; };
+		B29479F423135A5B002F2147 /* ShopModelRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModelRegistration.swift; sourceTree = "<group>"; };
+		B29479F723136698002F2147 /* CreateShopDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShopDelegate.swift; sourceTree = "<group>"; };
 		B2A2E81822D0D51200DFDAB3 /* CustomerHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerHome.storyboard; sourceTree = "<group>"; };
 		B2A2E81A22D0D61800DFDAB3 /* CustomerFavorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerFavorites.storyboard; sourceTree = "<group>"; };
 		B2A898AF22EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperDashboardTabBarController.swift; sourceTree = "<group>"; };
@@ -205,6 +212,7 @@
 		B2BC92B222F3E61500D128B4 /* ProductCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardViewModel.swift; sourceTree = "<group>"; };
 		B2C2CB6222EFF08C00F2EA30 /* CustomerFavoriteUserBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerFavoriteUserBaseController.swift; sourceTree = "<group>"; };
 		B2D9A7CE22EE80A900A59E3D /* KeeperDashboardNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperDashboardNavigationController.swift; sourceTree = "<group>"; };
+		B2E6FDFE23149C0100A69001 /* KeeperShopTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeeperShopTableCell.xib; sourceTree = "<group>"; };
 		B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerGuestSettingsViewController.swift; sourceTree = "<group>"; };
 		B2EE6A8622D8FDBF00350BBA /* AboutApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutApp.storyboard; sourceTree = "<group>"; };
 		B2EE6A8822D8FE8500350BBA /* LegalData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LegalData.storyboard; sourceTree = "<group>"; };
@@ -326,6 +334,7 @@
 			children = (
 				B237E9632309F8DB00DD8E39 /* KeeperNoShopView.xib */,
 				B237E9652309FDB700DD8E39 /* KeeperNoShopView.swift */,
+				B2E6FDFE23149C0100A69001 /* KeeperShopTableCell.xib */,
 			);
 			path = Keeper;
 			sourceTree = "<group>";
@@ -568,6 +577,14 @@
 			path = You;
 			sourceTree = "<group>";
 		};
+		B29479F62313668B002F2147 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				B29479F723136698002F2147 /* CreateShopDelegate.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
 		B2A2E81622D0D4B200DFDAB3 /* Customer */ = {
 			isa = PBXGroup;
 			children = (
@@ -615,6 +632,7 @@
 				B2BC92B222F3E61500D128B4 /* ProductCardViewModel.swift */,
 				B2829F16230632B00050C45E /* UserRegistrationModel.swift */,
 				B2F0835D2311975400AA395A /* UserModel.swift */,
+				B29479F423135A5B002F2147 /* ShopModelRegistration.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -631,6 +649,7 @@
 		B2A91D5422D0184500CBBA4E /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				B29479F62313668B002F2147 /* Shop */,
 				B272B8D322CEE7C900E124B4 /* Account */,
 			);
 			path = Delegates;
@@ -669,6 +688,7 @@
 			children = (
 				B2A91D5522D018A400CBBA4E /* IAccountService.swift */,
 				B2093E9223083D45006CA976 /* IGenericService.swift */,
+				B29479F223135502002F2147 /* IShopService.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -918,6 +938,7 @@
 				B24BEE2A22E8039100C1E5FB /* KeeperShopSettings.storyboard in Resources */,
 				B272B8C222CED28500E124B4 /* UserAuthentication.storyboard in Resources */,
 				B27D794922D42CEB0012F5CD /* CustomerCart.storyboard in Resources */,
+				B2E6FDFF23149C0100A69001 /* KeeperShopTableCell.xib in Resources */,
 				B2FC8EF022CA1FBE008CE65C /* LaunchScreen.storyboard in Resources */,
 				B24BEE3022E8059900C1E5FB /* KeeperHistory.storyboard in Resources */,
 				B289AE14230B56060010F8C9 /* KeeperShopCreation.storyboard in Resources */,
@@ -1096,11 +1117,14 @@
 				B28F41AE22D8141600C7E2E6 /* AuthBackdropDelegate.swift in Sources */,
 				B2829F17230632B00050C45E /* UserRegistrationModel.swift in Sources */,
 				B2D9A7CF22EE80A900A59E3D /* KeeperDashboardNavigationController.swift in Sources */,
+				B29479F523135A5B002F2147 /* ShopModelRegistration.swift in Sources */,
 				B2512DBB22F0D7E700E1BA9E /* TextWithBackgroundView.swift in Sources */,
 				B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */,
+				B29479F323135502002F2147 /* IShopService.swift in Sources */,
 				B2A898B022EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift in Sources */,
 				B277C3132302435F00EEFBC9 /* KeeperTabBarController.swift in Sources */,
 				B2198F572309CDFD0083A01A /* MainKeeperShopViewController.swift in Sources */,
+				B29479F823136698002F2147 /* CreateShopDelegate.swift in Sources */,
 				B22B909022E5517E00D0B449 /* CustomerRegistrationFormViewController.swift in Sources */,
 				B2F0835E2311975400AA395A /* UserModel.swift in Sources */,
 				B2829F192306361C0050C45E /* UserRegistrationTypeSelection.swift in Sources */,

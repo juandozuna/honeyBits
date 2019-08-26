@@ -1,5 +1,5 @@
 //
-//  IShopService.swift
+//  CreateShopDelegate.swift
 //  HoneyBits
 //
 //  Created by Juan Daniel Ozuna Espinal on 8/25/19.
@@ -9,6 +9,6 @@
 import Foundation
 
 
-protocol IShopService : IGenericService {
-    
+protocol CreateShopDelegate {
+    func shopCreated()
 }

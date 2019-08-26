@@ -32,8 +32,8 @@ class BaseService {
         ]
         
         if let userData = getAuthenticationUser() {
-            let token = userData.token 
-            headers.updateValue("Bearer \(String(describing: token))", forKey: "Authorization")
+            let token = userData.token!
+            headers.updateValue("Bearer \(token)", forKey: "Authorization")
         }
         
         return headers
@@ -70,6 +70,20 @@ class BaseService {
     private func handleResponse(response: DataResponse<Any>, completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
         print(response)
         
+        if let statusCode = response.response?.statusCode {
+            if statusCode == 401 {
+                completion(.Unauthorized, nil)
+                //TODO: Implement method to execute login again
+                return
+            }
+            
+            if statusCode == 500 {
+                completion(.ServerError, nil)
+                //TODO: Implement method to execute login again
+                return
+            }
+        }
+        
         if let error = response.error {
             completion(.Failure, nil)
             print(error)
@@ -81,14 +95,11 @@ class BaseService {
             return
         }
         
-        let json = response.result.value! as! [String: Any]
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) else {
+        guard let jsonData = response.data else {
             completion(.Failure, nil)
             return
         }
         
-        let jsonString = String(data: jsonData, encoding: .utf8)
-        let data = jsonString?.data(using: .utf8)
-        completion(.Success, data)
+        completion(.Success, jsonData)
     }
 }
