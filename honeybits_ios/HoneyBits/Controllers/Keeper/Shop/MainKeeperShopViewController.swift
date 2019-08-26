@@ -23,16 +23,17 @@ class MainKeeperShopViewController : UIViewController {
     }
     
     private func reloadShops() {
-        
+        print("Reload Shops Methods Has Been Called")
     }
 }
 
 
 extension MainKeeperShopViewController : SetupStoreDelegate {
     func setupShop() {
-        let controller = viewControllerFromStoryboard(storyboard: "KeeperShopCreation", withIdentifier: "shopFormNav") as! KeeperShopNameFormController
+        let navController = viewControllerFromStoryboard(storyboard: "KeeperShopCreation", withIdentifier: "shopFormNav") as! UINavigationController
+        let controller = navController.topViewController as! KeeperShopNameFormController
         controller.delegate = self
-        present(controller, animated: true, completion: nil)
+        present(navController, animated: true, completion: nil)
     }
 }
 

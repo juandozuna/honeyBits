@@ -114,7 +114,7 @@ class KeeperShopDescriptionFormController : UIViewController {
         startLoading()
         shopService.createShop(createModel: shopRegistrationModel!) { (status, shopModel) in
             if status == .Success {
-                print(shopModel)
+                print(shopModel!)
                 self.delegate?.shopCreated()
             }
             self.dismiss(animated: true, completion: nil)
