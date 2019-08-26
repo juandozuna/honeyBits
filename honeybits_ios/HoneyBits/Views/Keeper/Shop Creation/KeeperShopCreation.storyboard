@@ -143,7 +143,7 @@
                         <outlet property="bgView" destination="lVT-d2-Uu4" id="qLQ-bo-nOf"/>
                         <outlet property="continueBtn" destination="WfB-wV-YOK" id="9WT-2M-Guw"/>
                         <outlet property="shopNameTxt" destination="tqn-pl-Jge" id="ZmD-GO-0fy"/>
-                        <segue destination="Ri5-ak-JAB" kind="show" identifier="goToLogoController" id="UZ7-Ef-Jqg"/>
+                        <segue destination="Ri5-ak-JAB" kind="show" identifier="goToDescription" id="UZ7-Ef-Jqg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acL-Sa-WBq" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -49,6 +49,8 @@ class KeeperShopDescriptionFormController : UIViewController {
         setupGestureListeners()
         showNoInputText()
         descriptionViewSetup()
+        updateBtnStatus()
+        activityIndicatorViewSetup()
     }
     
     private func descriptionViewSetup() {
@@ -86,8 +88,10 @@ class KeeperShopDescriptionFormController : UIViewController {
         let validationResult = Validator.required().apply(value)
         if validationResult {
             createShopBtn.backgroundColor = .flatOrange()
+            createShopBtn.isEnabled = true
         } else {
             createShopBtn.backgroundColor = .flatGray()
+            createShopBtn.isEnabled = false
         }
     }
     
@@ -123,7 +127,7 @@ class KeeperShopDescriptionFormController : UIViewController {
     }
     
     @IBAction func createShopBtnPressed(_ sender: Any) {
-        
+        createShop()
     }
     
 }

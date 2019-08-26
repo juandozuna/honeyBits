@@ -28,7 +28,7 @@ class KeeperShopNameFormController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToLogoController" {
+        if segue.identifier == "goToDescription" {
             let vc = segue.destination as! KeeperShopDescriptionFormController
             vc.shopRegistrationModel = shopRegistrationModel
             vc.delegate = delegate
@@ -39,6 +39,7 @@ class KeeperShopNameFormController: UIViewController {
     private func controllerSetup() {
         continueBtn.isEnabled = false
         configureTextfields()
+        updateBtnStatus()
     }
     
     private func configureTextfields() {
@@ -54,7 +55,7 @@ class KeeperShopNameFormController: UIViewController {
         let res = Validator.required().apply(shopNameTxt.text!)
             continueBtn.isEnabled = res
         
-        if res {
+        if !res {
             continueBtn.backgroundColor = UIColor.flatGray()
         } else {
             continueBtn.backgroundColor = UIColor.flatOrange()
@@ -67,9 +68,8 @@ class KeeperShopNameFormController: UIViewController {
     }
     
     @IBAction func continueBtnPressed(_ sender: Any) {
-        var shopRegistrationModel = ShopModelRegistration()
-        shopRegistrationModel.shopName = shopNameTxt.text!
-        performSegue(withIdentifier: "goToLogoController", sender: self)
+        shopRegistrationModel = ShopModelRegistration(shopName:  shopNameTxt.text!, shopDescription: "Temp")
+        performSegue(withIdentifier: "goToDescription", sender: self)
     }
     
     @IBAction func cancelBtn(_ sender: Any) {
@@ -80,5 +80,10 @@ class KeeperShopNameFormController: UIViewController {
 extension KeeperShopNameFormController : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateBtnStatus()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        updateBtnStatus()
+        return true
     }
 }

@@ -9,6 +9,6 @@
 import Foundation
 
 struct ShopModelRegistration : Codable {
-    var shopName: String?
-    var shopDescription: String?
+    var shopName: String
+    var shopDescription: String
 }

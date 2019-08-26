@@ -12,6 +12,9 @@ class MainKeeperShopViewController : UIViewController {
    
     @IBOutlet var baseView: UIView!
     @IBOutlet weak var noShopView: KeeperNoShopView!
+    var shopService = ShopService()
+    
+    var shops: [ShopModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +23,19 @@ class MainKeeperShopViewController : UIViewController {
     
     private func setupController() {
         noShopView.setupDelegate = self
+        reloadShops()
+    }
+    
+    private func getAllShops() {
+        shopService.getShopsForUser { (status, shops) in
+            if status == .Success {
+                self.shops = shops!
+            }
+        }
     }
     
     private func reloadShops() {
-        print("Reload Shops Methods Has Been Called")
+       getAllShops()
     }
 }
 
