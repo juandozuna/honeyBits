@@ -16,6 +16,8 @@ class KeeperShopNameFormController: UIViewController {
     @IBOutlet weak var shopNameTxt: TextField!
     @IBOutlet var bgView: UIView!
     @IBOutlet weak var continueBtn: PMSuperButton!
+    var shopRegistrationModel: ShopModelRegistration?
+    var delegate: CreateShopDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +29,9 @@ class KeeperShopNameFormController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToLogoController" {
-            if let vc = segue.destination as? KeeperShopDescriptionFormController {
-                
-            }
+            let vc = segue.destination as! KeeperShopDescriptionFormController
+            vc.shopRegistrationModel = shopRegistrationModel
+            vc.delegate = delegate
         }
     }
     
@@ -51,6 +53,12 @@ class KeeperShopNameFormController: UIViewController {
     private func updateBtnStatus() {
         let res = Validator.required().apply(shopNameTxt.text!)
             continueBtn.isEnabled = res
+        
+        if res {
+            continueBtn.backgroundColor = UIColor.flatGray()
+        } else {
+            continueBtn.backgroundColor = UIColor.flatOrange()
+        }
     }
     
     
@@ -59,9 +67,14 @@ class KeeperShopNameFormController: UIViewController {
     }
     
     @IBAction func continueBtnPressed(_ sender: Any) {
+        var shopRegistrationModel = ShopModelRegistration()
+        shopRegistrationModel.shopName = shopNameTxt.text!
         performSegue(withIdentifier: "goToLogoController", sender: self)
     }
     
+    @IBAction func cancelBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension KeeperShopNameFormController : UITextFieldDelegate {

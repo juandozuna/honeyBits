@@ -132,7 +132,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bdu-dW-LPP"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Info" id="b7c-EI-G0H"/>
+                    <navigationItem key="navigationItem" title="Info" id="b7c-EI-G0H">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="oPF-u3-9VG">
+                            <connections>
+                                <action selector="cancelBtn:" destination="wIq-dD-xTD" id="zEW-6J-Qu6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bgView" destination="lVT-d2-Uu4" id="qLQ-bo-nOf"/>
                         <outlet property="continueBtn" destination="WfB-wV-YOK" id="9WT-2M-Guw"/>
@@ -233,6 +239,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="continueBtnPressed:" destination="wIq-dD-xTD" eventType="touchUpInside" id="qyX-Lo-ed9"/>
+                                            <action selector="createShopBtnPressed:" destination="Ri5-ak-JAB" eventType="touchUpInside" id="3lD-Pw-SvU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -260,6 +267,7 @@
                     </view>
                     <connections>
                         <outlet property="bgView" destination="aMO-Ci-ZQ3" id="rKv-lw-Grx"/>
+                        <outlet property="createShopBtn" destination="lpY-y8-W7Z" id="twO-Wa-UAd"/>
                         <outlet property="descriptionContainerView" destination="HlS-1e-ee6" id="bZj-FZ-G5x"/>
                         <outlet property="descriptionTv" destination="gYS-ds-xPe" id="8Nu-9R-Lz2"/>
                         <outlet property="noTextView" destination="OCr-rq-aB9" id="Aj0-M5-NXZ"/>
