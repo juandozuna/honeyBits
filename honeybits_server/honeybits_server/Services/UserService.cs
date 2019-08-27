@@ -84,5 +84,7 @@ namespace honeybits_server.Services
         {
             throw new NotImplementedException();
         }
+
+        public Shop GetKeeperShop(int Id) => _context.Shop.Where(x => x.OwnerId == Id).FirstOrDefault();
     }
 }
