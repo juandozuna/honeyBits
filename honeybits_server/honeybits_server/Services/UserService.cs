@@ -92,5 +92,12 @@ namespace honeybits_server.Services
 
             return user == null;
         }
+
+        public bool IsEmailAvailable(string email)
+        {
+            var users = _context.Users.Where(x => x.Email == email).FirstOrDefault();
+
+            return users == null;
+        }
     }
 }

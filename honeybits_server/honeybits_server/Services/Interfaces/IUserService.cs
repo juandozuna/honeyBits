@@ -18,5 +18,6 @@ namespace honeybits_server.Services.Interfaces
         IEnumerable<BeeTransaction> GetUserBeeTransactions(int id);
         Shop GetKeeperShop(int Id);
         bool IsUsernameAvailable(string username);
+        bool IsEmailAvailable(string email);
     }
 }
