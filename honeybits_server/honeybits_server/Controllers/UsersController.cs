@@ -43,5 +43,14 @@ namespace honeybits_server.Controllers
         [HttpGet("get_keeper_shop")]
         public IActionResult GetShopOwner() => Ok(_userService.GetKeeperShop(int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value)));
         
+        [HttpPost("is_username_available/{username}")]
+        public IActionResult IsUsernameAvailable(string username)
+        {
+            if (string.IsNullOrEmpty(username))
+                return BadRequest("String was empty.");
+
+            return Ok(_userService.IsUsernameAvailable(username));
+        }
+
     }
 }
