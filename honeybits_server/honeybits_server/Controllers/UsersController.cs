@@ -31,7 +31,7 @@ namespace honeybits_server.Controllers
 
             if (user == null)
             {
-                return BadRequest();
+                return BadRequest("Username or password not ");
             }
 
             return Ok(user);
@@ -47,9 +47,18 @@ namespace honeybits_server.Controllers
         public IActionResult IsUsernameAvailable(string username)
         {
             if (string.IsNullOrEmpty(username))
-                return BadRequest("String was empty.");
+                return BadRequest("Username was empty.");
 
             return Ok(_userService.IsUsernameAvailable(username));
+        }
+
+        [HttpPost("is_email_available")]
+        public IActionResult IsEmailAvailable([FromBody]string email)
+        {
+            if(string.IsNullOrEmpty(email))
+                return BadRequest("Email was empty.");
+
+            return Ok(_userService.IsEmailAvailable(email));
         }
 
     }
