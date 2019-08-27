@@ -86,5 +86,12 @@ namespace honeybits_server.Services
         }
 
         public Shop GetKeeperShop(int Id) => _context.Shop.Where(x => x.OwnerId == Id).FirstOrDefault();
+
+        public bool IsUsernameAvailable(string username)
+        {
+            var user = _context.Users.Where(x => x.Username == username).FirstOrDefault();
+
+            return user == null;
+        }
     }
 }
