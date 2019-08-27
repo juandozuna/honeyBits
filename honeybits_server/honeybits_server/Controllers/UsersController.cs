@@ -37,6 +37,14 @@ namespace honeybits_server.Controllers
             return Ok(user);
         }
 
+        [HttpPost("get_bee_transactions")]
+        public IActionResult GetTransactions()
+        {
+            var transactions = _userService.GetUserBeeTransactions(int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value));
+
+            return Ok(transactions);
+        }
+
         [HttpGet("all")]
         public IActionResult GetAll() => Ok(_userService.GetAll());
 
