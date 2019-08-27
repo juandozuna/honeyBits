@@ -80,15 +80,9 @@ namespace honeybits_server.Services
             return search;
         }
 
-        public IEnumerable<ProductLike> GetAllLikedProducts()
-        {
-            throw new NotImplementedException();
-        }
+        public IEnumerable<ProductLike> GetAllLikedProducts(int Id) => _context.ProductLike.Where(x => x.UserId == Id).Where(x => x.IsDeleted == false).ToList();
 
-        public IEnumerable<BeeTransaction> GetUserBeeTransactions(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public IEnumerable<BeeTransaction> GetUserBeeTransactions(int id) => _context.BeeTransaction.Where(x => x.UserId == id).Where(x => x.IsDeleted == false).ToList();
 
         public Shop GetKeeperShop(int Id) => _context.Shop.Where(x => x.OwnerId == Id).FirstOrDefault();
 
