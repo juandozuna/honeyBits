@@ -72,7 +72,12 @@ namespace honeybits_server.Services
 
         public IEnumerable<Users> Search(string value)
         {
-            throw new NotImplementedException();
+            List<Users> usernames = _context.Users.Where(x => x.Username.Contains(value)).ToList();
+            List<Users> firstnames = _context.Users.Where(x => x.FirstName.Contains(value)).ToList();
+
+            List<Users> search = firstnames.Concat(usernames).ToList();
+
+            return search;
         }
 
         public IEnumerable<ProductLike> GetAllLikedProducts()
