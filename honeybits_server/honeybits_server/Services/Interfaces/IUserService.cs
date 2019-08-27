@@ -14,7 +14,7 @@ namespace honeybits_server.Services.Interfaces
         Users Get(int id);
         IEnumerable<Users> Search(string value);
         IEnumerable<Users> GetAll();
-        IEnumerable<ProductLike> GetAllLikedProducts();
+        IEnumerable<ProductLike> GetAllLikedProducts(int Id);
         IEnumerable<BeeTransaction> GetUserBeeTransactions(int id);
         Shop GetKeeperShop(int Id);
         bool IsUsernameAvailable(string username);
