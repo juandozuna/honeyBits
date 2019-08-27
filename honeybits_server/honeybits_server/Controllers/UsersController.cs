@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using honeybits_server.Models;
 using honeybits_server.Services.Interfaces;
@@ -38,5 +39,9 @@ namespace honeybits_server.Controllers
 
         [HttpGet("all")]
         public IActionResult GetAll() => Ok(_userService.GetAll());
+
+        [HttpGet("get_keeper_shop")]
+        public IActionResult GetShopOwner() => Ok(_userService.GetKeeperShop(int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value)));
+        
     }
 }
