@@ -48,7 +48,8 @@ namespace honeybits_server.Services
             return new Token
             {
                 token = tokenHandler.WriteToken(token),
-                Rol = user.RoleId
+                Rol = user.RoleId,
+                UserId = user.UserId
             };
         }
 
@@ -75,7 +76,7 @@ namespace honeybits_server.Services
             List<Users> usernames = _context.Users.Where(x => x.Username.Contains(value)).ToList();
             List<Users> firstnames = _context.Users.Where(x => x.FirstName.Contains(value)).ToList();
 
-            List<Users> search = firstnames.Concat(usernames).ToList();
+            List<Users> search = usernames.Intersect(firstnames).ToList();
 
             return search;
         }
