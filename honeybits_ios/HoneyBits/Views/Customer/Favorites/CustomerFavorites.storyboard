@@ -115,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="2444" y="-765.06746626686663"/>
         </scene>
-        <!--View Controller-->
+        <!--Shops-->
         <scene sceneID="aO3-h9-Ctd">
             <objects>
-                <viewController storyboardIdentifier="customerShops" id="VyY-nY-71p" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="customerShops" title="Shops" id="VyY-nY-71p" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eIQ-DR-HhL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
