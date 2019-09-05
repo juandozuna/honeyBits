@@ -18,6 +18,7 @@ class KeeperShopNameFormController: UIViewController {
     @IBOutlet weak var continueBtn: PMSuperButton!
     var shopRegistrationModel: ShopModelRegistration?
     var delegate: CreateShopDelegate?
+    var accountService: IAccountService = AccountService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +69,7 @@ class KeeperShopNameFormController: UIViewController {
     }
     
     @IBAction func continueBtnPressed(_ sender: Any) {
-        shopRegistrationModel = ShopModelRegistration(shopName:  shopNameTxt.text!, shopDescription: "Temp")
+        shopRegistrationModel = ShopModelRegistration(ownerId: accountService.loggedUser!.userId! , shopName:  shopNameTxt.text!, shopDescription: "Temp")
         performSegue(withIdentifier: "goToDescription", sender: self)
     }
     

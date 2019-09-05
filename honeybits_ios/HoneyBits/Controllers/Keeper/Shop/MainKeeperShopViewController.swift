@@ -10,7 +10,6 @@ import UIKit
 
 class MainKeeperShopViewController : UIViewController {
    
-    @IBOutlet weak var barAddBtn: UIBarButtonItem!
     @IBOutlet var baseView: UIView!
     @IBOutlet weak var noShopView: KeeperNoShopView!
     @IBOutlet var bgView: UIView!
@@ -70,7 +69,6 @@ class MainKeeperShopViewController : UIViewController {
     
         noShopView.isHidden = showShopsTable
         shopsTable.isHidden = !showShopsTable
-        barAddBtn.customView?.isHidden = showShopsTable
         
     }
     
@@ -105,10 +103,6 @@ class MainKeeperShopViewController : UIViewController {
         let controller = navController.topViewController as! KeeperShopNameFormController
         controller.delegate = self
         present(navController, animated: true, completion: nil)
-    }
-    
-    @IBAction func addShopBtnPressed(_ sender: Any) {
-        presentShopCreationController()
     }
     
 }

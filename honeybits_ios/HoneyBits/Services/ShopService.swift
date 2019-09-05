@@ -38,7 +38,7 @@ class ShopService : BaseService, IShopService{
             return;
         }
         var model = createModel
-        model.ownerId = user.userId
+        model.ownerId = user.userId!
         
         let json = try! JSONEncoder().encode(model)
         
