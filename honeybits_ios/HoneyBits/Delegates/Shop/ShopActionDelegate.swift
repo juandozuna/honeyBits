@@ -10,12 +10,12 @@ import Foundation
 
 
 protocol ShopActionDelegate {
-    func editShop()
+    func editShop(shopModel: ShopModel)
 }
 
 
 extension ShopActionDelegate {
-    func editShop() {
+    func editShop(shopModel: ShopModel) {
         
     }
 }

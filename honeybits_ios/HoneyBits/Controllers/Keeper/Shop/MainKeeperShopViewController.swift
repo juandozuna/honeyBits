@@ -15,8 +15,10 @@ class MainKeeperShopViewController : UIViewController {
     @IBOutlet var bgView: UIView!
     var shopService = ShopService()
     
-    var shopsTable: UITableView = {
-        let tv = UITableView()
+    var shopColView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let tv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
@@ -30,7 +32,7 @@ class MainKeeperShopViewController : UIViewController {
         return aiv;
     }()
     
-    var shops: [ShopModel] = []
+    var shopModel: ShopModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,24 +40,18 @@ class MainKeeperShopViewController : UIViewController {
     }
     
     private func setupController() {
-        setupTableView()
+        setupCollectionView()
         setupActivityIndicatorView()
         displayCorrectView()
         noShopView.setupDelegate = self
-        reloadShops()
+        reloadShop()
     }
     
-    private func setupTableView() {
-        shopsTable.register(UITableViewCell.self, forCellReuseIdentifier: "shopCell")
-        
-        bgView.addSubview(shopsTable)
-        bgView.addConstraintsWithFormat("H:|[v0]|", views: shopsTable)
-        bgView.addConstraintsWithFormat("V:|[v0]|", views: shopsTable)
+    private func setupCollectionView() {
+        bgView.addSubview(shopColView)
 
-        shopsTable.delegate = self
-        shopsTable.dataSource = self
-        
-        
+        bgView.addConstraintsWithFormat("H:|[v0]|", views: shopColView)
+        bgView.addConstraintsWithFormat("V:|[v0]|", views: shopColView)
     }
     
     private func setupActivityIndicatorView() {
@@ -65,23 +61,13 @@ class MainKeeperShopViewController : UIViewController {
     }
     
     private func displayCorrectView() {
-        let showShopsTable = shops.count > 0
+        let showShopsTable = shopModel != nil
     
         noShopView.isHidden = showShopsTable
-        shopsTable.isHidden = !showShopsTable
+        shopColView.isHidden = !showShopsTable
         
     }
     
-    private func getAllShops() {
-        startLoading()
-        shopService.getShopsForUser { (status, shops) in
-            if status == .Success {
-                self.shops = shops!
-                self.shopsTable.reloadData()
-                self.stopLoading()
-            }
-        }
-    }
     
     private func startLoading() {
         activityIndicatorView.isHidden = false
@@ -94,8 +80,8 @@ class MainKeeperShopViewController : UIViewController {
         activityIndicatorView.isHidden = true
     }
     
-    private func reloadShops() {
-       getAllShops()
+    private func reloadShop() {
+       
     }
     
     private func presentShopCreationController() {
@@ -116,21 +102,7 @@ extension MainKeeperShopViewController : SetupStoreDelegate {
 
 extension MainKeeperShopViewController : CreateShopDelegate {
     func shopCreated() {
-        reloadShops()
+        reloadShop()
     }
 }
 
-
-extension MainKeeperShopViewController : UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shops.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = shopsTable.dequeueReusableCell(withIdentifier: "shopCell", for: indexPath)
-        cell.textLabel?.text = shops[indexPath.row].shopName!
-        return cell
-    }
-    
-    
-}

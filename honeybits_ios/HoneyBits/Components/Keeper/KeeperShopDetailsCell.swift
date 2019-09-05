@@ -21,13 +21,15 @@ class KeeperShopDetailsCell: UICollectionViewCell {
         }
     }
     
+    var delegate: ShopActionDelegate?
+    
     private var currentShopData: ShopModel?
     
     @IBOutlet weak var shopTitleLb: UILabel!
     @IBOutlet weak var shopDescriptionLb: UILabel!
     
     @IBAction func shopEditBtnPressed(_ sender: Any) {
-        //TODO: Implement delegate to open corresponding edit screen
+        delegate?.editShop(shopModel: currentShopData!)
     }
     
     
