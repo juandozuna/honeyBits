@@ -84,6 +84,7 @@ class MainKeeperShopViewController : UIViewController {
         shopService.getShopsForUser { (status, shops) in
             self.shopModel = shops![0]
             self.displayCorrectView()
+            self.shopColView.reloadData()
             self.stopLoading()
         }
     }
@@ -130,13 +131,12 @@ extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionVi
         //let section = indexPath.section
         //if section == 1 {
 
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: shopDetailCellId, for: indexPath) as! KeeperShopDetailsCell
-        
-            
-            cell.backgroundColor = .blue
-            cell.delegate = self
-            //cell.shopData = shopModel!
-            return cell;
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: shopDetailCellId, for: indexPath) as! KeeperShopDetailsCell
+        cell.delegate = self
+        if let shop = shopModel {
+            cell.shopData = shop
+        }
+        return cell;
        //
         
        // return UICollectionViewCell()
@@ -145,7 +145,7 @@ extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let frame = view.frame
         
-        return CGSize(width: frame.width, height: 150)
+        return CGSize(width: frame.width, height: 156)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
