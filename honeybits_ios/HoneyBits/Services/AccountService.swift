@@ -69,7 +69,7 @@ class AccountService : BaseService, IAccountService {
         
         jsonRequest(url, jsonData: registrationData, method: .post) { (status, data) in
             if status == .Success {
-                var userModel = try! JSONDecoder().decode(UserModel.self, from: data!)
+                let userModel = try! JSONDecoder().decode(UserModel.self, from: data!)
                 
                 completion(.Success, userModel)
                 return

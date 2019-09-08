@@ -28,9 +28,14 @@ class KeeperShopDetailsCell: UICollectionViewCell {
     @IBOutlet weak var shopTitleLb: UILabel!
     @IBOutlet weak var shopDescriptionLb: UILabel!
     
+    
     @IBAction func shopEditBtnPressed(_ sender: Any) {
         delegate?.editShop(shopModel: currentShopData!)
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
     
 }

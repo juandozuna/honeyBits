@@ -48,7 +48,7 @@
 		B262AF4A22DBF14900ABF311 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AF4922DBF14900ABF311 /* BaseService.swift */; };
 		B262AF4C22DBF86600ABF311 /* UserTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AF4B22DBF86600ABF311 /* UserTokenModel.swift */; };
 		B262AF4F22DBF94D00ABF311 /* RequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AF4E22DBF94D00ABF311 /* RequestStatus.swift */; };
-		B26C6524232095F00053537C /* KeeperShopDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = B26C6523232095F00053537C /* KeeperShopDetails.xib */; };
+		B26C6524232095F00053537C /* KeeperShopDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B26C6523232095F00053537C /* KeeperShopDetailsCell.xib */; };
 		B26C65262320994B0053537C /* KeeperShopDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26C65252320994B0053537C /* KeeperShopDetailsCell.swift */; };
 		B26C652A2320A38E0053537C /* ShopActionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26C65292320A38E0053537C /* ShopActionDelegate.swift */; };
 		B26CEB3522E257EB00814889 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CEB3422E257EB00814889 /* MainNavigationController.swift */; };
@@ -175,7 +175,7 @@
 		B262AF4922DBF14900ABF311 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		B262AF4B22DBF86600ABF311 /* UserTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenModel.swift; sourceTree = "<group>"; };
 		B262AF4E22DBF94D00ABF311 /* RequestStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatus.swift; sourceTree = "<group>"; };
-		B26C6523232095F00053537C /* KeeperShopDetails.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeeperShopDetails.xib; sourceTree = "<group>"; };
+		B26C6523232095F00053537C /* KeeperShopDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeeperShopDetailsCell.xib; sourceTree = "<group>"; };
 		B26C65252320994B0053537C /* KeeperShopDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperShopDetailsCell.swift; sourceTree = "<group>"; };
 		B26C65292320A38E0053537C /* ShopActionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopActionDelegate.swift; sourceTree = "<group>"; };
 		B26CEB3422E257EB00814889 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
@@ -347,7 +347,7 @@
 				B2E6FDFE23149C0100A69001 /* KeeperShopTableCell.xib */,
 				B2605722231F34F9001B4EDF /* KeeperShopView.xib */,
 				B2605724231F3506001B4EDF /* KeeperShopView.swift */,
-				B26C6523232095F00053537C /* KeeperShopDetails.xib */,
+				B26C6523232095F00053537C /* KeeperShopDetailsCell.xib */,
 				B26C65252320994B0053537C /* KeeperShopDetailsCell.swift */,
 			);
 			path = Keeper;
@@ -945,7 +945,7 @@
 				B24BEE2422E7FF3500C1E5FB /* KeeperDashboard.storyboard in Resources */,
 				B27D794522D42BC80012F5CD /* CustomerSearch.storyboard in Resources */,
 				B2EE6A8722D8FDBF00350BBA /* AboutApp.storyboard in Resources */,
-				B26C6524232095F00053537C /* KeeperShopDetails.xib in Resources */,
+				B26C6524232095F00053537C /* KeeperShopDetailsCell.xib in Resources */,
 				B272B8CB22CED34900E124B4 /* Localizable.strings in Resources */,
 				B24BEE2D22E804A900C1E5FB /* KeeperSettings.storyboard in Resources */,
 				B2A2E81922D0D51200DFDAB3 /* CustomerHome.storyboard in Resources */,

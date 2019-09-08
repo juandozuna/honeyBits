@@ -14,14 +14,9 @@ class MainKeeperShopViewController : UIViewController {
     @IBOutlet weak var noShopView: KeeperNoShopView!
     @IBOutlet var bgView: UIView!
     var shopService = ShopService()
-    
-    var shopColView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let tv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        return tv
-    }()
+    private let shopDetailCellId = "shopDetailCellId"
+ 
+    @IBOutlet weak var shopColView: UICollectionView!
     
     var activityIndicatorView: UIActivityIndicatorView = {
         let aiv = UIActivityIndicatorView()
@@ -48,10 +43,15 @@ class MainKeeperShopViewController : UIViewController {
     }
     
     private func setupCollectionView() {
+        shopColView.delegate = self
+        shopColView.dataSource = self
+        let nib = UINib(nibName: "KeeperShopDetailsCell", bundle: nil)
+        shopColView.register(nib, forCellWithReuseIdentifier: shopDetailCellId)
+        
         bgView.addSubview(shopColView)
-
         bgView.addConstraintsWithFormat("H:|[v0]|", views: shopColView)
         bgView.addConstraintsWithFormat("V:|[v0]|", views: shopColView)
+        shopColView.backgroundColor = .white
     }
     
     private func setupActivityIndicatorView() {
@@ -61,11 +61,10 @@ class MainKeeperShopViewController : UIViewController {
     }
     
     private func displayCorrectView() {
-        let showShopsTable = shopModel != nil
+        let showShopsTable = true//shopModel != nil
     
         noShopView.isHidden = showShopsTable
         shopColView.isHidden = !showShopsTable
-        
     }
     
     
@@ -81,7 +80,12 @@ class MainKeeperShopViewController : UIViewController {
     }
     
     private func reloadShop() {
-       
+        startLoading()
+        shopService.getShopsForUser { (status, shops) in
+            self.shopModel = shops![0]
+            self.displayCorrectView()
+            self.stopLoading()
+        }
     }
     
     private func presentShopCreationController() {
@@ -106,3 +110,46 @@ extension MainKeeperShopViewController : CreateShopDelegate {
     }
 }
 
+extension MainKeeperShopViewController : ShopActionDelegate {
+    func editShop(shopModel: ShopModel) {
+        showAlertMessage("You pressed the edit button", title: shopModel.shopName!)
+    }
+}
+
+extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       return 1
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        //let section = indexPath.section
+        //if section == 1 {
+
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: shopDetailCellId, for: indexPath) as! KeeperShopDetailsCell
+        
+            
+            cell.backgroundColor = .blue
+            cell.delegate = self
+            //cell.shopData = shopModel!
+            return cell;
+       //
+        
+       // return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let frame = view.frame
+        
+        return CGSize(width: frame.width, height: 150)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+}

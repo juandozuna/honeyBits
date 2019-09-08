@@ -105,7 +105,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="continueBtnPressed:" destination="wIq-dD-xTD" eventType="touchUpInside" id="akQ-Fo-dJq"/>
+                                            <action selector="continueBtnPressed:" destination="wIq-dD-xTD" eventType="touchUpInside" id="k6S-ZB-AOI"/>
                                         </connections>
                                     </button>
                                 </subviews>

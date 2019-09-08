@@ -67,7 +67,7 @@ class KeeperShopNameFormController: UIViewController {
     @objc func handleResigneResponderTap(_ sender: UITapGestureRecognizer) {
         resignResponderForFields()
     }
-    
+        
     @IBAction func continueBtnPressed(_ sender: Any) {
         shopRegistrationModel = ShopModelRegistration(ownerId: accountService.loggedUser!.userId! , shopName:  shopNameTxt.text!, shopDescription: "Temp")
         performSegue(withIdentifier: "goToDescription", sender: self)

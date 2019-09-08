@@ -40,13 +40,28 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CDw-gi-4Rc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aYe-ns-lGO">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QIe-5j-2d8" firstAttribute="leading" secondItem="MKN-Ha-uif" secondAttribute="leading" id="2R3-Hg-MD8"/>
+                            <constraint firstItem="CDw-gi-4Rc" firstAttribute="leading" secondItem="MKN-Ha-uif" secondAttribute="leading" id="9MT-ye-CCD"/>
+                            <constraint firstItem="MKN-Ha-uif" firstAttribute="trailing" secondItem="CDw-gi-4Rc" secondAttribute="trailing" id="Yua-4k-ic7"/>
                             <constraint firstItem="QIe-5j-2d8" firstAttribute="top" secondItem="MKN-Ha-uif" secondAttribute="top" id="eVy-tl-byQ"/>
                             <constraint firstItem="QIe-5j-2d8" firstAttribute="bottom" secondItem="MKN-Ha-uif" secondAttribute="bottom" id="gHq-Ar-GD6"/>
+                            <constraint firstItem="CDw-gi-4Rc" firstAttribute="top" secondItem="MKN-Ha-uif" secondAttribute="top" id="ng3-z8-nHj"/>
                             <constraint firstItem="MKN-Ha-uif" firstAttribute="trailing" secondItem="QIe-5j-2d8" secondAttribute="trailing" id="uA2-Dh-OIc"/>
+                            <constraint firstItem="MKN-Ha-uif" firstAttribute="bottom" secondItem="CDw-gi-4Rc" secondAttribute="bottom" id="wnH-RR-MGZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MKN-Ha-uif"/>
                     </view>
@@ -55,6 +70,7 @@
                         <outlet property="baseView" destination="1Bh-HU-T1Y" id="JSH-RG-Uqg"/>
                         <outlet property="bgView" destination="1Bh-HU-T1Y" id="Ebq-Yb-Heg"/>
                         <outlet property="noShopView" destination="QIe-5j-2d8" id="EHg-Wh-Yt4"/>
+                        <outlet property="shopColView" destination="CDw-gi-4Rc" id="qyI-3D-VgD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVW-m7-9Uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
