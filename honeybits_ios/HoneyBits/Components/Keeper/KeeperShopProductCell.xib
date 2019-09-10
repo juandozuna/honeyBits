@@ -13,20 +13,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LbU-Ag-wiP" customClass="KeeperShopProductCell" customModule="HoneyBits" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="190" height="186"/>
+            <rect key="frame" x="0.0" y="0.0" width="230" height="186"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="190" height="186"/>
+                <rect key="frame" x="0.0" y="0.0" width="230" height="186"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ge3-mD-OCD">
-                        <rect key="frame" x="0.0" y="0.0" width="190" height="186"/>
+                        <rect key="frame" x="0.0" y="0.0" width="230" height="186"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prod3" translatesAutoresizingMaskIntoConstraints="NO" id="F4Y-jy-c6t">
-                                <rect key="frame" x="4" y="4" width="182" height="178"/>
+                                <rect key="frame" x="4" y="4" width="222" height="178"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Va5-3g-iCe" customClass="PMSuperButton" customModule="PMSuperButton">
-                                <rect key="frame" x="149" y="8" width="33" height="30"/>
+                                <rect key="frame" x="189" y="8" width="33" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="JUy-WE-jMf"/>
@@ -51,15 +51,28 @@
                                     <action selector="editBtnPressed:" destination="LbU-Ag-wiP" eventType="touchUpInside" id="CZT-IO-Yg0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lrp-eb-SJm">
+                                <rect key="frame" x="4" y="153" width="222" height="25"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.62342144691780821" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="fBj-qi-rOo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="F4Y-jy-c6t" firstAttribute="leading" secondItem="ge3-mD-OCD" secondAttribute="leading" constant="4" id="GD3-r1-uk0"/>
+                            <constraint firstAttribute="trailing" secondItem="Lrp-eb-SJm" secondAttribute="trailing" constant="4" id="K6J-sQ-VBt"/>
                             <constraint firstAttribute="bottom" secondItem="F4Y-jy-c6t" secondAttribute="bottom" constant="4" id="Yb8-Bi-RJa"/>
                             <constraint firstItem="Va5-3g-iCe" firstAttribute="top" secondItem="ge3-mD-OCD" secondAttribute="top" constant="8" id="ajK-Gh-16Z"/>
                             <constraint firstAttribute="trailing" secondItem="F4Y-jy-c6t" secondAttribute="trailing" constant="4" id="jmF-8x-Pi9"/>
                             <constraint firstAttribute="trailing" secondItem="Va5-3g-iCe" secondAttribute="trailing" constant="8" id="oWO-Ta-9iD"/>
                             <constraint firstItem="F4Y-jy-c6t" firstAttribute="top" secondItem="ge3-mD-OCD" secondAttribute="top" constant="4" id="uYi-gP-UDb"/>
+                            <constraint firstItem="Lrp-eb-SJm" firstAttribute="leading" secondItem="ge3-mD-OCD" secondAttribute="leading" constant="4" id="viz-JE-GVg"/>
+                            <constraint firstAttribute="bottom" secondItem="Lrp-eb-SJm" secondAttribute="bottom" constant="8" id="wHH-5j-khk"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -71,11 +84,13 @@
                 <constraint firstAttribute="trailing" secondItem="ge3-mD-OCD" secondAttribute="trailing" id="rb1-ta-cn5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="JEy-N1-8kl"/>
-            <size key="customSize" width="190" height="186"/>
+            <size key="customSize" width="230" height="186"/>
             <connections>
                 <outlet property="editBtn" destination="Va5-3g-iCe" id="xbt-bm-qRc"/>
+                <outlet property="productImage" destination="F4Y-jy-c6t" id="w3n-GF-fXf"/>
+                <outlet property="productLabel" destination="Lrp-eb-SJm" id="Bbn-6n-KPT"/>
             </connections>
-            <point key="canvasLocation" x="-34.782608695652179" y="89.0625"/>
+            <point key="canvasLocation" x="-5.7971014492753632" y="89.0625"/>
         </collectionViewCell>
     </objects>
     <resources>

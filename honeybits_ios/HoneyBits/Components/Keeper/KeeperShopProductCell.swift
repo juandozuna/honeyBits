@@ -11,9 +11,29 @@ import PMSuperButton
 
 class KeeperShopProductCell: UICollectionViewCell {
     
+    @IBOutlet weak var productLabel: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var editBtn: PMSuperButton!
     var productId: Int?
     var delegate: ProductActionDelegate?
+    
+    var image: UIImage {
+        get {
+            return productImage.image!
+        }
+        set {
+            productImage.image = newValue
+        }
+    }
+    
+    var label: String {
+        get {
+            return productLabel.text!
+        }
+        set {
+            productLabel.text = newValue
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
