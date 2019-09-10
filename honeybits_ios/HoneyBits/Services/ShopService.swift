@@ -12,6 +12,7 @@ import Alamofire
 class ShopService : BaseService, IShopService{
     
     let baseService: String = "api/Shops/"
+    let accountService = AccountService()
     
     func getShopsForUser(completion: @escaping CompletedRequestVoid<[ShopModel]>) {
         let url = "\(baseEndpoint)\(baseService)all"
@@ -32,7 +33,14 @@ class ShopService : BaseService, IShopService{
     
     func createShop(createModel: ShopModelRegistration, completion: @escaping CompletedRequestVoid<ShopModel>) {
         let url = "\(baseEndpoint)\(baseService)create"
-        let json = try! JSONEncoder().encode(createModel)
+        guard let user = accountService.loggedUser else {
+            completion(.Failure, nil)
+            return;
+        }
+        var model = createModel
+        model.ownerId = user.userId!
+        
+        let json = try! JSONEncoder().encode(model)
         
         jsonRequest(url, jsonData: json, method: .post) { (status, data) in
             if status == .Success {

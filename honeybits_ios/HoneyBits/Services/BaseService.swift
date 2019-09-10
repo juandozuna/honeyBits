@@ -12,6 +12,8 @@ import SwiftyJSON
 
 
 class BaseService {
+    typealias CompletedRequestVoid<T> = (RequestStatus, T?) -> Void
+    
     let baseEndpoint: String = Bundle.main.object(forInfoDictionaryKey: "API_ENDPOINT_BASE_URL") as! String
     
     func getAuthenticationUser() -> UserTokenModel? {
@@ -73,13 +75,13 @@ class BaseService {
         if let statusCode = response.response?.statusCode {
             if statusCode == 401 {
                 completion(.Unauthorized, nil)
-                //TODO: Implement method to execute login again
+                forgetApiToken()
                 return
             }
             
             if statusCode == 500 {
                 completion(.ServerError, nil)
-                //TODO: Implement method to execute login again
+                forgetApiToken()
                 return
             }
         }
@@ -101,5 +103,9 @@ class BaseService {
         }
         
         completion(.Success, jsonData)
+    }
+    
+    private func forgetApiToken() {
+        UserDefaults.standard.set(nil, forKey: "authentication_user")
     }
 }

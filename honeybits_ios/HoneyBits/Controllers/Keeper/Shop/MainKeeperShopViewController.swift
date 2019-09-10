@@ -10,17 +10,13 @@ import UIKit
 
 class MainKeeperShopViewController : UIViewController {
    
-    @IBOutlet weak var barAddBtn: UIBarButtonItem!
     @IBOutlet var baseView: UIView!
     @IBOutlet weak var noShopView: KeeperNoShopView!
     @IBOutlet var bgView: UIView!
     var shopService = ShopService()
-    
-    var shopsTable: UITableView = {
-        let tv = UITableView()
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        return tv
-    }()
+    private let shopDetailCellId = "shopDetailCellId"
+ 
+    @IBOutlet weak var shopColView: UICollectionView!
     
     var activityIndicatorView: UIActivityIndicatorView = {
         let aiv = UIActivityIndicatorView()
@@ -31,7 +27,7 @@ class MainKeeperShopViewController : UIViewController {
         return aiv;
     }()
     
-    var shops: [ShopModel] = []
+    var shopModel: ShopModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,24 +35,23 @@ class MainKeeperShopViewController : UIViewController {
     }
     
     private func setupController() {
-        setupTableView()
+        setupCollectionView()
         setupActivityIndicatorView()
         displayCorrectView()
         noShopView.setupDelegate = self
-        reloadShops()
+        reloadShop()
     }
     
-    private func setupTableView() {
-        shopsTable.register(UITableViewCell.self, forCellReuseIdentifier: "shopCell")
+    private func setupCollectionView() {
+        shopColView.delegate = self
+        shopColView.dataSource = self
+        let nib = UINib(nibName: "KeeperShopDetailsCell", bundle: nil)
+        shopColView.register(nib, forCellWithReuseIdentifier: shopDetailCellId)
         
-        bgView.addSubview(shopsTable)
-        bgView.addConstraintsWithFormat("H:|[v0]|", views: shopsTable)
-        bgView.addConstraintsWithFormat("V:|[v0]|", views: shopsTable)
-
-        shopsTable.delegate = self
-        shopsTable.dataSource = self
-        
-        
+        bgView.addSubview(shopColView)
+        bgView.addConstraintsWithFormat("H:|[v0]|", views: shopColView)
+        bgView.addConstraintsWithFormat("V:|[v0]|", views: shopColView)
+        shopColView.backgroundColor = .white
     }
     
     private func setupActivityIndicatorView() {
@@ -66,24 +61,12 @@ class MainKeeperShopViewController : UIViewController {
     }
     
     private func displayCorrectView() {
-        let showShopsTable = shops.count > 0
+        let showShopsTable = true//shopModel != nil
     
         noShopView.isHidden = showShopsTable
-        shopsTable.isHidden = !showShopsTable
-        barAddBtn.customView?.isHidden = showShopsTable
-        
+        shopColView.isHidden = !showShopsTable
     }
     
-    private func getAllShops() {
-        startLoading()
-        shopService.getShopsForUser { (status, shops) in
-            if status == .Success {
-                self.shops = shops!
-                self.shopsTable.reloadData()
-                self.stopLoading()
-            }
-        }
-    }
     
     private func startLoading() {
         activityIndicatorView.isHidden = false
@@ -96,8 +79,14 @@ class MainKeeperShopViewController : UIViewController {
         activityIndicatorView.isHidden = true
     }
     
-    private func reloadShops() {
-       getAllShops()
+    private func reloadShop() {
+        startLoading()
+        shopService.getShopsForUser { (status, shops) in
+            self.shopModel = shops![0]
+            self.displayCorrectView()
+            self.shopColView.reloadData()
+            self.stopLoading()
+        }
     }
     
     private func presentShopCreationController() {
@@ -105,10 +94,6 @@ class MainKeeperShopViewController : UIViewController {
         let controller = navController.topViewController as! KeeperShopNameFormController
         controller.delegate = self
         present(navController, animated: true, completion: nil)
-    }
-    
-    @IBAction func addShopBtnPressed(_ sender: Any) {
-        presentShopCreationController()
     }
     
 }
@@ -122,21 +107,49 @@ extension MainKeeperShopViewController : SetupStoreDelegate {
 
 extension MainKeeperShopViewController : CreateShopDelegate {
     func shopCreated() {
-        reloadShops()
+        reloadShop()
     }
 }
 
+extension MainKeeperShopViewController : ShopActionDelegate {
+    func editShop(shopModel: ShopModel) {
+        showAlertMessage("You pressed the edit button", title: shopModel.shopName!)
+    }
+}
 
-extension MainKeeperShopViewController : UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shops.count
+extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = shopsTable.dequeueReusableCell(withIdentifier: "shopCell", for: indexPath)
-        cell.textLabel?.text = shops[indexPath.row].shopName!
-        return cell
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        //let section = indexPath.section
+        //if section == 1 {
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: shopDetailCellId, for: indexPath) as! KeeperShopDetailsCell
+        cell.delegate = self
+        if let shop = shopModel {
+            cell.shopData = shop
+        }
+        return cell;
+       //
+        
+       // return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let frame = view.frame
+        
+        return CGSize(width: frame.width, height: 156)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
     
 }

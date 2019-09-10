@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Shop Setup-->
+        <!--Shops-->
         <scene sceneID="ma3-fY-waq">
             <objects>
                 <navigationController id="jFt-gw-nqp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shop Setup" image="shop-settings" id="LAU-7i-EzM"/>
+                    <tabBarItem key="tabBarItem" title="Shops" image="shop-settings" id="LAU-7i-EzM"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7un-Po-WjF">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="-1104" y="103"/>
         </scene>
-        <!--Shop Settings-->
+        <!--Shops-->
         <scene sceneID="bKx-2z-QCn">
             <objects>
                 <viewController id="hhr-7a-AhW" customClass="MainKeeperShopViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,29 +40,37 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CDw-gi-4Rc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aYe-ns-lGO">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QIe-5j-2d8" firstAttribute="leading" secondItem="MKN-Ha-uif" secondAttribute="leading" id="2R3-Hg-MD8"/>
+                            <constraint firstItem="CDw-gi-4Rc" firstAttribute="leading" secondItem="MKN-Ha-uif" secondAttribute="leading" id="9MT-ye-CCD"/>
+                            <constraint firstItem="MKN-Ha-uif" firstAttribute="trailing" secondItem="CDw-gi-4Rc" secondAttribute="trailing" id="Yua-4k-ic7"/>
                             <constraint firstItem="QIe-5j-2d8" firstAttribute="top" secondItem="MKN-Ha-uif" secondAttribute="top" id="eVy-tl-byQ"/>
                             <constraint firstItem="QIe-5j-2d8" firstAttribute="bottom" secondItem="MKN-Ha-uif" secondAttribute="bottom" id="gHq-Ar-GD6"/>
+                            <constraint firstItem="CDw-gi-4Rc" firstAttribute="top" secondItem="MKN-Ha-uif" secondAttribute="top" id="ng3-z8-nHj"/>
                             <constraint firstItem="MKN-Ha-uif" firstAttribute="trailing" secondItem="QIe-5j-2d8" secondAttribute="trailing" id="uA2-Dh-OIc"/>
+                            <constraint firstItem="MKN-Ha-uif" firstAttribute="bottom" secondItem="CDw-gi-4Rc" secondAttribute="bottom" id="wnH-RR-MGZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MKN-Ha-uif"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Shop Settings" id="Itj-bM-CuX">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WBo-X1-3WP">
-                            <color key="tintColor" red="0.89246906729999997" green="0.36151764019999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <action selector="addShopBtnPressed:" destination="hhr-7a-AhW" id="MR0-qK-9Nr"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Shops" id="Itj-bM-CuX"/>
                     <connections>
-                        <outlet property="barAddBtn" destination="WBo-X1-3WP" id="q0L-lQ-UIj"/>
                         <outlet property="baseView" destination="1Bh-HU-T1Y" id="JSH-RG-Uqg"/>
                         <outlet property="bgView" destination="1Bh-HU-T1Y" id="Ebq-Yb-Heg"/>
                         <outlet property="noShopView" destination="QIe-5j-2d8" id="EHg-Wh-Yt4"/>
+                        <outlet property="shopColView" destination="CDw-gi-4Rc" id="qyI-3D-VgD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVW-m7-9Uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
