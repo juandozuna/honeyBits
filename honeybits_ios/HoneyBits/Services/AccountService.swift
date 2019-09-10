@@ -35,7 +35,7 @@ class AccountService : BaseService, IAccountService {
     }
     
     //MARK:-  Methods
-    func authenticateUser(user: UserTokenModel, completion: @escaping AccountService.CompletedRequestVoid<Bool?>) {
+    func authenticateUser(user: UserTokenModel, completion: @escaping CompletedRequestVoid<Bool?>) {
         let parameters: Parameters = [
             "username": user.username!,
             "password": user.password!
@@ -63,7 +63,7 @@ class AccountService : BaseService, IAccountService {
         }
     }
     
-    func registerUser(registration: UserRegistrationModel, completion: @escaping AccountService.CompletedRequestVoid<UserModel>) {
+    func registerUser(registration: UserRegistrationModel, completion: @escaping CompletedRequestVoid<UserModel>) {
         let url = "\(baseEndpoint)\(baseUserService)create"
         let registrationData = try! JSONEncoder().encode(registration)
         
