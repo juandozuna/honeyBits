@@ -14,12 +14,4 @@ struct ProductModel : Codable {
     var productCategoryId: Int?
     var productDescription: String?
     var productPrice: Decimal?
-    
-    init() {
-        productId = nil
-        productName = nil
-        productCategoryId = nil
-        productDescription = nil
-        productPrice = nil
-    }
 }
