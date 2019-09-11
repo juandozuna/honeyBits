@@ -68,8 +68,9 @@ class RegistrationUsernameSelectionController: UIViewController {
                     self.backdropDelegate?.isBackdropActive = false
                     self.delegate?.logIn()
                     self.dismiss(animated: true, completion: nil)
+                    self.showHudMessage(nil, type: .success)
                 } else {
-                    self.showAlertMessage("An error occurred while registering user", title: "Error in registration")
+                    self.showHudMessage(NSLocalizedString("RegistrationError", comment: ""), type: .error)
                 }
                  self.stopLoading()
             }
@@ -85,7 +86,7 @@ class RegistrationUsernameSelectionController: UIViewController {
                 self.loginRegisteredUser()
                 return
             }
-            self.showAlertMessage("An error occurred while registering user", title: "Error in registration")
+            self.showHudMessage(NSLocalizedString("RegistrationError", comment: ""), type: .error)
         }
     }
 }

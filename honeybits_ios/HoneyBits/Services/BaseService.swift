@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-
+import SVProgressHUD
 
 class BaseService {
     typealias CompletedRequestVoid<T> = (RequestStatus, T?) -> Void
@@ -75,12 +75,21 @@ class BaseService {
         if let statusCode = response.response?.statusCode {
             if statusCode == 401 {
                 completion(.Unauthorized, nil)
+                SVProgressHUD.showError(withStatus: NSLocalizedString("UserNotAllowed", comment: ""))
                 forgetApiToken()
                 return
             }
             
             if statusCode == 500 {
                 completion(.ServerError, nil)
+                SVProgressHUD.showError(withStatus: NSLocalizedString("ServerError", comment: ""))
+                forgetApiToken()
+                return
+            }
+            
+            if statusCode == 404 {
+                completion(.ServerError, nil)
+                SVProgressHUD.showError(withStatus: NSLocalizedString("EndpointNotFound", comment: ""))
                 forgetApiToken()
                 return
             }
@@ -88,17 +97,21 @@ class BaseService {
         
         if let error = response.error {
             completion(.Failure, nil)
+            SVProgressHUD.showError(withStatus: error.localizedDescription)
             print(error)
             return
         }
         
         if response.result.isFailure {
             completion(.Failure, nil)
+            SVProgressHUD.showError(withStatus: NSLocalizedString("ResponseFailed", comment: ""))
+
             return
         }
         
         guard let jsonData = response.data else {
             completion(.Failure, nil)
+            SVProgressHUD.showError(withStatus: NSLocalizedString("JsonDataFromResponseError", comment: ""))
             return
         }
         

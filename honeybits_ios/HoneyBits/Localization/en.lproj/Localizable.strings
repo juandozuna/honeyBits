@@ -14,3 +14,9 @@
 "Sign in" = "Sign in";
 "RequiredField" = "This is a required field";
 "ValidEmailAddress" = "You must enter a valid email address";
+"RegistrationError" = "There was an error while registering User";
+"UserNotAllowed" = "User sesion has expired";
+"ServerError" = "An error ocurred in the server";
+"ResponseFailed" = "Failed server response";
+"JsonDataFromResponseError" = "Failed to retrieve JSON from response";
+"EndpointNotFound" = "Not able to perform request to API route";
