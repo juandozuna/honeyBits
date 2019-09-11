@@ -10,6 +10,7 @@
 		0BD5BDC146488DC7AD00F8EA /* Pods_HoneyBits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E461E760B99B774FB47708 /* Pods_HoneyBits.framework */; };
 		1C0F3653B6F29A19D501CAAB /* Pods_HoneyBitsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C636D69A3D1DCE55F9C6D98 /* Pods_HoneyBitsTests.framework */; };
 		94689591791F5DCFE6CF9A41 /* Pods_HoneyBitsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3796716515E095C76664E6F2 /* Pods_HoneyBitsUITests.framework */; };
+		B202E6172329AD95000164E4 /* ProgressTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B202E6162329AD95000164E4 /* ProgressTypeEnum.swift */; };
 		B2093E9323083D45006CA976 /* IGenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2093E9223083D45006CA976 /* IGenericService.swift */; };
 		B2093E972308911F006CA976 /* ShopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2093E962308911F006CA976 /* ShopService.swift */; };
 		B211EC2222EF30B2006B5A82 /* MenuBarMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2122EF30B2006B5A82 /* MenuBarMainController.swift */; };
@@ -141,6 +142,7 @@
 		7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsUITests.release.xcconfig"; path = "Target Support Files/Pods-HoneyBitsUITests/Pods-HoneyBitsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		979A26B3C22A87F960576887 /* Pods-HoneyBitsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsTests.debug.xcconfig"; path = "Target Support Files/Pods-HoneyBitsTests/Pods-HoneyBitsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF08A3412DFB48B7CEC50E1A /* Pods-HoneyBits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBits.release.xcconfig"; path = "Target Support Files/Pods-HoneyBits/Pods-HoneyBits.release.xcconfig"; sourceTree = "<group>"; };
+		B202E6162329AD95000164E4 /* ProgressTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTypeEnum.swift; sourceTree = "<group>"; };
 		B2093E9223083D45006CA976 /* IGenericService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGenericService.swift; sourceTree = "<group>"; };
 		B2093E962308911F006CA976 /* ShopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopService.swift; sourceTree = "<group>"; };
 		B211EC2122EF30B2006B5A82 /* MenuBarMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarMainController.swift; sourceTree = "<group>"; };
@@ -480,6 +482,7 @@
 			children = (
 				B262AF4E22DBF94D00ABF311 /* RequestStatus.swift */,
 				B21957EC22E24AD9008AEBA0 /* Roles.swift */,
+				B202E6162329AD95000164E4 /* ProgressTypeEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1122,6 +1125,7 @@
 				B2398A3622DD5B230042C764 /* EncodableExtensions.swift in Sources */,
 				B2093E972308911F006CA976 /* ShopService.swift in Sources */,
 				B2BC92B322F3E61500D128B4 /* ProductCardViewModel.swift in Sources */,
+				B202E6172329AD95000164E4 /* ProgressTypeEnum.swift in Sources */,
 				B262AF4F22DBF94D00ABF311 /* RequestStatus.swift in Sources */,
 				B262AF4C22DBF86600ABF311 /* UserTokenModel.swift in Sources */,
 				B211EC2422EF3F7E006B5A82 /* MenuBarView.swift in Sources */,

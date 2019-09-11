@@ -10,9 +10,11 @@ import UIKit
 import Material
 import ChameleonFramework
 import SwiftValidators
+import SVProgressHUD
 
 extension UIViewController {
     func showAlertMessage(_ message: String, title: String, completion: (()->Void)? = nil) {
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
@@ -21,6 +23,23 @@ extension UIViewController {
         }))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func showHudMessage(_ message: String?, type: ProgressTypeEnum?) {
+        
+        if let t = type {
+            switch t {
+            case .success:
+                SVProgressHUD.showSuccess(withStatus: message)
+            case .error:
+                SVProgressHUD.showError(withStatus: message)
+            case .info:
+                SVProgressHUD.showInfo(withStatus: message)
+            }
+        } else {
+            showAlertMessage(message!, title: "Alert")
+        }
     }
     
     

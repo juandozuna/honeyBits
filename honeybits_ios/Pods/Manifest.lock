@@ -13,6 +13,12 @@ PODS:
     - Motion/Core (= 3.1.1)
   - Motion/Core (3.1.1)
   - PMSuperButton (3.0.1)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
   - SVProgressHUD (2.2.5)
   - SwiftValidators (9.0.1)
   - SwiftyJSON (5.0.0)
@@ -26,6 +32,8 @@ DEPENDENCIES:
   - IHKeyboardAvoiding
   - Material
   - PMSuperButton
+  - RxCocoa (~> 5)
+  - RxSwift (~> 5)
   - SVProgressHUD
   - SwiftValidators
   - SwiftyJSON
@@ -41,6 +49,9 @@ SPEC REPOS:
     - Material
     - Motion
     - PMSuperButton
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SVProgressHUD
     - SwiftValidators
     - SwiftyJSON
@@ -55,12 +66,15 @@ SPEC CHECKSUMS:
   Material: 3622a0e18c8114e701b9d8509c3c4af28ed69ed8
   Motion: f115b33f36cc52472a25a965daa89b3859817de0
   PMSuperButton: 2bef6f8659a5df969a69887f496ef309480c65eb
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftValidators: 8389e5dd12516d228f9648c20501a23e63a5252a
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
   SwipeViewController: 48eef0f9959b795ab4687b95428122597bce3f27
 
-PODFILE CHECKSUM: 20b98053f610e984748035d8358344af02fdbb16
+PODFILE CHECKSUM: ef2a540d71e5f0172b3ff65d4902970c1be476a3
 
 COCOAPODS: 1.7.1

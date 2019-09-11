@@ -8,6 +8,7 @@
 
 import UIKit
 import ChameleonFramework
+import SVProgressHUD
 
 class MainKeeperShopViewController : UIViewController {
    
@@ -79,14 +80,16 @@ class MainKeeperShopViewController : UIViewController {
     
     
     private func startLoading() {
-        activityIndicatorView.isHidden = false
-        activityIndicatorView.startAnimating()
+//        activityIndicatorView.isHidden = false
+//        activityIndicatorView.startAnimating()
+        SVProgressHUD.show()
     }
     
     private func stopLoading() {
         displayCorrectView()
-        activityIndicatorView.stopAnimating()
-        activityIndicatorView.isHidden = true
+        SVProgressHUD.dismiss()
+//        activityIndicatorView.stopAnimating()
+//        activityIndicatorView.isHidden = true
     }
     
     private func reloadShop() {

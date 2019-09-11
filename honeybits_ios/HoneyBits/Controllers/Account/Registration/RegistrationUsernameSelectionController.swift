@@ -9,19 +9,12 @@
 import UIKit
 import Material
 import ChameleonFramework
+import SVProgressHUD
 
 class RegistrationUsernameSelectionController: UIViewController {
     
     
     
-    var activityIndicatorView: UIActivityIndicatorView = {
-       let aiv = UIActivityIndicatorView()
-        aiv.translatesAutoresizingMaskIntoConstraints = false
-        aiv.color = .flatOrange()
-        aiv.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
-        aiv.isHidden = true
-        return aiv;
-    }()
     @IBOutlet weak var txtUsername: TextField!
     @IBOutlet var bgView: UIView!
     var backdropDelegate: AuthBackdropDelegate?
@@ -37,7 +30,6 @@ class RegistrationUsernameSelectionController: UIViewController {
     
     private func controllerSetup() {
         textFieldSetup()
-        activityViewSetup()
     }
     
     private func textFieldSetup() {
@@ -45,13 +37,6 @@ class RegistrationUsernameSelectionController: UIViewController {
         txtUsername.isSecureTextEntry = false
         txtUsername.rightView = nil
         setTextFieldColor(to: txtUsername)
-    }
-    
-    private func activityViewSetup() {
-        view.addSubview(activityIndicatorView)
-        view.addConstraintsWithFormat("H:|[v0]|", views: activityIndicatorView)
-         view.addConstraintsWithFormat("V:|[v0]|", views: activityIndicatorView)
-        stopLoading()
     }
     
     private func bgViewSetup() {
@@ -65,13 +50,11 @@ class RegistrationUsernameSelectionController: UIViewController {
     }
     
     private func startLoading() {
-        activityIndicatorView.isHidden = false
-        activityIndicatorView.startAnimating()
+        SVProgressHUD.show()
     }
     
     private func stopLoading() {
-        activityIndicatorView.stopAnimating()
-        activityIndicatorView.isHidden = true
+        SVProgressHUD.dismiss()
     }
     
     private func loginRegisteredUser() {
