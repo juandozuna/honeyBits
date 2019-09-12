@@ -25,7 +25,7 @@ class KeeperShopProductSectionHeader: UICollectionReusableView {
     }
     
     private func configureBtnStyles() {
-        addBtn.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        addBtn.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
     @IBAction func addBtnPressed(_ sender: Any) {
