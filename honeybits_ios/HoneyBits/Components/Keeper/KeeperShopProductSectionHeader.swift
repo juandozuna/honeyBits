@@ -7,18 +7,12 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import PMSuperButton
 
 class KeeperShopProductSectionHeader: UICollectionReusableView {
     
-    private let addBtnSubject = BehaviorSubject<Void>(value: ())
     @IBOutlet weak var addBtn: PMSuperButton!
-    
-    var addBtnObservable: Observable<Void> {
-        return addBtnSubject.asObservable()
-    }
+    var parent: MainKeeperShopViewController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,7 +24,7 @@ class KeeperShopProductSectionHeader: UICollectionReusableView {
     }
     
     @IBAction func addBtnPressed(_ sender: Any) {
-       addBtnSubject.on(.next(()))
+       parent?.addProductBtnPressed()
     }
     
     

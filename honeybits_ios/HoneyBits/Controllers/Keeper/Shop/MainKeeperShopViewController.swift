@@ -8,7 +8,6 @@
 
 import UIKit
 import ChameleonFramework
-import RxSwift
 import SVProgressHUD
 
 class MainKeeperShopViewController : UIViewController {
@@ -22,10 +21,10 @@ class MainKeeperShopViewController : UIViewController {
     private let shopDetailCellId = "shopDetailCellId"
     private let productCellId = "productCellId"
     private let headerCellId = "headerCellId"
+    private var allowProductAddBtn = false
     
     var shopModel: ShopModel?
     var products: [ProductModel]?
-    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,7 +93,7 @@ class MainKeeperShopViewController : UIViewController {
         }
     }
     
-    private func addProductBtnPressed() {
+     func addProductBtnPressed() {
         showAlertMessage("Heellous", title: "Guenas")
     }
     
@@ -150,10 +149,7 @@ extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionVi
         if section == 1 && kind == UICollectionView.elementKindSectionHeader{
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCellId, for: indexPath) as! KeeperShopProductSectionHeader
             
-            view.addBtnObservable.subscribe({_ in 
-                self.addProductBtnPressed()
-            }).disposed(by: disposeBag)
-            
+            view.parent = self
             return view
             
         }
