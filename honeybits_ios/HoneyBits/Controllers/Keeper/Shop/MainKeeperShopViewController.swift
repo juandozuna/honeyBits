@@ -8,7 +8,6 @@
 
 import UIKit
 import ChameleonFramework
-import SVProgressHUD
 
 class MainKeeperShopViewController : UIViewController {
    
@@ -22,15 +21,6 @@ class MainKeeperShopViewController : UIViewController {
     private let productCellId = "productCellId"
     private let headerCellId = "headerCellId"
     
-    var activityIndicatorView: UIActivityIndicatorView = {
-        let aiv = UIActivityIndicatorView()
-        aiv.translatesAutoresizingMaskIntoConstraints = false
-        aiv.color = .flatOrange()
-        aiv.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
-        aiv.isHidden = true
-        return aiv;
-    }()
-    
     var shopModel: ShopModel?
     var products: [ProductModel]?
     
@@ -41,7 +31,6 @@ class MainKeeperShopViewController : UIViewController {
     
     private func setupController() {
         setupCollectionView()
-        setupActivityIndicatorView()
         displayCorrectView()
         noShopView.setupDelegate = self
         reloadShop()
@@ -64,12 +53,7 @@ class MainKeeperShopViewController : UIViewController {
         bgView.addConstraintsWithFormat("V:|[v0]|", views: shopColView)
         shopColView.backgroundColor = .white
     }
-    
-    private func setupActivityIndicatorView() {
-        bgView.addSubview(activityIndicatorView)
-        bgView.addConstraintsWithFormat("H:|[v0]|", views: activityIndicatorView)
-        bgView.addConstraintsWithFormat("V:|[v0]|", views: activityIndicatorView)
-    }
+
     
     private func displayCorrectView() {
         let showShopsTable = true//shopModel != nil
@@ -79,25 +63,14 @@ class MainKeeperShopViewController : UIViewController {
     }
     
     
-    private func startLoading() {
-//        activityIndicatorView.isHidden = false
-//        activityIndicatorView.startAnimating()
-        SVProgressHUD.show()
-    }
-    
     private func stopLoading() {
         displayCorrectView()
-        SVProgressHUD.dismiss()
-//        activityIndicatorView.stopAnimating()
-//        activityIndicatorView.isHidden = true
     }
     
     private func reloadShop() {
-        startLoading()
         shopService.getShopsForUser { (status, shops) in
             if status != .Success {
                 self.stopLoading()
-                self.showAlertMessage("Error ocurred while retrieving shop info", title: "Networking Error")
                 return
             }
             
@@ -109,7 +82,6 @@ class MainKeeperShopViewController : UIViewController {
     private func reloadShopProducts() {
         productService.getProductsForShop(shopId: 1) { (status, products) in
             if status != .Success {
-                self.showAlertMessage("Error ocurred while trying to retrieve products", title: "Networking Error")
                 return
             }
             self.products = products
