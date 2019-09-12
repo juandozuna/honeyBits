@@ -98,30 +98,30 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igd-Xd-iao">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="l0x-Re-Ap2">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="l0x-Re-Ap2">
+                                        <rect key="frame" x="8" y="25" width="398" height="145"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SmD-xq-5QG" customClass="TextField" customModule="Material">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="45"/>
+                                                <color key="backgroundColor" red="0.97647058823529409" green="0.94117647058823528" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="R7S-Qt-0gE"/>
+                                                    <constraint firstAttribute="height" constant="45" id="R7S-Qt-0gE"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Shop Name"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value="The name of your shop"/>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iFl-g3-v0s" customClass="TextField" customModule="Material">
-                                                <rect key="frame" x="0.0" y="105" width="414" height="60"/>
+                                                <rect key="frame" x="0.0" y="100" width="398" height="45"/>
+                                                <color key="backgroundColor" red="0.97647058823529409" green="0.94117647058823528" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Shop Description"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value="A short description for your shop"/>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                         </subviews>
@@ -129,9 +129,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="l0x-Re-Ap2" firstAttribute="top" secondItem="igd-Xd-iao" secondAttribute="top" id="NMg-Eo-2bI"/>
-                                    <constraint firstItem="l0x-Re-Ap2" firstAttribute="leading" secondItem="igd-Xd-iao" secondAttribute="leading" id="UJF-qx-L7d"/>
-                                    <constraint firstAttribute="trailing" secondItem="l0x-Re-Ap2" secondAttribute="trailing" id="uvn-Gv-L3V"/>
+                                    <constraint firstItem="l0x-Re-Ap2" firstAttribute="top" secondItem="igd-Xd-iao" secondAttribute="top" constant="25" id="NMg-Eo-2bI"/>
+                                    <constraint firstItem="l0x-Re-Ap2" firstAttribute="leading" secondItem="igd-Xd-iao" secondAttribute="leading" constant="8" id="UJF-qx-L7d"/>
+                                    <constraint firstAttribute="trailing" secondItem="l0x-Re-Ap2" secondAttribute="trailing" constant="8" id="uvn-Gv-L3V"/>
                                 </constraints>
                             </view>
                         </subviews>

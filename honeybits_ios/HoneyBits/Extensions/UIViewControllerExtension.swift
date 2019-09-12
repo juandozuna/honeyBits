@@ -71,6 +71,8 @@ extension UIViewController {
     
     //MARK:- Material Text Field
     func setTextFieldColor(to textField: TextField) {
+        textField.backgroundColor = UIColor.flatWhite()
+        textField.textInsets = UIEdgeInsets(top: 5, left: 8, bottom: 5, right: 8)
         textField.dividerActiveColor = UIColor.flatOrange()
         textField.placeholderActiveColor = UIColor.flatOrange()
     }
