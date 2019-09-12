@@ -144,13 +144,9 @@ extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let section = indexPath.section
         if section == 1 && kind == UICollectionView.elementKindSectionHeader{
-            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCellId, for: indexPath) as? KeeperShopProductSectionHeader else {
-                return UICollectionReusableView()
-            }
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCellId, for: indexPath)
+            return view
             
-            view.addBtnObservable.subscribe(onNext: {
-                self.showHudMessage("Add product Btn pressed", type: .success)
-            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         }
         return UICollectionReusableView()
     }

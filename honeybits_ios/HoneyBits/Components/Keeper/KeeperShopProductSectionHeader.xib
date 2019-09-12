@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xo2-gq-k7B" customClass="KeeperShopProductSectionHeader" customModule="HoneyBits" customModuleProvider="target">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xo2-gq-k7B">
             <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -20,23 +20,26 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jG-J0-oBy">
-                            <rect key="frame" x="15" y="18.5" width="69" height="40"/>
+                            <rect key="frame" x="15" y="18.5" width="83" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="260" id="6Z5-8S-Em5"/>
                                 <constraint firstAttribute="height" constant="40" id="bEJ-cQ-8VL"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amu-sc-zjk" customClass="PMSuperButton" customModule="PMSuperButton">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Amu-sc-zjk" customClass="PMSuperButton" customModule="PMSuperButton">
                             <rect key="frame" x="348" y="16" width="45" height="45"/>
                             <color key="backgroundColor" red="0.99482471449999998" green="0.58095096130000001" blue="0.34970351300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="N0O-3c-IeB"/>
                                 <constraint firstAttribute="width" constant="45" id="ZYZ-w7-C5p"/>
                             </constraints>
-                            <state key="normal" image="cm_add_white"/>
+                            <color key="tintColor" red="0.97512323170000004" green="1" blue="0.97991931290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <state key="normal" image="plus-icon-white">
+                                <attributedString key="attributedTitle"/>
+                            </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="23"/>
@@ -49,9 +52,6 @@
                                     <real key="value" value="2"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="addBtnPressed:" destination="xo2-gq-k7B" eventType="touchUpInside" id="lL2-Yp-Lga"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,6 +74,6 @@
         </collectionReusableView>
     </objects>
     <resources>
-        <image name="cm_add_white" width="24" height="24"/>
+        <image name="plus-icon-white" width="64" height="64"/>
     </resources>
 </document>
