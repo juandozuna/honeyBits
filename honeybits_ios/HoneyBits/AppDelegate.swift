@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func progressHudSetup() {
         SVProgressHUD.setDefaultStyle(.custom)
         SVProgressHUD.setDefaultMaskType(.custom)
-        SVProgressHUD.setBackgroundColor(UIColor.flatBlack())
+        SVProgressHUD.setBackgroundColor(UIColor.flatWhite())
         SVProgressHUD.setForegroundColor(UIColor.flatOrange())
         SVProgressHUD.setBackgroundLayerColor(UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5))
         hideProgressHudOnUserTap()
