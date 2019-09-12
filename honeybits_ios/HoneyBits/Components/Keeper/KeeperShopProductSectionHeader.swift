@@ -8,10 +8,12 @@
 
 import UIKit
 import RxSwift
+import PMSuperButton
 
 class KeeperShopProductSectionHeader: UICollectionReusableView {
     
     private let addBtnSubject = BehaviorSubject<Void>(value: ())
+    @IBOutlet weak var addBtn: PMSuperButton!
     
     var addBtnObservable: Observable<Void> {
         return addBtnSubject.asObservable()
@@ -19,10 +21,15 @@ class KeeperShopProductSectionHeader: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureBtnStyles()
+    }
+    
+    private func configureBtnStyles() {
+        addBtn.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
     
     @IBAction func addBtnPressed(_ sender: Any) {
-        //addBtnSubject.onNext(())
+        addBtnSubject.onNext(())
     }
     
     
