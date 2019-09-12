@@ -30,6 +30,7 @@
 		B237E9662309FDB700DD8E39 /* KeeperNoShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B237E9652309FDB700DD8E39 /* KeeperNoShopView.swift */; };
 		B2398A3422DD36280042C764 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2398A3322DD36280042C764 /* UIViewControllerExtension.swift */; };
 		B2398A3622DD5B230042C764 /* EncodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2398A3522DD5B230042C764 /* EncodableExtensions.swift */; };
+		B23B3686232B023000DF0FB8 /* KeeperShopEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23B3685232B023000DF0FB8 /* KeeperShopEditViewController.swift */; };
 		B23FEA9822F0F74F001E8B32 /* ProductCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23FEA9722F0F74F001E8B32 /* ProductCardView.xib */; };
 		B23FEA9A22F10078001E8B32 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23FEA9922F10078001E8B32 /* ProductCardView.swift */; };
 		B23FEA9C22F1BFE4001E8B32 /* CustomerHomeUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23FEA9B22F1BFE4001E8B32 /* CustomerHomeUserController.swift */; };
@@ -164,6 +165,7 @@
 		B237E9652309FDB700DD8E39 /* KeeperNoShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperNoShopView.swift; sourceTree = "<group>"; };
 		B2398A3322DD36280042C764 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B2398A3522DD5B230042C764 /* EncodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtensions.swift; sourceTree = "<group>"; };
+		B23B3685232B023000DF0FB8 /* KeeperShopEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperShopEditViewController.swift; sourceTree = "<group>"; };
 		B23FEA9722F0F74F001E8B32 /* ProductCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCardView.xib; sourceTree = "<group>"; };
 		B23FEA9922F10078001E8B32 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 		B23FEA9B22F1BFE4001E8B32 /* CustomerHomeUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeUserController.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			children = (
 				B2093E9B23089C6D006CA976 /* Creation */,
 				B2198F562309CDFD0083A01A /* MainKeeperShopViewController.swift */,
+				B23B3685232B023000DF0FB8 /* KeeperShopEditViewController.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -1112,6 +1115,7 @@
 				B26C652A2320A38E0053537C /* ShopActionDelegate.swift in Sources */,
 				B2DABEFA232739F9001B4E4C /* KeeperShopProductCell.swift in Sources */,
 				B28F419B22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift in Sources */,
+				B23B3686232B023000DF0FB8 /* KeeperShopEditViewController.swift in Sources */,
 				B23FEA9C22F1BFE4001E8B32 /* CustomerHomeUserController.swift in Sources */,
 				B28F41AC22D80CD900C7E2E6 /* CustomerYouViewController.swift in Sources */,
 				B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */,

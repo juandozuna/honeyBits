@@ -71,11 +71,92 @@
                         <outlet property="bgView" destination="1Bh-HU-T1Y" id="Ebq-Yb-Heg"/>
                         <outlet property="noShopView" destination="QIe-5j-2d8" id="EHg-Wh-Yt4"/>
                         <outlet property="shopColView" destination="CDw-gi-4Rc" id="qyI-3D-VgD"/>
+                        <segue destination="Nvq-3Q-1dP" kind="presentation" identifier="goToShopEdit" id="3Md-1G-ZUq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVW-m7-9Uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-115.94202898550725" y="104.46428571428571"/>
+        </scene>
+        <!--Edit Shop-->
+        <scene sceneID="O91-Fz-B06">
+            <objects>
+                <viewController title="Edit Shop" id="Nvq-3Q-1dP" customClass="KeeperShopEditViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pdk-E5-sTx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2K-WA-JNr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="I1t-Pe-baS"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="OJ2-75-0vR"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igd-Xd-iao">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="l0x-Re-Ap2">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SmD-xq-5QG" customClass="TextField" customModule="Material">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="R7S-Qt-0gE"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Shop Name"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value="The name of your shop"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iFl-g3-v0s" customClass="TextField" customModule="Material">
+                                                <rect key="frame" x="0.0" y="105" width="414" height="60"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Shop Description"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value="A short description for your shop"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="l0x-Re-Ap2" firstAttribute="top" secondItem="igd-Xd-iao" secondAttribute="top" id="NMg-Eo-2bI"/>
+                                    <constraint firstItem="l0x-Re-Ap2" firstAttribute="leading" secondItem="igd-Xd-iao" secondAttribute="leading" id="UJF-qx-L7d"/>
+                                    <constraint firstAttribute="trailing" secondItem="l0x-Re-Ap2" secondAttribute="trailing" id="uvn-Gv-L3V"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97006449855832044" green="0.96537819663291802" blue="0.97475080048372298" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="igd-Xd-iao" firstAttribute="top" secondItem="S2K-WA-JNr" secondAttribute="bottom" id="6kl-PE-KPt"/>
+                            <constraint firstAttribute="bottom" secondItem="igd-Xd-iao" secondAttribute="bottom" id="DDC-5C-DaY"/>
+                            <constraint firstItem="igd-Xd-iao" firstAttribute="leading" secondItem="m5t-xs-ABz" secondAttribute="leading" id="WFg-4n-eVw"/>
+                            <constraint firstItem="S2K-WA-JNr" firstAttribute="top" secondItem="m5t-xs-ABz" secondAttribute="top" id="dIa-ly-OLn"/>
+                            <constraint firstItem="S2K-WA-JNr" firstAttribute="trailing" secondItem="m5t-xs-ABz" secondAttribute="trailing" id="eak-Ls-rPZ"/>
+                            <constraint firstItem="igd-Xd-iao" firstAttribute="trailing" secondItem="m5t-xs-ABz" secondAttribute="trailing" id="mxC-Dk-w54"/>
+                            <constraint firstItem="S2K-WA-JNr" firstAttribute="leading" secondItem="m5t-xs-ABz" secondAttribute="leading" id="taO-zx-KrG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="m5t-xs-ABz"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="shopDescription" destination="iFl-g3-v0s" id="nEN-rd-7MT"/>
+                        <outlet property="shopName" destination="SmD-xq-5QG" id="RGQ-gp-haj"/>
+                        <outlet property="topBar" destination="S2K-WA-JNr" id="KF7-mr-K6u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jbK-yU-ia0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911.59420289855075" y="-188.16964285714286"/>
         </scene>
     </scenes>
     <resources>

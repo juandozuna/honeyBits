@@ -31,6 +31,13 @@ class MainKeeperShopViewController : UIViewController {
         setupController()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToShopEdit" {
+            let vc = segue.destination as! KeeperShopEditViewController
+            prepareShopEditController(with: vc)
+        }
+    }
+    
     private func setupController() {
         setupCollectionView()
         displayCorrectView()
@@ -56,7 +63,14 @@ class MainKeeperShopViewController : UIViewController {
         bgView.addConstraintsWithFormat("V:|[v0]|", views: shopColView)
         shopColView.backgroundColor = .white
     }
+    
+    private func goToShopEditPage() {
+        performSegue(withIdentifier: "goToShopEdit", sender: self)
+    }
 
+    private func prepareShopEditController(with vc: KeeperShopEditViewController){
+        vc.setShopModel(model: shopModel)
+    }
     
     private func displayCorrectView() {
         let showShopsTable = true//shopModel != nil
@@ -121,9 +135,7 @@ extension MainKeeperShopViewController : CreateShopDelegate {
 
 extension MainKeeperShopViewController : ShopActionDelegate {
     func editShop(shopModel: ShopModel) {
-        showAlertMessage("You pressed the edit button", title: shopModel.shopName!)
-        shopColView.reloadData()
-        displayCorrectView()
+        goToShopEditPage()
     }
 }
 
