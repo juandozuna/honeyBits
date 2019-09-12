@@ -38,34 +38,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func hideProgressHudOnUserTap(){
+        NotificationCenter.default.addObserver(self, selector: #selector(self.tapToDismiss(notification:)), name: NSNotification.Name.SVProgressHUDDidReceiveTouchEvent, object: nil)
+    }
+    
+    @objc func tapToDismiss(notification: Notification) {
+        SVProgressHUD.dismiss()
+    }
+    
+    func removeProgressHudObserver(){
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.SVProgressHUDDidReceiveTouchEvent, object: nil)
+    }
+    
     private func progressHudSetup() {
         SVProgressHUD.setDefaultStyle(.custom)
         SVProgressHUD.setDefaultMaskType(.custom)
         SVProgressHUD.setBackgroundColor(UIColor.flatBlack())
         SVProgressHUD.setForegroundColor(UIColor.flatOrange())
         SVProgressHUD.setBackgroundLayerColor(UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5))
+        hideProgressHudOnUserTap()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        removeProgressHudObserver()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        removeProgressHudObserver()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        hideProgressHudOnUserTap()
+
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        
+        hideProgressHudOnUserTap()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        removeProgressHudObserver()
+        
     }
 
 

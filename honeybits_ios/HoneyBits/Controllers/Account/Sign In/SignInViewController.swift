@@ -53,7 +53,7 @@ class SignInViewController: UIViewController {
             user.username = txtUsername.text!
             accountService.authenticateUser(user: user) { (status, result) in
                 if status == .Success {
-                    SVProgressHUD.showSuccess(withStatus: "")
+                    SVProgressHUD.showSuccess(withStatus: nil)
                    self.successfulLogin()
                 }
             }
