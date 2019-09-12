@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import PMSuperButton
 
 class KeeperShopProductSectionHeader: UICollectionReusableView {
@@ -29,7 +30,7 @@ class KeeperShopProductSectionHeader: UICollectionReusableView {
     }
     
     @IBAction func addBtnPressed(_ sender: Any) {
-        addBtnSubject.onNext(())
+       addBtnSubject.on(.next(()))
     }
     
     

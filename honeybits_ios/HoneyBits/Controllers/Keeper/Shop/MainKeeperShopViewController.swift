@@ -94,6 +94,10 @@ class MainKeeperShopViewController : UIViewController {
         }
     }
     
+    private func addProductBtnPressed() {
+        showAlertMessage("Heellous", title: "Guenas")
+    }
+    
     private func presentShopCreationController() {
         let navController = viewControllerFromStoryboard(storyboard: "KeeperShopCreation", withIdentifier: "shopFormNav") as! UINavigationController
         let controller = navController.topViewController as! KeeperShopNameFormController
@@ -144,7 +148,12 @@ extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let section = indexPath.section
         if section == 1 && kind == UICollectionView.elementKindSectionHeader{
-            let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCellId, for: indexPath)
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCellId, for: indexPath) as! KeeperShopProductSectionHeader
+            
+            view.addBtnObservable.subscribe({_ in 
+                self.addProductBtnPressed()
+            }).disposed(by: disposeBag)
+            
             return view
             
         }
