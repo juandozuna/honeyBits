@@ -42,6 +42,8 @@
 		B2512DBB22F0D7E700E1BA9E /* TextWithBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2512DBA22F0D7E700E1BA9E /* TextWithBackgroundView.swift */; };
 		B2512DBD22F0D82800E1BA9E /* TextWithBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2512DBC22F0D82800E1BA9E /* TextWithBackgroundView.xib */; };
 		B25AE9A3230CF30B002E7D67 /* KeeperShopDescriptionFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AE9A2230CF30B002E7D67 /* KeeperShopDescriptionFormController.swift */; };
+		B25BBB0B2329F052005640A9 /* KeeperShopProductSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B25BBB0A2329F052005640A9 /* KeeperShopProductSectionHeader.xib */; };
+		B25BBB0D2329F236005640A9 /* KeeperShopProductSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25BBB0C2329F236005640A9 /* KeeperShopProductSectionHeader.swift */; };
 		B25D46A722E398C700F3E644 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25D46A622E398C700F3E644 /* NSObjectExtensions.swift */; };
 		B25FCB9322E94FCB006BDD0C /* KeeperSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25FCB9222E94FCB006BDD0C /* KeeperSettingsViewController.swift */; };
 		B2605723231F34F9001B4EDF /* KeeperShopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2605722231F34F9001B4EDF /* KeeperShopView.xib */; };
@@ -174,6 +176,8 @@
 		B2512DBA22F0D7E700E1BA9E /* TextWithBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithBackgroundView.swift; sourceTree = "<group>"; };
 		B2512DBC22F0D82800E1BA9E /* TextWithBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextWithBackgroundView.xib; sourceTree = "<group>"; };
 		B25AE9A2230CF30B002E7D67 /* KeeperShopDescriptionFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperShopDescriptionFormController.swift; sourceTree = "<group>"; };
+		B25BBB0A2329F052005640A9 /* KeeperShopProductSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeeperShopProductSectionHeader.xib; sourceTree = "<group>"; };
+		B25BBB0C2329F236005640A9 /* KeeperShopProductSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperShopProductSectionHeader.swift; sourceTree = "<group>"; };
 		B25D46A622E398C700F3E644 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
 		B25FCB9222E94FCB006BDD0C /* KeeperSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperSettingsViewController.swift; sourceTree = "<group>"; };
 		B2605722231F34F9001B4EDF /* KeeperShopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeeperShopView.xib; sourceTree = "<group>"; };
@@ -361,6 +365,8 @@
 				B26C65252320994B0053537C /* KeeperShopDetailsCell.swift */,
 				B2DABEF7232735F7001B4E4C /* KeeperShopProductCell.xib */,
 				B2DABEF9232739F9001B4E4C /* KeeperShopProductCell.swift */,
+				B25BBB0A2329F052005640A9 /* KeeperShopProductSectionHeader.xib */,
+				B25BBB0C2329F236005640A9 /* KeeperShopProductSectionHeader.swift */,
 			);
 			path = Keeper;
 			sourceTree = "<group>";
@@ -958,6 +964,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B24BEE2422E7FF3500C1E5FB /* KeeperDashboard.storyboard in Resources */,
+				B25BBB0B2329F052005640A9 /* KeeperShopProductSectionHeader.xib in Resources */,
 				B27D794522D42BC80012F5CD /* CustomerSearch.storyboard in Resources */,
 				B2EE6A8722D8FDBF00350BBA /* AboutApp.storyboard in Resources */,
 				B26C6524232095F00053537C /* KeeperShopDetailsCell.xib in Resources */,
@@ -1125,6 +1132,7 @@
 				B2398A3622DD5B230042C764 /* EncodableExtensions.swift in Sources */,
 				B2093E972308911F006CA976 /* ShopService.swift in Sources */,
 				B2BC92B322F3E61500D128B4 /* ProductCardViewModel.swift in Sources */,
+				B25BBB0D2329F236005640A9 /* KeeperShopProductSectionHeader.swift in Sources */,
 				B202E6172329AD95000164E4 /* ProgressTypeEnum.swift in Sources */,
 				B262AF4F22DBF94D00ABF311 /* RequestStatus.swift in Sources */,
 				B262AF4C22DBF86600ABF311 /* UserTokenModel.swift in Sources */,

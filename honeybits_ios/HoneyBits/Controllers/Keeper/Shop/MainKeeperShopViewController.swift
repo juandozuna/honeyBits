@@ -8,6 +8,8 @@
 
 import UIKit
 import ChameleonFramework
+import RxSwift
+import SVProgressHUD
 
 class MainKeeperShopViewController : UIViewController {
    
@@ -23,6 +25,7 @@ class MainKeeperShopViewController : UIViewController {
     
     var shopModel: ShopModel?
     var products: [ProductModel]?
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +49,8 @@ class MainKeeperShopViewController : UIViewController {
         let nib2 = UINib(nibName: "KeeperShopProductCell", bundle: nil)
         shopColView.register(nib2, forCellWithReuseIdentifier: productCellId)
         
-        shopColView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCellId)
+        let nib3 = UINib(nibName: "KeeperShopProductSectionHeader", bundle: nil)
+        shopColView.register(nib3, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCellId)
         
         bgView.addSubview(shopColView)
         bgView.addConstraintsWithFormat("H:|[v0]|", views: shopColView)
@@ -138,19 +142,26 @@ extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if indexPath.section == 2 {
-            let v = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCellId, for: indexPath)
+        let section = indexPath.section
+        if section == 1 && kind == UICollectionView.elementKindSectionHeader{
+            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCellId, for: indexPath) as? KeeperShopProductSectionHeader else {
+                return UICollectionReusableView()
+            }
             
-            let label = UILabel()
-            label.text = "Products"
-            v.addSubview(label)
-            v.addConstraintsWithFormat("H:|[v0]|", views: label)
-            v.addConstraintsWithFormat("V:|[v0]|", views: label)
-            return v
+            view.addBtnObservable.subscribe(onNext: {
+                self.showHudMessage("Add product Btn pressed", type: .success)
+            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         }
-        return collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCellId, for: indexPath)
+        return UICollectionReusableView()
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 1 {
+            return CGSize(width: view.frame.width, height: 60)
+        }
+        return CGSize(width: view.frame.width, height: 0)
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
