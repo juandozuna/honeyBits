@@ -45,6 +45,7 @@ class BaseService {
     
     func urlRequestWithParams(_ url: URLConvertible, method: HTTPMethod?, parameters: Parameters?,
                     completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
+        SVProgressHUD.show()
           Alamofire.request(url,
                           method: method ?? .get,
                           parameters: parameters,
@@ -55,7 +56,8 @@ class BaseService {
     }
     
     func jsonRequest(_ url: URLConvertible, jsonData: Data, method: HTTPMethod, completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
-        let parameters = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: Any] 
+        SVProgressHUD.show()
+        let parameters = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: Any]
         
         Alamofire.request(url, method: method, parameters: parameters, encoding: JSONEncoding.prettyPrinted, headers: setHeaders()).responseJSON { (response) in
             self.handleResponse(response: response, completion: completion)
@@ -64,6 +66,8 @@ class BaseService {
     }
     
     func jsonRequest(_ url: URLConvertible, method: HTTPMethod, completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
+        SVProgressHUD.show()
+        
         Alamofire.request(url, method: method, parameters: nil, encoding: JSONEncoding.prettyPrinted, headers: setHeaders()).responseJSON { (response) in
             self.handleResponse(response: response, completion: completion)
         }
@@ -71,7 +75,6 @@ class BaseService {
     
     private func handleResponse(response: DataResponse<Any>, completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
         print(response)
-        
         if let statusCode = response.response?.statusCode {
             if statusCode == 401 {
                 completion(.Unauthorized, nil)
@@ -116,6 +119,7 @@ class BaseService {
             return
         }
         
+        SVProgressHUD.dismiss()
         completion(.Success, jsonData)
     }
     

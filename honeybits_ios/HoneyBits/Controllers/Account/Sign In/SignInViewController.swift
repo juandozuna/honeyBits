@@ -24,10 +24,8 @@ class SignInViewController: UIViewController {
     var backdropDelegate: AuthBackdropDelegate?
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var txtUsername: TextField!
-    var userName = BehaviorRelay<String?>(value: nil)
 
     @IBOutlet weak var txtPassword: TextField!
-    var password = BehaviorRelay<String?>(value: nil)
     
     @IBOutlet weak var btnSignIn: PMSuperButton!
     @IBOutlet weak var formView: UIView!
@@ -41,20 +39,21 @@ class SignInViewController: UIViewController {
         
         KeyboardAvoiding.avoidingView = formView
         
-        screenIsLoading(false)
         setTapGestures()
         setFormTextFields()
+        setBtnState()
         
     }
     
     @IBAction func SignInBtnPressed(_ sender: Any) {
         if validateForm() {
-            screenIsLoading(true)
+            
             var user = UserTokenModel()
             user.password = txtPassword.text!
             user.username = txtUsername.text!
             accountService.authenticateUser(user: user) { (status, result) in
                 if status == .Success {
+                    SVProgressHUD.showSuccess(withStatus: "")
                    self.successfulLogin()
                 }
             }
@@ -95,24 +94,7 @@ class SignInViewController: UIViewController {
     private func successfulLogin() {
         DispatchQueue.main.async {
             self.delegate!.logIn()
-            self.screenIsLoading(false)
-            self.showHudMessage(nil, type: .success)
             self.dismissIt()
-        }
-    }
-    
-    private func failedLogin() {
-        DispatchQueue.main.async {
-            self.screenIsLoading(false)
-        }
-    }
-    
-    private func screenIsLoading(_ isLoading: Bool) {
-        
-        if isLoading {
-            SVProgressHUD.show()
-        } else {
-            SVProgressHUD.dismiss()
         }
     }
     
@@ -172,22 +154,33 @@ class SignInViewController: UIViewController {
         btnSignIn.backgroundColor = UIColor.flatOrange()
         
         txtUsername
-            .rx.text.orEmpty.bind(to: userName).disposed(by: disposeBag)
-
+            .rx.text.orEmpty.subscribe(onNext: { (val) in
+                self.setBtnState()
+            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        
         txtPassword
-            .rx.text.orEmpty.bind(to: password).disposed(by: disposeBag)
+            .rx.text.orEmpty.subscribe(onNext: { (val) in
+                self.setBtnState()
+            }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+    
+    private func setBtnStyleCorrectly() {
+        let currentColor = btnSignIn.isEnabled ? UIColor.flatOrange() : UIColor.flatOrange()?.darken(byPercentage: 0.35)
         
-        userName.subscribe {
-            self.setBtnState();
-            }.disposed(by: disposeBag)
-        
-        password.subscribe {
-            self.setBtnState();
-            }.disposed(by: disposeBag)
+        UIView.animate(withDuration: 0.3) {
+            self.btnSignIn.backgroundColor = currentColor
+        }
     }
     
     private func setBtnState() {
-        btnSignIn.isEnabled = validateForm()
+        let user = txtUsername.text!
+        let val1 = Validator.required().apply(user)
+        
+        let pass = txtPassword.text!
+        let val2 = Validator.required().apply(pass)
+        
+        btnSignIn.isEnabled = val1 && val2
+        setBtnStyleCorrectly()
     }
 }
 

@@ -49,13 +49,6 @@ class RegistrationUsernameSelectionController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    private func startLoading() {
-        SVProgressHUD.show()
-    }
-    
-    private func stopLoading() {
-        SVProgressHUD.dismiss()
-    }
     
     private func loginRegisteredUser() {
         var userSignIn = UserTokenModel()
@@ -67,19 +60,16 @@ class RegistrationUsernameSelectionController: UIViewController {
                 if status == .Success {
                     self.backdropDelegate?.isBackdropActive = false
                     self.delegate?.logIn()
-                    self.dismiss(animated: true, completion: nil)
                     self.showHudMessage(nil, type: .success)
+                    self.dismiss(animated: true, completion: nil)
                 } else {
                     self.showHudMessage(NSLocalizedString("RegistrationError", comment: ""), type: .error)
                 }
-                 self.stopLoading()
             }
-             self.stopLoading()
         }
     }
     
     @IBAction func completeRegistrationBtnPressed(_ sender: Any) {
-        startLoading()
         registrationUserModel?.username = txtUsername.text!
         accountService.registerUser(registration: registrationUserModel!) { (status, userModel) in
             if status == .Success {
