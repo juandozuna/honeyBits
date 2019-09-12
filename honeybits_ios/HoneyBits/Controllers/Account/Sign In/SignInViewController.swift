@@ -12,6 +12,9 @@ import ChameleonFramework
 import PMSuperButton
 import SwiftValidators
 import IHKeyboardAvoiding
+import SVProgressHUD
+import RxSwift
+import RxCocoa
 
 class SignInViewController: UIViewController {
 
@@ -21,10 +24,15 @@ class SignInViewController: UIViewController {
     var backdropDelegate: AuthBackdropDelegate?
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var txtUsername: TextField!
+    var userName = BehaviorRelay<String?>(value: nil)
+
     @IBOutlet weak var txtPassword: TextField!
+    var password = BehaviorRelay<String?>(value: nil)
+    
     @IBOutlet weak var btnSignIn: PMSuperButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var formView: UIView!
+    
+    let disposeBag = DisposeBag()
     
     let accountService: IAccountService = AccountService()
     
@@ -36,6 +44,7 @@ class SignInViewController: UIViewController {
         screenIsLoading(false)
         setTapGestures()
         setFormTextFields()
+        
     }
     
     @IBAction func SignInBtnPressed(_ sender: Any) {
@@ -47,9 +56,6 @@ class SignInViewController: UIViewController {
             accountService.authenticateUser(user: user) { (status, result) in
                 if status == .Success {
                    self.successfulLogin()
-                } else {
-                    self.failedLogin()
-                    self.showAlertMessage("There was an error while performing the sign in operation", title: "Sign In Error")
                 }
             }
         }
@@ -89,8 +95,9 @@ class SignInViewController: UIViewController {
     private func successfulLogin() {
         DispatchQueue.main.async {
             self.delegate!.logIn()
-            self.dismissIt()
             self.screenIsLoading(false)
+            self.showHudMessage(nil, type: .success)
+            self.dismissIt()
         }
     }
     
@@ -101,16 +108,12 @@ class SignInViewController: UIViewController {
     }
     
     private func screenIsLoading(_ isLoading: Bool) {
-        activityIndicator.isHidden = !isLoading
         
         if isLoading {
-            activityIndicator.startAnimating()
+            SVProgressHUD.show()
         } else {
-            activityIndicator.stopAnimating()
+            SVProgressHUD.dismiss()
         }
-//        txtPassword.isHidden = isLoading
-//        txtUsername.isHidden = isLoading
-        btnSignIn.isEnabled = !isLoading
     }
     
     //MARK:- Validations
@@ -149,6 +152,7 @@ class SignInViewController: UIViewController {
         bgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dimsissView(_:))))
     }
     
+    
     //MARK:- Controls SETUP
     func setFormTextFields(){
         txtUsername.placeholder = "Username"
@@ -166,6 +170,24 @@ class SignInViewController: UIViewController {
         txtPassword.dividerActiveColor = UIColor.flatOrange()
         txtPassword.placeholderActiveColor = UIColor.flatOrange()
         btnSignIn.backgroundColor = UIColor.flatOrange()
+        
+        txtUsername
+            .rx.text.orEmpty.bind(to: userName).disposed(by: disposeBag)
+
+        txtPassword
+            .rx.text.orEmpty.bind(to: password).disposed(by: disposeBag)
+        
+        userName.subscribe {
+            self.setBtnState();
+            }.disposed(by: disposeBag)
+        
+        password.subscribe {
+            self.setBtnState();
+            }.disposed(by: disposeBag)
+    }
+    
+    private func setBtnState() {
+        btnSignIn.isEnabled = validateForm()
     }
 }
 
