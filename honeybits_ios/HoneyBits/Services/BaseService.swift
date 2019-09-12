@@ -97,7 +97,8 @@ class BaseService {
         
         if let error = response.error {
             completion(.Failure, nil)
-            SVProgressHUD.showError(withStatus: error.localizedDescription)
+            let localized = error.localizedDescription
+            SVProgressHUD.showError(withStatus: localized)
             print(error)
             return
         }
