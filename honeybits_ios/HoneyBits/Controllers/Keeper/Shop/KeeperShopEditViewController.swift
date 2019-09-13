@@ -22,6 +22,7 @@ class KeeperShopEditViewController : UIViewController {
     @IBOutlet weak var cancelBtn: PMSuperButton!
     @IBOutlet weak var saveBtn: PMSuperButton!
     @IBOutlet weak var btnsContainer: UIView!
+    @IBOutlet weak var bgView: UIView!
     
     var shopModelSubject: BehaviorSubject<ShopModel?> = BehaviorSubject(value: nil)
     
@@ -36,15 +37,37 @@ class KeeperShopEditViewController : UIViewController {
         shopModelSubject.onNext(model)
     }
     
+    @objc func onTapGeneralListener(_ sender: UITapGestureRecognizer) {
+        resignResponderOnFormInputs()
+    }
+    
+    @IBAction func cancelBtn(_ sender: Any) {
+        dismissForm()
+    }
+    
     private func controllerSetup() {
         setupKeyboardAvoidingConfiguration()
         topBarSetup()
         setupTextFields()
         shopModelSetup()
+        configureTapListeners()
+    }
+    
+    private func dismissForm() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    private func configureTapListeners() {
+        bgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapGeneralListener(_:))))
     }
     
     private func setupKeyboardAvoidingConfiguration() {
         KeyboardAvoiding.avoidingView = btnsContainer
+    }
+    
+    private func resignResponderOnFormInputs() {
+        resignResponder(for: shopName)
+        resignResponder(for: shopDescription)
     }
     
     private func topBarSetup() {

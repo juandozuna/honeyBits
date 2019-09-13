@@ -159,6 +159,9 @@
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancelBtn:" destination="Nvq-3Q-1dP" eventType="touchUpInside" id="DJR-rx-Ka2"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVw-Wf-vMd" customClass="PMSuperButton" customModule="PMSuperButton">
                                                 <rect key="frame" x="8" y="33" width="398" height="50"/>
@@ -218,6 +221,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="bgView" destination="igd-Xd-iao" id="lwZ-OK-hX3"/>
                         <outlet property="btnsContainer" destination="ZX6-sz-rHS" id="2iK-Tn-21W"/>
                         <outlet property="cancelBtn" destination="QxC-4e-faj" id="PKp-g9-bjt"/>
                         <outlet property="saveBtn" destination="pVw-Wf-vMd" id="VJ3-Bf-D0W"/>
