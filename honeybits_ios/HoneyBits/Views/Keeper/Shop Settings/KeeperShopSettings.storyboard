@@ -126,11 +126,80 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZX6-sz-rHS">
+                                        <rect key="frame" x="0.0" y="612" width="414" height="178"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxC-4e-faj" customClass="PMSuperButton" customModule="PMSuperButton">
+                                                <rect key="frame" x="8" y="113" width="398" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="rDn-3S-Vyn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.99482471449999998" green="0.53641385959999999" blue="0.074377538389999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="0.0" height="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVw-Wf-vMd" customClass="PMSuperButton" customModule="PMSuperButton">
+                                                <rect key="frame" x="8" y="33" width="398" height="50"/>
+                                                <color key="backgroundColor" red="0.99482471449999998" green="0.53641385959999999" blue="0.074377538389999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Save Changes">
+                                                    <color key="titleColor" red="0.97647058819999999" green="0.94117647059999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="0.0" height="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="pVw-Wf-vMd" firstAttribute="leading" secondItem="QxC-4e-faj" secondAttribute="leading" id="C8i-yi-em2"/>
+                                            <constraint firstItem="QxC-4e-faj" firstAttribute="leading" secondItem="ZX6-sz-rHS" secondAttribute="leading" constant="8" id="VcY-Rd-rhT"/>
+                                            <constraint firstAttribute="height" constant="178" id="Ycg-3r-h0x"/>
+                                            <constraint firstItem="pVw-Wf-vMd" firstAttribute="trailing" secondItem="QxC-4e-faj" secondAttribute="trailing" id="bVv-DX-qli"/>
+                                            <constraint firstAttribute="bottom" secondItem="QxC-4e-faj" secondAttribute="bottom" constant="15" id="bum-mc-OJ6"/>
+                                            <constraint firstAttribute="trailing" secondItem="QxC-4e-faj" secondAttribute="trailing" constant="8" id="cjJ-65-0aN"/>
+                                            <constraint firstItem="QxC-4e-faj" firstAttribute="top" secondItem="pVw-Wf-vMd" secondAttribute="bottom" constant="30" id="n7u-Jh-xNE"/>
+                                            <constraint firstItem="pVw-Wf-vMd" firstAttribute="height" secondItem="QxC-4e-faj" secondAttribute="height" id="yCh-No-Hlx"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="ZX6-sz-rHS" firstAttribute="leading" secondItem="igd-Xd-iao" secondAttribute="leading" id="0PW-bO-pO9"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZX6-sz-rHS" secondAttribute="trailing" id="6qN-4C-w0Q"/>
                                     <constraint firstItem="l0x-Re-Ap2" firstAttribute="top" secondItem="igd-Xd-iao" secondAttribute="top" constant="25" id="NMg-Eo-2bI"/>
                                     <constraint firstItem="l0x-Re-Ap2" firstAttribute="leading" secondItem="igd-Xd-iao" secondAttribute="leading" constant="8" id="UJF-qx-L7d"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZX6-sz-rHS" secondAttribute="bottom" constant="18" id="fkE-tb-axK"/>
                                     <constraint firstAttribute="trailing" secondItem="l0x-Re-Ap2" secondAttribute="trailing" constant="8" id="uvn-Gv-L3V"/>
                                 </constraints>
                             </view>
@@ -149,6 +218,9 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="btnsContainer" destination="ZX6-sz-rHS" id="2iK-Tn-21W"/>
+                        <outlet property="cancelBtn" destination="QxC-4e-faj" id="PKp-g9-bjt"/>
+                        <outlet property="saveBtn" destination="pVw-Wf-vMd" id="VJ3-Bf-D0W"/>
                         <outlet property="shopDescription" destination="iFl-g3-v0s" id="nEN-rd-7MT"/>
                         <outlet property="shopName" destination="SmD-xq-5QG" id="RGQ-gp-haj"/>
                         <outlet property="topBar" destination="S2K-WA-JNr" id="KF7-mr-K6u"/>

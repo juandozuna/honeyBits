@@ -11,12 +11,17 @@ import Material
 import RxSwift
 import RxCocoa
 import SwiftValidators
+import IHKeyboardAvoiding
+import PMSuperButton
 
 class KeeperShopEditViewController : UIViewController {
     
     @IBOutlet weak var topBar: UINavigationBar!
     @IBOutlet weak var shopName: TextField!
     @IBOutlet weak var shopDescription: TextField!
+    @IBOutlet weak var cancelBtn: PMSuperButton!
+    @IBOutlet weak var saveBtn: PMSuperButton!
+    @IBOutlet weak var btnsContainer: UIView!
     
     var shopModelSubject: BehaviorSubject<ShopModel?> = BehaviorSubject(value: nil)
     
@@ -32,9 +37,14 @@ class KeeperShopEditViewController : UIViewController {
     }
     
     private func controllerSetup() {
+        setupKeyboardAvoidingConfiguration()
         topBarSetup()
         setupTextFields()
         shopModelSetup()
+    }
+    
+    private func setupKeyboardAvoidingConfiguration() {
+        KeyboardAvoiding.avoidingView = btnsContainer
     }
     
     private func topBarSetup() {

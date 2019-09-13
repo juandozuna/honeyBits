@@ -941,7 +941,7 @@
 				};
 			};
 			buildConfigurationList = B2FC8EDD22CA1FBD008CE65C /* Build configuration list for PBXProject "HoneyBits" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
