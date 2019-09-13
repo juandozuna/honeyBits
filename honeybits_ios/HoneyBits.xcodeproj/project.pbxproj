@@ -345,10 +345,8 @@
 		B21957EE22E24C64008AEBA0 /* Keeper */ = {
 			isa = PBXGroup;
 			children = (
-				B2093E9923089BFA006CA976 /* Shop Creation */,
 				B24BEE2E22E8058B00C1E5FB /* History */,
 				B24BEE2B22E8049E00C1E5FB /* Settings */,
-				B24BEE2822E8038100C1E5FB /* Shop Settings */,
 				B24BEE2522E801B400C1E5FB /* Deals */,
 				B24BEE2222E7FF2400C1E5FB /* Dashboard */,
 				B21957EF22E24C78008AEBA0 /* KeeperMain.storyboard */,
@@ -372,6 +370,23 @@
 				B25BBB0C2329F236005640A9 /* KeeperShopProductSectionHeader.swift */,
 			);
 			path = Keeper;
+			sourceTree = "<group>";
+		};
+		B2270030232C3D5E0074AFF7 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				B2270032232C3E300074AFF7 /* Products */,
+				B2093E9923089BFA006CA976 /* Shop Creation */,
+				B24BEE2822E8038100C1E5FB /* Shop Settings */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		B2270032232C3E300074AFF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Products;
 			sourceTree = "<group>";
 		};
 		B22B908D22E5514900D0B449 /* Registration */ = {
@@ -470,7 +485,6 @@
 		B25FCB9022E94E6A006BDD0C /* Keeper */ = {
 			isa = PBXGroup;
 			children = (
-				B2093E9A23089C66006CA976 /* Shop */,
 				B2A898AE22EDF080009F87A4 /* Dashboard */,
 				B25FCB9122E94FB5006BDD0C /* Settings */,
 				B277C3122302435F00EEFBC9 /* KeeperTabBarController.swift */,
@@ -518,6 +532,7 @@
 		B2745FC522D57D2F00297A43 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B22B909122E6ABDC00D0B449 /* Segues */,
 				B2198F532309CC850083A01A /* Keeper */,
 				B2512DB922F0D67F00E1BA9E /* General */,
 				B2745FCE22D57E4900297A43 /* Customer */,
@@ -640,8 +655,8 @@
 			isa = PBXGroup;
 			children = (
 				B2D9A7CB22EE7FCA00A59E3D /* Generic */,
+				B2093E9A23089C66006CA976 /* Shop */,
 				B25FCB9022E94E6A006BDD0C /* Keeper */,
-				B22B909122E6ABDC00D0B449 /* Segues */,
 				B2F8358B22D6834F00A9910C /* Customer */,
 				B2E13D3522CECFDB0074607C /* Account */,
 				B26CEB3422E257EB00814889 /* MainNavigationController.swift */,
@@ -652,6 +667,7 @@
 		B2A5813922CAD0F900C9C5D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B2270030232C3D5E0074AFF7 /* Shop */,
 				B21957EE22E24C64008AEBA0 /* Keeper */,
 				B2A2E81622D0D4B200DFDAB3 /* Customer */,
 				B2DD098322CAF8D100A98586 /* Account */,

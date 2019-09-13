@@ -50,14 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.SVProgressHUDDidReceiveTouchEvent, object: nil)
     }
     
-    private func progressHudSetup() {
-        SVProgressHUD.setDefaultStyle(.custom)
-        SVProgressHUD.setDefaultMaskType(.custom)
-        SVProgressHUD.setBackgroundColor(UIColor.flatWhite())
-        SVProgressHUD.setForegroundColor(UIColor.flatOrange())
-        SVProgressHUD.setBackgroundLayerColor(UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5))
-        hideProgressHudOnUserTap()
-    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -74,7 +66,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         hideProgressHudOnUserTap()
-
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -86,6 +77,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
 
-
+    private func progressHudSetup() {
+        SVProgressHUD.setDefaultStyle(.custom)
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.setBackgroundColor(UIColor.flatWhite())
+        SVProgressHUD.setForegroundColor(UIColor.flatOrange())
+        SVProgressHUD.setBackgroundLayerColor(UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5))
+        hideProgressHudOnUserTap()
+    }
 }
 
