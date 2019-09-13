@@ -181,6 +181,9 @@
                                                         <size key="value" width="0.0" height="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="saveBtn:" destination="Nvq-3Q-1dP" eventType="touchUpInside" id="kHq-zA-Vcu"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

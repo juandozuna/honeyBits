@@ -14,6 +14,7 @@ import SwiftValidators
 import IHKeyboardAvoiding
 import PMSuperButton
 import ChameleonFramework
+import SVProgressHUD
 
 class KeeperShopEditViewController : UIViewController {
     
@@ -25,7 +26,13 @@ class KeeperShopEditViewController : UIViewController {
     @IBOutlet weak var btnsContainer: UIView!
     @IBOutlet weak var bgView: UIView!
     
-    var shopModelSubject: BehaviorSubject<ShopModel?> = BehaviorSubject(value: nil)
+    var shopService: ShopService?
+    var shopModelSubject = BehaviorSubject<ShopModel?>(value: nil)
+    
+    private var shopUpdatedVariable = BehaviorRelay<Bool>(value: false)
+    var shopUpdated: Observable<Bool> {
+        return shopUpdatedVariable.asObservable()
+    }
     
     var disposeBag = DisposeBag()
     
@@ -42,15 +49,33 @@ class KeeperShopEditViewController : UIViewController {
         resignResponderOnFormInputs()
     }
     
+    @IBAction func saveBtn(_ sender: Any) {
+        guard let model = try? shopModelSubject.value() else {
+            showHudMessage(NSLocalizedString("ErrorRetrivingShopModel", comment: ""), type: .error)
+            return
+        }
+        shopService?.updateShop(model: model, completion: { (status, nil) in
+            if status != .Success {
+                self.showHudMessage(NSLocalizedString("ErrorUpdatingShop", comment: ""), type: .error)
+                self.shopUpdatedVariable.accept(false)
+                return
+            }
+            self.showHudMessage(nil, type: .success)
+            self.dismissForm()
+            self.shopUpdatedVariable.accept(true)
+        })
+    }
+    
     @IBAction func cancelBtn(_ sender: Any) {
         dismissForm()
     }
     
     private func controllerSetup() {
+        shopModelSetup()
         setupKeyboardAvoidingConfiguration()
         topBarSetup()
         setupTextFields()
-        shopModelSetup()
+        updateBtnState()
         configureTapListeners()
     }
     
@@ -106,8 +131,6 @@ class KeeperShopEditViewController : UIViewController {
         
         saveBtn.isEnabled = formValid
         saveBtn.setTitleColor(formValid ? .white : UIColor.flatOrangeColorDark(), for: .normal)
-        
-        
     }
     
     private func setupTextFields() {

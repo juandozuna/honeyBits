@@ -9,6 +9,7 @@
 import UIKit
 import ChameleonFramework
 import SVProgressHUD
+import RxSwift
 
 class MainKeeperShopViewController : UIViewController {
    
@@ -26,6 +27,8 @@ class MainKeeperShopViewController : UIViewController {
     var shopModel: ShopModel?
     var products: [ProductModel]?
     
+    var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupController()
@@ -42,7 +45,9 @@ class MainKeeperShopViewController : UIViewController {
         setupCollectionView()
         displayCorrectView()
         noShopView.setupDelegate = self
-        reloadShop()
+        reloadShop {
+            self.reloadShopProducts()
+        }
     }
     
     private func setupCollectionView() {
@@ -69,7 +74,15 @@ class MainKeeperShopViewController : UIViewController {
     }
 
     private func prepareShopEditController(with vc: KeeperShopEditViewController){
+        vc.shopService = shopService
         vc.setShopModel(model: shopModel)
+        
+        vc.shopUpdated.subscribe({ value in
+            if value.element != nil && value.element! {
+                self.reloadShop()
+                self.shopColView.reloadData()
+            }
+        }).disposed(by: disposeBag)
     }
     
     private func displayCorrectView() {
@@ -84,7 +97,7 @@ class MainKeeperShopViewController : UIViewController {
         displayCorrectView()
     }
     
-    private func reloadShop() {
+    private func reloadShop(done: (() -> Void)? = nil) {
         shopService.getShopsForUser { (status, shops) in
             if status != .Success {
                 self.stopLoading()
@@ -92,7 +105,7 @@ class MainKeeperShopViewController : UIViewController {
             }
             
             self.shopModel = shops![0]
-            self.reloadShopProducts()
+            done?()
         }
     }
     
@@ -129,7 +142,9 @@ extension MainKeeperShopViewController : SetupStoreDelegate {
 
 extension MainKeeperShopViewController : CreateShopDelegate {
     func shopCreated() {
-        reloadShop()
+        reloadShop {
+            self.reloadShopProducts()
+        }
     }
 }
 

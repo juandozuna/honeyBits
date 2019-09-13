@@ -40,9 +40,7 @@ class ShopService : BaseService, IShopService{
         var model = createModel
         model.ownerId = user.userId!
         
-        let json = try! JSONEncoder().encode(model)
-        
-        jsonRequest(url, jsonData: json, method: .post) { (status, data) in
+        request(url, model: model, method: .post) { (status, data) in
             if status == .Success {
                 do {
                     let parsedData = try JSONDecoder().decode(ShopModel.self, from: data!)
@@ -55,6 +53,16 @@ class ShopService : BaseService, IShopService{
                 completion(status, nil)
             }
         }
+        
+    }
+    
+    func updateShop(model shopModel: ShopModel, completion: @escaping CompletedRequestVoid<Void>) {
+        //let url = "\(baseEndpoint)\(baseService)update"
+        
+        completion(.Success, nil);
+//        request(url, model: shopModel, method: .put) { (status, data) in
+//
+//        }
     }
     
 }

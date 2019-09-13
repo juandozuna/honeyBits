@@ -20,3 +20,5 @@
 "ResponseFailed" = "Failed server response";
 "JsonDataFromResponseError" = "Failed to retrieve JSON from response";
 "EndpointNotFound" = "Not able to perform request to API route";
+"ErrorRetrivingShopModel" = "There was an App error trying to retrieve the shop model from inputs";
+"ErrorUpdatingShop" = "Error ocurred trying to update the shop";

@@ -65,6 +65,17 @@ class BaseService {
         
     }
     
+    func request<T: Codable>(_ url: URLConvertible, model: T, method: HTTPMethod, completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
+        SVProgressHUD.show()
+        let jsonData = try! JSONEncoder().encode(model)
+        let parameters = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: Any]
+        
+        Alamofire.request(url, method: method, parameters: parameters, encoding: JSONEncoding.prettyPrinted, headers: setHeaders()).responseJSON { (response) in
+            self.handleResponse(response: response, completion: completion)
+        }
+        
+    }
+    
     func jsonRequest(_ url: URLConvertible, method: HTTPMethod, completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
         SVProgressHUD.show()
         
