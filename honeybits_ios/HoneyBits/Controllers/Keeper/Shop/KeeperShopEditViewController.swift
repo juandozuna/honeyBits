@@ -13,6 +13,7 @@ import RxCocoa
 import SwiftValidators
 import IHKeyboardAvoiding
 import PMSuperButton
+import ChameleonFramework
 
 class KeeperShopEditViewController : UIViewController {
     
@@ -53,6 +54,16 @@ class KeeperShopEditViewController : UIViewController {
         configureTapListeners()
     }
     
+    private func isFormValid() -> Bool {
+        let nameText = shopName.text!
+        let descriptionText = shopDescription.text!
+        
+        let nameValid = Validator.required().apply(nameText)
+        let descriptionValid = Validator.required().apply(descriptionText)
+        
+        return nameValid && descriptionValid
+    }
+    
     private func dismissForm() {
         dismiss(animated: true, completion: nil)
     }
@@ -90,8 +101,25 @@ class KeeperShopEditViewController : UIViewController {
         }
     }
     
+    private func updateBtnState() {
+        let formValid = isFormValid()
+        
+        saveBtn.isEnabled = formValid
+        saveBtn.setTitleColor(formValid ? .white : UIColor.flatOrangeColorDark(), for: .normal)
+        
+        
+    }
+    
     private func setupTextFields() {
         setTextFieldColor(to: shopName)
         setTextFieldColor(to: shopDescription)
+        
+        shopName.rx.text.orEmpty.subscribe({ _ in
+            self.updateBtnState()
+        }).disposed(by: disposeBag);
+        
+        shopDescription.rx.text.orEmpty.subscribe({ _ in
+            self.updateBtnState()
+        }).disposed(by: disposeBag);
     }
 }
