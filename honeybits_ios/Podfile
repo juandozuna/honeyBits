@@ -19,6 +19,7 @@ target 'HoneyBits' do
   pod 'SwiftyJSON'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SkeletonView'
 
   target 'HoneyBitsTests' do
     inherit! :search_paths

@@ -137,6 +137,13 @@ class MainKeeperShopViewController : UIViewController {
         present(productController, animated: true, completion: nil)
     }
     
+    private func presentProductFormInEditMode(model: ProductModel) {
+        let productController = viewControllerFromStoryboard(storyboard: "ProductForms", withIdentifier: "productForm") as! ProductFormViewController
+        productController.productService = productService
+        productController.setFormModel(model: model)
+        present(productController, animated: true, completion: nil)
+    }
+    
 }
 
 
@@ -211,7 +218,13 @@ extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionVi
         }
         
         let pcell = collectionView.dequeueReusableCell(withReuseIdentifier: productCellId, for: indexPath) as! KeeperShopProductCell
-        pcell.label = products != nil ? products![indexPath.item].productName! : "Not Found"
+        let product = products![indexPath.item]
+        pcell.label = product.productName!
+        
+        pcell.editBtn.rx.tap.subscribe({ (arg0) in
+            self.presentProductFormInEditMode(model: product)
+        }).disposed(by: disposeBag)
+        
         return pcell
     }
     

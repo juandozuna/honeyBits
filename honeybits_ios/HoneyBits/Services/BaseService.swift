@@ -84,6 +84,17 @@ class BaseService {
         }
     }
     
+    func imageRequest(imageUrl: String, completion: @escaping CompletedRequestVoid<UIImage>) {
+        Alamofire.request(imageUrl, method: .get)
+            .validate()
+            .responseData(completionHandler: { (responseData) in
+                DispatchQueue.main.async {
+                    let image = UIImage(data: responseData.data!)
+                    completion(.Success, image)
+                }
+            })
+    }
+    
     private func handleResponse(response: DataResponse<Any>, completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
         print(response)
         if let statusCode = response.response?.statusCode {

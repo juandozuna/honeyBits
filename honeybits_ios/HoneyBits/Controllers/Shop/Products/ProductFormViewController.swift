@@ -13,6 +13,7 @@ import SVProgressHUD
 import SwiftValidators
 import RxSwift
 import RxCocoa
+import SkeletonView
 
 class ProductFormViewController: UIViewController {
     
@@ -24,6 +25,8 @@ class ProductFormViewController: UIViewController {
     @IBOutlet weak var mainFormContainer: UIView!
     @IBOutlet weak var formStackView: UIStackView!
     @IBOutlet weak var productImagePlaceholder: UIImageView!
+    @IBOutlet weak var imageContainerView: ContainerView!
+    
     var productService: ProductService?
     var categories: [ProductCategoryModel]?
     var requestObservable: Observable<Bool> {
@@ -71,6 +74,7 @@ class ProductFormViewController: UIViewController {
     
     private func controllerSetup() {
         textFieldsSetup()
+        imageContainerSetup()
         configureKeyboardAvoiding()
         configureMainTapGestureListener()
         loadCategories()
@@ -82,6 +86,10 @@ class ProductFormViewController: UIViewController {
         setTextFieldColor(to: txtProductName)
         setTextFieldColor(to: txtProductDescription)
         setTextFieldColor(to: txtProductCategory)
+    }
+    
+    private func imageContainerSetup() {
+        imageContainerView.isSkeletonable = true
     }
     
     private func configureKeyboardAvoiding() {
@@ -175,7 +183,16 @@ class ProductFormViewController: UIViewController {
             showHudMessage(NSLocalizedString("ErrorRetrievingModel", comment: ""), type: .error)
             return
         }
-        productService?.getProductImage(productId: <#T##Int#>, completion: <#T##(RequestStatus, ProductImage?) -> Void#>)
+        
+        imageContainerView.showAnimatedGradientSkeleton()
+        productService?.getProductImage(productId: model.productId!, completion: { (status, imageModel) in
+            if let i = imageModel {
+                self.productService?.imageRequest(imageUrl: i.productImageUrl!, completion: { (imageStatus, image) in
+                    self.productImagePlaceholder.image = image
+                    self.imageContainerView.hideSkeleton()
+                })
+            }
+        })
     }
     
     private func setValueToInputsFromModel(_ model: ProductModel) {
