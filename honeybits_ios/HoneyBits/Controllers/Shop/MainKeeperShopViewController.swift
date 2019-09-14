@@ -133,6 +133,7 @@ class MainKeeperShopViewController : UIViewController {
     
     private func presentProductCreateController() {
         let productController = viewControllerFromStoryboard(storyboard: "ProductForms", withIdentifier: "productForm") as! ProductFormViewController
+        productController.productService = productService
         present(productController, animated: true, completion: nil)
     }
     
