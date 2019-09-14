@@ -26,6 +26,7 @@ class ProductFormViewController: UIViewController {
     @IBOutlet weak var mainFormContainer: UIView!
     @IBOutlet weak var formStackView: UIStackView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var containerView: ContainerView!
     
     var productService: ProductService?
     var categories: [ProductCategoryModel]?
@@ -170,7 +171,9 @@ class ProductFormViewController: UIViewController {
     private func updateFormView(model: ProductModel?) {
         if editMode {
             setValueToInputsFromModel(model!)
-            retrieveProductImage()
+            DispatchQueue.main.async {
+                self.retrieveProductImage()
+            }
         }
     }
     
@@ -180,10 +183,12 @@ class ProductFormViewController: UIViewController {
             return
         }
 
+        containerView.showAnimatedGradientSkeleton()
         productService?.getProductImage(productId: model.productId!, completion: { (status, imageModel) in
             if let i = imageModel {
                 self.productService?.imageRequest(imageUrl: i.productImageUrl!, completion: { (imageStatus, image) in
                     self.imageView.image = image
+                    self.containerView.hideSkeleton()
                 })
             }
         })
