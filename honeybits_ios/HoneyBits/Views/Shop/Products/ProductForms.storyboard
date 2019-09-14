@@ -86,6 +86,9 @@
                                             <constraint firstAttribute="height" constant="50" id="vli-Ly-q9W"/>
                                         </constraints>
                                         <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelBtnAction:" destination="mWa-1n-3Bg" eventType="touchUpInside" id="t4x-rE-UH2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2IQ-NL-HGB" customClass="PrimaryButton" customModule="HoneyBits" customModuleProvider="target">
                                         <rect key="frame" x="15" y="481" width="384" height="50"/>
@@ -96,6 +99,9 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShadowPathAutoSizing" value="NO"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveBtnAction:" destination="mWa-1n-3Bg" eventType="touchUpInside" id="jl1-bq-sZT"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="Dju-v8-j7I">
                                         <rect key="frame" x="10" y="40" width="394" height="225"/>
@@ -165,6 +171,7 @@
                     </view>
                     <connections>
                         <outlet property="cancelBtn" destination="T9f-ns-QYb" id="ueH-3x-Sf7"/>
+                        <outlet property="formStackView" destination="Dju-v8-j7I" id="K9V-he-e7t"/>
                         <outlet property="mainFormContainer" destination="CNe-7M-nRf" id="eWN-bb-IwB"/>
                         <outlet property="saveProductBtn" destination="2IQ-NL-HGB" id="3xo-eX-7HV"/>
                         <outlet property="txtProductCategory" destination="592-gQ-KUb" id="yKF-Dw-ovd"/>

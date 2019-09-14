@@ -40,4 +40,8 @@ class ProductService: BaseService {
     func getProductCategories(completion: CompletedRequestVoid<[ProductCategoryModel]>) {
         completion(.Success, categories)
     }
+    
+    func createNewProduct(model: ProductModel, completion: CompletedRequestVoid<ProductModel>){
+        completion(.Success, model)
+    }
 }

@@ -23,6 +23,7 @@ class ProductFormViewController: UIViewController {
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var saveProductBtn: PrimaryButton!
     @IBOutlet weak var mainFormContainer: UIView!
+    @IBOutlet weak var formStackView: UIStackView!
     
     var productService: ProductService?
     var categories: [ProductCategoryModel]?
@@ -32,6 +33,21 @@ class ProductFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         controllerSetup()
+    }
+    
+    @IBAction func saveBtnAction(_ sender: Any) {
+        if isFormValid() {
+            let model = getProductModel()
+            productService?.createNewProduct(model: model, completion: { (status, model) in
+                ///TODO: Write correct product code
+                showHudMessage("Succesfull Creation", type: .success)
+                dismissForm()
+            })
+        }
+    }
+    
+    @IBAction func cancelBtnAction(_ sender: Any) {
+        dismissForm()
     }
     
     private func controllerSetup() {
@@ -50,7 +66,7 @@ class ProductFormViewController: UIViewController {
     }
     
     private func configureKeyboardAvoiding() {
-        KeyboardAvoiding.avoidingView = mainFormContainer
+        KeyboardAvoiding.avoidingView = formStackView
     }
     
     private func configureMainTapGestureListener() {
@@ -95,25 +111,35 @@ class ProductFormViewController: UIViewController {
             .rx.text.orEmpty
             .subscribe(onNext: { (value) in
                 self.updateFormStatus()
+                self.configureKeyboardAvoiding()
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
         txtProductName
             .rx.text.orEmpty
             .subscribe(onNext: { (value) in
                 self.updateFormStatus()
+                self.configureKeyboardAvoiding()
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
         txtProductDescription
             .rx.text.orEmpty
             .subscribe(onNext: { (value) in
                 self.updateFormStatus()
+                KeyboardAvoiding.avoidingView = self.txtProductDescription
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
         txtProductCategory
             .rx.text.orEmpty
             .subscribe(onNext: { (value) in
                 self.updateFormStatus()
+                self.configureKeyboardAvoiding()
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+    
+    private func getProductModel() -> ProductModel {
+        let model = ProductModel(productId: nil, productName: txtProductName.text, productCategoryId: 2, productDescription: txtProductDescription.text, productPrice: Decimal(string: txtProductPrice.text!))
+        
+        return model
     }
     
     @objc private func resignRespondersOnTap(_ sender: UITapGestureRecognizer) {
