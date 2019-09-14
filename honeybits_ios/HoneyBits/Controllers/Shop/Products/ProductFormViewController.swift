@@ -48,7 +48,7 @@ class ProductFormViewController: UIViewController {
                    succesfulRequest.accept(false)
                     return
                 }
-                showHudMessage(NSLocalizedString("ProductCreatedSuccesfully", comment: ""), type: .success)
+                showHudMessage(NSLocalizedString("ProductCreatedSuccesfully", comment: "no comment"), type: .success)
                 dismissForm()
                 succesfulRequest.accept(true)
                 
@@ -76,7 +76,7 @@ class ProductFormViewController: UIViewController {
     }
     
     private func configureKeyboardAvoiding() {
-        KeyboardAvoiding.avoidingView = formStackView
+        //KeyboardAvoiding.avoidingView = formStackView
     }
     
     private func configureMainTapGestureListener() {
@@ -121,28 +121,24 @@ class ProductFormViewController: UIViewController {
             .rx.text.orEmpty
             .subscribe(onNext: { (value) in
                 self.updateFormStatus()
-                self.configureKeyboardAvoiding()
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
         txtProductName
             .rx.text.orEmpty
             .subscribe(onNext: { (value) in
                 self.updateFormStatus()
-                self.configureKeyboardAvoiding()
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
         txtProductDescription
             .rx.text.orEmpty
             .subscribe(onNext: { (value) in
                 self.updateFormStatus()
-                KeyboardAvoiding.avoidingView = self.txtProductDescription
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
         txtProductCategory
             .rx.text.orEmpty
             .subscribe(onNext: { (value) in
                 self.updateFormStatus()
-                self.configureKeyboardAvoiding()
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     

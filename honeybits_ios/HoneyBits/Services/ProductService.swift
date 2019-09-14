@@ -39,9 +39,7 @@ class ProductService: BaseService {
     }
     
     func getProductCategories(completion: CompletedRequestVoid<[ProductCategoryModel]>) {
-        SVProgressHUD.show()
         completion(.Success, categories)
-        SVProgressHUD.dismiss(withDelay: 400)
     }
     
     func createNewProduct(model: ProductModel, completion: CompletedRequestVoid<ProductModel>){
