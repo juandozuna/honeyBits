@@ -20,10 +20,10 @@ class ProductFormViewController: UIViewController {
     @IBOutlet weak var txtProductName: TextField!
     @IBOutlet weak var txtProductDescription: TextField!
     @IBOutlet weak var txtProductCategory: TextField!
-    @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var saveProductBtn: PrimaryButton!
     @IBOutlet weak var mainFormContainer: UIView!
     @IBOutlet weak var formStackView: UIStackView!
+    @IBOutlet weak var productImagePlaceholder: UIImageView!
     var productService: ProductService?
     var categories: [ProductCategoryModel]?
     var requestObservable: Observable<Bool> {
@@ -37,6 +37,16 @@ class ProductFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         controllerSetup()
+    }
+    
+    func setFormModel(model: ProductModel?) {
+        if let m = model {
+            productModel.onNext(m)
+            editMode = true
+        } else {
+            productModel.onNext(nil)
+            editMode = false
+        }
     }
     
     @IBAction func saveBtnAction(_ sender: Any) {
@@ -145,6 +155,35 @@ class ProductFormViewController: UIViewController {
         let model = ProductModel(productId: nil, productName: txtProductName.text, productCategoryId: 2, productDescription: txtProductDescription.text, productPrice: Decimal(string: txtProductPrice.text!))
         
         return model
+    }
+    
+    private func checkForChangesInProductModel() {
+        productModel.subscribe(onNext: { (model) in
+            self.updateFormView(model: model)
+        }).disposed(by: disposeBag)
+    }
+    
+    private func updateFormView(model: ProductModel?) {
+        if editMode {
+            setValueToInputsFromModel(model!)
+            retrieveProductImage()
+        }
+    }
+    
+    private func retrieveProductImage() {
+        guard let model = try? productModel.value() else {
+            showHudMessage(NSLocalizedString("ErrorRetrievingModel", comment: ""), type: .error)
+            return
+        }
+        productService?.getProductImage(productId: <#T##Int#>, completion: <#T##(RequestStatus, ProductImage?) -> Void#>)
+    }
+    
+    private func setValueToInputsFromModel(_ model: ProductModel) {
+        txtProductPrice.text = model.productPrice!.formattedAmount
+        txtProductDescription.text = model.productDescription
+        txtProductName.text = model.productName
+        txtProductCategory.text = "Temporary Field, awaiting substitution"
+        
     }
     
     @objc private func resignRespondersOnTap(_ sender: UITapGestureRecognizer) {

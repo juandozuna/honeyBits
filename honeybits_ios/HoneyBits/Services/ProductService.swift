@@ -45,4 +45,11 @@ class ProductService: BaseService {
     func createNewProduct(model: ProductModel, completion: CompletedRequestVoid<ProductModel>){
         completion(.Success, model)
     }
+    
+    func getProductImage(productId: Int, completion: CompletedRequestVoid<ProductImage>) {
+        let imageUrl = "http://beenaturalbodycare.com/wp-content/uploads/2013/05/honey.jpg"
+        let image = ProductImage(id: 1, productId: productId, name: "honey image", description: "Description of image", type: "Profile", url: imageUrl)
+        
+        completion(.Success, image)
+    }
 }

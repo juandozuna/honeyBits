@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Product Form View Controller-->
@@ -169,9 +170,9 @@
                         <viewLayoutGuide key="safeArea" id="3VF-dd-0l4"/>
                     </view>
                     <connections>
-                        <outlet property="cancelBtn" destination="T9f-ns-QYb" id="ueH-3x-Sf7"/>
                         <outlet property="formStackView" destination="Dju-v8-j7I" id="K9V-he-e7t"/>
                         <outlet property="mainFormContainer" destination="CNe-7M-nRf" id="eWN-bb-IwB"/>
+                        <outlet property="productImagePlaceholder" destination="FcY-rU-GyL" id="60N-OD-Jnb"/>
                         <outlet property="saveProductBtn" destination="2IQ-NL-HGB" id="3xo-eX-7HV"/>
                         <outlet property="txtProductCategory" destination="592-gQ-KUb" id="yKF-Dw-ovd"/>
                         <outlet property="txtProductDescription" destination="aqz-Ra-dvB" id="lfQ-0F-IXA"/>
