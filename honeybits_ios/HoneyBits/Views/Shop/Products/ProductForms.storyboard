@@ -38,6 +38,9 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="FcY-rU-GyL">
                                                         <rect key="frame" x="0.0" y="0.0" width="193.5" height="150"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,6 +54,7 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <integer key="value" value="82"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zwZ-ND-YnS" customClass="TextField" customModule="Material">
@@ -171,9 +175,8 @@
                     </view>
                     <connections>
                         <outlet property="formStackView" destination="Dju-v8-j7I" id="K9V-he-e7t"/>
-                        <outlet property="imageContainerView" destination="eh8-15-Rot" id="1hh-b2-4rB"/>
+                        <outlet property="imageView" destination="FcY-rU-GyL" id="BY8-6b-dCs"/>
                         <outlet property="mainFormContainer" destination="CNe-7M-nRf" id="eWN-bb-IwB"/>
-                        <outlet property="productImagePlaceholder" destination="FcY-rU-GyL" id="60N-OD-Jnb"/>
                         <outlet property="saveProductBtn" destination="2IQ-NL-HGB" id="3xo-eX-7HV"/>
                         <outlet property="txtProductCategory" destination="592-gQ-KUb" id="yKF-Dw-ovd"/>
                         <outlet property="txtProductDescription" destination="aqz-Ra-dvB" id="lfQ-0F-IXA"/>

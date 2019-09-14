@@ -14,6 +14,7 @@ import SwiftValidators
 import RxSwift
 import RxCocoa
 import SkeletonView
+import ChameleonFramework
 
 class ProductFormViewController: UIViewController {
     
@@ -24,8 +25,7 @@ class ProductFormViewController: UIViewController {
     @IBOutlet weak var saveProductBtn: PrimaryButton!
     @IBOutlet weak var mainFormContainer: UIView!
     @IBOutlet weak var formStackView: UIStackView!
-    @IBOutlet weak var productImagePlaceholder: UIImageView!
-    @IBOutlet weak var imageContainerView: ContainerView!
+    @IBOutlet weak var imageView: UIImageView!
     
     var productService: ProductService?
     var categories: [ProductCategoryModel]?
@@ -44,12 +44,19 @@ class ProductFormViewController: UIViewController {
     
     func setFormModel(model: ProductModel?) {
         if let m = model {
-            productModel.onNext(m)
             editMode = true
+            getProductToUpdate(productId: m.productId!)
         } else {
-            productModel.onNext(nil)
             editMode = false
+            productModel.onNext(nil)
         }
+    }
+    
+    private func getProductToUpdate(productId: Int) {
+        productService?.getSingleProduct(productId: productId, completion: { (status, productModel) in
+            self.productModel.onNext(productModel)
+            self.updateFormView(model: productModel)
+        })
     }
     
     @IBAction func saveBtnAction(_ sender: Any) {
@@ -74,7 +81,6 @@ class ProductFormViewController: UIViewController {
     
     private func controllerSetup() {
         textFieldsSetup()
-        imageContainerSetup()
         configureKeyboardAvoiding()
         configureMainTapGestureListener()
         loadCategories()
@@ -86,10 +92,6 @@ class ProductFormViewController: UIViewController {
         setTextFieldColor(to: txtProductName)
         setTextFieldColor(to: txtProductDescription)
         setTextFieldColor(to: txtProductCategory)
-    }
-    
-    private func imageContainerSetup() {
-        imageContainerView.isSkeletonable = true
     }
     
     private func configureKeyboardAvoiding() {
@@ -165,12 +167,6 @@ class ProductFormViewController: UIViewController {
         return model
     }
     
-    private func checkForChangesInProductModel() {
-        productModel.subscribe(onNext: { (model) in
-            self.updateFormView(model: model)
-        }).disposed(by: disposeBag)
-    }
-    
     private func updateFormView(model: ProductModel?) {
         if editMode {
             setValueToInputsFromModel(model!)
@@ -183,24 +179,24 @@ class ProductFormViewController: UIViewController {
             showHudMessage(NSLocalizedString("ErrorRetrievingModel", comment: ""), type: .error)
             return
         }
-        
-        imageContainerView.showAnimatedGradientSkeleton()
+
         productService?.getProductImage(productId: model.productId!, completion: { (status, imageModel) in
             if let i = imageModel {
                 self.productService?.imageRequest(imageUrl: i.productImageUrl!, completion: { (imageStatus, image) in
-                    self.productImagePlaceholder.image = image
-                    self.imageContainerView.hideSkeleton()
+                    self.imageView.image = image
                 })
             }
         })
     }
     
     private func setValueToInputsFromModel(_ model: ProductModel) {
-        txtProductPrice.text = model.productPrice!.formattedAmount
-        txtProductDescription.text = model.productDescription
-        txtProductName.text = model.productName
-        txtProductCategory.text = "Temporary Field, awaiting substitution"
-        
+        DispatchQueue.main.async {
+            self.txtProductPrice.text = "23.33"
+            self.txtProductDescription.text = model.productDescription
+            self.txtProductName.text = model.productName
+            self.txtProductCategory.text = "Temporary Field, awaiting substitution"
+            self.updateFormStatus()
+        }
     }
     
     @objc private func resignRespondersOnTap(_ sender: UITapGestureRecognizer) {

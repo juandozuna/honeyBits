@@ -52,4 +52,10 @@ class ProductService: BaseService {
         
         completion(.Success, image)
     }
+    
+    func getSingleProduct(productId: Int, completion: CompletedRequestVoid<ProductModel>) {
+        let product = ProductModel(productId: 2, productName: "Name", productCategoryId: 3, productDescription: "Description", productPrice: 234.31)
+        
+        completion(.Success, product)
+    }
 }

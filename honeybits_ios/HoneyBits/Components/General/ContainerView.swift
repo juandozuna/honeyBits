@@ -8,6 +8,7 @@
 
 import UIKit
 import ChameleonFramework
+import SkeletonView
 
 @IBDesignable
 class ContainerView : UIView {
@@ -18,7 +19,17 @@ class ContainerView : UIView {
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setup()
+    }
+    
+    private func setup() {
+        isSkeletonable = true
+    }
+    
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
+        setup()
     }
 }
