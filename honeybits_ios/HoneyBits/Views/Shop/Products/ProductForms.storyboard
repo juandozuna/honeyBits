@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Product Form View Controller-->
@@ -30,13 +31,30 @@
                                 <rect key="frame" x="0.0" y="89" width="414" height="160"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="QuY-Pz-xia">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                        <rect key="frame" x="10" y="10" width="394" height="150"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7yO-Ju-HYx">
-                                                <rect key="frame" x="0.0" y="0.0" width="203.5" height="160"/>
-                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eh8-15-Rot" customClass="ContainerView" customModule="HoneyBits" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="193.5" height="150"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prod2" translatesAutoresizingMaskIntoConstraints="NO" id="FcY-rU-GyL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="193.5" height="150"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="FcY-rU-GyL" secondAttribute="bottom" id="5IT-yR-dU2"/>
+                                                    <constraint firstItem="FcY-rU-GyL" firstAttribute="top" secondItem="eh8-15-Rot" secondAttribute="top" id="7cR-IM-hj4"/>
+                                                    <constraint firstItem="FcY-rU-GyL" firstAttribute="leading" secondItem="eh8-15-Rot" secondAttribute="leading" id="QVT-KJ-PK3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="FcY-rU-GyL" secondAttribute="trailing" id="mvo-mF-Xcs"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="82"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zwZ-ND-YnS" customClass="TextField" customModule="Material">
-                                                <rect key="frame" x="210.5" y="60" width="203.5" height="40"/>
+                                                <rect key="frame" x="200.5" y="55" width="193.5" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Oe6-Am-ijX"/>
                                                 </constraints>
@@ -54,9 +72,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="Kti-JV-9Es"/>
                                     <constraint firstAttribute="bottom" secondItem="QuY-Pz-xia" secondAttribute="bottom" id="Szf-RW-noi"/>
-                                    <constraint firstItem="QuY-Pz-xia" firstAttribute="leading" secondItem="CR5-2Y-2xN" secondAttribute="leading" id="igw-VO-moW"/>
-                                    <constraint firstAttribute="trailing" secondItem="QuY-Pz-xia" secondAttribute="trailing" id="s4m-te-IIt"/>
-                                    <constraint firstItem="QuY-Pz-xia" firstAttribute="top" secondItem="CR5-2Y-2xN" secondAttribute="top" id="zDt-OV-8zz"/>
+                                    <constraint firstItem="QuY-Pz-xia" firstAttribute="leading" secondItem="CR5-2Y-2xN" secondAttribute="leading" constant="10" id="igw-VO-moW"/>
+                                    <constraint firstAttribute="trailing" secondItem="QuY-Pz-xia" secondAttribute="trailing" constant="10" id="s4m-te-IIt"/>
+                                    <constraint firstItem="QuY-Pz-xia" firstAttribute="top" secondItem="CR5-2Y-2xN" secondAttribute="top" constant="10" id="zDt-OV-8zz"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNe-7M-nRf">
@@ -80,10 +98,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="Dju-v8-j7I">
-                                        <rect key="frame" x="0.0" y="40" width="414" height="225"/>
+                                        <rect key="frame" x="10" y="40" width="394" height="225"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZR-EW-hHa" userLabel="ProductName" customClass="TextField" customModule="Material">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="7td-eH-Dpc"/>
                                                 </constraints>
@@ -95,7 +113,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqz-Ra-dvB" userLabel="ProductDescription" customClass="TextField" customModule="Material">
-                                                <rect key="frame" x="0.0" y="90" width="414" height="45"/>
+                                                <rect key="frame" x="0.0" y="90" width="394" height="45"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -104,7 +122,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="592-gQ-KUb" userLabel="ProductCategory" customClass="TextField" customModule="Material">
-                                                <rect key="frame" x="0.0" y="180" width="414" height="45"/>
+                                                <rect key="frame" x="0.0" y="180" width="394" height="45"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -119,11 +137,11 @@
                                 <constraints>
                                     <constraint firstItem="Dju-v8-j7I" firstAttribute="top" secondItem="CNe-7M-nRf" secondAttribute="top" constant="40" id="0Vp-Ft-AcW"/>
                                     <constraint firstItem="2IQ-NL-HGB" firstAttribute="height" secondItem="T9f-ns-QYb" secondAttribute="height" id="1Im-Gp-7gk"/>
-                                    <constraint firstItem="Dju-v8-j7I" firstAttribute="leading" secondItem="CNe-7M-nRf" secondAttribute="leading" id="6sa-Hg-EWw"/>
+                                    <constraint firstItem="Dju-v8-j7I" firstAttribute="leading" secondItem="CNe-7M-nRf" secondAttribute="leading" constant="10" id="6sa-Hg-EWw"/>
                                     <constraint firstItem="2IQ-NL-HGB" firstAttribute="leading" secondItem="T9f-ns-QYb" secondAttribute="leading" id="OjY-r1-hGh"/>
                                     <constraint firstItem="2IQ-NL-HGB" firstAttribute="trailing" secondItem="T9f-ns-QYb" secondAttribute="trailing" id="UCk-4n-vFd"/>
                                     <constraint firstItem="T9f-ns-QYb" firstAttribute="leading" secondItem="CNe-7M-nRf" secondAttribute="leading" constant="15" id="YQj-nN-ITU"/>
-                                    <constraint firstAttribute="trailing" secondItem="Dju-v8-j7I" secondAttribute="trailing" id="cW4-AH-nb0"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dju-v8-j7I" secondAttribute="trailing" constant="10" id="cW4-AH-nb0"/>
                                     <constraint firstAttribute="trailing" secondItem="T9f-ns-QYb" secondAttribute="trailing" constant="15" id="euw-jh-X4G"/>
                                     <constraint firstAttribute="bottom" secondItem="T9f-ns-QYb" secondAttribute="bottom" constant="35" id="ibg-EV-Enb"/>
                                     <constraint firstItem="T9f-ns-QYb" firstAttribute="top" secondItem="2IQ-NL-HGB" secondAttribute="bottom" constant="31" id="zz4-Uu-odl"/>
@@ -159,4 +177,7 @@
             <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="prod2" width="175" height="175"/>
+    </resources>
 </document>

@@ -27,6 +27,7 @@
 		B227003C232C777B0074AFF7 /* ProductFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227003B232C777B0074AFF7 /* ProductFormViewController.swift */; };
 		B227003E232C7A870074AFF7 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227003D232C7A870074AFF7 /* PrimaryButton.swift */; };
 		B2270040232C7CB30074AFF7 /* PrimaryButtonOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227003F232C7CB30074AFF7 /* PrimaryButtonOutline.swift */; };
+		B2270042232C87B40074AFF7 /* CorneredImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2270041232C87B40074AFF7 /* CorneredImageView.swift */; };
 		B22B908622E3E5E900D0B449 /* FirstTimeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B908522E3E5E900D0B449 /* FirstTimeLoginViewController.swift */; };
 		B22B908822E4E73100D0B449 /* CustomerRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22B908722E4E73100D0B449 /* CustomerRegistration.storyboard */; };
 		B22B909022E5517E00D0B449 /* CustomerRegistrationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B908F22E5517E00D0B449 /* CustomerRegistrationFormViewController.swift */; };
@@ -167,6 +168,7 @@
 		B227003B232C777B0074AFF7 /* ProductFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFormViewController.swift; sourceTree = "<group>"; };
 		B227003D232C7A870074AFF7 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		B227003F232C7CB30074AFF7 /* PrimaryButtonOutline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonOutline.swift; sourceTree = "<group>"; };
+		B2270041232C87B40074AFF7 /* CorneredImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorneredImageView.swift; sourceTree = "<group>"; };
 		B22B908522E3E5E900D0B449 /* FirstTimeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeLoginViewController.swift; sourceTree = "<group>"; };
 		B22B908722E4E73100D0B449 /* CustomerRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerRegistration.storyboard; sourceTree = "<group>"; };
 		B22B908F22E5517E00D0B449 /* CustomerRegistrationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRegistrationFormViewController.swift; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 				B2270036232C41990074AFF7 /* ContainerView.swift */,
 				B227003D232C7A870074AFF7 /* PrimaryButton.swift */,
 				B227003F232C7CB30074AFF7 /* PrimaryButtonOutline.swift */,
+				B2270041232C87B40074AFF7 /* CorneredImageView.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -1193,6 +1196,7 @@
 				B211EC2E22EF7083006B5A82 /* MenuContentCell.swift in Sources */,
 				B227003C232C777B0074AFF7 /* ProductFormViewController.swift in Sources */,
 				B2BC92B122F3E1C600D128B4 /* ProductCardCollectionView.swift in Sources */,
+				B2270042232C87B40074AFF7 /* CorneredImageView.swift in Sources */,
 				B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */,
 				B28F419D22D6DF7E00C7E2E6 /* LoginDelegate.swift in Sources */,
 				B211EC2C22EF6FFF006B5A82 /* MenuContentCollectionView.swift in Sources */,
