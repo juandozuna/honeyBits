@@ -23,3 +23,4 @@
 "ErrorRetrivingShopModel" = "There was an App error trying to retrieve the shop model from inputs";
 "ErrorUpdatingShop" = "Error ocurred trying to update the shop";
 "UnableToRetrieveCategories" = "Application unable to retrieve product categories from server";
+"ProductCreatedSuccesfully" = "Product was created succesfully";

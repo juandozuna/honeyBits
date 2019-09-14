@@ -28,6 +28,11 @@ class ProductFormViewController: UIViewController {
     var productService: ProductService?
     var categories: [ProductCategoryModel]?
     
+    private var succesfulRequest: BehaviorRelay<Bool> = BehaviorRelay(value: false)
+    var requestObservable: Observable<Bool> {
+        return succesfulRequest.asObservable()
+    }
+    
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -39,9 +44,14 @@ class ProductFormViewController: UIViewController {
         if isFormValid() {
             let model = getProductModel()
             productService?.createNewProduct(model: model, completion: { (status, model) in
-                ///TODO: Write correct product code
-                showHudMessage("Succesfull Creation", type: .success)
+                if status != .Success {
+                   succesfulRequest.accept(false)
+                    return
+                }
+                showHudMessage(NSLocalizedString("ProductCreatedSuccesfully", comment: ""), type: .success)
                 dismissForm()
+                succesfulRequest.accept(true)
+                
             })
         }
     }
