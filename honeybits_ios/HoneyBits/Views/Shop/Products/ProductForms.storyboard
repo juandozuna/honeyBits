@@ -165,6 +165,7 @@
                     </view>
                     <connections>
                         <outlet property="cancelBtn" destination="T9f-ns-QYb" id="ueH-3x-Sf7"/>
+                        <outlet property="mainFormContainer" destination="CNe-7M-nRf" id="eWN-bb-IwB"/>
                         <outlet property="saveProductBtn" destination="2IQ-NL-HGB" id="3xo-eX-7HV"/>
                         <outlet property="txtProductCategory" destination="592-gQ-KUb" id="yKF-Dw-ovd"/>
                         <outlet property="txtProductDescription" destination="aqz-Ra-dvB" id="lfQ-0F-IXA"/>

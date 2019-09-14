@@ -22,6 +22,7 @@ class ProductFormViewController: UIViewController {
     @IBOutlet weak var txtProductCategory: TextField!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var saveProductBtn: PrimaryButton!
+    @IBOutlet weak var mainFormContainer: UIView!
     
     var productService: ProductService?
     var categories: [ProductCategoryModel]?
@@ -49,7 +50,7 @@ class ProductFormViewController: UIViewController {
     }
     
     private func configureKeyboardAvoiding() {
-        KeyboardAvoiding.avoidingView = saveProductBtn
+        KeyboardAvoiding.avoidingView = mainFormContainer
     }
     
     private func configureMainTapGestureListener() {
@@ -71,38 +72,47 @@ class ProductFormViewController: UIViewController {
         }
     }
     
-    private func isFormValid() -> Bool {
-        let price = requiredValidation(for: txtProductPrice)
-        let name = requiredValidation(for: txtProductName)
-        let description = requiredValidation(for: txtProductDescription)
-        let category = requiredValidation(for: txtProductCategory)
+    private func isFormValid() -> Bool{
+        let price = Validator.required().apply(txtProductPrice.text!)
+        let name = Validator.required().apply(txtProductName.text!)
+        let description = Validator.required().apply(txtProductDescription.text!)
+        let category = Validator.required().apply(txtProductCategory.text!)
         
         return price && name && description && category
+    }
+    
+    private func setSaveBtnStatus(active: Bool) {
+        saveProductBtn.isEnabled = active
+    }
+    
+    private func updateFormStatus() {
+        let formValid = isFormValid()
+        setSaveBtnStatus(active: formValid)
     }
     
     private func setupTextFieldSubscriptions() {
         txtProductPrice
             .rx.text.orEmpty
             .subscribe(onNext: { (value) in
-                _ = self.isFormValid()
+                self.updateFormStatus()
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
         txtProductName
             .rx.text.orEmpty
             .subscribe(onNext: { (value) in
-                _ = self.isFormValid()
+                self.updateFormStatus()
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
         txtProductDescription
             .rx.text.orEmpty
             .subscribe(onNext: { (value) in
-                _ = self.isFormValid()
+                self.updateFormStatus()
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
         txtProductCategory
             .rx.text.orEmpty
             .subscribe(onNext: { (value) in
-                _ = self.isFormValid()
+                self.updateFormStatus()
             }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     
