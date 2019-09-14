@@ -22,6 +22,9 @@
 		B21957ED22E24AD9008AEBA0 /* Roles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21957EC22E24AD9008AEBA0 /* Roles.swift */; };
 		B21957F022E24C78008AEBA0 /* KeeperMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21957EF22E24C78008AEBA0 /* KeeperMain.storyboard */; };
 		B2198F572309CDFD0083A01A /* MainKeeperShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2198F562309CDFD0083A01A /* MainKeeperShopViewController.swift */; };
+		B2270034232C3E940074AFF7 /* ProductForms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2270033232C3E940074AFF7 /* ProductForms.storyboard */; };
+		B2270037232C41990074AFF7 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2270036232C41990074AFF7 /* ContainerView.swift */; };
+		B227003C232C777B0074AFF7 /* ProductFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227003B232C777B0074AFF7 /* ProductFormViewController.swift */; };
 		B22B908622E3E5E900D0B449 /* FirstTimeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B908522E3E5E900D0B449 /* FirstTimeLoginViewController.swift */; };
 		B22B908822E4E73100D0B449 /* CustomerRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22B908722E4E73100D0B449 /* CustomerRegistration.storyboard */; };
 		B22B909022E5517E00D0B449 /* CustomerRegistrationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B908F22E5517E00D0B449 /* CustomerRegistrationFormViewController.swift */; };
@@ -157,6 +160,9 @@
 		B21957EC22E24AD9008AEBA0 /* Roles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roles.swift; sourceTree = "<group>"; };
 		B21957EF22E24C78008AEBA0 /* KeeperMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperMain.storyboard; sourceTree = "<group>"; };
 		B2198F562309CDFD0083A01A /* MainKeeperShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainKeeperShopViewController.swift; sourceTree = "<group>"; };
+		B2270033232C3E940074AFF7 /* ProductForms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductForms.storyboard; sourceTree = "<group>"; };
+		B2270036232C41990074AFF7 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		B227003B232C777B0074AFF7 /* ProductFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFormViewController.swift; sourceTree = "<group>"; };
 		B22B908522E3E5E900D0B449 /* FirstTimeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeLoginViewController.swift; sourceTree = "<group>"; };
 		B22B908722E4E73100D0B449 /* CustomerRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerRegistration.storyboard; sourceTree = "<group>"; };
 		B22B908F22E5517E00D0B449 /* CustomerRegistrationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRegistrationFormViewController.swift; sourceTree = "<group>"; };
@@ -313,6 +319,7 @@
 		B2093E9A23089C66006CA976 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				B227003A232C77680074AFF7 /* Products */,
 				B2093E9B23089C6D006CA976 /* Creation */,
 				B2198F562309CDFD0083A01A /* MainKeeperShopViewController.swift */,
 				B23B3685232B023000DF0FB8 /* KeeperShopEditViewController.swift */,
@@ -375,16 +382,32 @@
 		B2270030232C3D5E0074AFF7 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
-				B2270032232C3E300074AFF7 /* Products */,
+				B2270035232C3EAA0074AFF7 /* Products */,
 				B2093E9923089BFA006CA976 /* Shop Creation */,
 				B24BEE2822E8038100C1E5FB /* Shop Settings */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
 		};
-		B2270032232C3E300074AFF7 /* Products */ = {
+		B2270035232C3EAA0074AFF7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				B2270033232C3E940074AFF7 /* ProductForms.storyboard */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		B2270039232C6AB80074AFF7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		B227003A232C77680074AFF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B227003B232C777B0074AFF7 /* ProductFormViewController.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -414,13 +437,6 @@
 				B22B909222E6AC2400D0B449 /* ScaleSegue.swift */,
 			);
 			path = Segues;
-			sourceTree = "<group>";
-		};
-		B2398A3022DCB39F0042C764 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		B24BEE2222E7FF2400C1E5FB /* Dashboard */ = {
@@ -478,6 +494,7 @@
 			children = (
 				B2512DBA22F0D7E700E1BA9E /* TextWithBackgroundView.swift */,
 				B2512DBC22F0D82800E1BA9E /* TextWithBackgroundView.xib */,
+				B2270036232C41990074AFF7 /* ContainerView.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -826,7 +843,6 @@
 		B2FC8EE422CA1FBD008CE65C /* HoneyBits */ = {
 			isa = PBXGroup;
 			children = (
-				B2398A3022DCB39F0042C764 /* Networking */,
 				B2F8358F22D6881F00A9910C /* Extensions */,
 				B2A91D5422D0184500CBBA4E /* Delegates */,
 				B272B8BD22CED19400E124B4 /* Localization */,
@@ -836,6 +852,7 @@
 				B2A5813922CAD0F900C9C5D9 /* Views */,
 				B2A5813822CAD0F300C9C5D9 /* Controllers */,
 				B2745FC522D57D2F00297A43 /* Components */,
+				B2270039232C6AB80074AFF7 /* Helper */,
 				B2FC8EEC22CA1FBE008CE65C /* Assets.xcassets */,
 				B2FC8EEE22CA1FBE008CE65C /* LaunchScreen.storyboard */,
 				B2FC8EF122CA1FBE008CE65C /* Info.plist */,
@@ -992,6 +1009,7 @@
 				B2A2E81922D0D51200DFDAB3 /* CustomerHome.storyboard in Resources */,
 				B27C9F6122E23EE500B4AFE3 /* main.storyboard in Resources */,
 				B21957F022E24C78008AEBA0 /* KeeperMain.storyboard in Resources */,
+				B2270034232C3E940074AFF7 /* ProductForms.storyboard in Resources */,
 				B2DABEF8232735F7001B4E4C /* KeeperShopProductCell.xib in Resources */,
 				B24BEE2A22E8039100C1E5FB /* KeeperShopSettings.storyboard in Resources */,
 				B272B8C222CED28500E124B4 /* UserAuthentication.storyboard in Resources */,
@@ -1137,6 +1155,7 @@
 				B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */,
 				B25FCB9322E94FCB006BDD0C /* KeeperSettingsViewController.swift in Sources */,
 				B27C9F5B22E23B0900B4AFE3 /* ProductModel.swift in Sources */,
+				B2270037232C41990074AFF7 /* ContainerView.swift in Sources */,
 				B25AE9A3230CF30B002E7D67 /* KeeperShopDescriptionFormController.swift in Sources */,
 				B28F41A622D7A88C00C7E2E6 /* CustomerLoginViewController.swift in Sources */,
 				B23FEA9E22F1C26D001E8B32 /* CustomerHomeHeaderCell.swift in Sources */,
@@ -1166,6 +1185,7 @@
 				B26CEB3522E257EB00814889 /* MainNavigationController.swift in Sources */,
 				B28F41A122D7604200C7E2E6 /* CustomerHomeView.swift in Sources */,
 				B211EC2E22EF7083006B5A82 /* MenuContentCell.swift in Sources */,
+				B227003C232C777B0074AFF7 /* ProductFormViewController.swift in Sources */,
 				B2BC92B122F3E1C600D128B4 /* ProductCardCollectionView.swift in Sources */,
 				B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */,
 				B28F419D22D6DF7E00C7E2E6 /* LoginDelegate.swift in Sources */,

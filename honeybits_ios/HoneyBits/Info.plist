@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Access media library to choose pictures</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Use camera to take picture of products and shop</string>
 	<key>API_ENDPOINT_BASE_URL</key>
 	<string>$(API_ENDPOINT_BASE_URL)</string>
 	<key>CFBundleDevelopmentRegion</key>

@@ -41,6 +41,10 @@ class MainKeeperShopViewController : UIViewController {
         }
     }
     
+    func addProductBtnPressed() {
+        presentProductCreateController()
+    }
+    
     private func setupController() {
         setupCollectionView()
         displayCorrectView()
@@ -120,15 +124,16 @@ class MainKeeperShopViewController : UIViewController {
         }
     }
     
-     func addProductBtnPressed() {
-        showAlertMessage("Heellous", title: "Guenas")
-    }
-    
     private func presentShopCreationController() {
         let navController = viewControllerFromStoryboard(storyboard: "KeeperShopCreation", withIdentifier: "shopFormNav") as! UINavigationController
         let controller = navController.topViewController as! KeeperShopNameFormController
         controller.delegate = self
         present(navController, animated: true, completion: nil)
+    }
+    
+    private func presentProductCreateController() {
+        let productController = viewControllerFromStoryboard(storyboard: "ProductForms", withIdentifier: "productForm") as! ProductFormViewController
+        present(productController, animated: true, completion: nil)
     }
     
 }

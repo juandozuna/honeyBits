@@ -11,6 +11,7 @@ import Foundation
 
 class ProductService: BaseService {
     
+    //TEMPORARY Products awaiting API connection
     let products: [ProductModel] = [
         ProductModel(productId: 1, productName: "Product 1", productCategoryId: 2, productDescription: "Descriptions", productPrice: 234.23),
         ProductModel(productId: 2, productName: "Product 2", productCategoryId: 2, productDescription: "Descriptions", productPrice: 234.23),
@@ -24,7 +25,19 @@ class ProductService: BaseService {
         ProductModel(productId: 10, productName: "Product 10", productCategoryId: 2, productDescription: "Descriptions", productPrice: 234.23),
     ]
     
+    let categories: [ProductCategoryModel] = [
+        ProductCategoryModel(productCategoryId: 1, productCategoryName: "Category 1", productCategoryDescripcion: "Description"),
+        ProductCategoryModel(productCategoryId: 2, productCategoryName: "Category 2", productCategoryDescripcion: "Description"),
+        ProductCategoryModel(productCategoryId: 3, productCategoryName: "Category 3", productCategoryDescripcion: "Description"),
+        ProductCategoryModel(productCategoryId: 4, productCategoryName: "Category 4", productCategoryDescripcion: "Description")
+    ]
+    
+    
     func getProductsForShop(shopId: Int, completion: CompletedRequestVoid<[ProductModel]>) {
         completion(.Success, products)
+    }
+    
+    func getProductCategories(completion: CompletedRequestVoid<[ProductCategoryModel]>) {
+        completion(.Success, categories)
     }
 }

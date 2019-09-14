@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Product Form View Controller-->
+        <scene sceneID="K8a-Bt-uXl">
+            <objects>
+                <viewController storyboardIdentifier="productForm" id="mWa-1n-3Bg" customClass="ProductFormViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AZh-7V-c48">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wca-3i-JO8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="71M-T2-yH7"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Create Product" id="urh-je-YDQ"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CR5-2Y-2xN">
+                                <rect key="frame" x="0.0" y="89" width="414" height="160"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="QuY-Pz-xia">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7yO-Ju-HYx">
+                                                <rect key="frame" x="0.0" y="0.0" width="203.5" height="160"/>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zwZ-ND-YnS" customClass="TextField" customModule="Material">
+                                                <rect key="frame" x="210.5" y="60" width="203.5" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Oe6-Am-ijX"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Product Price"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="Kti-JV-9Es"/>
+                                    <constraint firstAttribute="bottom" secondItem="QuY-Pz-xia" secondAttribute="bottom" id="Szf-RW-noi"/>
+                                    <constraint firstItem="QuY-Pz-xia" firstAttribute="leading" secondItem="CR5-2Y-2xN" secondAttribute="leading" id="igw-VO-moW"/>
+                                    <constraint firstAttribute="trailing" secondItem="QuY-Pz-xia" secondAttribute="trailing" id="s4m-te-IIt"/>
+                                    <constraint firstItem="QuY-Pz-xia" firstAttribute="top" secondItem="CR5-2Y-2xN" secondAttribute="top" id="zDt-OV-8zz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CR5-2Y-2xN" firstAttribute="leading" secondItem="3VF-dd-0l4" secondAttribute="leading" id="2kk-HI-sNF"/>
+                            <constraint firstItem="Wca-3i-JO8" firstAttribute="leading" secondItem="3VF-dd-0l4" secondAttribute="leading" id="3is-Wz-Oht"/>
+                            <constraint firstItem="Wca-3i-JO8" firstAttribute="top" secondItem="3VF-dd-0l4" secondAttribute="top" id="ZML-Mp-Me3"/>
+                            <constraint firstItem="CR5-2Y-2xN" firstAttribute="top" secondItem="Wca-3i-JO8" secondAttribute="bottom" id="agv-aX-nrL"/>
+                            <constraint firstItem="Wca-3i-JO8" firstAttribute="trailing" secondItem="3VF-dd-0l4" secondAttribute="trailing" id="bS7-nA-wnY"/>
+                            <constraint firstItem="CR5-2Y-2xN" firstAttribute="trailing" secondItem="3VF-dd-0l4" secondAttribute="trailing" id="zH3-Rm-dtg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3VF-dd-0l4"/>
+                    </view>
+                    <connections>
+                        <outlet property="txtProductPrice" destination="zwZ-ND-YnS" id="EcX-1R-8iq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ely-OO-tbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
+        </scene>
+    </scenes>
+</document>
