@@ -24,16 +24,15 @@ class ProductFormViewController: UIViewController {
     @IBOutlet weak var saveProductBtn: PrimaryButton!
     @IBOutlet weak var mainFormContainer: UIView!
     @IBOutlet weak var formStackView: UIStackView!
-    
     var productService: ProductService?
     var categories: [ProductCategoryModel]?
-    
-    private var succesfulRequest: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     var requestObservable: Observable<Bool> {
         return succesfulRequest.asObservable()
     }
-    
     var disposeBag = DisposeBag()
+    private var succesfulRequest: BehaviorRelay<Bool> = BehaviorRelay(value: false)
+    private var editMode = false
+    private var productModel: BehaviorSubject<ProductModel?> = BehaviorSubject(value: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
