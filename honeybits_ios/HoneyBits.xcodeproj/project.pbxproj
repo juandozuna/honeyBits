@@ -114,6 +114,8 @@
 		B2F0835C2311811500AA395A /* RegistrationUsernameSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0835B2311811500AA395A /* RegistrationUsernameSelectionController.swift */; };
 		B2F0835E2311975400AA395A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0835D2311975400AA395A /* UserModel.swift */; };
 		B2F2371C232D2425006CFD70 /* SingleProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2371B232D2425006CFD70 /* SingleProductViewController.swift */; };
+		B2F2371E232D298C006CFD70 /* DecimalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2371D232D298C006CFD70 /* DecimalExtension.swift */; };
+		B2F23720232D2CF3006CFD70 /* ProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2371F232D2CF3006CFD70 /* ProductImage.swift */; };
 		B2F8358A22D6820900A9910C /* SignInDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8358922D6820900A9910C /* SignInDelegate.swift */; };
 		B2F8358E22D6837200A9910C /* CustomerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8358D22D6837200A9910C /* CustomerHomeViewController.swift */; };
 		B2F8359122D6882F00A9910C /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8359022D6882F00A9910C /* UiViewExtension.swift */; };
@@ -258,6 +260,8 @@
 		B2F0835B2311811500AA395A /* RegistrationUsernameSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUsernameSelectionController.swift; sourceTree = "<group>"; };
 		B2F0835D2311975400AA395A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B2F2371B232D2425006CFD70 /* SingleProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductViewController.swift; sourceTree = "<group>"; };
+		B2F2371D232D298C006CFD70 /* DecimalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalExtension.swift; sourceTree = "<group>"; };
+		B2F2371F232D2CF3006CFD70 /* ProductImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
 		B2F8358922D6820900A9910C /* SignInDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDelegate.swift; sourceTree = "<group>"; };
 		B2F8358D22D6837200A9910C /* CustomerHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeViewController.swift; sourceTree = "<group>"; };
 		B2F8359022D6882F00A9910C /* UiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExtension.swift; sourceTree = "<group>"; };
@@ -716,6 +720,7 @@
 				B2829F16230632B00050C45E /* UserRegistrationModel.swift */,
 				B2F0835D2311975400AA395A /* UserModel.swift */,
 				B29479F423135A5B002F2147 /* ShopModelRegistration.swift */,
+				B2F2371F232D2CF3006CFD70 /* ProductImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -826,6 +831,7 @@
 				B2398A3322DD36280042C764 /* UIViewControllerExtension.swift */,
 				B2398A3522DD5B230042C764 /* EncodableExtensions.swift */,
 				B25D46A622E398C700F3E644 /* NSObjectExtensions.swift */,
+				B2F2371D232D298C006CFD70 /* DecimalExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1161,6 +1167,7 @@
 				B26C652A2320A38E0053537C /* ShopActionDelegate.swift in Sources */,
 				B2DABEFA232739F9001B4E4C /* KeeperShopProductCell.swift in Sources */,
 				B28F419B22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift in Sources */,
+				B2F23720232D2CF3006CFD70 /* ProductImage.swift in Sources */,
 				B23B3686232B023000DF0FB8 /* KeeperShopEditViewController.swift in Sources */,
 				B23FEA9C22F1BFE4001E8B32 /* CustomerHomeUserController.swift in Sources */,
 				B28F41AC22D80CD900C7E2E6 /* CustomerYouViewController.swift in Sources */,
@@ -1214,6 +1221,7 @@
 				B2F8358E22D6837200A9910C /* CustomerHomeViewController.swift in Sources */,
 				B2EE6A8422D8E54900350BBA /* CustomerGuestSettingsViewController.swift in Sources */,
 				B2398A3422DD36280042C764 /* UIViewControllerExtension.swift in Sources */,
+				B2F2371E232D298C006CFD70 /* DecimalExtension.swift in Sources */,
 				B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */,
 				B26C65262320994B0053537C /* KeeperShopDetailsCell.swift in Sources */,
 				B28F41AE22D8141600C7E2E6 /* AuthBackdropDelegate.swift in Sources */,

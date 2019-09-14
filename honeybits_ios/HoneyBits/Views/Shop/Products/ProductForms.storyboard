@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Product Form View Controller-->
@@ -36,7 +35,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eh8-15-Rot" customClass="ContainerView" customModule="HoneyBits" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="193.5" height="150"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prod2" translatesAutoresizingMaskIntoConstraints="NO" id="FcY-rU-GyL">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="FcY-rU-GyL">
                                                         <rect key="frame" x="0.0" y="0.0" width="193.5" height="150"/>
                                                     </imageView>
                                                 </subviews>
@@ -186,6 +185,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="prod2" width="175" height="175"/>
+        <image name="image-placeholder" width="240" height="240"/>
     </resources>
 </document>
