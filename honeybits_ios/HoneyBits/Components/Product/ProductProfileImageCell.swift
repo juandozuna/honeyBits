@@ -9,8 +9,11 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SkeletonView
 
 class ProductProfileImageCell : UICollectionViewCell {
+    
+    var baseService = BaseService()
     
     private var imageView: UIImageView = {
         let iv = UIImageView(image: nil)
@@ -32,6 +35,16 @@ class ProductProfileImageCell : UICollectionViewCell {
         self.imageView.image = image
     }
     
+    func setImageFromUrl(imageUrl: String) {
+        showAnimatedGradientSkeleton()
+        imageView.showAnimatedGradientSkeleton()
+        baseService.imageRequest(imageUrl: imageUrl) { (status, uimage) in
+            self.imageView.image = uimage
+            self.hideSkeleton()
+            self.imageView.hideSkeleton()
+        }
+    }
+    
     func setTapGestureRecognizer() {
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.eventEmitter)))
     }
@@ -41,6 +54,8 @@ class ProductProfileImageCell : UICollectionViewCell {
     }
     
     private func viewSetup() {
+        isSkeletonable = true
+        imageView.isSkeletonable = true
         addSubview(imageView)
         addConstraintsWithFormat("H:|[v0]|", views: imageView)
         addConstraintsWithFormat("V:|[v0]|", views: imageView)

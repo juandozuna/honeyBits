@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SkeletonView
 
 class SingleProductViewController: UIViewController {
     
@@ -23,9 +24,11 @@ class SingleProductViewController: UIViewController {
         layout.estimatedItemSize = CGSize(width: width, height: 20)
         return layout
     }()
+    private var productService: ProductService = ProductService()
     private var productModel: ProductModel?
     private var productProfileImage: ProductImage?
     private var productImages: [ProductImage]?
+    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,28 +36,108 @@ class SingleProductViewController: UIViewController {
     }
     
     private func controllerSetup() {
-        self.collectionViewSetup()
+        subscribeToProductId()
+        collectionViewSetup()
     }
-    
+
     private func collectionViewSetup() {
+        collectionView.isSkeletonable = true
         collectionView.collectionViewLayout = layout
         collectionView.register(ProductProfileImageCell.self, forCellWithReuseIdentifier: imageViewCellId)
         collectionView.register(UINib(nibName: "ProductViewDetailsCell", bundle: nil), forCellWithReuseIdentifier: contentCellId)
+        collectionView.register(ProductProfileImageCell.self, forCellWithReuseIdentifier: productImagesCellId)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
+    
+    private func subscribeToProductId() {
+        self.productId.subscribe({ (value) in
+            if value.element != nil && value.element! > 0 {
+                self.requestDataToServer(id: value.element!)
+            }
+        }).disposed(by: disposeBag)
+    }
+    
+    private func requestDataToServer(id: Int) {
+        collectionView.showAnimatedGradientSkeleton()
+        
+    }
+    
+    private func getProductData(id: Int, completed: (() -> Void)?) {
+        productService.getSingleProduct(productId: id) { (status, productModel) in
+            if status != .Success {
+                return
+            }
+            
+            self.productModel = productModel
+            completed?()
+        }
+    }
+    
+    private func getProductProfileImage(id: Int, completed: (() -> Void)?) {
+        productService.getProductImage(productId: id) { (status, pimage) in
+            if status != .Success {
+                return
+            }
+            
+            self.productProfileImage = pimage
+            completed?()
+        }
+    }
+    
+    private func getAllProductImages(id: Int, completed: (() -> Void)?) {
+        
+    }
+    
 }
 
 extension SingleProductViewController : UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 2 {
+            return productImages?.count ?? 0
+        }
+        
         return 1
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+       let section = indexPath.section
+        
+        if section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageViewCellId, for: indexPath)
+            return cell
+        }
+        
+        if section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: contentCellId, for: indexPath)
+            return cell
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productImagesCellId, for: indexPath)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let section = indexPath.section
+        let width = view.bounds.width
+        
+        let thirdSize = (width / 3) - 5
+        
+        if section == 0 {
+            return CGSize(width: width, height: 160)
+        }
+        
+        if section == 1 {
+            return CGSize(width: width, height: 150)
+        }
+        
+        return CGSize(width: thirdSize, height: thirdSize)
     }
     
     

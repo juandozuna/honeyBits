@@ -53,6 +53,18 @@ class ProductService: BaseService {
         completion(.Success, image)
     }
     
+    func getAllProductImages(productId: Int, completion: CompletedRequestVoid<[ProductImage]>) {
+        let imageUrl = "http://beenaturalbodycare.com/wp-content/uploads/2013/05/honey.jpg"
+        let image = ProductImage(id: 1, productId: productId, name: "honey image", description: "Description of image", type: "Profile", url: imageUrl)
+        
+        var arr: [ProductImage] = []
+        for _ in 0..<12  {
+            arr.append(image)
+        }
+        
+        completion(.Success, arr)
+    }
+    
     func getSingleProduct(productId: Int, completion: CompletedRequestVoid<ProductModel>) {
         let product = ProductModel(productId: 2, productName: "Name", productCategoryId: 3, productDescription: "Description", productPrice: 234.31)
         
