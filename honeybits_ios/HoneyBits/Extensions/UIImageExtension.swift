@@ -8,20 +8,17 @@
 
 import UIKit
 import SkeletonView
-import GIFImageView
+import SVProgressHUD
+import ChameleonFramework
 
 extension UIImageView {
     func loadDataImage(imageUrl: String) {
         let baseService = BaseService()
-        self.startLoading()
+        SVProgressHUD.show()
         baseService.imageRequest(imageUrl: imageUrl) { (status, image) in
             self.image = image
+            SVProgressHUD.dismiss()
         }
         
-    }
-    
-    private func startLoading() {
-        let gif = UIImage.animatedImage(named: "loading-gif")
-        self.image = gif
     }
 }

@@ -5,7 +5,7 @@
 //  Created by Juan Daniel Ozuna Espinal on 9/15/19.
 //  Copyright © 2019 Juan Daniel Ozuna Espinal. All rights reserved.
 //
-
+import ChameleonFramework
 import UIKit
 
 class ProductSingleImageCell: UICollectionViewCell {
@@ -53,11 +53,12 @@ class ProductSingleImageCell: UICollectionViewCell {
     private func viewSetup() {
         viewMethodRan = true
         imageViewSetup()
+        backgroundColor = UIColor.flatGrayColorDark()
     }
     
     private func imageViewSetup() {
         addSubview(imageView)
-        addConstraintsWithFormat("H:|[v0]|", views: imageView)
-        addConstraintsWithFormat("V:|[v0]|", views: imageView)
+        addConstraintsWithFormat("H:|-2-[v0]-2-|", views: imageView)
+        addConstraintsWithFormat("V:|-2-[v0]-2-|", views: imageView)
     }
 }

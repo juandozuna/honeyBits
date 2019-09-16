@@ -49,8 +49,6 @@ class SingleProductViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     }
     
     private func reloadCollectionView() {
@@ -117,10 +115,10 @@ class SingleProductViewController: UIViewController {
 extension SingleProductViewController : UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if section == 2 {
-//            return productImages?.count ?? 0
-//        }
-//
+        if section == 2 {
+            return productImages?.count ?? 0
+        }
+
         return 1
     }
     
@@ -154,7 +152,7 @@ extension SingleProductViewController : UICollectionViewDelegate, UICollectionVi
         let section = indexPath.section
         let width = view.bounds.width
 
-        let thirdSize = (width / 3) - 5
+        let thirdSize = (width / 3) - 8
 
         if section == 0 {
             return CGSize(width: width, height: 160)
@@ -166,6 +164,11 @@ extension SingleProductViewController : UICollectionViewDelegate, UICollectionVi
         }
 
         return CGSize(width: thirdSize, height: thirdSize)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
     }
     
     
