@@ -36,7 +36,7 @@ class ProductViewDetailsCell : UICollectionViewCell {
         viewSetup()
     }
     
-    private func viewSetup() {
+    func viewSetup() {
         generalSettings()
         textViewSetup()
     }

@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_feed_image" translatesAutoresizingMaskIntoConstraints="NO" id="FgX-g4-X3H">
-                        <rect key="frame" x="0.0" y="0.0" width="203.00000000000045" height="142"/>
+                        <rect key="frame" x="0.0" y="0.0" width="203" height="142"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heQ-du-ODS">
                         <rect key="frame" x="0.0" y="0.0" width="203" height="142"/>

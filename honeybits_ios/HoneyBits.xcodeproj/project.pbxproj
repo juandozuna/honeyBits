@@ -107,6 +107,8 @@
 		B2C4D89E232EE225009A614B /* ProductViewDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C4D89D232EE225009A614B /* ProductViewDetailsCell.xib */; };
 		B2C4D8A0232EE43F009A614B /* ProductViewDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4D89F232EE43F009A614B /* ProductViewDetailsCell.swift */; };
 		B2C4D8A2232F04E5009A614B /* ProductProfileImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C4D8A1232F04E5009A614B /* ProductProfileImageCell.xib */; };
+		B2C4D8A4232F3128009A614B /* ProductSingleImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4D8A3232F3128009A614B /* ProductSingleImageCell.swift */; };
+		B2C4D8A6232F324C009A614B /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4D8A5232F324C009A614B /* UIImageExtension.swift */; };
 		B2D9A7CF22EE80A900A59E3D /* KeeperDashboardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D9A7CE22EE80A900A59E3D /* KeeperDashboardNavigationController.swift */; };
 		B2DABEF8232735F7001B4E4C /* KeeperShopProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2DABEF7232735F7001B4E4C /* KeeperShopProductCell.xib */; };
 		B2DABEFA232739F9001B4E4C /* KeeperShopProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DABEF9232739F9001B4E4C /* KeeperShopProductCell.swift */; };
@@ -258,6 +260,8 @@
 		B2C4D89D232EE225009A614B /* ProductViewDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductViewDetailsCell.xib; sourceTree = "<group>"; };
 		B2C4D89F232EE43F009A614B /* ProductViewDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewDetailsCell.swift; sourceTree = "<group>"; };
 		B2C4D8A1232F04E5009A614B /* ProductProfileImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductProfileImageCell.xib; sourceTree = "<group>"; };
+		B2C4D8A3232F3128009A614B /* ProductSingleImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSingleImageCell.swift; sourceTree = "<group>"; };
+		B2C4D8A5232F324C009A614B /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		B2D9A7CE22EE80A900A59E3D /* KeeperDashboardNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperDashboardNavigationController.swift; sourceTree = "<group>"; };
 		B2DABEF7232735F7001B4E4C /* KeeperShopProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeeperShopProductCell.xib; sourceTree = "<group>"; };
 		B2DABEF9232739F9001B4E4C /* KeeperShopProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperShopProductCell.swift; sourceTree = "<group>"; };
@@ -762,6 +766,7 @@
 				B2C4D89B232EBD41009A614B /* ProductProfileImageCell.swift */,
 				B2C4D89D232EE225009A614B /* ProductViewDetailsCell.xib */,
 				B2C4D89F232EE43F009A614B /* ProductViewDetailsCell.swift */,
+				B2C4D8A3232F3128009A614B /* ProductSingleImageCell.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -855,6 +860,7 @@
 				B2398A3522DD5B230042C764 /* EncodableExtensions.swift */,
 				B25D46A622E398C700F3E644 /* NSObjectExtensions.swift */,
 				B2F2371D232D298C006CFD70 /* DecimalExtension.swift */,
+				B2C4D8A5232F324C009A614B /* UIImageExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1238,6 +1244,7 @@
 				B2270042232C87B40074AFF7 /* CorneredImageView.swift in Sources */,
 				B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */,
 				B28F419D22D6DF7E00C7E2E6 /* LoginDelegate.swift in Sources */,
+				B2C4D8A6232F324C009A614B /* UIImageExtension.swift in Sources */,
 				B211EC2C22EF6FFF006B5A82 /* MenuContentCollectionView.swift in Sources */,
 				B2DABEFC23273B8C001B4E4C /* ProductActionDelegate.swift in Sources */,
 				B21957ED22E24AD9008AEBA0 /* Roles.swift in Sources */,
@@ -1266,6 +1273,7 @@
 				B2198F572309CDFD0083A01A /* MainKeeperShopViewController.swift in Sources */,
 				B29479F823136698002F2147 /* CreateShopDelegate.swift in Sources */,
 				B22B909022E5517E00D0B449 /* CustomerRegistrationFormViewController.swift in Sources */,
+				B2C4D8A4232F3128009A614B /* ProductSingleImageCell.swift in Sources */,
 				B2F0835E2311975400AA395A /* UserModel.swift in Sources */,
 				B2829F192306361C0050C45E /* UserRegistrationTypeSelection.swift in Sources */,
 			);

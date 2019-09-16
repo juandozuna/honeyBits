@@ -4,6 +4,7 @@ PODS:
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
   - FontAwesome.swift (1.7.1)
+  - GIFImageView (0.1.0)
   - IHKeyboardAvoiding (4.6)
   - Material (3.1.4):
     - Material/Core (= 3.1.4)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - Alamofire
   - ChameleonFramework
   - FontAwesome.swift
+  - GIFImageView
   - IHKeyboardAvoiding
   - Material
   - PMSuperButton
@@ -44,6 +46,7 @@ SPEC REPOS:
     - Alamofire
     - ChameleonFramework
     - FontAwesome.swift
+    - GIFImageView
     - IHKeyboardAvoiding
     - Material
     - Motion
@@ -61,6 +64,7 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   FontAwesome.swift: 8d9792fa2d2347055da35bd97752b3960bd75952
+  GIFImageView: cd6a500b9bac1942cb66b73452b97baa6e75280d
   IHKeyboardAvoiding: 2a664fdb5f964359fa7ec8fc5c9aebb447583ff8
   Material: 3622a0e18c8114e701b9d8509c3c4af28ed69ed8
   Motion: f115b33f36cc52472a25a965daa89b3859817de0
@@ -74,6 +78,6 @@ SPEC CHECKSUMS:
   SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
   SwipeViewController: 48eef0f9959b795ab4687b95428122597bce3f27
 
-PODFILE CHECKSUM: ce8ef870eb1c2fe9400439241ab87db599b10e7f
+PODFILE CHECKSUM: 5021a5e407ebb9db6ab2f826fc387570bfc09c7a
 
 COCOAPODS: 1.7.1

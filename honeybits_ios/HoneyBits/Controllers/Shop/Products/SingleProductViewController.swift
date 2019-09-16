@@ -45,10 +45,12 @@ class SingleProductViewController: UIViewController {
         collectionView.collectionViewLayout = layout
         collectionView.register(UINib(nibName: "ProductProfileImageCell", bundle: nil), forCellWithReuseIdentifier: imageViewCellId)
         collectionView.register(UINib(nibName: "ProductViewDetailsCell", bundle: nil), forCellWithReuseIdentifier: contentCellId)
-        //collectionView.register(ProductProfileImageCell.self, forCellWithReuseIdentifier: productImagesCellId)
+        collectionView.register(ProductSingleImageCell.self, forCellWithReuseIdentifier: productImagesCellId)
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        (collectionView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     }
     
     private func reloadCollectionView() {
@@ -123,43 +125,47 @@ extension SingleProductViewController : UICollectionViewDelegate, UICollectionVi
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        let section = indexPath.section
-//
-//        if section == 0 {
+
+        if section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageViewCellId, for: indexPath) as! ProductProfileImageCell
             cell.viewSetup()
             cell.setImage(image: UIImage(named: "main_feed_image")!)
             return cell
-//        }
+        }
         
-//        if section == 1 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: contentCellId, for: indexPath)
-//            return cell
-//        }
-//
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productImagesCellId, for: indexPath)
-//        return cell
+        if section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: contentCellId, for: indexPath) as! ProductViewDetailsCell
+            cell.viewSetup()
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+            return cell
+        }
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productImagesCellId, for: indexPath)
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let section = indexPath.section
         let width = view.bounds.width
-//
-//        let thirdSize = (width / 3) - 5
-//
-//        if section == 0 {
+
+        let thirdSize = (width / 3) - 5
+
+        if section == 0 {
             return CGSize(width: width, height: 160)
-//        }
-//
-//        if section == 1 {
-//            return CGSize(width: width, height: 150)
-//        }
-//
-//        return CGSize(width: thirdSize, height: thirdSize)
+        }
+        
+        if section == 1 {
+            //let estimatedFrame = NSString(string: "Demo content").boundingRect(with: .zero, options: .usesLineFragmentOrigin, attributes: nil, context: nil)
+            return CGSize(width: width, height: 200)
+        }
+
+        return CGSize(width: thirdSize, height: thirdSize)
     }
     
     
