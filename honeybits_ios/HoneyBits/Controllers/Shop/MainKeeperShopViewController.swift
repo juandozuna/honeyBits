@@ -144,6 +144,11 @@ class MainKeeperShopViewController : UIViewController {
         present(productController, animated: true, completion: nil)
     }
     
+    private func pushProductViewController(productId: Int) {
+        let pc = viewControllerFromStoryboard(storyboard: "Products", withIdentifier: "productDetailCotnroller") as! SingleProductViewController
+        pc.productId.accept(productId)
+        navigationController?.pushViewController(pc, animated: true)
+    }
 }
 
 
@@ -223,6 +228,12 @@ extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionVi
         
         pcell.editBtn.rx.tap.subscribe({ (arg0) in
             self.presentProductFormInEditMode(model: product)
+        }).disposed(by: disposeBag)
+        
+        pcell.tappedObserver.subscribe({ value in
+            if value.element!    {
+                self.pushProductViewController(productId: product.productId!)
+            }
         }).disposed(by: disposeBag)
         
         return pcell

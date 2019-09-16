@@ -25,6 +25,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prod3" translatesAutoresizingMaskIntoConstraints="NO" id="F4Y-jy-c6t">
                                 <rect key="frame" x="4" y="4" width="222" height="178"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haf-vy-JTJ">
+                                <rect key="frame" x="4" y="4" width="222" height="178"/>
+                                <connections>
+                                    <action selector="generalBtn:" destination="LbU-Ag-wiP" eventType="touchUpInside" id="i2D-UI-Bjl"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Va5-3g-iCe" customClass="PMSuperButton" customModule="PMSuperButton">
                                 <rect key="frame" x="192" y="8" width="30" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,11 +77,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="haf-vy-JTJ" firstAttribute="bottom" secondItem="F4Y-jy-c6t" secondAttribute="bottom" id="8KU-mi-zfD"/>
                             <constraint firstItem="F4Y-jy-c6t" firstAttribute="leading" secondItem="ge3-mD-OCD" secondAttribute="leading" constant="4" id="GD3-r1-uk0"/>
+                            <constraint firstItem="haf-vy-JTJ" firstAttribute="trailing" secondItem="F4Y-jy-c6t" secondAttribute="trailing" id="IAu-zU-FYP"/>
                             <constraint firstAttribute="trailing" secondItem="Lrp-eb-SJm" secondAttribute="trailing" constant="4" id="K6J-sQ-VBt"/>
                             <constraint firstAttribute="bottom" secondItem="F4Y-jy-c6t" secondAttribute="bottom" constant="4" id="Yb8-Bi-RJa"/>
                             <constraint firstItem="Va5-3g-iCe" firstAttribute="top" secondItem="ge3-mD-OCD" secondAttribute="top" constant="8" id="ajK-Gh-16Z"/>
+                            <constraint firstItem="haf-vy-JTJ" firstAttribute="top" secondItem="F4Y-jy-c6t" secondAttribute="top" id="dkE-vd-Gdm"/>
                             <constraint firstAttribute="trailing" secondItem="F4Y-jy-c6t" secondAttribute="trailing" constant="4" id="jmF-8x-Pi9"/>
+                            <constraint firstItem="haf-vy-JTJ" firstAttribute="leading" secondItem="F4Y-jy-c6t" secondAttribute="leading" id="kwb-BK-DTm"/>
                             <constraint firstAttribute="trailing" secondItem="Va5-3g-iCe" secondAttribute="trailing" constant="8" id="oWO-Ta-9iD"/>
                             <constraint firstItem="F4Y-jy-c6t" firstAttribute="top" secondItem="ge3-mD-OCD" secondAttribute="top" constant="4" id="uYi-gP-UDb"/>
                             <constraint firstItem="Lrp-eb-SJm" firstAttribute="leading" secondItem="ge3-mD-OCD" secondAttribute="leading" constant="4" id="viz-JE-GVg"/>

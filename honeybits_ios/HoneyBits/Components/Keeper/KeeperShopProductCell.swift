@@ -8,6 +8,7 @@
 
 import UIKit
 import PMSuperButton
+import RxSwift
 
 class KeeperShopProductCell: UICollectionViewCell {
     
@@ -16,6 +17,10 @@ class KeeperShopProductCell: UICollectionViewCell {
     @IBOutlet weak var editBtn: PMSuperButton!
     var productId: Int?
     var delegate: ProductActionDelegate?
+    var tappedSubject: BehaviorSubject<Bool> = BehaviorSubject(value: false)
+    var tappedObserver: Observable<Bool> {
+        return tappedSubject.asObservable()
+    }
     
     var image: UIImage {
         get {
@@ -37,14 +42,30 @@ class KeeperShopProductCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        viewSetup()
+    }
+    
+    private func viewSetup() {
         editBtnSetup()
+        setupViewTapListener()
     }
     
     private func editBtnSetup() {
         editBtn.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
+    private func setupViewTapListener() {
+        productImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(emitTapEvent)))
+    }
+    
+    @objc private func emitTapEvent() {
+        tappedSubject.onNext(true)
+    }
+    
     @IBAction func editBtnPressed(_ sender: Any) {
         delegate?.openProduct(id: productId)
+    }
+    @IBAction func generalBtn(_ sender: Any) {
+        self.emitTapEvent()
     }
 }

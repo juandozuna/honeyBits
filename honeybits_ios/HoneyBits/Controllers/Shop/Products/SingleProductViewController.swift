@@ -43,12 +43,16 @@ class SingleProductViewController: UIViewController {
     private func collectionViewSetup() {
         collectionView.isSkeletonable = true
         collectionView.collectionViewLayout = layout
-        collectionView.register(ProductProfileImageCell.self, forCellWithReuseIdentifier: imageViewCellId)
+        collectionView.register(UINib(nibName: "ProductProfileImageCell", bundle: nil), forCellWithReuseIdentifier: imageViewCellId)
         collectionView.register(UINib(nibName: "ProductViewDetailsCell", bundle: nil), forCellWithReuseIdentifier: contentCellId)
-        collectionView.register(ProductProfileImageCell.self, forCellWithReuseIdentifier: productImagesCellId)
+        //collectionView.register(ProductProfileImageCell.self, forCellWithReuseIdentifier: productImagesCellId)
         
         collectionView.delegate = self
         collectionView.dataSource = self
+    }
+    
+    private func reloadCollectionView() {
+        collectionView.reloadData()
     }
     
     private func subscribeToProductId() {
@@ -62,6 +66,13 @@ class SingleProductViewController: UIViewController {
     private func requestDataToServer(id: Int) {
         collectionView.showAnimatedGradientSkeleton()
         
+        getProductData(id: id) {
+            self.getProductProfileImage(id: id) {
+                self.getAllProductImages(id: id) {
+                    self.collectionView.hideSkeleton()
+                }
+            }
+        }
     }
     
     private func getProductData(id: Int, completed: (() -> Void)?) {
@@ -69,8 +80,8 @@ class SingleProductViewController: UIViewController {
             if status != .Success {
                 return
             }
-            
             self.productModel = productModel
+            self.reloadCollectionView()
             completed?()
         }
     }
@@ -82,12 +93,21 @@ class SingleProductViewController: UIViewController {
             }
             
             self.productProfileImage = pimage
+            self.reloadCollectionView()
             completed?()
         }
     }
     
     private func getAllProductImages(id: Int, completed: (() -> Void)?) {
-        
+        productService.getAllProductImages(productId: id) { (status, images) in
+            if status != .Success {
+                return
+            }
+            
+            self.productImages = images
+            self.reloadCollectionView()
+            completed?()
+        }
     }
     
 }
@@ -95,49 +115,51 @@ class SingleProductViewController: UIViewController {
 extension SingleProductViewController : UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 2 {
-            return productImages?.count ?? 0
-        }
-        
+//        if section == 2 {
+//            return productImages?.count ?? 0
+//        }
+//
         return 1
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        let section = indexPath.section
-        
-        if section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageViewCellId, for: indexPath)
+//
+//        if section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageViewCellId, for: indexPath) as! ProductProfileImageCell
+            cell.viewSetup()
+            cell.setImage(image: UIImage(named: "main_feed_image")!)
             return cell
-        }
+//        }
         
-        if section == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: contentCellId, for: indexPath)
-            return cell
-        }
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productImagesCellId, for: indexPath)
-        return cell
+//        if section == 1 {
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: contentCellId, for: indexPath)
+//            return cell
+//        }
+//
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productImagesCellId, for: indexPath)
+//        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let section = indexPath.section
         let width = view.bounds.width
-        
-        let thirdSize = (width / 3) - 5
-        
-        if section == 0 {
+//
+//        let thirdSize = (width / 3) - 5
+//
+//        if section == 0 {
             return CGSize(width: width, height: 160)
-        }
-        
-        if section == 1 {
-            return CGSize(width: width, height: 150)
-        }
-        
-        return CGSize(width: thirdSize, height: thirdSize)
+//        }
+//
+//        if section == 1 {
+//            return CGSize(width: width, height: 150)
+//        }
+//
+//        return CGSize(width: thirdSize, height: thirdSize)
     }
     
     
