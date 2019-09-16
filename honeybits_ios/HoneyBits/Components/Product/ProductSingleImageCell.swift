@@ -54,11 +54,12 @@ class ProductSingleImageCell: UICollectionViewCell {
         viewMethodRan = true
         imageViewSetup()
         backgroundColor = UIColor.flatGrayColorDark()
+        layer.cornerRadius = 5
     }
     
     private func imageViewSetup() {
         addSubview(imageView)
-        addConstraintsWithFormat("H:|-2-[v0]-2-|", views: imageView)
-        addConstraintsWithFormat("V:|-2-[v0]-2-|", views: imageView)
+        addConstraintsWithFormat("H:|-1-[v0]-1-|", views: imageView)
+        addConstraintsWithFormat("V:|-1-[v0]-1-|", views: imageView)
     }
 }

@@ -152,7 +152,7 @@ extension SingleProductViewController : UICollectionViewDelegate, UICollectionVi
         let section = indexPath.section
         let width = view.bounds.width
 
-        let thirdSize = (width / 3) - 8
+        let thirdSize = (width / 3) - 7
 
         if section == 0 {
             return CGSize(width: width, height: 160)
