@@ -54,7 +54,7 @@ class ProductService: BaseService {
     }
     
     func getAllProductImages(productId: Int, completion: CompletedRequestVoid<[ProductImage]>) {
-        let imageUrl = "http://beenaturalbodycare.com/wp-content/uploads/2013/05/honey.jpg"
+        let imageUrl = "https://picsum.photos/200/300"
         let image = ProductImage(id: 1, productId: productId, name: "honey image", description: "Description of image", type: "Profile", url: imageUrl)
         
         var arr: [ProductImage] = []

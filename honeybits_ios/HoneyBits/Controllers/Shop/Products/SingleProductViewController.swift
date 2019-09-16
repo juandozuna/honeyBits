@@ -18,12 +18,6 @@ class SingleProductViewController: UIViewController {
     private let imageViewCellId = "imageViewCellId"
     private let contentCellId = "contentCellId"
     private let productImagesCellId = "productImageCellId"
-    private var layout: UICollectionViewLayout = {
-        let layout = UICollectionViewFlowLayout()
-        let width = UIScreen.main.bounds.size.width
-        layout.estimatedItemSize = CGSize(width: width, height: 20)
-        return layout
-    }()
     private var productService: ProductService = ProductService()
     private var productModel: ProductModel?
     private var productProfileImage: ProductImage?
@@ -42,7 +36,6 @@ class SingleProductViewController: UIViewController {
 
     private func collectionViewSetup() {
         collectionView.isSkeletonable = true
-        collectionView.collectionViewLayout = layout
         collectionView.register(UINib(nibName: "ProductProfileImageCell", bundle: nil), forCellWithReuseIdentifier: imageViewCellId)
         collectionView.register(UINib(nibName: "ProductViewDetailsCell", bundle: nil), forCellWithReuseIdentifier: contentCellId)
         collectionView.register(ProductSingleImageCell.self, forCellWithReuseIdentifier: productImagesCellId)
@@ -139,8 +132,6 @@ extension SingleProductViewController : UICollectionViewDelegate, UICollectionVi
         if section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: contentCellId, for: indexPath) as! ProductViewDetailsCell
             cell.viewSetup()
-            cell.setNeedsLayout()
-            cell.layoutIfNeeded()
             return cell
         }
 
