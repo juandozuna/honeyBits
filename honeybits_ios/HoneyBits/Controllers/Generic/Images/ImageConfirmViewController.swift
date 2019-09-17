@@ -56,8 +56,8 @@ class ImageConfirmViewController : UIViewController {
         let buttonHeight: CGFloat = 100
         
         let approveBtn = UIButton()
-        approveBtn.backgroundColor = .blue
-        approveBtn.setTitleColor(.flatOrange(), for: .normal)
+        approveBtn.backgroundColor = .black
+        approveBtn.setTitleColor(.white, for: .normal)
         approveBtn.titleLabel?.text = "Accept"
         approveBtn.addTarget(self, action: #selector(self.approveBtn), for: .touchUpInside)
         approveBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -65,21 +65,22 @@ class ImageConfirmViewController : UIViewController {
        
         
         let cancelBtn = UIButton()
-        cancelBtn.backgroundColor = .red
-        cancelBtn.setTitleColor(.flatOrangeColorDark(), for: .normal)
-        cancelBtn.titleLabel?.text = "Cancel"
+        cancelBtn.backgroundColor = .black
+        cancelBtn.setTitleColor(.white, for: .normal)
+        cancelBtn.setTitle("Cancel", for: .normal)
         cancelBtn.addTarget(self, action: #selector(self.cancelBtn), for: .touchUpInside)
+        cancelBtn.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(cancelBtn)
 
         NSLayoutConstraint.activate([
-            cancelBtn.widthAnchor.constraint(equalToConstant: buttonWidth),
-            cancelBtn.heightAnchor.constraint(equalToConstant: buttonHeight),
-            cancelBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -6),
-            cancelBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
             approveBtn.widthAnchor.constraint(equalToConstant: buttonWidth),
             approveBtn.heightAnchor.constraint(equalToConstant: buttonHeight),
             approveBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
-            approveBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
+            approveBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            cancelBtn.widthAnchor.constraint(equalToConstant: buttonWidth),
+            cancelBtn.heightAnchor.constraint(equalToConstant: buttonHeight),
+            cancelBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -6),
+            cancelBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
             ])
     }
     
