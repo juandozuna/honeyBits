@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SkeletonView
+import AVKit
 
 class SingleProductViewController: UIViewController {
     
@@ -170,8 +171,20 @@ extension SingleProductViewController : UICollectionViewDelegate, UICollectionVi
 
 extension SingleProductViewController : UIImagePickerControllerDelegate {
     @IBAction func cameraBtnPressed(_ sender: Any) {
+        havePermissionToAccessMedia {
+            self.showActionSheetWithOptions()
+        }
+    }
+    
+    private func openImagePicker(sourceType: UIImagePickerController.SourceType) {
+//        let imagePicker = UIImagePickerController()
+//        imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+//        imagePicker.sourceType = sourceType
+    }
+
+    private func showActionSheetWithOptions() {
         let alertController = UIAlertController(title: NSLocalizedString("SelectImageSource", comment: ""), message: nil, preferredStyle: .actionSheet)
-      
+       
         let photoLibraryAction = UIAlertAction(title: NSLocalizedString("PhotoLibrary", comment: ""), style: .default) { (action) in
             alertController.dismiss(animated: true, completion: nil)
             self.openImagePicker(sourceType: .photoLibrary)
@@ -193,8 +206,25 @@ extension SingleProductViewController : UIImagePickerControllerDelegate {
         present(alertController, animated: true, completion: nil)
     }
     
-    private func openImagePicker(sourceType: UIImagePickerController.SourceType) {
-//        let imagePicker = UIImagePickerController()
-//        imagePicker.sourceType = sourceType
+    private func havePermissionToAccessMedia(action: () -> Void){
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            action()
+            return
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { (success) in
+                if success {
+                    self.showActionSheetWithOptions()
+                }
+            }
+            return
+        case .denied:
+            showHudMessage("Access Denied To Media", type: .info)
+            return
+        case .restricted:
+            showHudMessage("Media is restricted, proceed to settings and update permissions", type: .info)
+        @unknown default:
+            return
+        }
     }
 }
