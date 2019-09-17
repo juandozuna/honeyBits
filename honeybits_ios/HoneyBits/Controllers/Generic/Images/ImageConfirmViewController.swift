@@ -56,18 +56,18 @@ class ImageConfirmViewController : UIViewController {
         let buttonHeight: CGFloat = 100
         
         let approveBtn = UIButton()
-        approveBtn.backgroundColor = .black
+        approveBtn.backgroundColor = .clear
         approveBtn.setTitleColor(.white, for: .normal)
-        approveBtn.titleLabel?.text = "Accept"
+        approveBtn.setTitle("Confirm", for: .normal)
         approveBtn.addTarget(self, action: #selector(self.approveBtn), for: .touchUpInside)
         approveBtn.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(approveBtn)
        
         
         let cancelBtn = UIButton()
-        cancelBtn.backgroundColor = .black
+        cancelBtn.backgroundColor = .clear
         cancelBtn.setTitleColor(.white, for: .normal)
-        cancelBtn.setTitle("Cancel", for: .normal)
+        cancelBtn.setTitle("Reject", for: .normal)
         cancelBtn.addTarget(self, action: #selector(self.cancelBtn), for: .touchUpInside)
         cancelBtn.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(cancelBtn)
@@ -75,13 +75,13 @@ class ImageConfirmViewController : UIViewController {
         NSLayoutConstraint.activate([
             approveBtn.widthAnchor.constraint(equalToConstant: buttonWidth),
             approveBtn.heightAnchor.constraint(equalToConstant: buttonHeight),
-            approveBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            approveBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24),
             approveBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
             cancelBtn.widthAnchor.constraint(equalToConstant: buttonWidth),
             cancelBtn.heightAnchor.constraint(equalToConstant: buttonHeight),
-            cancelBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -6),
+            cancelBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24),
             cancelBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
-            ])
+        ])
     }
     
     @objc private func approveBtn() {
