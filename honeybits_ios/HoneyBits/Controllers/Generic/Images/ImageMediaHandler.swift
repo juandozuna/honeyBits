@@ -86,20 +86,22 @@ class ImageMediaHandler : NSObject, UIImagePickerControllerDelegate, UINavigatio
         currentViewController.dismiss(animated: true, completion: nil)
     }
     
-    func presentConfirmController(image: UIImage?) {
+    func presentConfirmController(image: UIImage?) -> UIViewController {
         let confirmController = ImageConfirmViewController()
+        confirmController.currentViewController = currentViewController
         confirmController.image = image
-        currentViewController.showHudMessage("Test", type: <#T##ProgressTypeEnum?#>)
-        currentViewController.present(confirmController, animated: true, completion: nil)
+        return confirmController
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             //let data = image.pngData()
-            presentConfirmController(image: image)
+            let vc = presentConfirmController(image: image)
+            picker.present(vc, animated: true, completion: nil)
         } else {
             currentViewController.showHudMessage("Error retrieving image", type: .error)
+            currentViewController.dismiss(animated: true, completion: nil)
         }
-        currentViewController.dismiss(animated: true, completion: nil)
+        
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 
 class ImageConfirmViewController : UIViewController {
     
+    var currentViewController: UIViewController!
+    
     var image: UIImage? {
         get {
             return imageView.image
@@ -39,8 +41,13 @@ class ImageConfirmViewController : UIViewController {
     }
     
     private func controllerSetup() {
+        mainViewSetup()
         presentImageView()
-        addTopNavigationBar()
+        //addTopNavigationBar()
+    }
+    
+    private func mainViewSetup() {
+        view.backgroundColor = .white
     }
     
     private func presentImageView() {
@@ -49,15 +56,15 @@ class ImageConfirmViewController : UIViewController {
         view.addConstraintsWithFormat("V:|[v0]|", views: imageView)
     }
     
-    private func addTopNavigationBar() {
-        view.addSubview(navBar)
-        view.addConstraintsWithFormat("H:|[v0]|", views: navBar)
-        view.addConstraintsWithFormat("V:|[v0(65)]", views: navBar)
-        
-        let rightButtonItem = UIBarButtonItem(title: "Confirm", style: .plain, target: self, action: #selector(self.rightNavBarBtnAction))
-        navBar.topItem?.rightBarButtonItem = rightButtonItem
-    }
-    
+//    private func addTopNavigationBar() {
+//        view.addSubview(navBar)
+//        view.addConstraintsWithFormat("H:|[v0]|", views: navBar)
+//        view.addConstraintsWithFormat("V:|[v0(60)]", views: navBar)
+//        navBar.backgroundColor = .red
+//        let rightButtonItem = UIBarButtonItem(title: "Confirm", style: .plain, target: self, action: #selector(self.rightNavBarBtnAction))
+//        navBar.topItem?.rightBarButtonItem = rightButtonItem
+//    }
+//
     @objc private func rightNavBarBtnAction() {
         showHudMessage("Hello", type: nil)
     }
