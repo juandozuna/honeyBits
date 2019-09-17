@@ -29,6 +29,8 @@ class SingleProductViewController: UIViewController {
         controllerSetup()
     }
     
+
+    
     private func controllerSetup() {
         subscribeToProductId()
         collectionViewSetup()
@@ -135,7 +137,10 @@ extension SingleProductViewController : UICollectionViewDelegate, UICollectionVi
             return cell
         }
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productImagesCellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productImagesCellId, for: indexPath) as! ProductSingleImageCell
+        if let pimage = productImages?[indexPath.item] {
+            cell.loadImageFromUrl(imageUrl: pimage.productImageUrl!)
+        }
         return cell
     }
     
@@ -161,6 +166,35 @@ extension SingleProductViewController : UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
     }
+}
+
+extension SingleProductViewController : UIImagePickerControllerDelegate {
+    @IBAction func cameraBtnPressed(_ sender: Any) {
+        let alertController = UIAlertController(title: NSLocalizedString("SelectImageSource", comment: ""), message: nil, preferredStyle: .actionSheet)
+      
+        let photoLibraryAction = UIAlertAction(title: NSLocalizedString("PhotoLibrary", comment: ""), style: .default) { (action) in
+            alertController.dismiss(animated: true, completion: nil)
+            self.openImagePicker(sourceType: .photoLibrary)
+        }
+        
+        let cameraAction = UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .default) { (action) in
+            alertController.dismiss(animated: true, completion: nil)
+            self.openImagePicker(sourceType: .camera)
+        }
+        
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { (action) in
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        
+        alertController.addAction(photoLibraryAction)
+        alertController.addAction(cameraAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
     
-    
+    private func openImagePicker(sourceType: UIImagePickerController.SourceType) {
+//        let imagePicker = UIImagePickerController()
+//        imagePicker.sourceType = sourceType
+    }
 }

@@ -55,10 +55,10 @@ class ProductService: BaseService {
     
     func getAllProductImages(productId: Int, completion: CompletedRequestVoid<[ProductImage]>) {
         let imageUrl = "https://picsum.photos/200/300"
-        let image = ProductImage(id: 1, productId: productId, name: "honey image", description: "Description of image", type: "Profile", url: imageUrl)
         
         var arr: [ProductImage] = []
-        for _ in 0..<12  {
+        for i in 0..<12  {
+            let image = ProductImage(id: 1 + i, productId: productId, name: "honey image", description: "Description of image", type: "Profile", url: imageUrl)
             arr.append(image)
         }
         

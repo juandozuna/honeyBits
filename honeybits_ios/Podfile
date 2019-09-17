@@ -8,19 +8,15 @@ target 'HoneyBits' do
   # Pods for HoneyBits
   pod 'Alamofire'
   pod 'PMSuperButton'
-  pod 'SwipeCellKit'
   pod 'SVProgressHUD'
   pod 'ChameleonFramework'
   pod 'Material'
   pod 'SwiftValidators'
   pod 'IHKeyboardAvoiding'
-  pod 'FontAwesome.swift'
-  pod 'SwipeViewController'
   pod 'SwiftyJSON'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SkeletonView'
-  pod 'GIFImageView'
 
   target 'HoneyBitsTests' do
     inherit! :search_paths

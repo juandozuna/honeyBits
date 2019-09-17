@@ -15,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var accountService: IAccountService = AccountService()
+    var mainNavController: MainNavigationController = {
+       let controller = MainNavigationController()
+        return controller
+    }()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -24,8 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        
-        let mainNavController = MainNavigationController()
         
         window?.rootViewController = mainNavController
         
@@ -70,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         hideProgressHudOnUserTap()
+        checkForInternetConnection()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -84,6 +87,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setForegroundColor(UIColor.flatOrange())
         SVProgressHUD.setBackgroundLayerColor(UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5))
         hideProgressHudOnUserTap()
+    }
+    
+    
+    private func checkForInternetConnection() {
+        //TODO: write code to check for internet connection
     }
 }
 

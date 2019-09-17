@@ -11,11 +11,12 @@ import UIKit
 class ProductSingleImageCell: UICollectionViewCell {
     
     private var viewMethodRan = false
+    private let baseService = BaseService()
     
     var imageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.loadDataImage(imageUrl: "https://pics.drugstore.com/prodimg/578349/900.jpg")
+        iv.image = UIImage(named: "loading-gif")
         iv.contentMode = UIImageView.ContentMode.scaleAspectFill
         return iv;
     }()
@@ -42,6 +43,10 @@ class ProductSingleImageCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         executeViewSetup()
+    }
+    
+    func loadImageFromUrl(imageUrl: String) {
+        self.imageView.loadDataImage(imageUrl: imageUrl)
     }
     
     private func executeViewSetup() {

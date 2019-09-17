@@ -20,7 +20,19 @@ class PrimaryButton : UIButton {
     
     @IBInspectable var btnBackgroundColor: UIColor = .flatOrange() {
         didSet {
-            backgroundColor = UIColor.flatOrange()
+            backgroundColor = self.btnBackgroundColor
+        }
+    }
+    
+    @IBInspectable var btnOpacity: Float = 1 {
+        didSet {
+            layer.opacity = self.btnOpacity
+        }
+    }
+    
+    @IBInspectable var imageInset: CGFloat = 0.0 {
+        didSet {
+           self.imageEdgeInsets = UIEdgeInsets(top: self.imageInset, left: self.imageInset, bottom: self.imageInset, right: self.imageInset)
         }
     }
     
@@ -34,7 +46,9 @@ class PrimaryButton : UIButton {
         titleLabel?.textColor = UIColor.flatWhite()
         tintColor = UIColor.flatWhite()
         backgroundColor = btnBackgroundColor
+        layer.opacity = btnOpacity
     }
+    
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()

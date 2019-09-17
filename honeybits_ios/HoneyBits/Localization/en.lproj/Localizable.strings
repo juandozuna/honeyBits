@@ -25,3 +25,7 @@
 "UnableToRetrieveCategories" = "Application unable to retrieve product categories from server";
 "ProductCreatedSuccesfully" = "Product was created succesfully";
 "ErrorRetrievingModel" = "Error ocurred trying to retrieve model";
+"SelectImageSource" = "Select Image Source";
+"PhotoLibrary" = "Photo Library";
+"Camera" = "Camera";
+"Cancel" = "Cancel";
