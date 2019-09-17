@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class ImageConfirmViewController : UIViewController {
     
@@ -29,12 +30,6 @@ class ImageConfirmViewController : UIViewController {
         return iv
     }()
     
-    var navBar: UINavigationBar = {
-        let nb = UINavigationBar()
-        nb.translatesAutoresizingMaskIntoConstraints = false
-        return nb
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         controllerSetup()
@@ -43,11 +38,11 @@ class ImageConfirmViewController : UIViewController {
     private func controllerSetup() {
         mainViewSetup()
         presentImageView()
-        //addTopNavigationBar()
+        buttonsSetup()
     }
     
     private func mainViewSetup() {
-        view.backgroundColor = .white
+        view.backgroundColor = .flatBlack()
     }
     
     private func presentImageView() {
@@ -56,16 +51,43 @@ class ImageConfirmViewController : UIViewController {
         view.addConstraintsWithFormat("V:|[v0]|", views: imageView)
     }
     
-//    private func addTopNavigationBar() {
-//        view.addSubview(navBar)
-//        view.addConstraintsWithFormat("H:|[v0]|", views: navBar)
-//        view.addConstraintsWithFormat("V:|[v0(60)]", views: navBar)
-//        navBar.backgroundColor = .red
-//        let rightButtonItem = UIBarButtonItem(title: "Confirm", style: .plain, target: self, action: #selector(self.rightNavBarBtnAction))
-//        navBar.topItem?.rightBarButtonItem = rightButtonItem
-//    }
-//
-    @objc private func rightNavBarBtnAction() {
-        showHudMessage("Hello", type: nil)
+    private func buttonsSetup() {
+        let buttonWidth = ((view.bounds.width / 2) - 36)
+        let buttonHeight: CGFloat = 100
+        
+        let approveBtn = UIButton()
+        approveBtn.backgroundColor = .blue
+        approveBtn.setTitleColor(.flatOrange(), for: .normal)
+        approveBtn.titleLabel?.text = "Accept"
+        approveBtn.addTarget(self, action: #selector(self.approveBtn), for: .touchUpInside)
+        approveBtn.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(approveBtn)
+       
+        
+        let cancelBtn = UIButton()
+        cancelBtn.backgroundColor = .red
+        cancelBtn.setTitleColor(.flatOrangeColorDark(), for: .normal)
+        cancelBtn.titleLabel?.text = "Cancel"
+        cancelBtn.addTarget(self, action: #selector(self.cancelBtn), for: .touchUpInside)
+        view.addSubview(cancelBtn)
+
+        NSLayoutConstraint.activate([
+            cancelBtn.widthAnchor.constraint(equalToConstant: buttonWidth),
+            cancelBtn.heightAnchor.constraint(equalToConstant: buttonHeight),
+            cancelBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -6),
+            cancelBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            approveBtn.widthAnchor.constraint(equalToConstant: buttonWidth),
+            approveBtn.heightAnchor.constraint(equalToConstant: buttonHeight),
+            approveBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            approveBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
+            ])
+    }
+    
+    @objc private func approveBtn() {
+        currentViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func cancelBtn() {
+        currentViewController.dismiss(animated: true, completion: nil)
     }
 }
