@@ -23,7 +23,7 @@ class ImageMediaHandler : NSObject, UIImagePickerControllerDelegate, UINavigatio
     }
     
     private func pickerGeneric(type: UIImagePickerController.SourceType) {
-        if UIImagePickerController.isSourceTypeAvailable(type) {
+            if UIImagePickerController.isSourceTypeAvailable(type) {
             let pickerController = UIImagePickerController()
             pickerController.delegate = self
             pickerController.sourceType = type
@@ -47,8 +47,14 @@ class ImageMediaHandler : NSObject, UIImagePickerControllerDelegate, UINavigatio
             alertController.dismiss(animated: true, completion: nil)
         }
         
-        alertController.addAction(photoLibraryAction)
-        alertController.addAction(cameraAction)
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            alertController.addAction(photoLibraryAction)
+        }
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            alertController.addAction(cameraAction)
+        }
+        
         alertController.addAction(cancelAction)
         
         currentViewController.present(alertController, animated: true, completion: nil)
@@ -80,10 +86,17 @@ class ImageMediaHandler : NSObject, UIImagePickerControllerDelegate, UINavigatio
         currentViewController.dismiss(animated: true, completion: nil)
     }
     
+    func presentConfirmController(image: UIImage?) {
+        let confirmController = ImageConfirmViewController()
+        confirmController.image = image
+        currentViewController.showHudMessage("Test", type: <#T##ProgressTypeEnum?#>)
+        currentViewController.present(confirmController, animated: true, completion: nil)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            let data = image.pngData()
-            self.imagePickedBlock?(data)
+            //let data = image.pngData()
+            presentConfirmController(image: image)
         } else {
             currentViewController.showHudMessage("Error retrieving image", type: .error)
         }
