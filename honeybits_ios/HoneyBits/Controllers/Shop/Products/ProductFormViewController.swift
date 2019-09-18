@@ -224,7 +224,7 @@ class ProductFormViewController: UIViewController {
     
     private func setValueToInputsFromModel(_ model: ProductModel) {
         DispatchQueue.main.async {
-            self.txtProductPrice.text = "1 3"
+            self.txtProductPrice.text = "13"
             self.txtProductDescription.text = model.productDescription
             self.txtProductName.text = model.productName
             self.txtProductCategory.text = "Temporary Field, awaiting substitution"

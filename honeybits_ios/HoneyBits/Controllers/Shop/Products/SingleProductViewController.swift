@@ -36,6 +36,10 @@ class SingleProductViewController: UIViewController {
         mediaHandler.imagePickedBlock = self.addReceivedImage
     }
     
+    @IBAction func editBtnPressed(_ sender: Any) {
+        openEditForm()
+    }
+    
     private func addReceivedImage(image: UIImage?) {
         if let i = image {
             productService.addImageToProduct(productId: productId.value, imageData: i) { (status, fn) in
@@ -47,6 +51,7 @@ class SingleProductViewController: UIViewController {
             }
         }
     }
+    
     
     private func controllerSetup() {
         subscribeToProductId()
@@ -65,6 +70,12 @@ class SingleProductViewController: UIViewController {
     
     private func reloadCollectionView() {
         collectionView.reloadData()
+    }
+    
+    private func openEditForm() {
+        if let model = productModel {
+            presentProductFormInEditMode(model: model)
+        }
     }
     
     private func subscribeToProductId() {
@@ -120,6 +131,18 @@ class SingleProductViewController: UIViewController {
             self.reloadCollectionView()
             completed?()
         }
+    }
+    
+    private func presentProductFormInEditMode(model: ProductModel) {
+        let productController = viewControllerFromStoryboard(storyboard: "ProductForms", withIdentifier: "productForm") as! ProductFormViewController
+        productController.productService = productService
+        productController.setFormModel(model: model)
+        productController.requestObservable.subscribe({ value in
+            if value.element! {
+               self.getProductData(id: model.productId!, completed: nil)
+            }
+        }).disposed(by: disposeBag)
+        navigationController?.pushViewController(productController, animated: true)
     }
     
 }

@@ -85,7 +85,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vll-oa-bLi"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Product" id="w3G-L4-7Nf"/>
+                    <navigationItem key="navigationItem" title="Product" id="w3G-L4-7Nf">
+                        <barButtonItem key="rightBarButtonItem" image="edit-icon" id="w17-oD-rKA">
+                            <color key="tintColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="editBtnPressed:" destination="Efi-Ch-YNh" id="DgG-pW-iZx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="cBj-mK-SQ4" id="Cgz-dp-DUL"/>
@@ -98,5 +105,6 @@
     </scenes>
     <resources>
         <image name="camera-icon-white" width="52" height="52"/>
+        <image name="edit-icon" width="29.5" height="29.5"/>
     </resources>
 </document>

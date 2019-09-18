@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="height" constant="45" id="71M-T2-yH7"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Create Product" id="urh-je-YDQ"/>
+                                    <navigationItem title="Product Form" id="urh-je-YDQ"/>
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CR5-2Y-2xN">
