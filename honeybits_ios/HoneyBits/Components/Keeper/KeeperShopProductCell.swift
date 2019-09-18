@@ -60,7 +60,7 @@ class KeeperShopProductCell: UICollectionViewCell {
     }
     
     @IBAction func editBtnPressed(_ sender: Any) {
-        delegate?.openProduct(id: productId)
+        delegate?.editProduct(productId: productId)
     }
     @IBAction func generalBtn(_ sender: Any) {
         self.emitTapEvent()

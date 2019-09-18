@@ -211,6 +211,8 @@ extension MainKeeperShopViewController : ProductActionDelegate {
     func viewProduct(productId: Int?) {
         if let id = productId {
             pushProductViewController(productId: id)
+        } else {
+            showHudMessage("Product Not Found", type: .error)
         }
     }
 }
@@ -267,6 +269,7 @@ extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionVi
         
         let pcell = collectionView.dequeueReusableCell(withReuseIdentifier: productCellId, for: indexPath) as! KeeperShopProductCell
         let product = products![indexPath.item]
+        pcell.productId = product.productId
         pcell.label = product.productName!
         pcell.delegate = self
         
