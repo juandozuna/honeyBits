@@ -18,6 +18,7 @@ class KeeperShopDetailsCell: UICollectionViewCell {
             shopTitleLb.text = newValue.shopName
             shopDescriptionLb.text = newValue.shopDescription
             currentShopData = newValue
+            self.stopLoading()
         }
     }
     
@@ -28,14 +29,29 @@ class KeeperShopDetailsCell: UICollectionViewCell {
     @IBOutlet weak var shopTitleLb: UILabel!
     @IBOutlet weak var shopDescriptionLb: UILabel!
     
+    func startLoading() {
+        shopTitleLb.showAnimatedGradientSkeleton()
+        shopDescriptionLb.showAnimatedGradientSkeleton()
+        showAnimatedGradientSkeleton()
+    }
+    
+    func stopLoading() {
+        shopTitleLb.hideSkeleton()
+        shopDescriptionLb.hideSkeleton()
+        hideSkeleton()
+    }
     
     @IBAction func shopEditBtnPressed(_ sender: Any) {
         delegate?.editShop(shopModel: currentShopData!)
     }
     
+    override func prepareForReuse() {
+        startLoading()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        self.startLoading()
     }
     
 }
