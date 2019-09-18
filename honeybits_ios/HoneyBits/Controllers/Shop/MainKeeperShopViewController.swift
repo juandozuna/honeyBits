@@ -165,7 +165,6 @@ class MainKeeperShopViewController : UIViewController {
     
     private func unsubscribeToObservers() {
         for subs in subscriptions {
-            subs.dispose()
             subs.disposed(by: disposeBag)
         }
     }
@@ -191,6 +190,28 @@ extension MainKeeperShopViewController : CreateShopDelegate {
 extension MainKeeperShopViewController : ShopActionDelegate {
     func editShop(shopModel: ShopModel) {
         goToShopEditPage()
+    }
+}
+
+extension MainKeeperShopViewController : ProductActionDelegate {
+    func editProduct(productId: Int?) {
+        var foundProduct: ProductModel? = nil
+        for product in products! {
+            if product.productId != nil && product.productId == productId!{
+                foundProduct = product
+                break
+            }
+        }
+        
+        if let fp = foundProduct {
+            presentProductFormInEditMode(model: fp)
+        }
+    }
+    
+    func viewProduct(productId: Int?) {
+        if let id = productId {
+            pushProductViewController(productId: id)
+        }
     }
 }
 
@@ -247,18 +268,7 @@ extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionVi
         let pcell = collectionView.dequeueReusableCell(withReuseIdentifier: productCellId, for: indexPath) as! KeeperShopProductCell
         let product = products![indexPath.item]
         pcell.label = product.productName!
-        
-        pcell.editBtn.rx.tap.subscribe({ (arg0) in
-            self.presentProductFormInEditMode(model: product)
-        }).disposed(by: disposeBag)
-        
-       let disposable = pcell.tappedObserver.subscribe({ value in
-            if value.element!    {
-                self.pushProductViewController(productId: product.productId!)
-            }
-       });
-        
-        subscriptions.append(disposable)
+        pcell.delegate = self
         
         return pcell
     }

@@ -18,10 +18,6 @@ class KeeperShopProductCell: UICollectionViewCell {
     @IBOutlet weak var editBtn: PMSuperButton!
     var productId: Int?
     var delegate: ProductActionDelegate?
-    var tappedSubject: BehaviorRelay<Bool> = BehaviorRelay(value: false)
-    var tappedObserver: Observable<Bool> {
-        return tappedSubject.asObservable()
-    }
     
     var image: UIImage {
         get {
@@ -60,7 +56,7 @@ class KeeperShopProductCell: UICollectionViewCell {
     }
     
     @objc private func emitTapEvent() {
-        tappedSubject.accept(true)
+        delegate?.viewProduct(productId: productId)
     }
     
     @IBAction func editBtnPressed(_ sender: Any) {

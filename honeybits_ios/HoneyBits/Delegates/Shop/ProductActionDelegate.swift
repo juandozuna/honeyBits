@@ -10,10 +10,12 @@ import Foundation
 
 protocol ProductActionDelegate {
     func openProduct(id: Int?)
+    func editProduct(productId: Int?)
+    func viewProduct(productId: Int?)
 }
 
 extension ProductActionDelegate {
-    func openProduct(id: Int?) {
-        
-    }
+    func openProduct(id: Int?) {}
+    func editProduct(productId: Int?) {}
+    func viewProduct(productId: Int?) {}
 }
