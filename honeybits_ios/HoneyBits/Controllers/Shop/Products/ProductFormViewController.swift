@@ -18,16 +18,18 @@ import ChameleonFramework
 
 class ProductFormViewController: UIViewController {
     
+    
+    @IBOutlet weak var saveProductButton: PrimaryButton!
     @IBOutlet weak var txtProductPrice: TextField!
     @IBOutlet weak var txtProductName: TextField!
     @IBOutlet weak var txtProductDescription: TextField!
     @IBOutlet weak var txtProductCategory: TextField!
-    @IBOutlet weak var saveProductBtn: PrimaryButton!
     @IBOutlet weak var mainFormContainer: UIView!
     @IBOutlet weak var formStackView: UIStackView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var containerView: ContainerView!
-    
+    var newImage: UIImage?
+    var productId: Int? = nil
     var productService: ProductService?
     var categories: [ProductCategoryModel]?
     var requestObservable: Observable<Bool> {
@@ -45,7 +47,7 @@ class ProductFormViewController: UIViewController {
     
     @IBAction func saveBtnAction(_ sender: Any) {
         if isFormValid() {
-            if editMode {
+            if !editMode {
                 createNewProduct()
             } else {
                 updateProduct()
@@ -60,6 +62,10 @@ class ProductFormViewController: UIViewController {
     func setFormModel(model: ProductModel?) {
         if let m = model {
             editMode = true
+            DispatchQueue.main.async {
+                self.saveProductButton.setTitle("Update Product", for: .normal)
+            }
+            productId = m.productId!
             getProductToUpdate(productId: m.productId!)
         } else {
             editMode = false
@@ -74,7 +80,7 @@ class ProductFormViewController: UIViewController {
                 succesfulRequest.accept(false)
                 return
             }
-            showHudMessage(NSLocalizedString("ProductCreatedSuccesfully", comment: "no comment"), type: .success)
+            showHudMessage(NSLocalizedString("ProductCreatedSuccesfully",value: "Product Created Succesfully" ,comment: ""), type: .success)
             dismissForm()
             succesfulRequest.accept(true)
             
@@ -82,6 +88,17 @@ class ProductFormViewController: UIViewController {
     }
     
     private func updateProduct() {
+        let model = getProductModel()
+        productService?.updateProductModel(product: model, image: newImage, completion: { (status, v) in
+            if status != .Success {
+                succesfulRequest.accept(false)
+                dismissForm()
+                return
+            }
+            dismissForm()
+            showHudMessage("Product Updated Succesfully", type: .success)
+            succesfulRequest.accept(true)
+        })
         
     }
     
@@ -142,7 +159,7 @@ class ProductFormViewController: UIViewController {
     }
     
     private func setSaveBtnStatus(active: Bool) {
-        saveProductBtn.isEnabled = active
+        saveProductButton.isEnabled = active
     }
     
     private func updateFormStatus() {
@@ -177,7 +194,7 @@ class ProductFormViewController: UIViewController {
     }
     
     private func getProductModel() -> ProductModel {
-        let model = ProductModel(productId: nil, productName: txtProductName.text, productCategoryId: 2, productDescription: txtProductDescription.text, productPrice: Decimal(string: txtProductPrice.text!))
+        let model = ProductModel(productId: self.productId, productName: txtProductName.text, productCategoryId: 2, productDescription: txtProductDescription.text, productPrice: Decimal(string: txtProductPrice.text!))
         
         return model
     }
@@ -233,5 +250,6 @@ class ProductFormViewController: UIViewController {
     
     private func updateProfileProductImage(image: UIImage?) {
         imageView.image = image
+        newImage = image
     }
 }

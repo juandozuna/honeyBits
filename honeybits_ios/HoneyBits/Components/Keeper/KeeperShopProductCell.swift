@@ -9,6 +9,7 @@
 import UIKit
 import PMSuperButton
 import RxSwift
+import RxCocoa
 
 class KeeperShopProductCell: UICollectionViewCell {
     
@@ -17,7 +18,7 @@ class KeeperShopProductCell: UICollectionViewCell {
     @IBOutlet weak var editBtn: PMSuperButton!
     var productId: Int?
     var delegate: ProductActionDelegate?
-    var tappedSubject: BehaviorSubject<Bool> = BehaviorSubject(value: false)
+    var tappedSubject: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     var tappedObserver: Observable<Bool> {
         return tappedSubject.asObservable()
     }
@@ -59,7 +60,7 @@ class KeeperShopProductCell: UICollectionViewCell {
     }
     
     @objc private func emitTapEvent() {
-        tappedSubject.onNext(true)
+        tappedSubject.accept(true)
     }
     
     @IBAction func editBtnPressed(_ sender: Any) {

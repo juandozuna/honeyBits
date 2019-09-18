@@ -178,7 +178,7 @@
                         <outlet property="formStackView" destination="Dju-v8-j7I" id="K9V-he-e7t"/>
                         <outlet property="imageView" destination="FcY-rU-GyL" id="BY8-6b-dCs"/>
                         <outlet property="mainFormContainer" destination="CNe-7M-nRf" id="eWN-bb-IwB"/>
-                        <outlet property="saveProductBtn" destination="2IQ-NL-HGB" id="3xo-eX-7HV"/>
+                        <outlet property="saveProductButton" destination="2IQ-NL-HGB" id="lbr-i5-edZ"/>
                         <outlet property="txtProductCategory" destination="592-gQ-KUb" id="yKF-Dw-ovd"/>
                         <outlet property="txtProductDescription" destination="aqz-Ra-dvB" id="lfQ-0F-IXA"/>
                         <outlet property="txtProductName" destination="SZR-EW-hHa" id="a5v-T1-gVb"/>

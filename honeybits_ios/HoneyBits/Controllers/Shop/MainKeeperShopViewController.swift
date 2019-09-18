@@ -26,7 +26,7 @@ class MainKeeperShopViewController : UIViewController {
     
     var shopModel: ShopModel?
     var products: [ProductModel]?
-    
+    var subscriptions: [Disposable] = []
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -134,6 +134,12 @@ class MainKeeperShopViewController : UIViewController {
     private func presentProductCreateController() {
         let productController = viewControllerFromStoryboard(storyboard: "ProductForms", withIdentifier: "productForm") as! ProductFormViewController
         productController.productService = productService
+        productController.requestObservable.subscribe({ value in
+            if value.element! {
+                self.unsubscribeToObservers()
+                self.reloadShopProducts()
+            }
+        }).disposed(by: disposeBag)
         present(productController, animated: true, completion: nil)
     }
     
@@ -141,6 +147,12 @@ class MainKeeperShopViewController : UIViewController {
         let productController = viewControllerFromStoryboard(storyboard: "ProductForms", withIdentifier: "productForm") as! ProductFormViewController
         productController.productService = productService
         productController.setFormModel(model: model)
+        productController.requestObservable.subscribe({ value in
+            if value.element! {
+                self.unsubscribeToObservers()
+                self.reloadShopProducts()
+            }
+        }).disposed(by: disposeBag)
         present(productController, animated: true, completion: nil)
     }
     
@@ -149,6 +161,15 @@ class MainKeeperShopViewController : UIViewController {
         pc.productId.accept(productId)
         navigationController?.pushViewController(pc, animated: true)
     }
+    
+    private func unsubscribeToObservers() {
+        for subs in subscriptions {
+            subs.disposed(by: disposeBag)
+            subs.dispose()
+        }
+    }
+    
+    
 }
 
 
@@ -230,11 +251,13 @@ extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionVi
             self.presentProductFormInEditMode(model: product)
         }).disposed(by: disposeBag)
         
-        pcell.tappedObserver.subscribe({ value in
+       let disposable = pcell.tappedObserver.subscribe({ value in
             if value.element!    {
                 self.pushProductViewController(productId: product.productId!)
             }
-        }).disposed(by: disposeBag)
+       });
+        
+        subscriptions.append(disposable)
         
         return pcell
     }
