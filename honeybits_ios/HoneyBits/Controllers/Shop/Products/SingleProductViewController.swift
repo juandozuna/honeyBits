@@ -36,9 +36,15 @@ class SingleProductViewController: UIViewController {
         mediaHandler.imagePickedBlock = self.addReceivedImage
     }
     
-    private func addReceivedImage(data: Data?) {
-        if let d = data {
-            print(d)
+    private func addReceivedImage(image: UIImage?) {
+        if let i = image {
+            productService.addImageToProduct(productId: productId.value, imageData: i) { (status, fn) in
+                if status == .Success {
+                    self.getAllProductImages(id: self.productId.value, completed: {
+                        self.reloadCollectionView()
+                    })
+                }
+            }
         }
     }
     

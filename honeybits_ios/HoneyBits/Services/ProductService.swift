@@ -70,4 +70,8 @@ class ProductService: BaseService {
         
         completion(.Success, product)
     }
+    
+    func addImageToProduct(productId: Int, imageData: UIImage, completion: CompletedRequestVoid<Void>) {
+        completion(.Success, nil)
+    }
 }

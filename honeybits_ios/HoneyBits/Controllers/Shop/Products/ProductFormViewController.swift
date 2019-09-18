@@ -43,6 +43,20 @@ class ProductFormViewController: UIViewController {
         controllerSetup()
     }
     
+    @IBAction func saveBtnAction(_ sender: Any) {
+        if isFormValid() {
+            if editMode {
+                createNewProduct()
+            } else {
+                updateProduct()
+            }
+        }
+    }
+    
+    @IBAction func cancelBtnAction(_ sender: Any) {
+        dismissForm()
+    }
+    
     func setFormModel(model: ProductModel?) {
         if let m = model {
             editMode = true
@@ -53,31 +67,22 @@ class ProductFormViewController: UIViewController {
         }
     }
     
-    private func getProductToUpdate(productId: Int) {
-        productService?.getSingleProduct(productId: productId, completion: { (status, productModel) in
-            self.productModel.onNext(productModel)
-            self.updateFormView(model: productModel)
+    private func createNewProduct() {
+        let model = getProductModel()
+        productService?.createNewProduct(model: model, completion: { (status, model) in
+            if status != .Success {
+                succesfulRequest.accept(false)
+                return
+            }
+            showHudMessage(NSLocalizedString("ProductCreatedSuccesfully", comment: "no comment"), type: .success)
+            dismissForm()
+            succesfulRequest.accept(true)
+            
         })
     }
     
-    @IBAction func saveBtnAction(_ sender: Any) {
-        if isFormValid() {
-            let model = getProductModel()
-            productService?.createNewProduct(model: model, completion: { (status, model) in
-                if status != .Success {
-                   succesfulRequest.accept(false)
-                    return
-                }
-                showHudMessage(NSLocalizedString("ProductCreatedSuccesfully", comment: "no comment"), type: .success)
-                dismissForm()
-                succesfulRequest.accept(true)
-                
-            })
-        }
-    }
-    
-    @IBAction func cancelBtnAction(_ sender: Any) {
-        dismissForm()
+    private func updateProduct() {
+        
     }
     
     private func controllerSetup() {
@@ -95,12 +100,21 @@ class ProductFormViewController: UIViewController {
         setTextFieldColor(to: txtProductCategory)
     }
     
+    private func getProductToUpdate(productId: Int) {
+        productService?.getSingleProduct(productId: productId, completion: { (status, productModel) in
+            self.productModel.onNext(productModel)
+            self.updateFormView(model: productModel)
+        })
+    }
+    
     private func configureKeyboardAvoiding() {
         //KeyboardAvoiding.avoidingView = formStackView
     }
     
     private func configureMainTapGestureListener() {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(resignRespondersOnTap(_:))))
+        
+        containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openImagePicker(_:))))
     }
     
     private func dismissForm() {
@@ -196,7 +210,7 @@ class ProductFormViewController: UIViewController {
     
     private func setValueToInputsFromModel(_ model: ProductModel) {
         DispatchQueue.main.async {
-            self.txtProductPrice.text = "23.33"
+            self.txtProductPrice.text = "1 3"
             self.txtProductDescription.text = model.productDescription
             self.txtProductName.text = model.productName
             self.txtProductCategory.text = "Temporary Field, awaiting substitution"
@@ -209,5 +223,15 @@ class ProductFormViewController: UIViewController {
         resignResponder(for: txtProductName)
         resignResponder(for: txtProductDescription)
         resignResponder(for: txtProductCategory)
+    }
+    
+    @objc private func openImagePicker(_ sender: UITapGestureRecognizer) {
+        let mediaHandler = ImageMediaHandler()
+        mediaHandler.showActionSheet(vc: self)
+        mediaHandler.imagePickedBlock = self.updateProfileProductImage
+    }
+    
+    private func updateProfileProductImage(image: UIImage?) {
+        imageView.image = image
     }
 }

@@ -11,10 +11,10 @@ import AVKit
 
 class ImageMediaHandler : NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var currentViewController: UIViewController!
-    var imagePickedBlock: ((_ data: Data?) -> Void)?
+    private var currentViewController: UIViewController!
+    var imagePickedBlock: ((_ data: UIImage?) -> Void)?
     
-    func camera() {
+    private func camera() {
         self.pickerGeneric(type: .camera)
     }
     
@@ -86,16 +86,16 @@ class ImageMediaHandler : NSObject, UIImagePickerControllerDelegate, UINavigatio
         currentViewController.dismiss(animated: true, completion: nil)
     }
     
-    func presentConfirmController(image: UIImage?) -> UIViewController {
+    private func presentConfirmController(image: UIImage?) -> UIViewController {
         let confirmController = ImageConfirmViewController()
         confirmController.currentViewController = currentViewController
+        confirmController.imagePickedBlock = imagePickedBlock
         confirmController.image = image
         return confirmController
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            //let data = image.pngData()
             let vc = presentConfirmController(image: image)
             picker.present(vc, animated: true, completion: nil)
         } else {

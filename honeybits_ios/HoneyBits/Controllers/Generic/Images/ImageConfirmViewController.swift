@@ -22,6 +22,8 @@ class ImageConfirmViewController : UIViewController {
         }
     }
     
+    var imagePickedBlock: ((_ data: UIImage?) -> Void)?
+    
     var imageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -85,6 +87,7 @@ class ImageConfirmViewController : UIViewController {
     }
     
     @objc private func approveBtn() {
+        imagePickedBlock?(self.image)
         currentViewController.dismiss(animated: true, completion: nil)
     }
     
