@@ -114,6 +114,7 @@ class MainKeeperShopViewController : UIViewController {
     }
     
     private func reloadShopProducts() {
+        self.unsubscribeToObservers()   //TODO: Update the shop ID that is being requested here
         productService.getProductsForShop(shopId: 1) { (status, products) in
             if status != .Success {
                 return
@@ -134,12 +135,12 @@ class MainKeeperShopViewController : UIViewController {
     private func presentProductCreateController() {
         let productController = viewControllerFromStoryboard(storyboard: "ProductForms", withIdentifier: "productForm") as! ProductFormViewController
         productController.productService = productService
-        productController.requestObservable.subscribe({ value in
+        let sub = productController.requestObservable.subscribe({ value in
             if value.element! {
-                self.unsubscribeToObservers()
                 self.reloadShopProducts()
             }
-        }).disposed(by: disposeBag)
+        })
+        subscriptions.append(sub)
         present(productController, animated: true, completion: nil)
     }
     
@@ -147,12 +148,12 @@ class MainKeeperShopViewController : UIViewController {
         let productController = viewControllerFromStoryboard(storyboard: "ProductForms", withIdentifier: "productForm") as! ProductFormViewController
         productController.productService = productService
         productController.setFormModel(model: model)
-        productController.requestObservable.subscribe({ value in
+        let sub = productController.requestObservable.subscribe({ value in
             if value.element! {
-                self.unsubscribeToObservers()
                 self.reloadShopProducts()
             }
-        }).disposed(by: disposeBag)
+        })
+        subscriptions.append(sub)
         present(productController, animated: true, completion: nil)
     }
     
@@ -164,8 +165,8 @@ class MainKeeperShopViewController : UIViewController {
     
     private func unsubscribeToObservers() {
         for subs in subscriptions {
-            subs.disposed(by: disposeBag)
             subs.dispose()
+            subs.disposed(by: disposeBag)
         }
     }
     

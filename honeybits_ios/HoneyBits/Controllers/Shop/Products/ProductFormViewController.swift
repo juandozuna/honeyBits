@@ -62,9 +62,6 @@ class ProductFormViewController: UIViewController {
     func setFormModel(model: ProductModel?) {
         if let m = model {
             editMode = true
-            DispatchQueue.main.async {
-                self.saveProductButton.setTitle("Update Product", for: .normal)
-            }
             productId = m.productId!
             getProductToUpdate(productId: m.productId!)
         } else {
