@@ -78,4 +78,8 @@ class ProductService: BaseService {
     func updateProductModel(product: ProductModel?, image updatedImage: UIImage?, completion: CompletedRequestVoid<Void>) {
         completion(.Success, nil)
     }
+    
+    func deleteProduct(productId: Int?, completion: CompletedRequestVoid<Void>) {
+        completion(.Success, nil)
+    }
 }

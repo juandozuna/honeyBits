@@ -11,11 +11,13 @@ import RxSwift
 import RxCocoa
 import SkeletonView
 import AVKit
+import SVProgressHUD
 
 class SingleProductViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var productId: BehaviorRelay<Int> = BehaviorRelay(value: 0)
+    var delegate: ProductActionDelegate?
     private let imageViewCellId = "imageViewCellId"
     private let contentCellId = "contentCellId"
     private let productImagesCellId = "productImageCellId"
@@ -38,6 +40,22 @@ class SingleProductViewController: UIViewController {
     
     @IBAction func editBtnPressed(_ sender: Any) {
         openEditForm()
+    }
+    
+    @IBAction func deleteBtnPressed(_ sender: Any) {
+        let alertController = UIAlertController(title: "Confirmation", message: "Do you want to delete this product?", preferredStyle: .alert)
+        
+        let yesAction = UIAlertAction(title: "Yes", style: .default) { (action) in
+            SVProgressHUD.show()
+            self.deleteProduct()
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (action) in
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     private func addReceivedImage(image: UIImage?) {
@@ -75,6 +93,17 @@ class SingleProductViewController: UIViewController {
     private func openEditForm() {
         if let model = productModel {
             presentProductFormInEditMode(model: model)
+        }
+    }
+    
+    private func deleteProduct() {
+        let id = productId.value
+        productService.deleteProduct(productId: id) { (status, none) in
+            if status == .Success {
+                delegate?.deleteProduct(productId: id)
+                navigationController?.popViewController(animated: true)
+            }
+            SVProgressHUD.dismiss()
         }
     }
     
@@ -136,13 +165,13 @@ class SingleProductViewController: UIViewController {
     private func presentProductFormInEditMode(model: ProductModel) {
         let productController = viewControllerFromStoryboard(storyboard: "ProductForms", withIdentifier: "productForm") as! ProductFormViewController
         productController.productService = productService
-        productController.setFormModel(model: model)
         productController.requestObservable.subscribe({ value in
             if value.element! {
                self.getProductData(id: model.productId!, completed: nil)
             }
         }).disposed(by: disposeBag)
-        navigationController?.pushViewController(productController, animated: true)
+        productController.setFormModel(model: model)
+        present(productController, animated: true, completion: nil)
     }
     
 }

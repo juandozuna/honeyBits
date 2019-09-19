@@ -12,10 +12,12 @@ protocol ProductActionDelegate {
     func openProduct(id: Int?)
     func editProduct(productId: Int?)
     func viewProduct(productId: Int?)
+    func deleteProduct(productId: Int?)
 }
 
 extension ProductActionDelegate {
     func openProduct(id: Int?) {}
     func editProduct(productId: Int?) {}
     func viewProduct(productId: Int?) {}
+    func deleteProduct(productId: Int?) {}
 }
