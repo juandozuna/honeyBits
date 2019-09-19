@@ -28,8 +28,10 @@ class ProductFormViewController: UIViewController {
     @IBOutlet weak var formStackView: UIStackView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var containerView: ContainerView!
+    var pickerView: UIPickerView?
     var newImage: UIImage?
     var productId: Int? = nil
+    var selectedCategoryId: Int?
     var productService: ProductService?
     var categories: [ProductCategoryModel]?
     var requestObservable: Observable<Bool> {
@@ -112,6 +114,17 @@ class ProductFormViewController: UIViewController {
         setTextFieldColor(to: txtProductName)
         setTextFieldColor(to: txtProductDescription)
         setTextFieldColor(to: txtProductCategory)
+        
+        txtProductCategory.delegate = self
+        pickerViewConfiguration()
+    }
+    
+    private func pickerViewConfiguration() {
+        let picker = UIPickerView()
+        picker.dataSource = self
+        picker.delegate = self
+        pickerView = picker
+        txtProductCategory.inputView = picker
     }
     
     private func getProductToUpdate(productId: Int) {
@@ -248,5 +261,34 @@ class ProductFormViewController: UIViewController {
     private func updateProfileProductImage(image: UIImage?) {
         imageView.image = image
         newImage = image
+    }
+}
+
+
+extension ProductFormViewController : UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if let cats = categories {
+            return cats.count
+        }
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if let cat = categories {
+            let currentCategory = cat[row]
+            return currentCategory.productCategoryName ?? "--"
+        }
+        return "--"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if let cat = categories {
+            txtProductCategory.text = cat[row].productCategoryName
+            selectedCategoryId = cat[row].productCategoryId
+        }
     }
 }

@@ -114,7 +114,7 @@ class BaseService {
             
             if statusCode == 404 {
                 completion(.ServerError, nil)
-                SVProgressHUD.showError(withStatus: NSLocalizedString("EndpointNotFound", comment: ""))
+                SVProgressHUD.showError(withStatus: NSLocalizedString("EndpointNotFound", value: "API Not Found " ,comment: ""))
                 forgetApiToken()
                 return
             }

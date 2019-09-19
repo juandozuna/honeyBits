@@ -102,13 +102,13 @@ class MainKeeperShopViewController : UIViewController {
     }
     
     private func reloadShop(done: (() -> Void)? = nil) {
-        shopService.getShopsForUser { (status, shops) in
+        shopService.getUserShop { (status, model) in
             if status != .Success {
                 self.stopLoading()
                 return
             }
             
-            self.shopModel = shops![0]
+            self.shopModel = model
             done?()
         }
     }

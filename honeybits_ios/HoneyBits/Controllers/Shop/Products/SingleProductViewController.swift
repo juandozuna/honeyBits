@@ -43,7 +43,7 @@ class SingleProductViewController: UIViewController {
     }
     
     @IBAction func deleteBtnPressed(_ sender: Any) {
-        let alertController = UIAlertController(title: "Confirmation", message: "Do you want to delete this product?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Delete Product", message: "Do you want to delete this product?", preferredStyle: .alert)
         
         let yesAction = UIAlertAction(title: "Yes", style: .default) { (action) in
             SVProgressHUD.show()
@@ -54,6 +54,9 @@ class SingleProductViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { (action) in
             alertController.dismiss(animated: true, completion: nil)
         }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(yesAction)
         
         present(alertController, animated: true, completion: nil)
     }

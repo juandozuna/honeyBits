@@ -43,7 +43,7 @@ class ImageMediaHandler : NSObject, UIImagePickerControllerDelegate, UINavigatio
             self.camera()
         }
         
-        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { (action) in
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel    ) { (action) in
             alertController.dismiss(animated: true, completion: nil)
         }
         

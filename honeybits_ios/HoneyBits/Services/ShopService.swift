@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SVProgressHUD
 
 class ShopService : BaseService, IShopService{
     
@@ -54,6 +55,22 @@ class ShopService : BaseService, IShopService{
             }
         }
         
+    }
+    
+    func getUserShop(completion: @escaping CompletedRequestVoid<ShopModel>) {
+        let url = "\(baseEndpoint)api/Users/get_keeper_shop"
+        
+        jsonRequest(url, method: .get) { (status, data) in
+            if status == .Success {
+                do {
+                    let parsedData = try JSONDecoder().decode(ShopModel.self, from: data!)
+                    completion(.Success, parsedData)
+                } catch {
+                    print(error)
+                    completion(.Failure, nil)
+                }
+            }
+        }
     }
     
     func updateShop(model shopModel: ShopModel, completion: @escaping CompletedRequestVoid<Void>) {

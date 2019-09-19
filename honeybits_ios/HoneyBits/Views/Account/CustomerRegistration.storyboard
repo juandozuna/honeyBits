@@ -264,7 +264,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbB-hQ-Jew" customClass="PMSuperButton" customModule="PMSuperButton">
                                         <rect key="frame" x="32" y="261" width="292" height="66"/>
                                         <color key="backgroundColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="I am a Beekeper">
+                                        <state key="normal" title="I am a Beekeeper">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>

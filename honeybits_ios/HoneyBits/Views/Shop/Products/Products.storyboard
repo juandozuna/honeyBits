@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cBj-mK-SQ4">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dMm-bt-YYv">
                                     <size key="itemSize" width="375" height="124"/>
@@ -46,7 +46,7 @@
                                 <cells/>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lJ-ha-QFF" customClass="PrimaryButton" customModule="HoneyBits" customModuleProvider="target">
-                                <rect key="frame" x="295" y="547" width="60" height="60"/>
+                                <rect key="frame" x="295" y="587" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Ava-1K-wbF"/>
@@ -73,41 +73,34 @@
                                     <action selector="cameraBtnPressed:" destination="Efi-Ch-YNh" eventType="touchUpInside" id="wWr-p5-DSE"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91A-NI-Fdw">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Mws-M5-8cm"/>
-                                    <barButtonItem systemItem="compose" id="w17-oD-rKA">
-                                        <color key="tintColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <connections>
-                                            <action selector="editBtnPressed:" destination="Efi-Ch-YNh" id="DgG-pW-iZx"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem width="17" style="plain" systemItem="fixedSpace" id="bre-YY-SVn"/>
-                                    <barButtonItem systemItem="trash" id="F3f-jd-Fcq">
-                                        <color key="tintColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <connections>
-                                            <action selector="deleteBtnPressed:" destination="Efi-Ch-YNh" id="kJj-OE-XgD"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cBj-mK-SQ4" firstAttribute="trailing" secondItem="vll-oa-bLi" secondAttribute="trailing" id="426-3F-Wxq"/>
-                            <constraint firstItem="91A-NI-Fdw" firstAttribute="top" secondItem="cBj-mK-SQ4" secondAttribute="bottom" id="Qzo-h0-lEh"/>
-                            <constraint firstItem="91A-NI-Fdw" firstAttribute="top" secondItem="7lJ-ha-QFF" secondAttribute="bottom" constant="16" id="Sq2-6O-o6Q"/>
-                            <constraint firstItem="91A-NI-Fdw" firstAttribute="bottom" secondItem="vll-oa-bLi" secondAttribute="bottom" id="TMF-uz-T41"/>
-                            <constraint firstItem="cBj-mK-SQ4" firstAttribute="leading" secondItem="vll-oa-bLi" secondAttribute="leading" id="cfw-zd-Ba7"/>
-                            <constraint firstItem="91A-NI-Fdw" firstAttribute="trailing" secondItem="vll-oa-bLi" secondAttribute="trailing" id="dsc-33-654"/>
+                            <constraint firstItem="vll-oa-bLi" firstAttribute="bottom" secondItem="7lJ-ha-QFF" secondAttribute="bottom" constant="20" id="DvN-Ns-7tR"/>
+                            <constraint firstItem="cBj-mK-SQ4" firstAttribute="leading" secondItem="vll-oa-bLi" secondAttribute="leading" id="Mho-Sc-pNV"/>
+                            <constraint firstItem="cBj-mK-SQ4" firstAttribute="bottom" secondItem="vll-oa-bLi" secondAttribute="bottom" id="Sbf-I6-laQ"/>
                             <constraint firstItem="vll-oa-bLi" firstAttribute="trailing" secondItem="7lJ-ha-QFF" secondAttribute="trailing" constant="20" id="e18-nn-yD6"/>
-                            <constraint firstItem="cBj-mK-SQ4" firstAttribute="top" secondItem="vll-oa-bLi" secondAttribute="top" id="nXU-Jt-JhC"/>
-                            <constraint firstItem="91A-NI-Fdw" firstAttribute="leading" secondItem="vll-oa-bLi" secondAttribute="leading" id="osG-jm-AOI"/>
+                            <constraint firstItem="cBj-mK-SQ4" firstAttribute="top" secondItem="vll-oa-bLi" secondAttribute="top" id="qSF-f4-dkV"/>
+                            <constraint firstItem="cBj-mK-SQ4" firstAttribute="trailing" secondItem="vll-oa-bLi" secondAttribute="trailing" id="z5O-3S-COX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vll-oa-bLi"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Product" id="w3G-L4-7Nf"/>
+                    <navigationItem key="navigationItem" title="Product" id="w3G-L4-7Nf">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="trash" id="F3f-jd-Fcq">
+                                <color key="tintColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="deleteBtnPressed:" destination="Efi-Ch-YNh" id="kJj-OE-XgD"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="compose" id="w17-oD-rKA">
+                                <color key="tintColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="editBtnPressed:" destination="Efi-Ch-YNh" id="DgG-pW-iZx"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="cBj-mK-SQ4" id="Cgz-dp-DUL"/>
