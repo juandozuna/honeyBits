@@ -7,6 +7,7 @@ namespace honeybits_server.Models
     {
         public Users()
         {
+            AccessLog = new HashSet<AccessLog>();
             BeeTransactionCreatedByNavigation = new HashSet<BeeTransaction>();
             BeeTransactionDeletedByNavigation = new HashSet<BeeTransaction>();
             BeeTransactionUser = new HashSet<BeeTransaction>();
@@ -47,6 +48,7 @@ namespace honeybits_server.Models
 
         public virtual Users DeletedByNavigation { get; set; }
         public virtual Role Role { get; set; }
+        public virtual ICollection<AccessLog> AccessLog { get; set; }
         public virtual ICollection<BeeTransaction> BeeTransactionCreatedByNavigation { get; set; }
         public virtual ICollection<BeeTransaction> BeeTransactionDeletedByNavigation { get; set; }
         public virtual ICollection<BeeTransaction> BeeTransactionUser { get; set; }

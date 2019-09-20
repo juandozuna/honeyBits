@@ -15,6 +15,7 @@ namespace honeybits_server.Models
         {
         }
 
+        public virtual DbSet<AccessLog> AccessLog { get; set; }
         public virtual DbSet<BeeTransaction> BeeTransaction { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<ProductCategory> ProductCategory { get; set; }
@@ -38,6 +39,37 @@ namespace honeybits_server.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<AccessLog>(entity =>
+            {
+                entity.ToTable("access_log");
+
+                entity.HasIndex(e => e.UserId)
+                    .HasName("user_id");
+
+                entity.Property(e => e.AccessLogId)
+                    .HasColumnName("access_log_id")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.AccessDate)
+                    .HasColumnName("access_date")
+                    .HasColumnType("timestamp")
+                    .HasDefaultValueSql("'CURRENT_TIMESTAMP'");
+
+                entity.Property(e => e.IpAddress)
+                    .HasColumnName("ip_address")
+                    .HasColumnType("varchar(255)");
+
+                entity.Property(e => e.UserId)
+                    .HasColumnName("user_id")
+                    .HasColumnType("int(11)");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.AccessLog)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("access_log_ibfk_1");
+            });
+
             modelBuilder.Entity<BeeTransaction>(entity =>
             {
                 entity.ToTable("bee_transaction");
@@ -304,6 +336,11 @@ namespace honeybits_server.Models
                     .IsRequired()
                     .HasColumnName("product_image_type")
                     .HasColumnType("varchar(15)");
+
+                entity.Property(e => e.ProductImageUrl)
+                    .HasColumnName("product_image_url")
+                    .HasColumnType("varchar(1000)")
+                    .HasDefaultValueSql("'/default_product_image.jpeg'");
 
                 entity.HasOne(d => d.CreatedByNavigation)
                     .WithMany(p => p.ProductImageCreatedByNavigation)

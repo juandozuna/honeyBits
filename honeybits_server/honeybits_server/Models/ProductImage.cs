@@ -10,6 +10,7 @@ namespace honeybits_server.Models
         public string ProductImageName { get; set; }
         public string ProductImageDescription { get; set; }
         public string ProductImageType { get; set; }
+        public string ProductImageUrl { get; set; }
         public int CreatedBy { get; set; }
         public DateTime? CreatedDate { get; set; }
         public bool? IsDeleted { get; set; }
