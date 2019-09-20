@@ -15,5 +15,6 @@ namespace honeybits_server.DTOs
         public int ProductCategoryId { get; set; }
 
         public IEnumerable<ProductImageDTO> ProductImages { get; set; }
+        public IEnumerable<ProductLikeDTO> ProductLikes { get; set; }
     }
 }
