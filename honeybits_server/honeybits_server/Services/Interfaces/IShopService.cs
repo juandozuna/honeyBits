@@ -13,7 +13,7 @@ namespace honeybits_server.Services.Interfaces
         Shop Update(Shop shop);
         bool Delete(Shop shop);
         IEnumerable<Shop> GetAll();
-        IEnumerable<ShopProduct> GetAllShopsProductsByShopId(int id);
+        IEnumerable<Product> GetAllProductsByShopId(int id);
         IEnumerable<Shop> Search(string value);
         IEnumerable<ShopFollower> GetShopFollowers(int id);
     }

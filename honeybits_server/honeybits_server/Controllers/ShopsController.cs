@@ -48,5 +48,14 @@ namespace honeybits_server.Controllers
 
         [HttpGet("all")]
         public IActionResult GetAll() => Ok(_shopService.GetAll());
+
+        [HttpPost("shop_products/{id}")]
+        public IActionResult GetProductsByShopId(int id)
+        {
+            if (id == 0)
+                return BadRequest("Id cannot be 0");
+
+            return Ok(_shopService.GetAllProductsByShopId(id));
+        }
     }
 }
