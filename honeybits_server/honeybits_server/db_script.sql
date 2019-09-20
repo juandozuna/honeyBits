@@ -83,6 +83,7 @@ CREATE TABLE product_image (
 	product_image_name		VARCHAR(255) NOT NULL,
 	product_image_description	VARCHAR(500),
 	product_image_type	VARCHAR(15) NOT NULL,
+	product_image_url	VARCHAR(1000) DEFAULT '/default_product_image.jpeg',
 	created_by		INT NOT NULL,
 	created_date	TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	is_deleted		BIT	DEFAULT 0,
