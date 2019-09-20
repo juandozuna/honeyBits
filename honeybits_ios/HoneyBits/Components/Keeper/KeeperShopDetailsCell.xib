@@ -63,6 +63,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="animatedScaleWhenHighlighted">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="shopEditBtnPressed:" destination="cND-kp-D4s" eventType="touchUpInside" id="hRl-pe-iq5"/>
@@ -96,6 +97,7 @@
             <viewLayoutGuide key="safeArea" id="RUt-td-6qu"/>
             <size key="customSize" width="574" height="156"/>
             <connections>
+                <outlet property="editBtn" destination="FvW-zX-ho3" id="2jg-rM-rtF"/>
                 <outlet property="shopDescriptionLb" destination="M8C-F0-0Sd" id="Qcv-sW-RiU"/>
                 <outlet property="shopTitleLb" destination="7Ds-m7-eLX" id="Ymq-eC-R2K"/>
             </connections>

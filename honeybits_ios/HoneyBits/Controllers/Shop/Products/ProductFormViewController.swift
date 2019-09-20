@@ -204,7 +204,7 @@ class ProductFormViewController: UIViewController {
     }
     
     private func getProductModel() -> ProductModel {
-        let model = ProductModel(productId: self.productId, productName: txtProductName.text, productCategoryId: 2, productDescription: txtProductDescription.text, productPrice: Decimal(string: txtProductPrice.text!))
+        let model = ProductModel(productId: self.productId, productName: txtProductName.text, productCategoryId: selectedCategoryId, productDescription: txtProductDescription.text, productPrice: Decimal(string: txtProductPrice.text!))
         
         return model
     }

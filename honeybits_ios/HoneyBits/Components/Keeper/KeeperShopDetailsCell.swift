@@ -28,16 +28,20 @@ class KeeperShopDetailsCell: UICollectionViewCell {
     
     @IBOutlet weak var shopTitleLb: UILabel!
     @IBOutlet weak var shopDescriptionLb: UILabel!
+    @IBOutlet weak var editBtn: UIButton!
     
     func startLoading() {
+        
         shopTitleLb.showAnimatedGradientSkeleton()
         shopDescriptionLb.showAnimatedGradientSkeleton()
+        editBtn.showAnimatedGradientSkeleton()
         showAnimatedGradientSkeleton()
     }
     
     func stopLoading() {
         shopTitleLb.hideSkeleton()
         shopDescriptionLb.hideSkeleton()
+        editBtn.hideSkeleton()
         hideSkeleton()
     }
     
