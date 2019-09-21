@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ProductCardViewModel {
+struct ProductCardViewModel : Codable{
     var image: String
     var isLiked: Bool
 }

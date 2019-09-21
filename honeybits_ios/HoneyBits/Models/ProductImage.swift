@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ProductImage {
+struct ProductImage : Codable{
     var productImageId: Int?
     var productId: Int?
     var productImageName: String?

@@ -24,6 +24,7 @@ class MainKeeperShopViewController : UIViewController {
     private let headerCellId = "headerCellId"
     private var allowProductAddBtn = false
     
+    var likes: [ShopLikes]?
     var shopModel: ShopModel?
     var products: [ProductModel]?
     var subscriptions: [Disposable] = []
@@ -50,7 +51,9 @@ class MainKeeperShopViewController : UIViewController {
         displayCorrectView()
         noShopView.setupDelegate = self
         reloadShop {
-            self.reloadShopProducts()
+            self.getShopLikes(done: {
+                self.reloadShopProducts()
+            })
         }
     }
     
@@ -109,6 +112,19 @@ class MainKeeperShopViewController : UIViewController {
             }
             
             self.shopModel = model
+            
+            done?()
+        }
+    }
+    
+    private func getShopLikes(done: (() -> Void)? = nil) {
+        shopService.getUserLikesForShop(shopId: self.shopModel?.shopId!) { (status, shoplikes) in
+            if status != .Success {
+                self.stopLoading()
+                return
+            }
+            self.likes = shoplikes
+            self.shopColView.reloadData()
             done?()
         }
     }
@@ -182,7 +198,9 @@ extension MainKeeperShopViewController : SetupStoreDelegate {
 extension MainKeeperShopViewController : CreateShopDelegate {
     func shopCreated() {
         reloadShop {
-            self.reloadShopProducts()
+            self.getShopLikes(done: {
+                self.reloadShopProducts()
+            })
         }
     }
 }
@@ -263,6 +281,7 @@ extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionVi
             scell.delegate = self
             if let shop = shopModel {
                 scell.shopData = shop
+                scell.likeAmount = likes?.count ?? 0
             }
             return scell;
         }

@@ -82,4 +82,14 @@ class ProductService: BaseService {
     func deleteProduct(productId: Int?, completion: CompletedRequestVoid<Void>) {
         completion(.Success, nil)
     }
+    
+    func getUserLikesForProduct(productId: Int?, completion: @escaping CompletedRequestVoid<[ProductLike]>) {
+        var likes: [ProductLike] = []
+        
+        for i in 1...10 {
+            likes.append(ProductLike(userId: i, userName: "User Fulano"))
+        }
+        
+        completion(.Success, likes)
+    }
 }

@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="574" height="156"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop Titlle Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ds-m7-eLX">
-                                <rect key="frame" x="20" y="40" width="421" height="40"/>
+                                <rect key="frame" x="20" y="40" width="441" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="i9Z-IQ-Fln"/>
                                 </constraints>
@@ -35,7 +35,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop Description Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="M8C-F0-0Sd">
-                                <rect key="frame" x="20" y="76" width="421" height="40"/>
+                                <rect key="frame" x="20" y="76" width="441" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="hOm-4A-ami"/>
                                 </constraints>
@@ -47,15 +47,15 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvW-zX-ho3" customClass="PMSuperButton" customModule="PMSuperButton">
-                                <rect key="frame" x="449" y="40" width="100" height="76"/>
+                                <rect key="frame" x="469" y="40" width="80" height="76"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="YOC-YB-jlN"/>
+                                    <constraint firstAttribute="width" constant="80" id="YOC-YB-jlN"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="shop-edit-icon"/>
+                                <state key="normal" image="edit-icon"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" red="0.99482471449999998" green="0.58095096130000001" blue="0.34970351300000002" alpha="0.33141588184931509" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="0.71801633883248739" green="0.71801633883248739" blue="0.71801633883248739" alpha="0.37631100171232879" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
                                         <real key="value" value="1"/>
@@ -64,20 +64,47 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="shopEditBtnPressed:" destination="cND-kp-D4s" eventType="touchUpInside" id="hRl-pe-iq5"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-filled" translatesAutoresizingMaskIntoConstraints="NO" id="0iL-s2-t5S">
+                                <rect key="frame" x="20" y="118" width="43" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="43" id="0tw-ni-iDI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29D-6V-2l1">
+                                <rect key="frame" x="23" y="124" width="38" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="F6f-jr-GBh"/>
+                                    <constraint firstAttribute="height" constant="25" id="zN9-zF-MGP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99235027104002449" green="1" blue="0.97535027444991229" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="FvW-zX-ho3" secondAttribute="trailing" constant="25" id="6J9-Ib-QIj"/>
                             <constraint firstItem="M8C-F0-0Sd" firstAttribute="leading" secondItem="imW-wi-UUQ" secondAttribute="leading" constant="20" id="77Y-eF-BG5"/>
+                            <constraint firstAttribute="bottom" secondItem="29D-6V-2l1" secondAttribute="bottom" constant="7" id="7J8-01-fHV"/>
                             <constraint firstItem="7Ds-m7-eLX" firstAttribute="leading" secondItem="imW-wi-UUQ" secondAttribute="leading" constant="20" id="FMc-II-NA7"/>
+                            <constraint firstAttribute="bottom" secondItem="0iL-s2-t5S" secondAttribute="bottom" id="Jkp-tB-za8"/>
+                            <constraint firstItem="0iL-s2-t5S" firstAttribute="leading" secondItem="imW-wi-UUQ" secondAttribute="leading" constant="20" id="KVD-qa-u2M"/>
+                            <constraint firstItem="29D-6V-2l1" firstAttribute="leading" secondItem="imW-wi-UUQ" secondAttribute="leading" constant="23" id="LAb-YD-P8b"/>
                             <constraint firstItem="FvW-zX-ho3" firstAttribute="top" secondItem="imW-wi-UUQ" secondAttribute="top" constant="40" id="OFi-Qw-plr"/>
                             <constraint firstItem="FvW-zX-ho3" firstAttribute="leading" secondItem="M8C-F0-0Sd" secondAttribute="trailing" constant="8" id="PCF-AL-wmw"/>
                             <constraint firstItem="FvW-zX-ho3" firstAttribute="leading" secondItem="7Ds-m7-eLX" secondAttribute="trailing" constant="8" id="TVD-kq-6J2"/>
+                            <constraint firstItem="0iL-s2-t5S" firstAttribute="top" secondItem="M8C-F0-0Sd" secondAttribute="bottom" constant="2" id="f8h-YD-vqs"/>
                             <constraint firstItem="7Ds-m7-eLX" firstAttribute="top" secondItem="imW-wi-UUQ" secondAttribute="top" constant="40" id="in1-lC-afm"/>
                             <constraint firstAttribute="bottom" secondItem="FvW-zX-ho3" secondAttribute="bottom" constant="40" id="m4L-sq-MYQ"/>
                             <constraint firstAttribute="bottom" secondItem="M8C-F0-0Sd" secondAttribute="bottom" constant="40" id="uLB-hY-bpR"/>
@@ -98,6 +125,7 @@
             <size key="customSize" width="574" height="156"/>
             <connections>
                 <outlet property="editBtn" destination="FvW-zX-ho3" id="2jg-rM-rtF"/>
+                <outlet property="likesAmountLb" destination="29D-6V-2l1" id="uum-Wm-RAa"/>
                 <outlet property="shopDescriptionLb" destination="M8C-F0-0Sd" id="Qcv-sW-RiU"/>
                 <outlet property="shopTitleLb" destination="7Ds-m7-eLX" id="Ymq-eC-R2K"/>
             </connections>
@@ -105,6 +133,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="shop-edit-icon" width="44" height="30.5"/>
+        <image name="edit-icon" width="29.5" height="29.5"/>
+        <image name="heart-filled" width="32" height="32"/>
     </resources>
 </document>

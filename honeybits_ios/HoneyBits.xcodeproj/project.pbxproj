@@ -32,6 +32,8 @@
 		B22B908822E4E73100D0B449 /* CustomerRegistration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22B908722E4E73100D0B449 /* CustomerRegistration.storyboard */; };
 		B22B909022E5517E00D0B449 /* CustomerRegistrationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B908F22E5517E00D0B449 /* CustomerRegistrationFormViewController.swift */; };
 		B22B909322E6AC2400D0B449 /* ScaleSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B909222E6AC2400D0B449 /* ScaleSegue.swift */; };
+		B232D22A23356CB7008A3B7C /* ShopLikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232D22923356CB7008A3B7C /* ShopLikes.swift */; };
+		B232D22C2335711B008A3B7C /* ProductLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232D22B2335711B008A3B7C /* ProductLike.swift */; };
 		B237E9642309F8DB00DD8E39 /* KeeperNoShopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B237E9632309F8DB00DD8E39 /* KeeperNoShopView.xib */; };
 		B237E9662309FDB700DD8E39 /* KeeperNoShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B237E9652309FDB700DD8E39 /* KeeperNoShopView.swift */; };
 		B2398A3422DD36280042C764 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2398A3322DD36280042C764 /* UIViewControllerExtension.swift */; };
@@ -185,6 +187,8 @@
 		B22B908722E4E73100D0B449 /* CustomerRegistration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerRegistration.storyboard; sourceTree = "<group>"; };
 		B22B908F22E5517E00D0B449 /* CustomerRegistrationFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRegistrationFormViewController.swift; sourceTree = "<group>"; };
 		B22B909222E6AC2400D0B449 /* ScaleSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleSegue.swift; sourceTree = "<group>"; };
+		B232D22923356CB7008A3B7C /* ShopLikes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopLikes.swift; sourceTree = "<group>"; };
+		B232D22B2335711B008A3B7C /* ProductLike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductLike.swift; path = HoneyBits/Models/ProductLike.swift; sourceTree = SOURCE_ROOT; };
 		B237E9632309F8DB00DD8E39 /* KeeperNoShopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeeperNoShopView.xib; sourceTree = "<group>"; };
 		B237E9652309FDB700DD8E39 /* KeeperNoShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperNoShopView.swift; sourceTree = "<group>"; };
 		B2398A3322DD36280042C764 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -732,6 +736,7 @@
 		B2A5813A22CAD10100C9C5D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B232D22B2335711B008A3B7C /* ProductLike.swift */,
 				B262AF4B22DBF86600ABF311 /* UserTokenModel.swift */,
 				B27C9F5822E23A2600B4AFE3 /* ShopModel.swift */,
 				B27C9F5A22E23B0900B4AFE3 /* ProductModel.swift */,
@@ -741,6 +746,7 @@
 				B2F0835D2311975400AA395A /* UserModel.swift */,
 				B29479F423135A5B002F2147 /* ShopModelRegistration.swift */,
 				B2F2371F232D2CF3006CFD70 /* ProductImage.swift */,
+				B232D22923356CB7008A3B7C /* ShopLikes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1233,7 +1239,9 @@
 				B272B8D022CEE65A00E124B4 /* LoginSelectViewController.swift in Sources */,
 				B2F8358A22D6820900A9910C /* SignInDelegate.swift in Sources */,
 				B262AF4A22DBF14900ABF311 /* BaseService.swift in Sources */,
+				B232D22A23356CB7008A3B7C /* ShopLikes.swift in Sources */,
 				B2398A3622DD5B230042C764 /* EncodableExtensions.swift in Sources */,
+				B232D22C2335711B008A3B7C /* ProductLike.swift in Sources */,
 				B2093E972308911F006CA976 /* ShopService.swift in Sources */,
 				B2BC92B322F3E61500D128B4 /* ProductCardViewModel.swift in Sources */,
 				B2F2371C232D2425006CFD70 /* SingleProductViewController.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class KeeperShopDetailsCell: UICollectionViewCell {
    
@@ -22,6 +23,12 @@ class KeeperShopDetailsCell: UICollectionViewCell {
         }
     }
     
+    var likeAmount: Int = 10 {
+        didSet {
+            likesAmountLb.text = String(self.likeAmount)
+        }
+    }
+    
     var delegate: ShopActionDelegate?
     
     private var currentShopData: ShopModel?
@@ -29,12 +36,14 @@ class KeeperShopDetailsCell: UICollectionViewCell {
     @IBOutlet weak var shopTitleLb: UILabel!
     @IBOutlet weak var shopDescriptionLb: UILabel!
     @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var likesAmountLb: UILabel!
     
     func startLoading() {
         
         shopTitleLb.showAnimatedGradientSkeleton()
         shopDescriptionLb.showAnimatedGradientSkeleton()
         editBtn.showAnimatedGradientSkeleton()
+        likesAmountLb.showAnimatedSkeleton(usingColor: .flatRed(), animation: nil)
         showAnimatedGradientSkeleton()
     }
     
@@ -42,6 +51,7 @@ class KeeperShopDetailsCell: UICollectionViewCell {
         shopTitleLb.hideSkeleton()
         shopDescriptionLb.hideSkeleton()
         editBtn.hideSkeleton()
+        likesAmountLb.hideSkeleton()
         hideSkeleton()
     }
     

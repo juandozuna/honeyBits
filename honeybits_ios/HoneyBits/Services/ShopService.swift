@@ -82,4 +82,14 @@ class ShopService : BaseService, IShopService{
 //        }
     }
     
+    func getUserLikesForShop(shopId: Int?, completion: @escaping CompletedRequestVoid<[ShopLikes]>) {
+        var shopLikes: [ShopLikes] = []
+        
+        for i in 1...10 {
+             shopLikes.append(ShopLikes(userId: i, userName: "User Fulano"))
+        }
+        
+        completion(.Success, shopLikes)
+    }
+    
 }
