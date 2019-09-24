@@ -1,4 +1,5 @@
-﻿using honeybits_server.Models;
+﻿using honeybits_server.DTOs;
+using honeybits_server.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace honeybits_server.Services.Interfaces
         IEnumerable<Product> GetAll();
         IEnumerable<Product> Search(string value);
         IEnumerable<ProductLike> GetProductLikes(int id);
+
+        IEnumerable<ProductCategoryDTO> GetProductCategories();
     }
 }

@@ -1,4 +1,5 @@
-﻿using honeybits_server.Models;
+﻿using honeybits_server.DTOs;
+using honeybits_server.Models;
 using honeybits_server.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,22 @@ namespace honeybits_server.Services
         public Product Get(int id) => _context.Product.Where(x => x.IsDeleted == false).FirstOrDefault();
 
         public IEnumerable<Product> GetAll() => _context.Product.ToList();
+
+        public IEnumerable<ProductCategoryDTO> GetProductCategories()
+        {
+            var categories = _context.ProductCategory.ToList();
+            List<ProductCategoryDTO> categoriesDTO = new List<ProductCategoryDTO>();
+
+            foreach(var category in categories) {
+                categoriesDTO.Add(new ProductCategoryDTO() {
+                    ProductCategoryId = category.ProductCategoryId,
+                    ProductCategoryName = category.ProductCategoryName,
+                    ProductCategoryDescription = category.ProductCategoryDescription
+                });
+            }
+
+            return categoriesDTO;
+        }
 
         public IEnumerable<ProductLike> GetProductLikes(int id)
         {
