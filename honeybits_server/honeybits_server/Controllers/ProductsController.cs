@@ -62,5 +62,8 @@ namespace honeybits_server.Controllers
 
         [HttpGet("all")]
         public IActionResult GetAll() => Ok(_productService.GetAll());
+
+        [HttpGet("product_categories")]
+        public IActionResult GetAllCategories() => Ok(_productService.GetProductCategories());
     }
 }
