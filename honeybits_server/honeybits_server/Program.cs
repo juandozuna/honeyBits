@@ -19,6 +19,10 @@ namespace honeybits_server
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseUrls("http://localhost:5000")
                 .UseStartup<Startup>();
     }
 }
