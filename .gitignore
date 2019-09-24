@@ -40,6 +40,8 @@ msbuild.wrn
 # Visual Studio 2015
 .vs/
 
+# Published files
+publish/
 
 #######################################################################
 # HoneyBits Android
