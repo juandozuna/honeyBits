@@ -10,7 +10,7 @@ namespace honeybits_server.Services.Interfaces
     public interface IProductService
     {
         Product Get(int id);
-        Product Create(ProductDTO data);
+        ProductDTO Create(ProductDTO data);
         bool Delete(Product product);
         IEnumerable<Product> GetAll();
         IEnumerable<Product> Search(string value);
