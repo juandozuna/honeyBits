@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using honeybits_server.DTOs;
 using honeybits_server.Models;
 using honeybits_server.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,21 +19,20 @@ namespace honeybits_server.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
-
+        
         public ProductsController(IProductService productService)
         {
             _productService = productService;
         }
 
         [HttpPost("create")]
-        public IActionResult Create([FromBody]Product product)
+        public IActionResult Create([FromBody]ProductDTO product)
         {
             if(!ModelState.IsValid)
-                return BadRequest();
-
+                return BadRequest(ModelState);
+         
             product.CreatedBy = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-            product.CreatedDate = DateTime.Now;
-
+            
             return Ok(_productService.Create(product));
         }
 
