@@ -1,5 +1,5 @@
 #######################################################################
-# HoneyBits Backend
+# HoneyBits Server
 #######################################################################
 
 *.swp
@@ -42,6 +42,9 @@ msbuild.wrn
 
 # Published files
 publish/
+
+# Testing Directories
+ImagesLocation/
 
 #######################################################################
 # HoneyBits Android
