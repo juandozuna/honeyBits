@@ -66,5 +66,16 @@ namespace honeybits_server.Controllers
 
         [HttpGet("product_categories")]
         public IActionResult GetAllCategories() => Ok(_productService.GetProductCategories());
+
+        [HttpPost("add_product_images")]
+        public IActionResult AddProductImage(List<ProductImageDTO> data) 
+        {
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            _productService.AddProductImage(data);
+
+            return Ok(data);
+        }
     }
 }
