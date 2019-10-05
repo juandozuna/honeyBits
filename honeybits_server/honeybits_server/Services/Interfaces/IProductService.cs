@@ -15,7 +15,7 @@ namespace honeybits_server.Services.Interfaces
         IEnumerable<Product> GetAll();
         IEnumerable<Product> Search(string value);
         IEnumerable<ProductLike> GetProductLikes(int id);
-
         IEnumerable<ProductCategoryDTO> GetProductCategories();
+        ProductImageDTO AddProductImage(List<ProductImageDTO> data);
     }
 }
