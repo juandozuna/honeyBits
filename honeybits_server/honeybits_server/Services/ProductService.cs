@@ -124,5 +124,10 @@ namespace honeybits_server.Services
         {
             throw new NotImplementedException();
         }
+
+        public ProductImageDTO AddProductImage(List<ProductImageDTO> data)
+        {
+            return new ProductImageDTO();
+        }
     }
 }
