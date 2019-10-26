@@ -19,10 +19,12 @@ namespace honeybits_server.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
+        private readonly IProductImageService _productImageService;
         
-        public ProductsController(IProductService productService)
+        public ProductsController(IProductService productService, IProductImageService productImageService)
         {
             _productService = productService;
+            _productImageService = productImageService;
         }
 
         [HttpPost("create")]
