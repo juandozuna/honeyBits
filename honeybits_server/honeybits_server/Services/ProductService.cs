@@ -30,6 +30,7 @@ namespace honeybits_server.Services
             var product = new Product();
             var productImages = new List<ProductImage>();
             var productLikes = new List<ProductLike>();
+            ImageProcessor imageProcessor = new ImageProcessor();
 
             product.ProductName = data.ProductName;
             product.ProductPrice = data.ProductPrice;
@@ -52,7 +53,13 @@ namespace honeybits_server.Services
                         ProductImageDescription = image.ProductImageDesc,
                         ProductImageName = image.ProductImageName,
                         ProductImageType = image.ProductImageType,
-                        ProductImageUrl = CreateFileImage(image.ProductImageName, product.ProductName, image.ProductImageType, image.ImageContent),
+                        ProductImageUrl = imageProcessor.SaveImage(
+                            Path.Combine(_hostingEnviroment.ContentRootPath, _appSettings.ImageLocation),
+                            product.ProductName,
+                            image.ProductImageName,
+                            image.ProductImageType,
+                            image.ImageContent
+                        ),
                         CreatedBy = data.CreatedBy,
                         CreatedDate = DateTime.Now
                     });
