@@ -31,13 +31,15 @@ namespace honeybits_server.Services {
                     ProductImageName = image.ProductImageName,
                     ProductImageDescription = image.ProductImageDesc,
                     ProductImageType = image.ProductImageType,
-                    
+                    CreatedBy = 2,
                     CreatedDate = DateTime.Now,
-
                 });
             }
 
-            throw new System.NotImplementedException();
+            _context.ProductImage.AddRange(images);
+            _context.SaveChanges();
+
+            return data;
         }
 
         public bool Delete(int Id)
@@ -47,7 +49,20 @@ namespace honeybits_server.Services {
 
         public ProductImageDTO Get(int Id)
         {
-            throw new System.NotImplementedException();
+            var productImage = _context.ProductImage.Find(Id);
+            
+            if(productImage == null)
+                return null;
+
+            return new ProductImageDTO() {
+                ProductId = productImage.ProductId,
+                ProductImageName = productImage.ProductImageName,
+                ProductImageDesc = productImage.ProductImageDescription,
+                ProductImageId = productImage.ProductImageId,
+                ProductImageType = productImage.ProductImageType,
+                CreatedBy = productImage.CreatedBy,
+                ImageContent = new ImageProcessor().GetImage(productImage)
+            };
         }
 
         public IEnumerable<ProductImageDTO> GetAllImages()
