@@ -25,5 +25,8 @@ namespace honeybits_server.DTOs
         
         [Required]
         public string ImageContent { get; set; }
+
+        public int CreatedBy { get; set; }
+        
     }
 }
