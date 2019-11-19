@@ -61,7 +61,7 @@ namespace honeybits_server.Services {
                 ProductImageId = productImage.ProductImageId,
                 ProductImageType = productImage.ProductImageType,
                 CreatedBy = productImage.CreatedBy,
-                ImageContent = new ImageProcessor().GetImage(productImage)
+                ImageContent = new ImageProcessor().GetImage(productImage, _hostingEnviroment.ContentRootPath.ToString())
             };
         }
 
