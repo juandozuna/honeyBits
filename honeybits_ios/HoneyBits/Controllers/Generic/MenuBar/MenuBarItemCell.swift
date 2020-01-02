@@ -63,7 +63,7 @@ class MenuBarItemCell: UICollectionViewCell {
     
     private func activateCell() {
         UIView.animate(withDuration: 0.6) {
-            self.itemLabel.textColor = self.accentColor ?? UIColor.flatOrange()
+            self.itemLabel.textColor = self.accentColor ?? ColorPallete().getColor(Pallet.PrimaryColor.rawValue)
             self.layoutIfNeeded()
         }
     }

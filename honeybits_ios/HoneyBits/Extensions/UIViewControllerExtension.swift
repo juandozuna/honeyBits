@@ -45,17 +45,19 @@ extension UIViewController {
     
     //MARK:- Validations
     func showErrorInTextfield(_ textfield: TextField, message: String) {
-        textfield.detailColor = UIColor.flatRed()
+        let pallet = ColorPallete()
+        textfield.detailColor = pallet.getColor("Error")!
         textfield.detail = message
-        textfield.dividerNormalColor = UIColor.flatRed()
-        textfield.placeholderNormalColor = UIColor.flatRed()
+        textfield.dividerNormalColor = pallet.getColor("Error")!
+        textfield.placeholderNormalColor = pallet.getColor("Error")!
     }
     
     func resetTextfield(_ textfield: TextField){
+        let pallet = ColorPallete()
         textfield.detail = ""
-        textfield.dividerNormalColor = UIColor.flatGray()
-        textfield.placeholderNormalColor = UIColor.flatGray()
-        textfield.detailColor = UIColor.flatGray()
+        textfield.dividerNormalColor = pallet.getColor("Textbox")!
+        textfield.placeholderNormalColor = pallet.getColor("Textbox")!
+        textfield.detailColor = pallet.getColor("Textbox")!
     }
     
     func requiredValidation(for textfield: TextField) -> Bool {
@@ -71,10 +73,11 @@ extension UIViewController {
     
     //MARK:- Material Text Field
     func setTextFieldColor(to textField: TextField) {
+        let pallet = ColorPallete()
         textField.backgroundColor = UIColor.flatWhite()
         textField.textInsets = UIEdgeInsets(top: 5, left: 8, bottom: 5, right: 8)
-        textField.dividerActiveColor = UIColor.flatOrange()
-        textField.placeholderActiveColor = UIColor.flatOrange()
+        textField.dividerActiveColor = pallet.getColor("PrimaryColor")!
+        textField.placeholderActiveColor = pallet.getColor("PrimaryColor")!
     }
     
     func resignResponder(for textField: UITextField) {

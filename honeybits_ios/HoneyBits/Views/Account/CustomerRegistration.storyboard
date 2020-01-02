@@ -65,7 +65,7 @@
                                                         </fragment>
                                                         <fragment content="Sign In">
                                                             <attributes>
-                                                                <color key="NSColor" red="0.89246906725888331" green="0.36151764022530192" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <color key="NSColor" red="1" green="0.77862583047551592" blue="0.1807079891856842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <font key="NSFont" size="17" name="Arial-BoldMT"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
@@ -149,7 +149,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fX-0V-iIb" customClass="PMSuperButton" customModule="PMSuperButton">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fX-0V-iIb" customClass="PrimaryButton" customModule="HoneyBits" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="214.5" width="325" height="33.5"/>
                                                         <color key="backgroundColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -160,6 +160,7 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="btnBackgroundColor" value="PrimaryColor"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="registerBtnPressed:" destination="yYd-Ot-FLW" eventType="touchUpInside" id="V1g-1B-ANW"/>
@@ -261,12 +262,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbB-hQ-Jew" customClass="PMSuperButton" customModule="PMSuperButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbB-hQ-Jew" customClass="PrimaryButton" customModule="HoneyBits" customModuleProvider="target">
                                         <rect key="frame" x="32" y="261" width="292" height="66"/>
                                         <color key="backgroundColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="I am a Beekeeper">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                        <state key="normal" title="I am a Beekeeper"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
                                                 <real key="value" value="2"/>
@@ -274,20 +273,19 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
                                                 <color key="value" red="0.89246906729999997" green="0.36151764019999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="btnBackgroundColor" value="PrimaryColorDark"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="keeperBtnPressed:" destination="W44-GM-lnb" eventType="touchUpInside" id="yXm-Rv-n4K"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPM-8i-oSM" customClass="PMSuperButton" customModule="PMSuperButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPM-8i-oSM" customClass="PrimaryButton" customModule="HoneyBits" customModuleProvider="target">
                                         <rect key="frame" x="30" y="111" width="295" height="65"/>
                                         <color key="backgroundColor" red="0.89246906729999997" green="0.36151764019999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="g4m-OE-l8W"/>
                                         </constraints>
-                                        <state key="normal" title="I am a new Customer">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                        <state key="normal" title="I am a new Customer"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
                                                 <real key="value" value="2"/>

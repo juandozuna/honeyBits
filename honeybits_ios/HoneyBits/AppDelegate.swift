@@ -9,6 +9,9 @@
 import UIKit
 import SVProgressHUD
 import ChameleonFramework
+import Firebase
+import GoogleSignIn
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,12 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return controller
     }()
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         progressHudSetup()
-        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
@@ -38,8 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
-    }
-    
+    }   
+
     func hideProgressHudOnUserTap(){
         NotificationCenter.default.addObserver(self, selector: #selector(self.tapToDismiss(notification:)), name: NSNotification.Name.SVProgressHUDDidReceiveTouchEvent, object: nil)
     }
@@ -81,10 +85,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func progressHudSetup() {
+        let pallet = ColorPallete()
         SVProgressHUD.setDefaultStyle(.custom)
         SVProgressHUD.setDefaultMaskType(.custom)
-        SVProgressHUD.setBackgroundColor(UIColor.flatWhite())
-        SVProgressHUD.setForegroundColor(UIColor.flatOrange())
+        SVProgressHUD.setBackgroundColor(pallet.getColor("ProgressBackground")!)
+        SVProgressHUD.setForegroundColor(pallet.getColor("Progress")!)
         SVProgressHUD.setBackgroundLayerColor(UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5))
         hideProgressHudOnUserTap()
     }

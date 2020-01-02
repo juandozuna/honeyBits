@@ -19,6 +19,12 @@ class ContainerView : UIView {
         }
     }
     
+    @IBInspectable var bgColor: String = "White"{
+        didSet {
+            backgroundColor = ColorPallete().getColor(bgColor)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
@@ -26,6 +32,7 @@ class ContainerView : UIView {
     
     private func setup() {
         isSkeletonable = true
+        backgroundColor = ColorPallete().getColor(bgColor)
     }
     
     override func prepareForInterfaceBuilder() {

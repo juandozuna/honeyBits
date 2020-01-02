@@ -23,6 +23,20 @@ class KeeperShopDetailsCell: UICollectionViewCell {
         }
     }
     
+    var shopImage: UIImage? {
+        get {
+            return shopImageView.image
+        }
+        set {
+            shopImageView.image = newValue
+            if newValue == nil {
+                shopImageView.showAnimatedSkeleton()
+            } else {
+                shopImageView.hideSkeleton()
+            }
+        }
+    }
+    
     var likeAmount: Int = 10 {
         didSet {
             likesAmountLb.text = String(self.likeAmount)
@@ -37,13 +51,20 @@ class KeeperShopDetailsCell: UICollectionViewCell {
     @IBOutlet weak var shopDescriptionLb: UILabel!
     @IBOutlet weak var editBtn: UIButton!
     @IBOutlet weak var likesAmountLb: UILabel!
+    @IBOutlet weak var shopImageView: UIImageView!
+    @IBOutlet weak var eyeBtn: ImageButton!
     
     func startLoading() {
+        let pallet = ColorPallete()
+        let pc = pallet.getColor("PrimaryColor")!
         
         shopTitleLb.showAnimatedGradientSkeleton()
         shopDescriptionLb.showAnimatedGradientSkeleton()
         editBtn.showAnimatedGradientSkeleton()
         likesAmountLb.showAnimatedSkeleton(usingColor: .flatRed(), animation: nil)
+        shopImageView
+            .showAnimatedSkeleton(usingColor: pc, animation: nil)
+        eyeBtn.showAnimatedSkeleton(usingColor: pc, animation: nil)
         showAnimatedGradientSkeleton()
     }
     
@@ -52,6 +73,8 @@ class KeeperShopDetailsCell: UICollectionViewCell {
         shopDescriptionLb.hideSkeleton()
         editBtn.hideSkeleton()
         likesAmountLb.hideSkeleton()
+        shopImageView.hideSkeleton()
+        eyeBtn.hideSkeleton()
         hideSkeleton()
     }
     

@@ -11,7 +11,7 @@ import ChameleonFramework
 
 class KeeperDashboardNavigationController : UINavigationController {
     
-    @IBInspectable var accentColor: UIColor = UIColor.flatOrange()
+    var accentColor: UIColor = ColorPallete().getColor("PrimaryColor")!  
     
     override func viewDidLoad() {
         super.viewDidLoad()

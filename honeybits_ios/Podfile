@@ -17,6 +17,10 @@ target 'HoneyBits' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SkeletonView'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn', '~> 4.4.0'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
 
   target 'HoneyBitsTests' do
     inherit! :search_paths

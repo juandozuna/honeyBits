@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GwD-G0-9Wc">
+            <rect key="frame" x="0.0" y="0.0" width="618" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gXb-qQ-hDI">
+                <rect key="frame" x="0.0" y="0.0" width="618" height="180"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAP-j6-TY3">
+                        <rect key="frame" x="0.0" y="0.0" width="618" height="180"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background1" translatesAutoresizingMaskIntoConstraints="NO" id="dRM-cQ-rDS">
+                                <rect key="frame" x="0.0" y="0.0" width="618" height="180"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TdB-10-VAf" customClass="ContainerView" customModule="HoneyBits" customModuleProvider="target">
+                                <rect key="frame" x="25" y="67.5" width="45" height="45"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-filled" translatesAutoresizingMaskIntoConstraints="NO" id="SHN-mS-Vxo">
+                                        <rect key="frame" x="15" y="15" width="15" height="15"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="SHN-mS-Vxo" firstAttribute="leading" secondItem="TdB-10-VAf" secondAttribute="leading" constant="15" id="69T-C7-hvn"/>
+                                    <constraint firstAttribute="trailing" secondItem="SHN-mS-Vxo" secondAttribute="trailing" constant="15" id="6kQ-E2-Lsa"/>
+                                    <constraint firstAttribute="height" constant="45" id="FIQ-tp-KzA"/>
+                                    <constraint firstAttribute="width" constant="45" id="Frw-BF-MAG"/>
+                                    <constraint firstAttribute="bottom" secondItem="SHN-mS-Vxo" secondAttribute="bottom" constant="15" id="LfQ-GH-gCP"/>
+                                    <constraint firstItem="SHN-mS-Vxo" firstAttribute="top" secondItem="TdB-10-VAf" secondAttribute="top" constant="15" id="dql-yV-IZh"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="bgColor" value="PrimaryColor"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite Items to save them for later and get better recommendations" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZo-Mf-XYT">
+                                <rect key="frame" x="95" y="42" width="508" height="96"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BZo-Mf-XYT" firstAttribute="leading" secondItem="TdB-10-VAf" secondAttribute="trailing" constant="25" id="FT7-zb-wKY"/>
+                            <constraint firstAttribute="bottom" secondItem="BZo-Mf-XYT" secondAttribute="bottom" constant="42" id="G2m-Ay-EvB"/>
+                            <constraint firstItem="dRM-cQ-rDS" firstAttribute="leading" secondItem="TAP-j6-TY3" secondAttribute="leading" id="K74-hT-ral"/>
+                            <constraint firstAttribute="trailing" secondItem="BZo-Mf-XYT" secondAttribute="trailing" constant="15" id="Ldu-ND-p42"/>
+                            <constraint firstAttribute="trailing" secondItem="dRM-cQ-rDS" secondAttribute="trailing" id="ONF-He-iR7"/>
+                            <constraint firstItem="dRM-cQ-rDS" firstAttribute="top" secondItem="TAP-j6-TY3" secondAttribute="top" id="Ofm-kR-yAF"/>
+                            <constraint firstItem="TdB-10-VAf" firstAttribute="leading" secondItem="TAP-j6-TY3" secondAttribute="leading" constant="25" id="SpE-Rs-Dhj"/>
+                            <constraint firstItem="TdB-10-VAf" firstAttribute="centerY" secondItem="TAP-j6-TY3" secondAttribute="centerY" id="d9z-QR-D8U"/>
+                            <constraint firstItem="BZo-Mf-XYT" firstAttribute="top" secondItem="TAP-j6-TY3" secondAttribute="top" constant="42" id="g2D-1C-LOO"/>
+                            <constraint firstAttribute="bottom" secondItem="dRM-cQ-rDS" secondAttribute="bottom" id="vi7-yA-ZKw"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="TAP-j6-TY3" secondAttribute="bottom" id="38b-b4-hn7"/>
+                    <constraint firstItem="TAP-j6-TY3" firstAttribute="top" secondItem="gXb-qQ-hDI" secondAttribute="top" id="Aqa-2I-2o2"/>
+                    <constraint firstItem="TAP-j6-TY3" firstAttribute="leading" secondItem="gXb-qQ-hDI" secondAttribute="leading" id="N5k-24-gbB"/>
+                    <constraint firstAttribute="trailing" secondItem="TAP-j6-TY3" secondAttribute="trailing" id="yn8-vl-5HW"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="618" height="180"/>
+            <point key="canvasLocation" x="52.173913043478265" y="6.0267857142857144"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Background1" width="440" height="107"/>
+        <image name="heart-filled" width="32" height="32"/>
+    </resources>
+</document>

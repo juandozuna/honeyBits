@@ -22,7 +22,7 @@ class CustomerFavoriteUserBaseController : UIViewController {
         let shopsVc = viewControllerFromStoryboard(storyboard: "CustomerFavorites", withIdentifier: "customerShops")
         
         let menuBarController = MenuBarMainController()
-        menuBarController.accentColor = UIColor.flatOrange()
+        menuBarController.accentColor = ColorPallete().getColor("PrimaryColor")!
         menuBarController.viewControllers = [itemsVc, shopsVc, nil, nil]
         
         addChild(menuBarController)

@@ -25,9 +25,11 @@ class ProductFormViewController: UIViewController {
     @IBOutlet weak var txtProductDescription: TextField!
     @IBOutlet weak var txtProductCategory: TextField!
     @IBOutlet weak var mainFormContainer: UIView!
-    @IBOutlet weak var formStackView: UIStackView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var containerView: ContainerView!
+    @IBOutlet weak var mainFormView: UIView!
+    
+    
     var pickerView: UIPickerView?
     var newImage: UIImage?
     var productId: Int? = nil
@@ -128,14 +130,16 @@ class ProductFormViewController: UIViewController {
     }
     
     private func getProductToUpdate(productId: Int) {
+        SVProgressHUD.show()
         productService?.getSingleProduct(productId: productId, completion: { (status, productModel) in
             self.productModel.onNext(productModel)
             self.updateFormView(model: productModel)
+            SVProgressHUD.dismiss()
         })
     }
     
     private func configureKeyboardAvoiding() {
-        //KeyboardAvoiding.avoidingView = formStackView
+        KeyboardAvoiding.avoidingView = mainFormView
     }
     
     private func configureMainTapGestureListener() {
@@ -155,6 +159,7 @@ class ProductFormViewController: UIViewController {
                     SVProgressHUD.showError(withStatus: NSLocalizedString("UnableToRetrieveCategories", comment: ""))
                 }
                 self.categories = categories
+                self.updateCategoryTextField()
             })
         }
     }
@@ -204,7 +209,7 @@ class ProductFormViewController: UIViewController {
     }
     
     private func getProductModel() -> ProductModel {
-        let model = ProductModel(productId: self.productId, productName: txtProductName.text, productCategoryId: selectedCategoryId, productDescription: txtProductDescription.text, productPrice: Decimal(string: txtProductPrice.text!))
+        let model = ProductModel(productId: self.productId, productName: txtProductName.text, productCategoryId: selectedCategoryId, productDescription: txtProductDescription.text, productPrice: Double(txtProductPrice.text!))
         
         return model
     }
@@ -237,11 +242,24 @@ class ProductFormViewController: UIViewController {
     
     private func setValueToInputsFromModel(_ model: ProductModel) {
         DispatchQueue.main.async {
-            self.txtProductPrice.text = "13"
+            self.txtProductPrice.text = "\(model.productPrice ?? 0.0)"
             self.txtProductDescription.text = model.productDescription
             self.txtProductName.text = model.productName
-            self.txtProductCategory.text = "Temporary Field, awaiting substitution"
+            self.selectedCategoryId = model.productCategoryId
+            self.txtProductCategory.text = self.categories?.first {$0.productCategoryId == self.selectedCategoryId}?.productCategoryName
             self.updateFormStatus()
+        }
+    }
+    
+    private func updateCategoryTextField() {
+        DispatchQueue.main.async {
+            if self.editMode {
+                let index = self.categories?.firstIndex{$0.productCategoryId == self.selectedCategoryId} ?? -1
+                if index > -1 {
+                    self.txtProductCategory.text = self.categories?[index].productCategoryName ?? ""
+                    self.pickerView?.selectRow(index, inComponent: 0, animated: false)
+                }
+            }
         }
     }
     

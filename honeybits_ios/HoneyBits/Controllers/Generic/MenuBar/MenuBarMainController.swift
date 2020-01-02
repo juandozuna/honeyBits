@@ -16,8 +16,8 @@ class MenuBarMainController : UIViewController {
         }
     }
     @IBInspectable var menuBarHeight: Int = 30
-    @IBInspectable var accentColor: UIColor = UIColor.flatYellow()
-    @IBInspectable var backgroundColor: UIColor? = UIColor(red: 0.969, green: 0.969, blue: 0.969, alpha: 1.0) {
+    var accentColor: UIColor = ColorPallete().getColor("PrimaryColor")!
+    var backgroundColor: UIColor = ColorPallete().getColor("White")! {
         didSet {
             changeColorToMenuBarCells()
         }

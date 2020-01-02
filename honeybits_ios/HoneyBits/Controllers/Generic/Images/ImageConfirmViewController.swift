@@ -4,7 +4,7 @@
 //
 //  Created by Juan Daniel Ozuna Espinal on 9/16/19.
 //  Copyright © 2019 Juan Daniel Ozuna Espinal. All rights reserved.
-//
+ //
 
 import UIKit
 import ChameleonFramework
@@ -92,6 +92,6 @@ class ImageConfirmViewController : UIViewController {
     }
     
     @objc private func cancelBtn() {
-        currentViewController.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }

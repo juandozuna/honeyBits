@@ -12,7 +12,6 @@ import PMSuperButton
 @IBDesignable class GuestView: UIView {
     
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var btn: PMSuperButton!
     
@@ -62,6 +61,11 @@ import PMSuperButton
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
+    }
+    
+    override func xibSetup() {
+        super.xibSetup()
+        textLabel.textColor = ColorPallete().getColor("black")
     }
     
     @IBAction func btnPressed(_ sender: Any) {

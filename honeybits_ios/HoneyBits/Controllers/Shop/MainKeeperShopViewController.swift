@@ -10,6 +10,7 @@ import UIKit
 import ChameleonFramework
 import SVProgressHUD
 import RxSwift
+import SVProgressHUD
 
 class MainKeeperShopViewController : UIViewController {
    
@@ -53,6 +54,7 @@ class MainKeeperShopViewController : UIViewController {
         reloadShop {
             self.getShopLikes(done: {
                 self.reloadShopProducts()
+                self.stopLoading()
             })
         }
     }
@@ -93,18 +95,24 @@ class MainKeeperShopViewController : UIViewController {
     }
     
     private func displayCorrectView() {
-        let showShopsTable = true//shopModel != nil
+        let showShopsTable = shopModel != nil
     
         noShopView.isHidden = showShopsTable
         shopColView.isHidden = !showShopsTable
     }
     
+    private func startLoading() {
+        displayCorrectView()
+        SVProgressHUD.show()
+    }
     
     private func stopLoading() {
         displayCorrectView()
+        SVProgressHUD.dismiss()
     }
     
     private func reloadShop(done: (() -> Void)? = nil) {
+        startLoading();
         shopService.getUserShop { (status, model) in
             if status != .Success {
                 self.stopLoading()
@@ -131,7 +139,7 @@ class MainKeeperShopViewController : UIViewController {
     
     private func reloadShopProducts() {
         self.unsubscribeToObservers()   //TODO: Update the shop ID that is being requested here
-        productService.getProductsForShop(shopId: 1) { (status, products) in
+        productService.getProductsForShop(shopId: self.shopModel!.shopId!) { (status, products) in
             if status != .Success {
                 return
             }
@@ -174,8 +182,8 @@ class MainKeeperShopViewController : UIViewController {
     }
     
     private func pushProductViewController(productId: Int) {
-        let pc = viewControllerFromStoryboard(storyboard: "Products", withIdentifier: "productDetailCotnroller") as! SingleProductViewController
-        pc.productId.accept(productId)
+        let pc = viewControllerFromStoryboard(storyboard: "KeeperProducts", withIdentifier: "productDetailCotnroller") as! SingleProductViewController
+        pc.getProductData(productId)
         navigationController?.pushViewController(pc, animated: true)
     }
     
@@ -228,6 +236,7 @@ extension MainKeeperShopViewController : ProductActionDelegate {
     
     func viewProduct(productId: Int?) {
         if let id = productId {
+            print("Product ID \(productId)")
             pushProductViewController(productId: id)
         } else {
             showHudMessage("Product Not Found", type: .error)
@@ -298,7 +307,12 @@ extension MainKeeperShopViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let frame = view.frame
         if indexPath.section == 0 {
-            return CGSize(width: frame.width, height: 156)
+            if let shop = shopModel {
+                let approximateWidthRect = CGSize(width: frame.width - 8 , height: 1000)
+                let estimatedFrame = NSString(string: shop.shopDescription ?? "No data").boundingRect(with: approximateWidthRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18.0)], context: nil)
+                return CGSize(width: frame.width, height: estimatedFrame.height + 270)
+            }
+            return CGSize(width: frame.width, height: 280)
         }
         
         return CGSize(width: (frame.width/2) - 5, height: (frame.width/2) - 2)

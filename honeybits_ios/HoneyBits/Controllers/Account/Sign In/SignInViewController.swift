@@ -32,7 +32,7 @@ class SignInViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
-    let accountService: IAccountService = AccountService()
+    let accountService: AccountService = AccountService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,15 +60,18 @@ class SignInViewController: UIViewController {
         }
     }
     
-    @IBAction func forgotPassBtnPressed(_ sender: Any) {
-    }
-    
     @IBAction func registerBtnPressed(_ sender: Any) {
         let registerVc = viewControllerFromStoryboard(storyboard: "CustomerRegistration", withIdentifier: "customerRegisterForm") as! CustomerRegistrationFormViewController
         registerVc.backdropDelegate = backdropDelegate
         navigationController?.pushViewController(registerVc, animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToForgetPassword" {
+            let vc = segue.destination as! ForgetPasswordViewController
+            vc.backdropDelegate = backdropDelegate
+        }
+    }
     
     @objc func tap(_ gestureRecognizer: UITapGestureRecognizer){
         if txtPassword.isFirstResponder {
@@ -147,11 +150,8 @@ class SignInViewController: UIViewController {
         txtPassword.delegate = self
         txtUsername.delegate = self
         
-        txtUsername.dividerActiveColor = UIColor.flatOrange()
-        txtUsername.placeholderActiveColor = UIColor.flatOrange()
-        txtPassword.dividerActiveColor = UIColor.flatOrange()
-        txtPassword.placeholderActiveColor = UIColor.flatOrange()
-        btnSignIn.backgroundColor = UIColor.flatOrange()
+        setTextFieldColor(to: txtUsername)
+        setTextFieldColor(to: txtPassword)
         
         txtUsername
             .rx.text.orEmpty.subscribe(onNext: { (val) in
@@ -165,7 +165,9 @@ class SignInViewController: UIViewController {
     }
     
     private func setBtnStyleCorrectly() {
-        let currentColor = btnSignIn.isEnabled ? UIColor.flatOrange() : UIColor.flatOrange()?.darken(byPercentage: 0.35)
+        let pcolor = ColorPallete().getColor("PrimaryColor")
+        
+        let currentColor = btnSignIn.isEnabled ? pcolor : pcolor?.darken(byPercentage: 0.35)
         
         UIView.animate(withDuration: 0.3) {
             self.btnSignIn.backgroundColor = currentColor

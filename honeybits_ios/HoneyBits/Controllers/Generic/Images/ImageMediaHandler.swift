@@ -23,7 +23,7 @@ class ImageMediaHandler : NSObject, UIImagePickerControllerDelegate, UINavigatio
     }
     
     private func pickerGeneric(type: UIImagePickerController.SourceType) {
-            if UIImagePickerController.isSourceTypeAvailable(type) {
+        if UIImagePickerController.isSourceTypeAvailable(type) {
             let pickerController = UIImagePickerController()
             pickerController.delegate = self
             pickerController.sourceType = type
@@ -96,8 +96,13 @@ class ImageMediaHandler : NSObject, UIImagePickerControllerDelegate, UINavigatio
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            let vc = presentConfirmController(image: image)
-            picker.present(vc, animated: true, completion: nil)
+            if picker.sourceType == .camera {
+                imagePickedBlock?(image)
+                picker.dismiss(animated: true, completion: nil)
+            } else {
+                let vc = presentConfirmController(image: image)
+                picker.present(vc, animated: true, completion: nil)
+            }
         } else {
             currentViewController.showHudMessage("Error retrieving image", type: .error)
             currentViewController.dismiss(animated: true, completion: nil)

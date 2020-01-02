@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     /// Helper method to init and setup the view from the Nib.
-    func xibSetup() {
+    @objc func xibSetup() {
         let view = loadFromNib()
         addSubview(view)
         stretch(view: view)

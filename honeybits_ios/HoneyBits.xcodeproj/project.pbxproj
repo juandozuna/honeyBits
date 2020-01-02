@@ -7,21 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BD5BDC146488DC7AD00F8EA /* Pods_HoneyBits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E461E760B99B774FB47708 /* Pods_HoneyBits.framework */; };
-		1C0F3653B6F29A19D501CAAB /* Pods_HoneyBitsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C636D69A3D1DCE55F9C6D98 /* Pods_HoneyBitsTests.framework */; };
-		94689591791F5DCFE6CF9A41 /* Pods_HoneyBitsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3796716515E095C76664E6F2 /* Pods_HoneyBitsUITests.framework */; };
+		0D0A2836F0FF37105828B5FC /* Pods_HoneyBitsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75831BB7C547CAB6F04A3996 /* Pods_HoneyBitsTests.framework */; };
+		27373D2C77C9263A4ECF56DB /* Pods_HoneyBitsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CAE03BB808802CB1BEACA42 /* Pods_HoneyBitsUITests.framework */; };
 		B202E6172329AD95000164E4 /* ProgressTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B202E6162329AD95000164E4 /* ProgressTypeEnum.swift */; };
+		B203770C236083850001544E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B203770B236083840001544E /* GoogleService-Info.plist */; };
+		B203770E2360C4110001544E /* GoogleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B203770D2360C4110001544E /* GoogleAuthService.swift */; };
 		B2093E9323083D45006CA976 /* IGenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2093E9223083D45006CA976 /* IGenericService.swift */; };
 		B2093E972308911F006CA976 /* ShopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2093E962308911F006CA976 /* ShopService.swift */; };
+		B20EDA75236243C20053A8B7 /* FacebookAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20EDA74236243C20053A8B7 /* FacebookAuthService.swift */; };
+		B20EDA77236272EA0053A8B7 /* AuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20EDA76236272EA0053A8B7 /* AuthenticationType.swift */; };
+		B20EDA7923627A570053A8B7 /* GoogleUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20EDA7823627A570053A8B7 /* GoogleUserModel.swift */; };
+		B20EDA7B23628AB60053A8B7 /* FacebookUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20EDA7A23628AB60053A8B7 /* FacebookUserModel.swift */; };
 		B211EC2222EF30B2006B5A82 /* MenuBarMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2122EF30B2006B5A82 /* MenuBarMainController.swift */; };
 		B211EC2422EF3F7E006B5A82 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2322EF3F7E006B5A82 /* MenuBarView.swift */; };
 		B211EC2622EF47B9006B5A82 /* MenuBarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2522EF47B9006B5A82 /* MenuBarItemCell.swift */; };
 		B211EC2A22EF6E1D006B5A82 /* MenuContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2922EF6E1D006B5A82 /* MenuContentController.swift */; };
 		B211EC2C22EF6FFF006B5A82 /* MenuContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2B22EF6FFF006B5A82 /* MenuContentCollectionView.swift */; };
 		B211EC2E22EF7083006B5A82 /* MenuContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2D22EF7083006B5A82 /* MenuContentCell.swift */; };
+		B2171FAB239F334300B1CCE6 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2171FAA239F334300B1CCE6 /* ForgetPasswordViewController.swift */; };
+		B2171FAD239F38C400B1CCE6 /* PasswordsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2171FAC239F38C400B1CCE6 /* PasswordsService.swift */; };
+		B2171FAF239F3A9A00B1CCE6 /* ForgetPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2171FAE239F3A9A00B1CCE6 /* ForgetPasswordModel.swift */; };
 		B21957ED22E24AD9008AEBA0 /* Roles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21957EC22E24AD9008AEBA0 /* Roles.swift */; };
 		B21957F022E24C78008AEBA0 /* KeeperMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21957EF22E24C78008AEBA0 /* KeeperMain.storyboard */; };
 		B2198F572309CDFD0083A01A /* MainKeeperShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2198F562309CDFD0083A01A /* MainKeeperShopViewController.swift */; };
+		B223BC7D23726EB100B7670A /* CustomerProducts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B223BC7C23726EB100B7670A /* CustomerProducts.storyboard */; };
 		B2270034232C3E940074AFF7 /* ProductForms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2270033232C3E940074AFF7 /* ProductForms.storyboard */; };
 		B2270037232C41990074AFF7 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2270036232C41990074AFF7 /* ContainerView.swift */; };
 		B227003C232C777B0074AFF7 /* ProductFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227003B232C777B0074AFF7 /* ProductFormViewController.swift */; };
@@ -38,11 +47,20 @@
 		B237E9662309FDB700DD8E39 /* KeeperNoShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B237E9652309FDB700DD8E39 /* KeeperNoShopView.swift */; };
 		B2398A3422DD36280042C764 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2398A3322DD36280042C764 /* UIViewControllerExtension.swift */; };
 		B2398A3622DD5B230042C764 /* EncodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2398A3522DD5B230042C764 /* EncodableExtensions.swift */; };
+		B239DDD3236762D30078C287 /* ProductInfoCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239DDD2236762D30078C287 /* ProductInfoCardViewCell.swift */; };
+		B239DDD52367E5510078C287 /* ProductSimilarItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239DDD42367E5510078C287 /* ProductSimilarItemsCollectionViewCell.swift */; };
+		B239DDD9236930F80078C287 /* HomeFooterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239DDD8236930F80078C287 /* HomeFooterCollectionViewCell.swift */; };
 		B23B3686232B023000DF0FB8 /* KeeperShopEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23B3685232B023000DF0FB8 /* KeeperShopEditViewController.swift */; };
-		B23FEA9822F0F74F001E8B32 /* ProductCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23FEA9722F0F74F001E8B32 /* ProductCardView.xib */; };
-		B23FEA9A22F10078001E8B32 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23FEA9922F10078001E8B32 /* ProductCardView.swift */; };
+		B23F0AE92363A97F00EA78BD /* CustomerHomeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23F0AE82363A97F00EA78BD /* CustomerHomeHeaderCell.xib */; };
+		B23F0AEE2363D2B500EA78BD /* HomeHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23F0AED2363D2B500EA78BD /* HomeHeaderCollectionViewCell.swift */; };
+		B23FEA9822F0F74F001E8B32 /* ProductCardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23FEA9722F0F74F001E8B32 /* ProductCardViewCell.xib */; };
+		B23FEA9A22F10078001E8B32 /* ProductCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23FEA9922F10078001E8B32 /* ProductCardViewCell.swift */; };
 		B23FEA9C22F1BFE4001E8B32 /* CustomerHomeUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23FEA9B22F1BFE4001E8B32 /* CustomerHomeUserController.swift */; };
 		B23FEA9E22F1C26D001E8B32 /* CustomerHomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23FEA9D22F1C26D001E8B32 /* CustomerHomeHeaderCell.swift */; };
+		B2453775233D98F3006F167A /* SearchProductTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2453774233D98F3006F167A /* SearchProductTableCell.swift */; };
+		B2453778233D9B9B006F167A /* HeartIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2453777233D9B9B006F167A /* HeartIcon.swift */; };
+		B24BA414233808CC009D89C0 /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24BA413233808CC009D89C0 /* ColorPallete.swift */; };
+		B24BA41923382CDC009D89C0 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24BA41823382CDC009D89C0 /* ImageButton.swift */; };
 		B24BEE2422E7FF3500C1E5FB /* KeeperDashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24BEE2322E7FF3500C1E5FB /* KeeperDashboard.storyboard */; };
 		B24BEE2722E801C000C1E5FB /* KeeperDeals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24BEE2622E801C000C1E5FB /* KeeperDeals.storyboard */; };
 		B24BEE2A22E8039100C1E5FB /* KeeperShopSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24BEE2922E8039100C1E5FB /* KeeperShopSettings.storyboard */; };
@@ -102,7 +120,7 @@
 		B2A898B022EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A898AF22EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift */; };
 		B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5522D018A400CBBA4E /* IAccountService.swift */; };
 		B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5722D01AFA00CBBA4E /* AccountService.swift */; };
-		B2BC92B122F3E1C600D128B4 /* ProductCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC92B022F3E1C600D128B4 /* ProductCardCollectionView.swift */; };
+		B2BC92B122F3E1C600D128B4 /* RecentProductCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC92B022F3E1C600D128B4 /* RecentProductCardCollectionView.swift */; };
 		B2BC92B322F3E61500D128B4 /* ProductCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC92B222F3E61500D128B4 /* ProductCardViewModel.swift */; };
 		B2C2CB6322EFF08C00F2EA30 /* CustomerFavoriteUserBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C2CB6222EFF08C00F2EA30 /* CustomerFavoriteUserBaseController.swift */; };
 		B2C4D89C232EBD41009A614B /* ProductProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4D89B232EBD41009A614B /* ProductProfileImageCell.swift */; };
@@ -116,6 +134,9 @@
 		B2DABEFA232739F9001B4E4C /* KeeperShopProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DABEF9232739F9001B4E4C /* KeeperShopProductCell.swift */; };
 		B2DABEFC23273B8C001B4E4C /* ProductActionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DABEFB23273B8C001B4E4C /* ProductActionDelegate.swift */; };
 		B2E6FDFF23149C0100A69001 /* KeeperShopTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E6FDFE23149C0100A69001 /* KeeperShopTableCell.xib */; };
+		B2EE458E237B225E00CE870A /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE458D237B225E00CE870A /* BarButtonItem.swift */; };
+		B2EE4591237B24AB00CE870A /* CustomerProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE4590237B24AB00CE870A /* CustomerProductViewController.swift */; };
+		B2EE4593237B5D4900CE870A /* ImageNavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE4592237B5D4900CE870A /* ImageNavButton.swift */; };
 		B2EE6A8422D8E54900350BBA /* CustomerGuestSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */; };
 		B2EE6A8722D8FDBF00350BBA /* AboutApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EE6A8622D8FDBF00350BBA /* AboutApp.storyboard */; };
 		B2EE6A8922D8FE8500350BBA /* LegalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EE6A8822D8FE8500350BBA /* LegalData.storyboard */; };
@@ -124,7 +145,7 @@
 		B2F2371C232D2425006CFD70 /* SingleProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2371B232D2425006CFD70 /* SingleProductViewController.swift */; };
 		B2F2371E232D298C006CFD70 /* DecimalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2371D232D298C006CFD70 /* DecimalExtension.swift */; };
 		B2F23720232D2CF3006CFD70 /* ProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2371F232D2CF3006CFD70 /* ProductImage.swift */; };
-		B2F23722232D4DF0006CFD70 /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F23721232D4DF0006CFD70 /* Products.storyboard */; };
+		B2F23722232D4DF0006CFD70 /* KeeperProducts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F23721232D4DF0006CFD70 /* KeeperProducts.storyboard */; };
 		B2F8358A22D6820900A9910C /* SignInDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8358922D6820900A9910C /* SignInDelegate.swift */; };
 		B2F8358E22D6837200A9910C /* CustomerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8358D22D6837200A9910C /* CustomerHomeViewController.swift */; };
 		B2F8359122D6882F00A9910C /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8359022D6882F00A9910C /* UiViewExtension.swift */; };
@@ -134,8 +155,7 @@
 		B2FC8EEB22CA1FBD008CE65C /* CustomerTabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FC8EE922CA1FBD008CE65C /* CustomerTabs.storyboard */; };
 		B2FC8EED22CA1FBE008CE65C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2FC8EEC22CA1FBE008CE65C /* Assets.xcassets */; };
 		B2FC8EF022CA1FBE008CE65C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FC8EEE22CA1FBE008CE65C /* LaunchScreen.storyboard */; };
-		B2FC8EFB22CA1FBE008CE65C /* HoneyBitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC8EFA22CA1FBE008CE65C /* HoneyBitsTests.swift */; };
-		B2FC8F0622CA1FBE008CE65C /* HoneyBitsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC8F0522CA1FBE008CE65C /* HoneyBitsUITests.swift */; };
+		D656AA537381A58653FDD4F4 /* Pods_HoneyBits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBDDFC31F9B36466F2DC8304 /* Pods_HoneyBits.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,27 +176,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1E5BFC44C36379A4C726E008 /* Pods-HoneyBitsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsTests.release.xcconfig"; path = "Target Support Files/Pods-HoneyBitsTests/Pods-HoneyBitsTests.release.xcconfig"; sourceTree = "<group>"; };
-		3796716515E095C76664E6F2 /* Pods_HoneyBitsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoneyBitsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C636D69A3D1DCE55F9C6D98 /* Pods_HoneyBitsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoneyBitsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		62E461E760B99B774FB47708 /* Pods_HoneyBits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoneyBits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		633F27CAC33C5B685297B670 /* Pods-HoneyBits.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBits.debug.xcconfig"; path = "Target Support Files/Pods-HoneyBits/Pods-HoneyBits.debug.xcconfig"; sourceTree = "<group>"; };
-		6E8B7938B853F1FCAA65E470 /* Pods-HoneyBitsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsUITests.debug.xcconfig"; path = "Target Support Files/Pods-HoneyBitsUITests/Pods-HoneyBitsUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsUITests.release.xcconfig"; path = "Target Support Files/Pods-HoneyBitsUITests/Pods-HoneyBitsUITests.release.xcconfig"; sourceTree = "<group>"; };
-		979A26B3C22A87F960576887 /* Pods-HoneyBitsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsTests.debug.xcconfig"; path = "Target Support Files/Pods-HoneyBitsTests/Pods-HoneyBitsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AF08A3412DFB48B7CEC50E1A /* Pods-HoneyBits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBits.release.xcconfig"; path = "Target Support Files/Pods-HoneyBits/Pods-HoneyBits.release.xcconfig"; sourceTree = "<group>"; };
+		22CBB8EBFD5C2A4671983E9A /* Pods-HoneyBitsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsUITests.debug.xcconfig"; path = "Target Support Files/Pods-HoneyBitsUITests/Pods-HoneyBitsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2C49A3648E7B99FD0B4DD36D /* Pods-HoneyBits.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBits.debug.xcconfig"; path = "Target Support Files/Pods-HoneyBits/Pods-HoneyBits.debug.xcconfig"; sourceTree = "<group>"; };
+		51A0BA868D0A199AF58A1D3F /* Pods-HoneyBitsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsUITests.release.xcconfig"; path = "Target Support Files/Pods-HoneyBitsUITests/Pods-HoneyBitsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		75831BB7C547CAB6F04A3996 /* Pods_HoneyBitsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoneyBitsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CAE03BB808802CB1BEACA42 /* Pods_HoneyBitsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoneyBitsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B202E6162329AD95000164E4 /* ProgressTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTypeEnum.swift; sourceTree = "<group>"; };
+		B203770B236083840001544E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B203770D2360C4110001544E /* GoogleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthService.swift; sourceTree = "<group>"; };
 		B2093E9223083D45006CA976 /* IGenericService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGenericService.swift; sourceTree = "<group>"; };
 		B2093E962308911F006CA976 /* ShopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopService.swift; sourceTree = "<group>"; };
+		B20EDA74236243C20053A8B7 /* FacebookAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuthService.swift; sourceTree = "<group>"; };
+		B20EDA76236272EA0053A8B7 /* AuthenticationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationType.swift; sourceTree = "<group>"; };
+		B20EDA7823627A570053A8B7 /* GoogleUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleUserModel.swift; sourceTree = "<group>"; };
+		B20EDA7A23628AB60053A8B7 /* FacebookUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookUserModel.swift; sourceTree = "<group>"; };
 		B211EC2122EF30B2006B5A82 /* MenuBarMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarMainController.swift; sourceTree = "<group>"; };
 		B211EC2322EF3F7E006B5A82 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		B211EC2522EF47B9006B5A82 /* MenuBarItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarItemCell.swift; sourceTree = "<group>"; };
 		B211EC2922EF6E1D006B5A82 /* MenuContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentController.swift; sourceTree = "<group>"; };
 		B211EC2B22EF6FFF006B5A82 /* MenuContentCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentCollectionView.swift; sourceTree = "<group>"; };
 		B211EC2D22EF7083006B5A82 /* MenuContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentCell.swift; sourceTree = "<group>"; };
+		B2171FA7239F2EA700B1CCE6 /* HoneyBits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoneyBits.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2171FA8239F2EA700B1CCE6 /* HoneyBitsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoneyBitsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2171FA9239F2EA700B1CCE6 /* HoneyBitsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoneyBitsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2171FAA239F334300B1CCE6 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		B2171FAC239F38C400B1CCE6 /* PasswordsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsService.swift; sourceTree = "<group>"; };
+		B2171FAE239F3A9A00B1CCE6 /* ForgetPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordModel.swift; sourceTree = "<group>"; };
 		B21957EC22E24AD9008AEBA0 /* Roles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roles.swift; sourceTree = "<group>"; };
 		B21957EF22E24C78008AEBA0 /* KeeperMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperMain.storyboard; sourceTree = "<group>"; };
 		B2198F562309CDFD0083A01A /* MainKeeperShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainKeeperShopViewController.swift; sourceTree = "<group>"; };
+		B223BC7C23726EB100B7670A /* CustomerProducts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerProducts.storyboard; sourceTree = "<group>"; };
 		B2270033232C3E940074AFF7 /* ProductForms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductForms.storyboard; sourceTree = "<group>"; };
 		B2270036232C41990074AFF7 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		B227003B232C777B0074AFF7 /* ProductFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFormViewController.swift; sourceTree = "<group>"; };
@@ -193,11 +222,20 @@
 		B237E9652309FDB700DD8E39 /* KeeperNoShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperNoShopView.swift; sourceTree = "<group>"; };
 		B2398A3322DD36280042C764 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B2398A3522DD5B230042C764 /* EncodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtensions.swift; sourceTree = "<group>"; };
+		B239DDD2236762D30078C287 /* ProductInfoCardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoCardViewCell.swift; sourceTree = "<group>"; };
+		B239DDD42367E5510078C287 /* ProductSimilarItemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSimilarItemsCollectionViewCell.swift; sourceTree = "<group>"; };
+		B239DDD8236930F80078C287 /* HomeFooterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFooterCollectionViewCell.swift; sourceTree = "<group>"; };
 		B23B3685232B023000DF0FB8 /* KeeperShopEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperShopEditViewController.swift; sourceTree = "<group>"; };
-		B23FEA9722F0F74F001E8B32 /* ProductCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCardView.xib; sourceTree = "<group>"; };
-		B23FEA9922F10078001E8B32 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
+		B23F0AE82363A97F00EA78BD /* CustomerHomeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerHomeHeaderCell.xib; sourceTree = "<group>"; };
+		B23F0AED2363D2B500EA78BD /* HomeHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		B23FEA9722F0F74F001E8B32 /* ProductCardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCardViewCell.xib; sourceTree = "<group>"; };
+		B23FEA9922F10078001E8B32 /* ProductCardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardViewCell.swift; sourceTree = "<group>"; };
 		B23FEA9B22F1BFE4001E8B32 /* CustomerHomeUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeUserController.swift; sourceTree = "<group>"; };
 		B23FEA9D22F1C26D001E8B32 /* CustomerHomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeHeaderCell.swift; sourceTree = "<group>"; };
+		B2453774233D98F3006F167A /* SearchProductTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductTableCell.swift; sourceTree = "<group>"; };
+		B2453777233D9B9B006F167A /* HeartIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartIcon.swift; sourceTree = "<group>"; };
+		B24BA413233808CC009D89C0 /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
+		B24BA41823382CDC009D89C0 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		B24BEE2322E7FF3500C1E5FB /* KeeperDashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperDashboard.storyboard; sourceTree = "<group>"; };
 		B24BEE2622E801C000C1E5FB /* KeeperDeals.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperDeals.storyboard; sourceTree = "<group>"; };
 		B24BEE2922E8039100C1E5FB /* KeeperShopSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperShopSettings.storyboard; sourceTree = "<group>"; };
@@ -259,7 +297,7 @@
 		B2A898AF22EDF0C1009F87A4 /* KeeperDashboardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperDashboardTabBarController.swift; sourceTree = "<group>"; };
 		B2A91D5522D018A400CBBA4E /* IAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAccountService.swift; sourceTree = "<group>"; };
 		B2A91D5722D01AFA00CBBA4E /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
-		B2BC92B022F3E1C600D128B4 /* ProductCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardCollectionView.swift; sourceTree = "<group>"; };
+		B2BC92B022F3E1C600D128B4 /* RecentProductCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCardCollectionView.swift; sourceTree = "<group>"; };
 		B2BC92B222F3E61500D128B4 /* ProductCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardViewModel.swift; sourceTree = "<group>"; };
 		B2C2CB6222EFF08C00F2EA30 /* CustomerFavoriteUserBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerFavoriteUserBaseController.swift; sourceTree = "<group>"; };
 		B2C4D89B232EBD41009A614B /* ProductProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductProfileImageCell.swift; sourceTree = "<group>"; };
@@ -273,6 +311,9 @@
 		B2DABEF9232739F9001B4E4C /* KeeperShopProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperShopProductCell.swift; sourceTree = "<group>"; };
 		B2DABEFB23273B8C001B4E4C /* ProductActionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductActionDelegate.swift; sourceTree = "<group>"; };
 		B2E6FDFE23149C0100A69001 /* KeeperShopTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeeperShopTableCell.xib; sourceTree = "<group>"; };
+		B2EE458D237B225E00CE870A /* BarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
+		B2EE4590237B24AB00CE870A /* CustomerProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProductViewController.swift; sourceTree = "<group>"; };
+		B2EE4592237B5D4900CE870A /* ImageNavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNavButton.swift; sourceTree = "<group>"; };
 		B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerGuestSettingsViewController.swift; sourceTree = "<group>"; };
 		B2EE6A8622D8FDBF00350BBA /* AboutApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutApp.storyboard; sourceTree = "<group>"; };
 		B2EE6A8822D8FE8500350BBA /* LegalData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LegalData.storyboard; sourceTree = "<group>"; };
@@ -281,24 +322,21 @@
 		B2F2371B232D2425006CFD70 /* SingleProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleProductViewController.swift; sourceTree = "<group>"; };
 		B2F2371D232D298C006CFD70 /* DecimalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalExtension.swift; sourceTree = "<group>"; };
 		B2F2371F232D2CF3006CFD70 /* ProductImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
-		B2F23721232D4DF0006CFD70 /* Products.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
+		B2F23721232D4DF0006CFD70 /* KeeperProducts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperProducts.storyboard; sourceTree = "<group>"; };
 		B2F8358922D6820900A9910C /* SignInDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDelegate.swift; sourceTree = "<group>"; };
 		B2F8358D22D6837200A9910C /* CustomerHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeViewController.swift; sourceTree = "<group>"; };
 		B2F8359022D6882F00A9910C /* UiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExtension.swift; sourceTree = "<group>"; };
 		B2FBFB6B23308C82004867EE /* ImageMediaHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaHandler.swift; sourceTree = "<group>"; };
 		B2FBFB6D2330916D004867EE /* ImageConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfirmViewController.swift; sourceTree = "<group>"; };
-		B2FC8EE222CA1FBD008CE65C /* HoneyBits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoneyBits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2FC8EEA22CA1FBD008CE65C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CustomerTabs.storyboard; sourceTree = "<group>"; };
 		B2FC8EEC22CA1FBE008CE65C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2FC8EEF22CA1FBE008CE65C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2FC8EF122CA1FBE008CE65C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2FC8EF622CA1FBE008CE65C /* HoneyBitsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoneyBitsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2FC8EFA22CA1FBE008CE65C /* HoneyBitsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneyBitsTests.swift; sourceTree = "<group>"; };
-		B2FC8EFC22CA1FBE008CE65C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2FC8F0122CA1FBE008CE65C /* HoneyBitsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoneyBitsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2FC8F0522CA1FBE008CE65C /* HoneyBitsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneyBitsUITests.swift; sourceTree = "<group>"; };
-		B2FC8F0722CA1FBE008CE65C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBDDFC31F9B36466F2DC8304 /* Pods_HoneyBits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoneyBits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9A8C8D69F1321C353BBA8B5 /* Pods-HoneyBits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBits.release.xcconfig"; path = "Target Support Files/Pods-HoneyBits/Pods-HoneyBits.release.xcconfig"; sourceTree = "<group>"; };
+		D7E08609677E2712CFBDA746 /* Pods-HoneyBitsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsTests.release.xcconfig"; path = "Target Support Files/Pods-HoneyBitsTests/Pods-HoneyBitsTests.release.xcconfig"; sourceTree = "<group>"; };
+		DA5F5D76362000BD943357DE /* Pods-HoneyBitsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoneyBitsTests.debug.xcconfig"; path = "Target Support Files/Pods-HoneyBitsTests/Pods-HoneyBitsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,7 +344,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BD5BDC146488DC7AD00F8EA /* Pods_HoneyBits.framework in Frameworks */,
+				D656AA537381A58653FDD4F4 /* Pods_HoneyBits.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +352,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C0F3653B6F29A19D501CAAB /* Pods_HoneyBitsTests.framework in Frameworks */,
+				0D0A2836F0FF37105828B5FC /* Pods_HoneyBitsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +360,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94689591791F5DCFE6CF9A41 /* Pods_HoneyBitsUITests.framework in Frameworks */,
+				27373D2C77C9263A4ECF56DB /* Pods_HoneyBitsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,14 +370,24 @@
 		329A663C18D8431F8D5AA002 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				633F27CAC33C5B685297B670 /* Pods-HoneyBits.debug.xcconfig */,
-				AF08A3412DFB48B7CEC50E1A /* Pods-HoneyBits.release.xcconfig */,
-				979A26B3C22A87F960576887 /* Pods-HoneyBitsTests.debug.xcconfig */,
-				1E5BFC44C36379A4C726E008 /* Pods-HoneyBitsTests.release.xcconfig */,
-				6E8B7938B853F1FCAA65E470 /* Pods-HoneyBitsUITests.debug.xcconfig */,
-				7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */,
+				2C49A3648E7B99FD0B4DD36D /* Pods-HoneyBits.debug.xcconfig */,
+				C9A8C8D69F1321C353BBA8B5 /* Pods-HoneyBits.release.xcconfig */,
+				DA5F5D76362000BD943357DE /* Pods-HoneyBitsTests.debug.xcconfig */,
+				D7E08609677E2712CFBDA746 /* Pods-HoneyBitsTests.release.xcconfig */,
+				22CBB8EBFD5C2A4671983E9A /* Pods-HoneyBitsUITests.debug.xcconfig */,
+				51A0BA868D0A199AF58A1D3F /* Pods-HoneyBitsUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8E610F034557A2A529D13AA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBDDFC31F9B36466F2DC8304 /* Pods_HoneyBits.framework */,
+				75831BB7C547CAB6F04A3996 /* Pods_HoneyBitsTests.framework */,
+				9CAE03BB808802CB1BEACA42 /* Pods_HoneyBitsUITests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B2093E9923089BFA006CA976 /* Shop Creation */ = {
@@ -427,7 +475,8 @@
 			isa = PBXGroup;
 			children = (
 				B2270033232C3E940074AFF7 /* ProductForms.storyboard */,
-				B2F23721232D4DF0006CFD70 /* Products.storyboard */,
+				B2F23721232D4DF0006CFD70 /* KeeperProducts.storyboard */,
+				B223BC7C23726EB100B7670A /* CustomerProducts.storyboard */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -435,6 +484,7 @@
 		B2270039232C6AB80074AFF7 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B24BA413233808CC009D89C0 /* ColorPallete.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -442,6 +492,7 @@
 		B227003A232C77680074AFF7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				B2EE458F237B246F00CE870A /* Customer */,
 				B227003B232C777B0074AFF7 /* ProductFormViewController.swift */,
 				B2F2371B232D2425006CFD70 /* SingleProductViewController.swift */,
 			);
@@ -473,6 +524,30 @@
 				B22B909222E6AC2400D0B449 /* ScaleSegue.swift */,
 			);
 			path = Segues;
+			sourceTree = "<group>";
+		};
+		B23F0AE72363937800EA78BD /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				B23F0AEA2363CDBC00EA78BD /* RecentlyViewed */,
+				B23F0AE82363A97F00EA78BD /* CustomerHomeHeaderCell.xib */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		B23F0AEA2363CDBC00EA78BD /* RecentlyViewed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RecentlyViewed;
+			sourceTree = "<group>";
+		};
+		B2453776233D9B80006F167A /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				B2453777233D9B9B006F167A /* HeartIcon.swift */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 		B24BEE2222E7FF2400C1E5FB /* Dashboard */ = {
@@ -534,6 +609,9 @@
 				B227003D232C7A870074AFF7 /* PrimaryButton.swift */,
 				B227003F232C7CB30074AFF7 /* PrimaryButtonOutline.swift */,
 				B2270041232C87B40074AFF7 /* CorneredImageView.swift */,
+				B24BA41823382CDC009D89C0 /* ImageButton.swift */,
+				B2EE458D237B225E00CE870A /* BarButtonItem.swift */,
+				B2EE4592237B5D4900CE870A /* ImageNavButton.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -562,6 +640,7 @@
 				B262AF4E22DBF94D00ABF311 /* RequestStatus.swift */,
 				B21957EC22E24AD9008AEBA0 /* Roles.swift */,
 				B202E6162329AD95000164E4 /* ProgressTypeEnum.swift */,
+				B20EDA76236272EA0053A8B7 /* AuthenticationType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -588,6 +667,7 @@
 		B2745FC522D57D2F00297A43 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B2453776233D9B80006F167A /* Icons */,
 				B2C4D89A232EBD1D009A614B /* Product */,
 				B22B909122E6ABDC00D0B449 /* Segues */,
 				B2198F532309CC850083A01A /* Keeper */,
@@ -642,9 +722,7 @@
 			children = (
 				B2512DB822F0D64300E1BA9E /* Guest */,
 				B2745FCF22D57E5B00297A43 /* CustomerHome */,
-				B23FEA9722F0F74F001E8B32 /* ProductCardView.xib */,
-				B23FEA9922F10078001E8B32 /* ProductCardView.swift */,
-				B2BC92B022F3E1C600D128B4 /* ProductCardCollectionView.swift */,
+				B2BC92B022F3E1C600D128B4 /* RecentProductCardCollectionView.swift */,
 			);
 			path = Customer;
 			sourceTree = "<group>";
@@ -652,9 +730,13 @@
 		B2745FCF22D57E5B00297A43 /* CustomerHome */ = {
 			isa = PBXGroup;
 			children = (
+				B23F0AE72363937800EA78BD /* TableCells */,
 				B28F419E22D7603200C7E2E6 /* CustomerHomeView.xib */,
 				B28F41A022D7604200C7E2E6 /* CustomerHomeView.swift */,
 				B23FEA9D22F1C26D001E8B32 /* CustomerHomeHeaderCell.swift */,
+				B23F0AED2363D2B500EA78BD /* HomeHeaderCollectionViewCell.swift */,
+				B239DDD8236930F80078C287 /* HomeFooterCollectionViewCell.swift */,
+				B239DDD42367E5510078C287 /* ProductSimilarItemsCollectionViewCell.swift */,
 			);
 			path = CustomerHome;
 			sourceTree = "<group>";
@@ -672,6 +754,7 @@
 			isa = PBXGroup;
 			children = (
 				B28F41A822D7B34E00C7E2E6 /* CustomerSearchViewController.swift */,
+				B2453774233D98F3006F167A /* SearchProductTableCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -747,6 +830,9 @@
 				B29479F423135A5B002F2147 /* ShopModelRegistration.swift */,
 				B2F2371F232D2CF3006CFD70 /* ProductImage.swift */,
 				B232D22923356CB7008A3B7C /* ShopLikes.swift */,
+				B20EDA7823627A570053A8B7 /* GoogleUserModel.swift */,
+				B20EDA7A23628AB60053A8B7 /* FacebookUserModel.swift */,
+				B2171FAE239F3A9A00B1CCE6 /* ForgetPasswordModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -772,11 +858,14 @@
 		B2C4D89A232EBD1D009A614B /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				B23FEA9722F0F74F001E8B32 /* ProductCardViewCell.xib */,
+				B23FEA9922F10078001E8B32 /* ProductCardViewCell.swift */,
 				B2C4D8A1232F04E5009A614B /* ProductProfileImageCell.xib */,
 				B2C4D89B232EBD41009A614B /* ProductProfileImageCell.swift */,
 				B2C4D89D232EE225009A614B /* ProductViewDetailsCell.xib */,
 				B2C4D89F232EE43F009A614B /* ProductViewDetailsCell.swift */,
 				B2C4D8A3232F3128009A614B /* ProductSingleImageCell.swift */,
+				B239DDD2236762D30078C287 /* ProductInfoCardViewCell.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -806,6 +895,7 @@
 				B22B908D22E5514900D0B449 /* Registration */,
 				B28F419A22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift */,
 				B22B908522E3E5E900D0B449 /* FirstTimeLoginViewController.swift */,
+				B2171FAA239F334300B1CCE6 /* ForgetPasswordViewController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -828,8 +918,19 @@
 				B262AF4922DBF14900ABF311 /* BaseService.swift */,
 				B2093E962308911F006CA976 /* ShopService.swift */,
 				B2A66DC22325A9A7008DCB59 /* ProductService.swift */,
+				B203770D2360C4110001544E /* GoogleAuthService.swift */,
+				B20EDA74236243C20053A8B7 /* FacebookAuthService.swift */,
+				B2171FAC239F38C400B1CCE6 /* PasswordsService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B2EE458F237B246F00CE870A /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				B2EE4590237B24AB00CE870A /* CustomerProductViewController.swift */,
+			);
+			path = Customer;
 			sourceTree = "<group>";
 		};
 		B2EE6A8522D8FDB100350BBA /* General */ = {
@@ -889,22 +990,12 @@
 			isa = PBXGroup;
 			children = (
 				B2FC8EE422CA1FBD008CE65C /* HoneyBits */,
-				B2FC8EF922CA1FBE008CE65C /* HoneyBitsTests */,
-				B2FC8F0422CA1FBE008CE65C /* HoneyBitsUITests */,
 				329A663C18D8431F8D5AA002 /* Pods */,
-				E7BE4C7547E88F5B785918BB /* Frameworks */,
+				8E610F034557A2A529D13AA7 /* Frameworks */,
+				B2171FA7239F2EA700B1CCE6 /* HoneyBits.app */,
+				B2171FA8239F2EA700B1CCE6 /* HoneyBitsTests.xctest */,
+				B2171FA9239F2EA700B1CCE6 /* HoneyBitsUITests.xctest */,
 			);
-			sourceTree = "<group>";
-		};
-		B2FC8EE322CA1FBD008CE65C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B2FC8EE222CA1FBD008CE65C /* HoneyBits.app */,
-				B2FC8EF622CA1FBE008CE65C /* HoneyBitsTests.xctest */,
-				B2FC8F0122CA1FBE008CE65C /* HoneyBitsUITests.xctest */,
-			);
-			name = Products;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		B2FC8EE422CA1FBD008CE65C /* HoneyBits */ = {
@@ -922,39 +1013,11 @@
 				B2270039232C6AB80074AFF7 /* Helper */,
 				B2FC8EEC22CA1FBE008CE65C /* Assets.xcassets */,
 				B2FC8EEE22CA1FBE008CE65C /* LaunchScreen.storyboard */,
+				B203770B236083840001544E /* GoogleService-Info.plist */,
 				B2FC8EF122CA1FBE008CE65C /* Info.plist */,
 				B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */,
 			);
 			path = HoneyBits;
-			sourceTree = "<group>";
-		};
-		B2FC8EF922CA1FBE008CE65C /* HoneyBitsTests */ = {
-			isa = PBXGroup;
-			children = (
-				B2FC8EE322CA1FBD008CE65C /* Products */,
-				B2FC8EFA22CA1FBE008CE65C /* HoneyBitsTests.swift */,
-				B2FC8EFC22CA1FBE008CE65C /* Info.plist */,
-			);
-			path = HoneyBitsTests;
-			sourceTree = "<group>";
-		};
-		B2FC8F0422CA1FBE008CE65C /* HoneyBitsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B2FC8F0522CA1FBE008CE65C /* HoneyBitsUITests.swift */,
-				B2FC8F0722CA1FBE008CE65C /* Info.plist */,
-			);
-			path = HoneyBitsUITests;
-			sourceTree = "<group>";
-		};
-		E7BE4C7547E88F5B785918BB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				62E461E760B99B774FB47708 /* Pods_HoneyBits.framework */,
-				5C636D69A3D1DCE55F9C6D98 /* Pods_HoneyBitsTests.framework */,
-				3796716515E095C76664E6F2 /* Pods_HoneyBitsUITests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -964,11 +1027,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2FC8F0A22CA1FBE008CE65C /* Build configuration list for PBXNativeTarget "HoneyBits" */;
 			buildPhases = (
-				83EBBBDDAF5156B2DB196107 /* [CP] Check Pods Manifest.lock */,
+				49BC9EB479329D153C0E592F /* [CP] Check Pods Manifest.lock */,
 				B2FC8EDE22CA1FBD008CE65C /* Sources */,
 				B2FC8EDF22CA1FBD008CE65C /* Frameworks */,
 				B2FC8EE022CA1FBD008CE65C /* Resources */,
-				1E24BA6FF82DFBBCDEC0D0A5 /* [CP] Embed Pods Frameworks */,
+				AC98CA461CFC9C045FFD527A /* [CP] Embed Pods Frameworks */,
+				8EF64B6A12E4019976E70963 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -976,14 +1040,14 @@
 			);
 			name = HoneyBits;
 			productName = HoneyBits;
-			productReference = B2FC8EE222CA1FBD008CE65C /* HoneyBits.app */;
+			productReference = B2171FA7239F2EA700B1CCE6 /* HoneyBits.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B2FC8EF522CA1FBE008CE65C /* HoneyBitsTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2FC8F0D22CA1FBE008CE65C /* Build configuration list for PBXNativeTarget "HoneyBitsTests" */;
 			buildPhases = (
-				AAD06AB13315226901A9F6EA /* [CP] Check Pods Manifest.lock */,
+				AA66708CB8F7A646E9CB51C7 /* [CP] Check Pods Manifest.lock */,
 				B2FC8EF222CA1FBE008CE65C /* Sources */,
 				B2FC8EF322CA1FBE008CE65C /* Frameworks */,
 				B2FC8EF422CA1FBE008CE65C /* Resources */,
@@ -995,14 +1059,14 @@
 			);
 			name = HoneyBitsTests;
 			productName = HoneyBitsTests;
-			productReference = B2FC8EF622CA1FBE008CE65C /* HoneyBitsTests.xctest */;
+			productReference = B2171FA8239F2EA700B1CCE6 /* HoneyBitsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B2FC8F0022CA1FBE008CE65C /* HoneyBitsUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2FC8F1022CA1FBE008CE65C /* Build configuration list for PBXNativeTarget "HoneyBitsUITests" */;
 			buildPhases = (
-				FA57FF2454AF294CBD311678 /* [CP] Check Pods Manifest.lock */,
+				1B0841B59B3E951C39E182B2 /* [CP] Check Pods Manifest.lock */,
 				B2FC8EFD22CA1FBE008CE65C /* Sources */,
 				B2FC8EFE22CA1FBE008CE65C /* Frameworks */,
 				B2FC8EFF22CA1FBE008CE65C /* Resources */,
@@ -1014,7 +1078,7 @@
 			);
 			name = HoneyBitsUITests;
 			productName = HoneyBitsUITests;
-			productReference = B2FC8F0122CA1FBE008CE65C /* HoneyBitsUITests.xctest */;
+			productReference = B2171FA9239F2EA700B1CCE6 /* HoneyBitsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -1050,7 +1114,7 @@
 				"es-419",
 			);
 			mainGroup = B2FC8ED922CA1FBD008CE65C;
-			productRefGroup = B2FC8EE322CA1FBD008CE65C /* Products */;
+			productRefGroup = B2FC8ED922CA1FBD008CE65C;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1074,6 +1138,7 @@
 				B26C6524232095F00053537C /* KeeperShopDetailsCell.xib in Resources */,
 				B272B8CB22CED34900E124B4 /* Localizable.strings in Resources */,
 				B24BEE2D22E804A900C1E5FB /* KeeperSettings.storyboard in Resources */,
+				B223BC7D23726EB100B7670A /* CustomerProducts.storyboard in Resources */,
 				B2A2E81922D0D51200DFDAB3 /* CustomerHome.storyboard in Resources */,
 				B27C9F6122E23EE500B4AFE3 /* main.storyboard in Resources */,
 				B21957F022E24C78008AEBA0 /* KeeperMain.storyboard in Resources */,
@@ -1089,16 +1154,18 @@
 				B24BEE3022E8059900C1E5FB /* KeeperHistory.storyboard in Resources */,
 				B289AE14230B56060010F8C9 /* KeeperShopCreation.storyboard in Resources */,
 				B2FC8EED22CA1FBE008CE65C /* Assets.xcassets in Resources */,
+				B23F0AE92363A97F00EA78BD /* CustomerHomeHeaderCell.xib in Resources */,
 				B2EE6A8922D8FE8500350BBA /* LegalData.storyboard in Resources */,
 				B2512DBD22F0D82800E1BA9E /* TextWithBackgroundView.xib in Resources */,
 				B27D794722D42C5D0012F5CD /* CustomerYou.storyboard in Resources */,
 				B2745FD122D57EA500297A43 /* GuestView.xib in Resources */,
 				B2A2E81B22D0D61800DFDAB3 /* CustomerFavorites.storyboard in Resources */,
 				B24BEE2722E801C000C1E5FB /* KeeperDeals.storyboard in Resources */,
-				B2F23722232D4DF0006CFD70 /* Products.storyboard in Resources */,
+				B203770C236083850001544E /* GoogleService-Info.plist in Resources */,
+				B2F23722232D4DF0006CFD70 /* KeeperProducts.storyboard in Resources */,
 				B22B908822E4E73100D0B449 /* CustomerRegistration.storyboard in Resources */,
 				B237E9642309F8DB00DD8E39 /* KeeperNoShopView.xib in Resources */,
-				B23FEA9822F0F74F001E8B32 /* ProductCardView.xib in Resources */,
+				B23FEA9822F0F74F001E8B32 /* ProductCardViewCell.xib in Resources */,
 				B2FC8EEB22CA1FBD008CE65C /* CustomerTabs.storyboard in Resources */,
 				B28F419F22D7603200C7E2E6 /* CustomerHomeView.xib in Resources */,
 			);
@@ -1121,68 +1188,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E24BA6FF82DFBBCDEC0D0A5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HoneyBits/Pods-HoneyBits-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HoneyBits/Pods-HoneyBits-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HoneyBits/Pods-HoneyBits-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		83EBBBDDAF5156B2DB196107 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HoneyBits-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AAD06AB13315226901A9F6EA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HoneyBitsTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FA57FF2454AF294CBD311678 /* [CP] Check Pods Manifest.lock */ = {
+		1B0841B59B3E951C39E182B2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1204,6 +1210,84 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		49BC9EB479329D153C0E592F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HoneyBits-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EF64B6A12E4019976E70963 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoneyBits/Pods-HoneyBits-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoneyBits/Pods-HoneyBits-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HoneyBits/Pods-HoneyBits-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA66708CB8F7A646E9CB51C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HoneyBitsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC98CA461CFC9C045FFD527A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoneyBits/Pods-HoneyBits-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HoneyBits/Pods-HoneyBits-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HoneyBits/Pods-HoneyBits-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1213,9 +1297,13 @@
 			files = (
 				B2C2CB6322EFF08C00F2EA30 /* CustomerFavoriteUserBaseController.swift in Sources */,
 				B2F8359122D6882F00A9910C /* UiViewExtension.swift in Sources */,
+				B23F0AEE2363D2B500EA78BD /* HomeHeaderCollectionViewCell.swift in Sources */,
 				B27C9F5D22E23BC200B4AFE3 /* ProductCategoryModel.swift in Sources */,
+				B20EDA7923627A570053A8B7 /* GoogleUserModel.swift in Sources */,
 				B25D46A722E398C700F3E644 /* NSObjectExtensions.swift in Sources */,
 				B289AE16230B5BE20010F8C9 /* KeeperShopNameFormController.swift in Sources */,
+				B2EE458E237B225E00CE870A /* BarButtonItem.swift in Sources */,
+				B2171FAB239F334300B1CCE6 /* ForgetPasswordViewController.swift in Sources */,
 				B26C652A2320A38E0053537C /* ShopActionDelegate.swift in Sources */,
 				B2DABEFA232739F9001B4E4C /* KeeperShopProductCell.swift in Sources */,
 				B28F419B22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift in Sources */,
@@ -1224,12 +1312,15 @@
 				B23FEA9C22F1BFE4001E8B32 /* CustomerHomeUserController.swift in Sources */,
 				B28F41AC22D80CD900C7E2E6 /* CustomerYouViewController.swift in Sources */,
 				B272B8D522CEE7E800E124B4 /* RecursiveDismissDelegate.swift in Sources */,
+				B2453778233D9B9B006F167A /* HeartIcon.swift in Sources */,
+				B203770E2360C4110001544E /* GoogleAuthService.swift in Sources */,
 				B25FCB9322E94FCB006BDD0C /* KeeperSettingsViewController.swift in Sources */,
 				B27C9F5B22E23B0900B4AFE3 /* ProductModel.swift in Sources */,
 				B2270037232C41990074AFF7 /* ContainerView.swift in Sources */,
 				B25AE9A3230CF30B002E7D67 /* KeeperShopDescriptionFormController.swift in Sources */,
 				B28F41A622D7A88C00C7E2E6 /* CustomerLoginViewController.swift in Sources */,
 				B23FEA9E22F1C26D001E8B32 /* CustomerHomeHeaderCell.swift in Sources */,
+				B20EDA77236272EA0053A8B7 /* AuthenticationType.swift in Sources */,
 				B237E9662309FDB700DD8E39 /* KeeperNoShopView.swift in Sources */,
 				B26CEB3722E25E3B00814889 /* CustomerTabBarController.swift in Sources */,
 				B211EC2222EF30B2006B5A82 /* MenuBarMainController.swift in Sources */,
@@ -1243,6 +1334,7 @@
 				B2398A3622DD5B230042C764 /* EncodableExtensions.swift in Sources */,
 				B232D22C2335711B008A3B7C /* ProductLike.swift in Sources */,
 				B2093E972308911F006CA976 /* ShopService.swift in Sources */,
+				B2EE4593237B5D4900CE870A /* ImageNavButton.swift in Sources */,
 				B2BC92B322F3E61500D128B4 /* ProductCardViewModel.swift in Sources */,
 				B2F2371C232D2425006CFD70 /* SingleProductViewController.swift in Sources */,
 				B25BBB0D2329F236005640A9 /* KeeperShopProductSectionHeader.swift in Sources */,
@@ -1253,36 +1345,46 @@
 				B2FBFB6C23308C82004867EE /* ImageMediaHandler.swift in Sources */,
 				B211EC2422EF3F7E006B5A82 /* MenuBarView.swift in Sources */,
 				B28F41A422D783BE00C7E2E6 /* CustomerFavoritesHomeViewController.swift in Sources */,
+				B2EE4591237B24AB00CE870A /* CustomerProductViewController.swift in Sources */,
 				B2745FD322D57EB500297A43 /* GuestView.swift in Sources */,
 				B22B909322E6AC2400D0B449 /* ScaleSegue.swift in Sources */,
 				B2093E9323083D45006CA976 /* IGenericService.swift in Sources */,
 				B2C4D89C232EBD41009A614B /* ProductProfileImageCell.swift in Sources */,
+				B24BA41923382CDC009D89C0 /* ImageButton.swift in Sources */,
 				B22B908622E3E5E900D0B449 /* FirstTimeLoginViewController.swift in Sources */,
 				B272B8D222CEE66200E124B4 /* SignInViewController.swift in Sources */,
 				B26CEB3522E257EB00814889 /* MainNavigationController.swift in Sources */,
 				B2FBFB6E2330916D004867EE /* ImageConfirmViewController.swift in Sources */,
+				B2171FAD239F38C400B1CCE6 /* PasswordsService.swift in Sources */,
 				B28F41A122D7604200C7E2E6 /* CustomerHomeView.swift in Sources */,
 				B211EC2E22EF7083006B5A82 /* MenuContentCell.swift in Sources */,
 				B227003C232C777B0074AFF7 /* ProductFormViewController.swift in Sources */,
-				B2BC92B122F3E1C600D128B4 /* ProductCardCollectionView.swift in Sources */,
+				B2BC92B122F3E1C600D128B4 /* RecentProductCardCollectionView.swift in Sources */,
 				B2270042232C87B40074AFF7 /* CorneredImageView.swift in Sources */,
 				B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */,
 				B28F419D22D6DF7E00C7E2E6 /* LoginDelegate.swift in Sources */,
+				B239DDD52367E5510078C287 /* ProductSimilarItemsCollectionViewCell.swift in Sources */,
 				B2C4D8A6232F324C009A614B /* UIImageExtension.swift in Sources */,
 				B211EC2C22EF6FFF006B5A82 /* MenuContentCollectionView.swift in Sources */,
 				B2DABEFC23273B8C001B4E4C /* ProductActionDelegate.swift in Sources */,
 				B21957ED22E24AD9008AEBA0 /* Roles.swift in Sources */,
+				B20EDA7B23628AB60053A8B7 /* FacebookUserModel.swift in Sources */,
 				B211EC2622EF47B9006B5A82 /* MenuBarItemCell.swift in Sources */,
-				B23FEA9A22F10078001E8B32 /* ProductCardView.swift in Sources */,
+				B23FEA9A22F10078001E8B32 /* ProductCardViewCell.swift in Sources */,
+				B24BA414233808CC009D89C0 /* ColorPallete.swift in Sources */,
+				B239DDD9236930F80078C287 /* HomeFooterCollectionViewCell.swift in Sources */,
 				B211EC2A22EF6E1D006B5A82 /* MenuContentController.swift in Sources */,
 				B227003E232C7A870074AFF7 /* PrimaryButton.swift in Sources */,
 				B2270040232C7CB30074AFF7 /* PrimaryButtonOutline.swift in Sources */,
+				B239DDD3236762D30078C287 /* ProductInfoCardViewCell.swift in Sources */,
 				B2F8358E22D6837200A9910C /* CustomerHomeViewController.swift in Sources */,
 				B2EE6A8422D8E54900350BBA /* CustomerGuestSettingsViewController.swift in Sources */,
 				B2398A3422DD36280042C764 /* UIViewControllerExtension.swift in Sources */,
+				B20EDA75236243C20053A8B7 /* FacebookAuthService.swift in Sources */,
 				B2F2371E232D298C006CFD70 /* DecimalExtension.swift in Sources */,
 				B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */,
 				B26C65262320994B0053537C /* KeeperShopDetailsCell.swift in Sources */,
+				B2453775233D98F3006F167A /* SearchProductTableCell.swift in Sources */,
 				B28F41AE22D8141600C7E2E6 /* AuthBackdropDelegate.swift in Sources */,
 				B2829F17230632B00050C45E /* UserRegistrationModel.swift in Sources */,
 				B2605725231F3506001B4EDF /* KeeperShopView.swift in Sources */,
@@ -1300,6 +1402,7 @@
 				B2C4D8A4232F3128009A614B /* ProductSingleImageCell.swift in Sources */,
 				B2F0835E2311975400AA395A /* UserModel.swift in Sources */,
 				B2829F192306361C0050C45E /* UserRegistrationTypeSelection.swift in Sources */,
+				B2171FAF239F3A9A00B1CCE6 /* ForgetPasswordModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1307,7 +1410,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2FC8EFB22CA1FBE008CE65C /* HoneyBitsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1315,7 +1417,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2FC8F0622CA1FBE008CE65C /* HoneyBitsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1428,6 +1529,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1483,6 +1585,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1492,7 +1595,7 @@
 		};
 		B2FC8F0B22CA1FBE008CE65C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 633F27CAC33C5B685297B670 /* Pods-HoneyBits.debug.xcconfig */;
+			baseConfigurationReference = 2C49A3648E7B99FD0B4DD36D /* Pods-HoneyBits.debug.xcconfig */;
 			buildSettings = {
 				API_ENDPOINT_BASE_URL = "http://honeybits.azurewebsites.net/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1500,7 +1603,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 755JV5Z68F;
 				INFOPLIST_FILE = HoneyBits/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1515,7 +1618,7 @@
 		};
 		B2FC8F0C22CA1FBE008CE65C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF08A3412DFB48B7CEC50E1A /* Pods-HoneyBits.release.xcconfig */;
+			baseConfigurationReference = C9A8C8D69F1321C353BBA8B5 /* Pods-HoneyBits.release.xcconfig */;
 			buildSettings = {
 				API_ENDPOINT_BASE_URL = "http://honeybits.azurewebsites.net/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1523,7 +1626,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 755JV5Z68F;
 				INFOPLIST_FILE = HoneyBits/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1538,7 +1641,7 @@
 		};
 		B2FC8F0E22CA1FBE008CE65C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 979A26B3C22A87F960576887 /* Pods-HoneyBitsTests.debug.xcconfig */;
+			baseConfigurationReference = DA5F5D76362000BD943357DE /* Pods-HoneyBitsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1560,7 +1663,7 @@
 		};
 		B2FC8F0F22CA1FBE008CE65C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E5BFC44C36379A4C726E008 /* Pods-HoneyBitsTests.release.xcconfig */;
+			baseConfigurationReference = D7E08609677E2712CFBDA746 /* Pods-HoneyBitsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1582,7 +1685,7 @@
 		};
 		B2FC8F1122CA1FBE008CE65C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E8B7938B853F1FCAA65E470 /* Pods-HoneyBitsUITests.debug.xcconfig */;
+			baseConfigurationReference = 22CBB8EBFD5C2A4671983E9A /* Pods-HoneyBitsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1603,7 +1706,7 @@
 		};
 		B2FC8F1222CA1FBE008CE65C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AD7B5CBD81DB024E79092E7 /* Pods-HoneyBitsUITests.release.xcconfig */;
+			baseConfigurationReference = 51A0BA868D0A199AF58A1D3F /* Pods-HoneyBitsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

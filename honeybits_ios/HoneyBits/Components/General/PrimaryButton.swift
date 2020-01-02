@@ -18,9 +18,16 @@ class PrimaryButton : UIButton {
         }
     }
     
-    @IBInspectable var btnBackgroundColor: UIColor = .flatOrange() {
+    @IBInspectable var btnBackgroundColor: String = "PrimaryColor" {
         didSet {
-            backgroundColor = self.btnBackgroundColor
+            backgroundColor = ColorPallete().getColor(btnBackgroundColor)
+        }
+    }
+    
+    @IBInspectable var txtColor: String = "Black" {
+        didSet {
+            titleLabel?.textColor = ColorPallete().getColor(txtColor)
+            tintColor = ColorPallete().getColor(txtColor)
         }
     }
     
@@ -43,9 +50,9 @@ class PrimaryButton : UIButton {
     
     private func setBtnProperties() {
         layer.cornerRadius = cornerRadius
-        titleLabel?.textColor = UIColor.flatWhite()
-        tintColor = UIColor.flatWhite()
-        backgroundColor = btnBackgroundColor
+        titleLabel?.textColor = ColorPallete().getColor(txtColor)
+        tintColor = ColorPallete().getColor(txtColor)
+        backgroundColor = ColorPallete().getColor(btnBackgroundColor)
         layer.opacity = btnOpacity
     }
     

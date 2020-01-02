@@ -56,12 +56,14 @@ class KeeperShopProductCell: UICollectionViewCell {
     }
     
     @objc private func emitTapEvent() {
+        print("Product View cell \(String(describing: productId))")
         delegate?.viewProduct(productId: productId)
     }
     
     @IBAction func editBtnPressed(_ sender: Any) {
         delegate?.editProduct(productId: productId)
     }
+    
     @IBAction func generalBtn(_ sender: Any) {
         self.emitTapEvent()
     }

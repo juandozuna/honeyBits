@@ -13,5 +13,5 @@ struct ProductModel : Codable {
     var productName: String?
     var productCategoryId: Int?
     var productDescription: String?
-    var productPrice: Decimal?
+    var productPrice: Double?
 }

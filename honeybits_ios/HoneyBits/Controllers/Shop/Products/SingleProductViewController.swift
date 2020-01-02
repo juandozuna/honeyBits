@@ -16,7 +16,7 @@ import SVProgressHUD
 class SingleProductViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var productId: BehaviorRelay<Int> = BehaviorRelay(value: 0)
+    var productId: Int? = 0
     var delegate: ProductActionDelegate?
     private let imageViewCellId = "imageViewCellId"
     private let contentCellId = "contentCellId"
@@ -61,11 +61,17 @@ class SingleProductViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    func getProductData(_ id: Int?) {
+        if id != nil && id! > 0 {
+           self.requestDataToServer(id: id!)
+       }
+    }
+    
     private func addReceivedImage(image: UIImage?) {
         if let i = image {
-            productService.addImageToProduct(productId: productId.value, imageData: i) { (status, fn) in
+            productService.addImageToProduct(productId: productId!, imageData: i) { (status, fn) in
                 if status == .Success {
-                    self.getAllProductImages(id: self.productId.value, completed: {
+                    self.getAllProductImages(id: self.productId!, completed: {
                         self.reloadCollectionView()
                     })
                 }
@@ -75,7 +81,6 @@ class SingleProductViewController: UIViewController {
     
     
     private func controllerSetup() {
-        subscribeToProductId()
         collectionViewSetup()
     }
 
@@ -100,37 +105,27 @@ class SingleProductViewController: UIViewController {
     }
     
     private func deleteProduct() {
-        let id = productId.value
+        let id = productId
         productService.deleteProduct(productId: id) { (status, none) in
             if status == .Success {
-                delegate?.deleteProduct(productId: id)
-                navigationController?.popViewController(animated: true)
+                self.delegate?.deleteProduct(productId: id)
+                self.navigationController?.popViewController(animated: true)
             }
             SVProgressHUD.dismiss()
         }
     }
     
-    private func subscribeToProductId() {
-        self.productId.subscribe({ (value) in
-            if value.element != nil && value.element! > 0 {
-                self.requestDataToServer(id: value.element!)
-            }
-        }).disposed(by: disposeBag)
-    }
-    
     private func requestDataToServer(id: Int) {
-        collectionView.showAnimatedGradientSkeleton()
-        
+        SVProgressHUD.show()
         getProductData(id: id) {
             self.getProductProfileImage(id: id) {
-                self.getAllProductImages(id: id) {
-                    self.collectionView.hideSkeleton()
-                }
+                self.getAllProductImages(id: id)
+                SVProgressHUD.dismiss()
             }
         }
     }
     
-    private func getProductData(id: Int, completed: (() -> Void)?) {
+    private func getProductData(id: Int, completed: (() -> Void)? = nil) {
         productService.getSingleProduct(productId: id) { (status, productModel) in
             if status != .Success {
                 return
@@ -141,7 +136,7 @@ class SingleProductViewController: UIViewController {
         }
     }
     
-    private func getProductProfileImage(id: Int, completed: (() -> Void)?) {
+    private func getProductProfileImage(id: Int, completed: (() -> Void)? = nil) {
         productService.getProductImage(productId: id) { (status, pimage) in
             if status != .Success {
                 return
@@ -153,7 +148,7 @@ class SingleProductViewController: UIViewController {
         }
     }
     
-    private func getAllProductImages(id: Int, completed: (() -> Void)?) {
+    private func getAllProductImages(id: Int, completed: (() -> Void)? = nil) {
         productService.getAllProductImages(productId: id) { (status, images) in
             if status != .Success {
                 return
@@ -168,12 +163,13 @@ class SingleProductViewController: UIViewController {
     private func presentProductFormInEditMode(model: ProductModel) {
         let productController = viewControllerFromStoryboard(storyboard: "ProductForms", withIdentifier: "productForm") as! ProductFormViewController
         productController.productService = productService
+        productController.setFormModel(model: model)
         productController.requestObservable.subscribe({ value in
             if value.element! {
                self.getProductData(id: model.productId!, completed: nil)
             }
         }).disposed(by: disposeBag)
-        productController.setFormModel(model: model)
+        
         present(productController, animated: true, completion: nil)
     }
     
@@ -206,6 +202,10 @@ extension SingleProductViewController : UICollectionViewDelegate, UICollectionVi
         if section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: contentCellId, for: indexPath) as! ProductViewDetailsCell
             cell.viewSetup()
+            if let product = productModel {
+                cell.nameText = "\(product.productName ?? "No data") - $\(product.productPrice ?? 0)"
+                cell.descriptionText = product.productDescription ?? "No data"
+            }
             return cell
         }
 
@@ -227,8 +227,12 @@ extension SingleProductViewController : UICollectionViewDelegate, UICollectionVi
         }
         
         if section == 1 {
-            //let estimatedFrame = NSString(string: "Demo content").boundingRect(with: .zero, options: .usesLineFragmentOrigin, attributes: nil, context: nil)
-            return CGSize(width: width, height: 200)
+            if let product = productModel {
+                let approximateWidthRect = CGSize(width: width - 8 , height: 1000)
+                let estimatedFrame = NSString(string: product.productDescription ?? "No data").boundingRect(with: approximateWidthRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15.0)], context: nil)
+                return CGSize(width: width, height: estimatedFrame.height + 90)
+            }
+            return CGSize(width: width, height: 0)
         }
 
         return CGSize(width: thirdSize, height: thirdSize)

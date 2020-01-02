@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jFt-gw-nqp">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jFt-gw-nqp">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,7 +40,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CDw-gi-4Rc">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aYe-ns-lGO">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -83,11 +81,11 @@
             <objects>
                 <viewController title="Edit Shop" id="Nvq-3Q-1dP" customClass="KeeperShopEditViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pdk-E5-sTx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2K-WA-JNr">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="I1t-Pe-baS"/>
                                 </constraints>
@@ -96,7 +94,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igd-Xd-iao">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="l0x-Re-Ap2">
                                         <rect key="frame" x="8" y="25" width="398" height="145"/>
@@ -107,7 +105,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="R7S-Qt-0gE"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
@@ -117,7 +114,6 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iFl-g3-v0s" customClass="TextField" customModule="Material">
                                                 <rect key="frame" x="0.0" y="100" width="398" height="45"/>
                                                 <color key="backgroundColor" red="0.97647058823529409" green="0.94117647058823528" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
@@ -127,7 +123,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZX6-sz-rHS">
-                                        <rect key="frame" x="0.0" y="612" width="414" height="178"/>
+                                        <rect key="frame" x="0.0" y="602" width="414" height="178"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxC-4e-faj" customClass="PrimaryButtonOutline" customModule="HoneyBits" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="113" width="398" height="50"/>
@@ -136,9 +132,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="rDn-3S-Vyn"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="Cancel">
-                                                    <color key="titleColor" red="0.99482471449999998" green="0.4736333405" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
+                                                <state key="normal" title="Cancel"/>
                                                 <connections>
                                                     <action selector="cancelBtn:" destination="Nvq-3Q-1dP" eventType="touchUpInside" id="DJR-rx-Ka2"/>
                                                 </connections>
@@ -147,15 +141,13 @@
                                                 <rect key="frame" x="8" y="33" width="398" height="50"/>
                                                 <color key="backgroundColor" red="0.99482471449999998" green="0.53641385959999999" blue="0.074377538389999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="Save Changes">
-                                                    <color key="titleColor" red="0.97647058819999999" green="0.94117647059999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
+                                                <state key="normal" title="Save Changes"/>
                                                 <connections>
                                                     <action selector="saveBtn:" destination="Nvq-3Q-1dP" eventType="touchUpInside" id="kHq-zA-Vcu"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="pVw-Wf-vMd" firstAttribute="leading" secondItem="QxC-4e-faj" secondAttribute="leading" id="C8i-yi-em2"/>
                                             <constraint firstItem="QxC-4e-faj" firstAttribute="leading" secondItem="ZX6-sz-rHS" secondAttribute="leading" constant="8" id="VcY-Rd-rhT"/>
@@ -168,7 +160,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="ZX6-sz-rHS" firstAttribute="leading" secondItem="igd-Xd-iao" secondAttribute="leading" id="0PW-bO-pO9"/>
                                     <constraint firstAttribute="trailing" secondItem="ZX6-sz-rHS" secondAttribute="trailing" id="6qN-4C-w0Q"/>

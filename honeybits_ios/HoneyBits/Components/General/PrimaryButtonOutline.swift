@@ -25,18 +25,29 @@ class PrimaryButtonOutline : UIButton {
     }
     
     
+    @IBInspectable var outlineColor: String = "PrimaryColor" {
+        didSet {
+            let cp = ColorPallete()
+            layer.borderColor = cp.getColor(outlineColor)?.cgColor
+            titleLabel?.textColor = cp.getColor(outlineColor)
+            tintColor = cp.getColor(outlineColor)
+        }
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setBtnProperties()
     }
     
     private func setBtnProperties() {
+        let cp = ColorPallete()
         layer.cornerRadius = cornerRadius
-        titleLabel?.textColor = UIColor.flatOrange()
-        tintColor = UIColor.flatOrange()
+        titleLabel?.textColor = cp.getColor(outlineColor)
+        tintColor = cp.getColor(outlineColor)
         backgroundColor = UIColor.clear
         layer.masksToBounds = true
-        layer.borderColor = UIColor.flatOrange()?.cgColor
+        layer.borderColor = cp.getColor(outlineColor)?.cgColor
         layer.borderWidth = borderWidth
     }
     

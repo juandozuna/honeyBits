@@ -14,6 +14,7 @@ struct UserTokenModel: Codable {
     var password: String?
     var token: String?
     var rol: UserRoles?
+    var authType: AuthenticationType?
     
     init() {
         username = nil

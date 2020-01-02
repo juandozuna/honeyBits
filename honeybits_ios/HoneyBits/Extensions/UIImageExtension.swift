@@ -14,10 +14,9 @@ import ChameleonFramework
 extension UIImageView {
     func loadDataImage(imageUrl: String) {
         let baseService = BaseService()
-        SVProgressHUD.show()
+        self.image = UIImage(named: "loading-gif")
         baseService.imageRequest(imageUrl: imageUrl) { (status, image) in
             self.image = image
-            SVProgressHUD.dismiss()
         }
         
     }
