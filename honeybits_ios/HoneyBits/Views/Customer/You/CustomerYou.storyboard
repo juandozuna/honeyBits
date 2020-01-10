@@ -193,7 +193,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="historyBtn:" destination="LOI-Sb-4rX" eventType="touchUpInside" id="YdZ-SR-nJJ"/>
+                                                        <action selector="customerUserProfileSettings:" destination="LOI-Sb-4rX" eventType="touchUpInside" id="YdZ-SR-nJJ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

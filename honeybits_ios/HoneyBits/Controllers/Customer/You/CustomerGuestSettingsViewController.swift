@@ -10,15 +10,14 @@ import UIKit
 
 class CustomerGuestSettingsViewController: UITableViewController {
 
-    @IBOutlet weak var historySwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func historyBtn(_ sender: Any) {
-        historySwitch.setOn(!historySwitch.isOn, animated: true)
+    @IBAction func  erProfileSettings(_ sender: Any) {
+        
     }
     
     
