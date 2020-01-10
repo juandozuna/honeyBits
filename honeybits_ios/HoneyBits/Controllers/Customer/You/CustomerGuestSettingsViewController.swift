@@ -16,7 +16,7 @@ class CustomerGuestSettingsViewController: UITableViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func  erProfileSettings(_ sender: Any) {
+    @IBAction func customerUserProfileSettings(_ sender: Any) {
         
     }
     

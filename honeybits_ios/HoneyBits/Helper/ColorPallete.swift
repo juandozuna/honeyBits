@@ -24,6 +24,7 @@ enum Pallet: String {
     case Progress = "Progress"
     case Black50 = "Black50"
     case Light = "Light"
+    case Black25 = "Black25"
 }
 
 class ColorPallete {
@@ -41,6 +42,7 @@ class ColorPallete {
     private let progress = UIColor(hexString: "#FF9B12")
     private let black50 = UIColor.flatBlack()?.lighten(byPercentage: 0.52)
     private let light = UIColor.flatBlack()?.lighten(byPercentage: 0.7)
+    private let black25 = UIColor(hexString: "#C5C6C3")
     
     func getColor(_ color: String) -> UIColor? {
         if let parsedColor = Pallet(rawValue: color) {
@@ -71,8 +73,14 @@ class ColorPallete {
                 return black50
             case .Light:
                 return light
+            case .Black25:
+                return black25
             }
         }
         return nil
+    }
+    
+    func getColor(_ color: Pallet) -> UIColor? {
+        return getColor(color.rawValue)
     }
 }
