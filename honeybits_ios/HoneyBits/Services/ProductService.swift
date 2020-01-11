@@ -13,6 +13,7 @@ import SVProgressHUD
 class ProductService: BaseService {
     let baseService = "api/Products/"
     
+
     func getProductsForShop(shopId: Int, completion: @escaping CompletedRequestVoid<[ProductModel]>) {
         let url = "\(baseEndpoint)/api/Shops/shop_products/\(shopId)"
         
@@ -27,7 +28,6 @@ class ProductService: BaseService {
                 }
             }
         }
-        
     }
     
     func getAllProducts(completion: @escaping CompletedRequestVoid<[ProductModel]>) {
@@ -149,5 +149,19 @@ class ProductService: BaseService {
         }
         
         completion(.Success, likes)
+    }
+    
+    func getLikedProducts(completion: @escaping CompletedRequestVoid<[ProductModel]>) {
+        let products: [ProductModel] = [
+            ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22),
+            ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22),
+            ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22),
+            ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22),
+            ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22),
+            ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22),
+            ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22)
+        ]
+        
+        completion(.Success, products)
     }
 }
