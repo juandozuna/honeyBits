@@ -11,5 +11,6 @@ namespace honeybits_server.Models
         public string Username { get; set; }
         public string Password { get; set; }
         public int Rol { get; set; }
+        public int UserId { get; set; }
     }
 }

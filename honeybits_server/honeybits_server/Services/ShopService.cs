@@ -32,7 +32,31 @@ namespace honeybits_server.Services
 
         public IEnumerable<Shop> GetAll() => _context.Shop.ToList();
 
-        public IEnumerable<ShopProduct> GetAllShopsProductsByShopId(int id)
+        public IEnumerable<Product> GetAllProductsByShopId(int id)
+        {
+            var shopProducts = _context.ShopProduct.Where(x => x.ShopId == id).ToList();
+            List<Product> products = new List<Product>();
+
+            foreach(var p in shopProducts)
+            {
+                products.Add(_context.Product.Find(p.ProductId));
+            }
+            
+
+            return products;
+        }
+
+        public IEnumerable<ShopFollower> GetShopFollowers(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Shop> Search(string value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Shop Update(Shop shop)
         {
             throw new NotImplementedException();
         }

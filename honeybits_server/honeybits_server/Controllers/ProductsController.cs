@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using honeybits_server.DTOs;
 using honeybits_server.Models;
 using honeybits_server.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,21 +19,22 @@ namespace honeybits_server.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
-
-        public ProductsController(IProductService productService)
+        private readonly IProductImageService _productImageService;
+        
+        public ProductsController(IProductService productService, IProductImageService productImageService)
         {
             _productService = productService;
+            _productImageService = productImageService;
         }
 
         [HttpPost("create")]
-        public IActionResult Create([FromBody]Product product)
+        public IActionResult Create([FromBody]ProductDTO product)
         {
             if(!ModelState.IsValid)
-                return BadRequest();
-
+                return BadRequest(ModelState);
+         
             product.CreatedBy = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-            product.CreatedDate = DateTime.Now;
-
+            
             return Ok(_productService.Create(product));
         }
 
@@ -62,5 +65,19 @@ namespace honeybits_server.Controllers
 
         [HttpGet("all")]
         public IActionResult GetAll() => Ok(_productService.GetAll());
+
+        [HttpGet("product_categories")]
+        public IActionResult GetAllCategories() => Ok(_productService.GetProductCategories());
+
+        [HttpPost("add_product_images")]
+        public IActionResult AddProductImage(List<ProductImageDTO> data) 
+        {
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            _productService.AddProductImage(data);
+
+            return Ok(data);
+        }
     }
 }

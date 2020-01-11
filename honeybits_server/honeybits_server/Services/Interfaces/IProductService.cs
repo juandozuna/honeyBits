@@ -1,4 +1,5 @@
-﻿using honeybits_server.Models;
+﻿using honeybits_server.DTOs;
+using honeybits_server.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,13 @@ namespace honeybits_server.Services.Interfaces
 {
     public interface IProductService
     {
-        Product Get(int id);
-        Product Create(Product product);
-        bool Delete(Product product);
+        ProductDTO Get(int id);
+        ProductDTO Create(ProductDTO data);
+        bool Delete(ProductDTO product);
         IEnumerable<Product> GetAll();
+        IEnumerable<Product> Search(string value);
+        IEnumerable<ProductLike> GetProductLikes(int id);
+        IEnumerable<ProductCategoryDTO> GetProductCategories();
+        ProductImageDTO AddProductImage(List<ProductImageDTO> data);
     }
 }

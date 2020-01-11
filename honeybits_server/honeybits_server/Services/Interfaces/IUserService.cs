@@ -12,8 +12,12 @@ namespace honeybits_server.Services.Interfaces
         Users Create(Users user);
         bool Delete(int id);
         Users Get(int id);
+        IEnumerable<Users> Search(string value);
         IEnumerable<Users> GetAll();
-        Role GetRole(int id); 
-        IEnumerable<Role> GetAllRoles();
+        IEnumerable<ProductLike> GetAllLikedProducts(int Id);
+        IEnumerable<BeeTransaction> GetUserBeeTransactions(int id);
+        Shop GetKeeperShop(int Id);
+        bool IsUsernameAvailable(string username);
+        bool IsEmailAvailable(string email);
     }
 }

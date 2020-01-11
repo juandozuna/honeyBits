@@ -48,7 +48,8 @@ namespace honeybits_server.Services
             return new Token
             {
                 token = tokenHandler.WriteToken(token),
-                Rol = user.RoleId
+                Rol = user.RoleId,
+                UserId = user.UserId
             };
         }
 
@@ -68,18 +69,36 @@ namespace honeybits_server.Services
 
         public Users Get(int id) => _context.Users.Find(id);
 
-        public IEnumerable<Users> GetAll() => _context.Users.ToList();
+        public IEnumerable<Users> GetAll() => _context.Users.Where(u => u.IsDeleted == false).ToList();
 
-        public Role GetRole(int id)
+        public IEnumerable<Users> Search(string value)
         {
-            var rol = _context.Role.Find(id);
+            List<Users> usernames = _context.Users.Where(x => x.Username.Contains(value)).ToList();
+            List<Users> firstnames = _context.Users.Where(x => x.FirstName.Contains(value)).ToList();
 
-            if (rol == null)
-                return null;
+            List<Users> search = usernames.Intersect(firstnames).ToList();
 
-            return rol;
+            return search;
         }
 
-        public IEnumerable<Role> GetAllRoles() => _context.Role.ToList();
+        public IEnumerable<ProductLike> GetAllLikedProducts(int Id) => _context.ProductLike.Where(x => x.UserId == Id).Where(x => x.IsDeleted == false).ToList();
+
+        public IEnumerable<BeeTransaction> GetUserBeeTransactions(int id) => _context.BeeTransaction.Where(x => x.UserId == id).Where(x => x.IsDeleted == false).ToList();
+
+        public Shop GetKeeperShop(int Id) => _context.Shop.Where(x => x.OwnerId == Id).FirstOrDefault();
+
+        public bool IsUsernameAvailable(string username)
+        {
+            var user = _context.Users.Where(x => x.Username == username).FirstOrDefault();
+
+            return user == null;
+        }
+
+        public bool IsEmailAvailable(string email)
+        {
+            var users = _context.Users.Where(x => x.Email == email).FirstOrDefault();
+
+            return users == null;
+        }
     }
 }

@@ -1,5 +1,5 @@
 #######################################################################
-# HoneyBits Backend
+# HoneyBits Server
 #######################################################################
 
 *.swp
@@ -40,6 +40,11 @@ msbuild.wrn
 # Visual Studio 2015
 .vs/
 
+# Published files
+publish/
+
+# Testing Directories
+ImagesLocation/
 
 #######################################################################
 # HoneyBits Android
