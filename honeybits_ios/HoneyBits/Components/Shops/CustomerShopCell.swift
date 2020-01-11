@@ -1,5 +1,5 @@
 //
-//  HBTextView.swift
+//  CustomerShopCell.swift
 //  HoneyBits
 //
 //  Created by Juan Daniel Ozuna Espinal on 1/10/20.
@@ -8,13 +8,7 @@
 
 import UIKit
 
-@IBDesignable
-class HBTextLabel: UILabel {
-    @IBInspectable var hbTextColor: String = "Black" {
-        didSet {
-            textColor = ColorPallete().getColor(hbTextColor)
-        }
-    }
+class CustomerShopCell : UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,5 +16,9 @@ class HBTextLabel: UILabel {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
 }
