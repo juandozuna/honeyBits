@@ -15,6 +15,23 @@ class ShopService : BaseService, IShopService{
     let baseService: String = "api/Shops/"
     let accountService = AccountService()
     
+    func getFavoritedShopsForUser(completion: @escaping CompletedRequestVoid<[ShopModel]>) {
+        //let url = "\(baseEndpoint)\(baseService)"
+        
+        let shops: [ShopModel] = [
+            ShopModel(id: 1, owner: 2, name: "Shop 1", description: "Shop Description 1"),
+            ShopModel(id: 1, owner: 2, name: "Shop 1", description: "Shop Description 1"),
+            ShopModel(id: 1, owner: 2, name: "Shop 1", description: "Shop Description 1"),
+            ShopModel(id: 1, owner: 2, name: "Shop 1", description: "Shop Description 1"),
+            ShopModel(id: 1, owner: 2, name: "Shop 1", description: "Shop Description 1"),
+            ShopModel(id: 1, owner: 2, name: "Shop 1", description: "Shop Description 1"),
+            ShopModel(id: 1, owner: 2, name: "Shop 1", description: "Shop Description 1"),
+            ShopModel(id: 1, owner: 2, name: "Shop 1", description: "Shop Description 1")   
+        ]
+        
+        completion(.Success, shops)
+    }
+    
     func getShopsForUser(completion: @escaping CompletedRequestVoid<[ShopModel]>) {
         let url = "\(baseEndpoint)\(baseService)all"
         

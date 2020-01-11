@@ -21,4 +21,11 @@ struct ShopModel : Codable {
         shopName = nil
         shopDescription = nil
     }
+    
+    init(id: Int, owner: Int, name: String, description: String) {
+        shopId = id
+        ownerId = owner
+        shopName = name
+        shopDescription = description
+    }
 }
