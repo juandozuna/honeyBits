@@ -122,8 +122,9 @@
 		B2A91D5822D01AFA00CBBA4E /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A91D5722D01AFA00CBBA4E /* AccountService.swift */; };
 		B2B7B91623C8107000D62DAB /* CustomerShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B7B91523C8107000D62DAB /* CustomerShopCell.xib */; };
 		B2B7B91823C9388F00D62DAB /* HBTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B7B91723C9388F00D62DAB /* HBTextLabel.swift */; };
-		B2B7B91A23C9480900D62DAB /* CustomerFavoritesShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B7B91923C9480900D62DAB /* CustomerFavoritesShopsViewController.swift */; };
 		B2B7B91C23C94F2400D62DAB /* CustomerShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B7B91B23C94F2400D62DAB /* CustomerShopCell.swift */; };
+		B2B7B91E23C9720A00D62DAB /* CustomerFavoriteProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B7B91D23C9720A00D62DAB /* CustomerFavoriteProductsViewController.swift */; };
+		B2B7B92023C9751C00D62DAB /* CustomerFavoriteShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B7B91F23C9751C00D62DAB /* CustomerFavoriteShopsViewController.swift */; };
 		B2BC92B122F3E1C600D128B4 /* RecentProductCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC92B022F3E1C600D128B4 /* RecentProductCardCollectionView.swift */; };
 		B2BC92B322F3E61500D128B4 /* ProductCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BC92B222F3E61500D128B4 /* ProductCardViewModel.swift */; };
 		B2C2CB6322EFF08C00F2EA30 /* CustomerFavoriteUserBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C2CB6222EFF08C00F2EA30 /* CustomerFavoriteUserBaseController.swift */; };
@@ -303,8 +304,9 @@
 		B2A91D5722D01AFA00CBBA4E /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		B2B7B91523C8107000D62DAB /* CustomerShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerShopCell.xib; sourceTree = "<group>"; };
 		B2B7B91723C9388F00D62DAB /* HBTextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBTextLabel.swift; sourceTree = "<group>"; };
-		B2B7B91923C9480900D62DAB /* CustomerFavoritesShopsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerFavoritesShopsViewController.swift; sourceTree = "<group>"; };
 		B2B7B91B23C94F2400D62DAB /* CustomerShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerShopCell.swift; sourceTree = "<group>"; };
+		B2B7B91D23C9720A00D62DAB /* CustomerFavoriteProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerFavoriteProductsViewController.swift; sourceTree = "<group>"; };
+		B2B7B91F23C9751C00D62DAB /* CustomerFavoriteShopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerFavoriteShopsViewController.swift; sourceTree = "<group>"; };
 		B2BC92B022F3E1C600D128B4 /* RecentProductCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProductCardCollectionView.swift; sourceTree = "<group>"; };
 		B2BC92B222F3E61500D128B4 /* ProductCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardViewModel.swift; sourceTree = "<group>"; };
 		B2C2CB6222EFF08C00F2EA30 /* CustomerFavoriteUserBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerFavoriteUserBaseController.swift; sourceTree = "<group>"; };
@@ -754,9 +756,10 @@
 		B28F41A222D783A300C7E2E6 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				B2B7B91F23C9751C00D62DAB /* CustomerFavoriteShopsViewController.swift */,
 				B28F41A322D783BE00C7E2E6 /* CustomerFavoritesHomeViewController.swift */,
 				B2C2CB6222EFF08C00F2EA30 /* CustomerFavoriteUserBaseController.swift */,
-				B2B7B91923C9480900D62DAB /* CustomerFavoritesShopsViewController.swift */,
+				B2B7B91D23C9720A00D62DAB /* CustomerFavoriteProductsViewController.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -1328,6 +1331,7 @@
 				B26C652A2320A38E0053537C /* ShopActionDelegate.swift in Sources */,
 				B2DABEFA232739F9001B4E4C /* KeeperShopProductCell.swift in Sources */,
 				B28F419B22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift in Sources */,
+				B2B7B91E23C9720A00D62DAB /* CustomerFavoriteProductsViewController.swift in Sources */,
 				B2F23720232D2CF3006CFD70 /* ProductImage.swift in Sources */,
 				B23B3686232B023000DF0FB8 /* KeeperShopEditViewController.swift in Sources */,
 				B23FEA9C22F1BFE4001E8B32 /* CustomerHomeUserController.swift in Sources */,
@@ -1413,7 +1417,6 @@
 				B2A66DC32325A9A7008DCB59 /* ProductService.swift in Sources */,
 				B2D9A7CF22EE80A900A59E3D /* KeeperDashboardNavigationController.swift in Sources */,
 				B29479F523135A5B002F2147 /* ShopModelRegistration.swift in Sources */,
-				B2B7B91A23C9480900D62DAB /* CustomerFavoritesShopsViewController.swift in Sources */,
 				B2512DBB22F0D7E700E1BA9E /* TextWithBackgroundView.swift in Sources */,
 				B2A91D5622D018A400CBBA4E /* IAccountService.swift in Sources */,
 				B29479F323135502002F2147 /* IShopService.swift in Sources */,
@@ -1424,6 +1427,7 @@
 				B22B909022E5517E00D0B449 /* CustomerRegistrationFormViewController.swift in Sources */,
 				B2C4D8A4232F3128009A614B /* ProductSingleImageCell.swift in Sources */,
 				B2F0835E2311975400AA395A /* UserModel.swift in Sources */,
+				B2B7B92023C9751C00D62DAB /* CustomerFavoriteShopsViewController.swift in Sources */,
 				B2B7B91823C9388F00D62DAB /* HBTextLabel.swift in Sources */,
 				B2829F192306361C0050C45E /* UserRegistrationTypeSelection.swift in Sources */,
 				B2171FAF239F3A9A00B1CCE6 /* ForgetPasswordModel.swift in Sources */,

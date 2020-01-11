@@ -92,19 +92,10 @@
         <!--Items-->
         <scene sceneID="bZd-Bv-kOj">
             <objects>
-                <viewController storyboardIdentifier="customerItems" title="Items" id="Huy-OR-k32" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="customerItems" title="Items" id="Huy-OR-k32" customClass="CustomerFavoriteProductsViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Ea-PX-pbz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBk-7a-lb9">
-                                <rect key="frame" x="135" y="292" width="43" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="a89-e5-TUA"/>
                     </view>
@@ -116,7 +107,7 @@
         <!--Shops-->
         <scene sceneID="aO3-h9-Ctd">
             <objects>
-                <viewController storyboardIdentifier="customerShops" title="Shops" id="VyY-nY-71p" customClass="CustomerFavoritesShopsViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="customerShops" title="Shops" id="VyY-nY-71p" customClass="CustomerFavoriteShopsViewController" customModule="HoneyBits" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eIQ-DR-HhL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

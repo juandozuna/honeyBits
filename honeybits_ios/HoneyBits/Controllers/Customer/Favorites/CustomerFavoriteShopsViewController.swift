@@ -8,9 +8,9 @@
 
 import UIKit
 
-class CustomerFavoritesShopsViewController : UIViewController {
+class CustomerFavoriteShopsViewController : UIViewController {
     
-    private let cellHeight: Float = 222t
+    private let cellHeight: Float = 222
     private var collectionView: UICollectionView!
     private let shopService = ShopService()
     private var shops: [ShopModel] = []
@@ -63,7 +63,7 @@ class CustomerFavoritesShopsViewController : UIViewController {
     }
 }
 
-extension CustomerFavoritesShopsViewController : UICollectionViewDelegate {
+extension CustomerFavoriteShopsViewController : UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Selected item at \(indexPath)")
@@ -71,7 +71,7 @@ extension CustomerFavoritesShopsViewController : UICollectionViewDelegate {
     
 }
 
-extension CustomerFavoritesShopsViewController : UICollectionViewDataSource {
+extension CustomerFavoriteShopsViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return shops.count
     }
@@ -82,7 +82,7 @@ extension CustomerFavoritesShopsViewController : UICollectionViewDataSource {
     }
 }
 
-extension CustomerFavoritesShopsViewController : UICollectionViewDelegateFlowLayout {
+extension CustomerFavoriteShopsViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: CGFloat(cellHeight))
     }
