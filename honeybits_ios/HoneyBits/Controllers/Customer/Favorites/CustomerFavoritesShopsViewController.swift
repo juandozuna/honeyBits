@@ -10,7 +10,7 @@ import UIKit
 
 class CustomerFavoritesShopsViewController : UIViewController {
     
-    private let cellHeight: Float = 222t
+    private let cellHeight: Float = 222
     private var collectionView: UICollectionView!
     private let shopService = ShopService()
     private var shops: [ShopModel] = []
