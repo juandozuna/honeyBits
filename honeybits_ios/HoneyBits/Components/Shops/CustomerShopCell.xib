@@ -105,6 +105,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fd-0L-lfh">
+                                <rect key="frame" x="0.0" y="0.0" width="580" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="138" id="ub9-YW-1DY"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="shopSelectedBtn:" destination="Zgd-ZM-XM5" eventType="touchUpInside" id="rxI-oG-1Xm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.94844285102739723" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -114,10 +123,13 @@
                             <constraint firstItem="ch8-dB-WNQ" firstAttribute="top" secondItem="ZE4-3L-iHj" secondAttribute="bottom" constant="6" id="FTT-AV-vSB"/>
                             <constraint firstItem="xtD-jX-vSg" firstAttribute="leading" secondItem="ch8-dB-WNQ" secondAttribute="trailing" constant="8" id="GzE-BH-zT6"/>
                             <constraint firstAttribute="bottom" secondItem="lmU-WP-r72" secondAttribute="bottom" id="Lq8-Dm-D4A"/>
+                            <constraint firstItem="7fd-0L-lfh" firstAttribute="leading" secondItem="lKf-zE-U2p" secondAttribute="leading" id="Lv9-xP-6lA"/>
+                            <constraint firstAttribute="trailing" secondItem="7fd-0L-lfh" secondAttribute="trailing" id="RCo-tH-Q2P"/>
                             <constraint firstAttribute="trailing" secondItem="zP7-lt-kg2" secondAttribute="trailing" constant="8" id="Sme-FR-H5O"/>
                             <constraint firstItem="ch8-dB-WNQ" firstAttribute="leading" secondItem="lKf-zE-U2p" secondAttribute="leading" constant="8" id="Sza-Qb-jHS"/>
                             <constraint firstItem="ZE4-3L-iHj" firstAttribute="top" secondItem="lKf-zE-U2p" secondAttribute="top" constant="5" id="Zdv-5l-7f7"/>
                             <constraint firstItem="zP7-lt-kg2" firstAttribute="top" secondItem="ZE4-3L-iHj" secondAttribute="bottom" constant="8" id="e9Y-te-awx"/>
+                            <constraint firstItem="7fd-0L-lfh" firstAttribute="top" secondItem="lKf-zE-U2p" secondAttribute="top" id="idq-El-G7o"/>
                             <constraint firstAttribute="trailing" secondItem="lmU-WP-r72" secondAttribute="trailing" constant="8" id="joU-mK-efe"/>
                             <constraint firstItem="6h5-5o-VVS" firstAttribute="leading" secondItem="xtD-jX-vSg" secondAttribute="trailing" constant="1" id="jqy-Cw-yMf"/>
                             <constraint firstItem="lmU-WP-r72" firstAttribute="leading" secondItem="lKf-zE-U2p" secondAttribute="leading" constant="8" id="sW4-9T-7ho"/>
@@ -145,6 +157,12 @@
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="580" height="220"/>
+            <connections>
+                <outlet property="shopImageView" destination="ZE4-3L-iHj" id="9fD-J2-FUa"/>
+                <outlet property="shopLocationLb" destination="6h5-5o-VVS" id="Wvs-S8-tPT"/>
+                <outlet property="shopLogoImageView" destination="4l6-0h-epx" id="o4n-AR-Pl8"/>
+                <outlet property="shopTitleLb" destination="zP7-lt-kg2" id="QOk-kj-ebq"/>
+            </connections>
             <point key="canvasLocation" x="492.75362318840581" y="93.75"/>
         </collectionViewCell>
     </objects>

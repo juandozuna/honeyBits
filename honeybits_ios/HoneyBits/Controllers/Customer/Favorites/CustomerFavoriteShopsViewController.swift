@@ -13,7 +13,7 @@ class CustomerFavoriteShopsViewController : UIViewController {
     private let cellHeight: Float = 222
     private var collectionView: UICollectionView!
     private let shopService = ShopService()
-    private var shops: [ShopModel] = []
+    private var shops: [ShopCardViewModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +61,10 @@ class CustomerFavoriteShopsViewController : UIViewController {
     private func registerCellsToCollectionView() {
         collectionView.register(UINib(nibName: "CustomerShopCell", bundle: nil), forCellWithReuseIdentifier: "shopCell")
     }
+    
+    private func selectShop(_ shopId: Int) {
+        showHudMessage("SHOP \(shopId)", type: .info)
+    }
 }
 
 extension CustomerFavoriteShopsViewController : UICollectionViewDelegate {
@@ -78,6 +82,9 @@ extension CustomerFavoriteShopsViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shopCell", for: indexPath) as! CustomerShopCell
+        let shop = shops[indexPath.item]
+        cell.loadShop(shop)
+        cell.shopSelected = self.selectShop
         return cell
     }
 }

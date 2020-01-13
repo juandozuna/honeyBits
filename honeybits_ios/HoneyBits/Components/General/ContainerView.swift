@@ -12,6 +12,8 @@ import SkeletonView
 
 @IBDesignable
 class ContainerView : UIView {
+    
+    
     @IBInspectable var cornerRadius: Int = 0 {
         didSet {
             layer.masksToBounds = cornerRadius > 0

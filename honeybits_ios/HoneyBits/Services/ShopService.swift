@@ -15,7 +15,7 @@ class ShopService : BaseService, IShopService{
     let baseService: String = "api/Shops/"
     let accountService = AccountService()
     
-    func getFavoritedShopsForUser(completion: @escaping CompletedRequestVoid<[ShopModel]>) {
+    func getFavoritedShopsForUser(completion: @escaping CompletedRequestVoid<[ShopCardViewModel]>) {
         //let url = "\(baseEndpoint)\(baseService)"
         
         let shops: [ShopModel] = [
@@ -29,7 +29,17 @@ class ShopService : BaseService, IShopService{
             ShopModel(id: 1, owner: 2, name: "Shop 1", description: "Shop Description 1")   
         ]
         
-        completion(.Success, shops)
+        var modeledShops: [ShopCardViewModel] = []
+        for shop in shops {
+            let model = ShopCardViewModel(
+                shopId: shop.shopId,
+                shopImageUrl: "https://media-cdn.tripadvisor.com/media/photo-s/0e/cc/0a/dc/restaurant-chocolat.jpg",
+                shopLogoUrl: "https://png.pngtree.com/template/20190422/ourlarge/pngtree-honey-logo-icon-vector-illustration-image_145193.jpg",
+                shopTitle: shop.shopName, shopLocation: "New York, New York")
+            modeledShops.append(model)
+        }
+        
+        completion(.Success, modeledShops)
     }
     
     func getShopsForUser(completion: @escaping CompletedRequestVoid<[ShopModel]>) {

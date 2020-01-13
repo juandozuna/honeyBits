@@ -30,6 +30,7 @@
 		B21957ED22E24AD9008AEBA0 /* Roles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21957EC22E24AD9008AEBA0 /* Roles.swift */; };
 		B21957F022E24C78008AEBA0 /* KeeperMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21957EF22E24C78008AEBA0 /* KeeperMain.storyboard */; };
 		B2198F572309CDFD0083A01A /* MainKeeperShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2198F562309CDFD0083A01A /* MainKeeperShopViewController.swift */; };
+		B220784123CC149C003776C9 /* ShopCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B220784023CC149C003776C9 /* ShopCardViewModel.swift */; };
 		B223BC7D23726EB100B7670A /* CustomerProducts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B223BC7C23726EB100B7670A /* CustomerProducts.storyboard */; };
 		B2270034232C3E940074AFF7 /* ProductForms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2270033232C3E940074AFF7 /* ProductForms.storyboard */; };
 		B2270037232C41990074AFF7 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2270036232C41990074AFF7 /* ContainerView.swift */; };
@@ -210,6 +211,7 @@
 		B21957EC22E24AD9008AEBA0 /* Roles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roles.swift; sourceTree = "<group>"; };
 		B21957EF22E24C78008AEBA0 /* KeeperMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperMain.storyboard; sourceTree = "<group>"; };
 		B2198F562309CDFD0083A01A /* MainKeeperShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainKeeperShopViewController.swift; sourceTree = "<group>"; };
+		B220784023CC149C003776C9 /* ShopCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCardViewModel.swift; sourceTree = "<group>"; };
 		B223BC7C23726EB100B7670A /* CustomerProducts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerProducts.storyboard; sourceTree = "<group>"; };
 		B2270033232C3E940074AFF7 /* ProductForms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductForms.storyboard; sourceTree = "<group>"; };
 		B2270036232C41990074AFF7 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
@@ -847,6 +849,7 @@
 				B20EDA7823627A570053A8B7 /* GoogleUserModel.swift */,
 				B20EDA7A23628AB60053A8B7 /* FacebookUserModel.swift */,
 				B2171FAE239F3A9A00B1CCE6 /* ForgetPasswordModel.swift */,
+				B220784023CC149C003776C9 /* ShopCardViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1358,6 +1361,7 @@
 				B232D22A23356CB7008A3B7C /* ShopLikes.swift in Sources */,
 				B2398A3622DD5B230042C764 /* EncodableExtensions.swift in Sources */,
 				B232D22C2335711B008A3B7C /* ProductLike.swift in Sources */,
+				B220784123CC149C003776C9 /* ShopCardViewModel.swift in Sources */,
 				B2093E972308911F006CA976 /* ShopService.swift in Sources */,
 				B2EE4593237B5D4900CE870A /* ImageNavButton.swift in Sources */,
 				B2BC92B322F3E61500D128B4 /* ProductCardViewModel.swift in Sources */,
