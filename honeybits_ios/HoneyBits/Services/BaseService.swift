@@ -11,6 +11,9 @@ import Alamofire
 import SwiftyJSON
 import SVProgressHUD
 
+
+let imageCache = NSCache<AnyObject, AnyObject>()
+
 class BaseService : NSObject {
     typealias CompletedRequestVoid<T> = (RequestStatus, T?) -> Void
     
@@ -83,13 +86,17 @@ class BaseService : NSObject {
     }
     
     func imageRequest(imageUrl: String, completion: @escaping CompletedRequestVoid<UIImage>) {
-        print("IMAGE REQUEST URL: \(imageUrl)")
-
+        if let imageFromCache = imageCache.object(forKey: imageUrl as NSString) as? UIImage {
+            completion(.Success, imageFromCache)
+            return
+        }
+        
         Alamofire.request(imageUrl, method: .get)
             .validate()
             .responseData(completionHandler: { (responseData) in
                 DispatchQueue.main.async {
                     let image = UIImage(data: responseData.data!)
+                    imageCache.setObject(image!, forKey: imageUrl as NSString)
                     completion(.Success, image)
                 }
             })

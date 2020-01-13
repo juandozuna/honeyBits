@@ -11,6 +11,7 @@ import SkeletonView
 import SVProgressHUD
 import ChameleonFramework
 
+
 extension UIImageView {
     func loadDataImage(imageUrl: String) {
         let baseService = BaseService()
