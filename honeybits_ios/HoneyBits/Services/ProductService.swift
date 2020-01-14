@@ -159,6 +159,9 @@ class ProductService: BaseService {
             ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22),
             ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22),
             ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22),
+            ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22),
+            ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22),
+            ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22),
             ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22)
         ]
         

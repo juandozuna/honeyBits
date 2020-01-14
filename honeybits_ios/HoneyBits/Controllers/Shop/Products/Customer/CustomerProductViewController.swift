@@ -25,6 +25,10 @@ class CustomerProductViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetup()
+        
+        if productService == nil {
+            productService = ProductService()
+        }
     }
     
     func getProductDetails(_ id: Int) {

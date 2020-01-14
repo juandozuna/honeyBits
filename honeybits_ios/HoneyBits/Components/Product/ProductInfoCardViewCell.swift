@@ -12,6 +12,8 @@ class ProductInfoCardViewCell : UICollectionViewCell {
     
     var moreAction: (() -> Void)?
     var imagePressed: (() -> Void)?
+    var controller: UIViewController?
+    var selectedProduct = 2
     
     private var productImageView: UIImageView = {
        let iv = UIImageView()
@@ -179,12 +181,52 @@ class ProductInfoCardViewCell : UICollectionViewCell {
     }
     
     @objc private func moreBtnPressed() {
-        moreAction?()
+        if controller != nil {
+            moreActionSheetController()
+        } else {
+            moreAction?()
+        }
+    }
+    
+    private func moreActionSheetController() {
+       let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+       
+       let viewProductAction = UIAlertAction(title: "View Product", style: .default) { (action) in
+        self.productSelected(self.selectedProduct)
+       }
+       
+       let shareAction = UIAlertAction(title: "Share", style: .default) { (action) in
+           //TODO: share product
+       }
+       
+       let goToShop = UIAlertAction(title: "Visit Shop", style: .default) {action in
+           //TODO: Visit shop
+       }
+       
+       let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+           actionSheet.dismiss(animated: true, completion: nil)
+       }
+       
+       actionSheet.addAction(viewProductAction)
+       actionSheet.addAction(shareAction)
+       actionSheet.addAction(goToShop)
+       actionSheet.addAction(cancelAction)
+       controller!.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    private func productSelected(_ id: Int) {
+        let vc = viewControllerFromStoryboard(storyboard: "CustomerProducts", withIdentifier: "customerProduct") as! CustomerProductViewController
+        vc.getProductDetails(id)
+        controller!.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func imageViewPressed() {
         print("Here")
-        imagePressed?()
+        if controller != nil {
+            productSelected(selectedProduct)
+        } else {
+            imagePressed?()
+        }
     }
     
 }

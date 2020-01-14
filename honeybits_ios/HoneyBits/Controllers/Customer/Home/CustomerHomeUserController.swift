@@ -66,7 +66,6 @@ class CustomerHomeUserController : UIViewController {
         vc.productService = self.productService
         vc.getProductDetails(id ?? 22)
         navigationController?.pushViewController(vc, animated: true)
-        
     }
     
     private func moreActionPressedInfoCard(_ id: Int) {

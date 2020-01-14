@@ -82,6 +82,7 @@ extension CustomerFavoriteProductsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath) as! ProductInfoCardViewCell
+        cell.controller = self
         return cell
     }
     
