@@ -12,6 +12,9 @@ class ProductInfoCardViewCell : UICollectionViewCell {
     
     var moreAction: (() -> Void)?
     var imagePressed: (() -> Void)?
+    var controller: UIViewController!
+    var productModel: ProductCardInfoViewModel!
+    var sharingService: SharingService!
     
     private var productImageView: UIImageView = {
        let iv = UIImageView()
@@ -74,6 +77,15 @@ class ProductInfoCardViewCell : UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         propertiesSetup()
+    }
+    
+    func setProductModel(model: ProductCardInfoViewModel) {
+        self.productModel = model
+    }
+    
+    func setupController(controller: UIViewController) {
+        self.controller = controller
+        sharingService = SharingService(with: controller)
     }
     
     private func viewSetup() {
@@ -179,12 +191,52 @@ class ProductInfoCardViewCell : UICollectionViewCell {
     }
     
     @objc private func moreBtnPressed() {
-        moreAction?()
+        if controller != nil {
+            moreActionSheetController()
+        } else {
+            moreAction?()
+        }
+    }
+    
+    private func moreActionSheetController() {
+       let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+       
+       let viewProductAction = UIAlertAction(title: "View Product", style: .default) { (action) in
+        self.productSelected(self.productModel.productId)
+       }
+       
+       let shareAction = UIAlertAction(title: "Share", style: .default) { (action) in
+        self.sharingService.shareTextContent(text: "Product ID")
+       }
+       
+       let goToShop = UIAlertAction(title: "Visit Shop", style: .default) {action in
+           //TODO: Visit shop
+       }
+       
+       let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+           actionSheet.dismiss(animated: true, completion: nil)
+       }
+       
+       actionSheet.addAction(viewProductAction)
+       actionSheet.addAction(shareAction)
+       actionSheet.addAction(goToShop)
+       actionSheet.addAction(cancelAction)
+       controller!.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    private func productSelected(_ id: Int) {
+        let vc = viewControllerFromStoryboard(storyboard: "CustomerProducts", withIdentifier: "customerProduct") as! CustomerProductViewController
+        vc.getProductDetails(id)
+        controller!.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func imageViewPressed() {
         print("Here")
-        imagePressed?()
+        if controller != nil {
+            productSelected(productModel.productId)
+        } else {
+            imagePressed?()
+        }
     }
     
 }

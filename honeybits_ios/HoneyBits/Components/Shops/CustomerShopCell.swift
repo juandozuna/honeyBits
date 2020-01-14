@@ -10,6 +10,13 @@ import UIKit
 
 class CustomerShopCell : UICollectionViewCell {
     
+    var shopSelected: ((_ shopId: Int) -> Void)?
+    private var shopModel: ShopCardViewModel?
+    @IBOutlet weak var shopImageView: UIImageView!
+    @IBOutlet weak var shopLogoImageView: UIImageView!
+    @IBOutlet weak var shopTitleLb: HBTextLabel!
+    @IBOutlet weak var shopLocationLb: HBTextLabel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -21,4 +28,23 @@ class CustomerShopCell : UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    @IBAction func shopSelectedBtn(_ sender: Any) {
+        self.shopTapped()
+    }
+    
+    func loadShop(_ model: ShopCardViewModel) {
+        shopModel = model
+        shopImageView.loadDataImage(imageUrl: model.shopImageUrl!)
+        shopLogoImageView.loadDataImage(imageUrl: model.shopLogoUrl!)
+        shopTitleLb.text = model.shopTitle
+        shopLocationLb.text = model.shopLocation
+    }
+    
+    private func shopTapped() {
+        if let shopId = shopModel?.shopId {
+            self.shopSelected?(shopId)
+        }
+    }
+    
 }

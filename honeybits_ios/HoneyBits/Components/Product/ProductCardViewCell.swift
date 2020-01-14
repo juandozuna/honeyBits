@@ -9,9 +9,6 @@
 import UIKit
 
 class ProductCardViewCell : UICollectionViewCell {
-    
-    
-    
     var productViewModel: ProductCardViewModel? {
         didSet {
             getProductModelData()

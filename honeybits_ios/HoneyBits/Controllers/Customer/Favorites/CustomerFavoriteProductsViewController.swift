@@ -10,7 +10,7 @@ import UIKit
 
 class CustomerFavoriteProductsViewController : UIViewController {
     
-    var products: [ProductModel] = []
+    var products: [ProductCardInfoViewModel] = []
     var productService: ProductService = ProductService()
     var cellHeight: CGFloat = 180
     var spacing: CGFloat = 13
@@ -82,6 +82,9 @@ extension CustomerFavoriteProductsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath) as! ProductInfoCardViewCell
+        cell.setupController(controller: self)
+        let product = products[indexPath.item]
+        cell.setProductModel(model: product)
         return cell
     }
     

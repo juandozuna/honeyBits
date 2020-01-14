@@ -11,10 +11,11 @@ import SkeletonView
 import SVProgressHUD
 import ChameleonFramework
 
+
 extension UIImageView {
     func loadDataImage(imageUrl: String) {
         let baseService = BaseService()
-        self.image = UIImage(named: "loading-gif")
+        self.image = UIImage(named: "shop1")
         baseService.imageRequest(imageUrl: imageUrl) { (status, image) in
             self.image = image
         }
