@@ -12,6 +12,7 @@ import ChameleonFramework
 class CustomerHomeUserController : UIViewController {
     
     private var productService: ProductService = ProductService()
+    private lazy var sharingService = SharingService(with: self)
     private var headerCellId: String = "headerCell"
     private var footerCellId: String = "footerCell"
     private var customerHeaderCellId: String = "customerHeaderCell"
@@ -76,7 +77,7 @@ class CustomerHomeUserController : UIViewController {
         }
         
         let shareAction = UIAlertAction(title: "Share", style: .default) { (action) in
-            //TODO: share product
+            self.sharingService.shareTextContent(text: "Product ID \(id)")
         }
         
         let goToShop = UIAlertAction(title: "Visit Shop", style: .default) {action in
@@ -136,6 +137,7 @@ extension CustomerHomeUserController : UICollectionViewDataSource, UICollectionV
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: similarItemsCell, for: indexPath) as! ProductSimilarItemsCollectionViewCell
         cell.moreAction = moreActionPressedInfoCard(_:)
         cell.pressedImage = productSelected(_:)
+        cell.parentController = self
         return cell
         
     }

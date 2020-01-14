@@ -151,7 +151,7 @@ class ProductService: BaseService {
         completion(.Success, likes)
     }
     
-    func getLikedProducts(completion: @escaping CompletedRequestVoid<[ProductModel]>) {
+    func getLikedProducts(completion: @escaping CompletedRequestVoid<[ProductCardInfoViewModel]>) {
         let products: [ProductModel] = [
             ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22),
             ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22),
@@ -165,6 +165,12 @@ class ProductService: BaseService {
             ProductModel(productId: 1, productName: "Product1", productCategoryId: 3, productDescription: "Description", productPrice: 123.22)
         ]
         
-        completion(.Success, products)
+        var models: [ProductCardInfoViewModel] = []
+        for product in products {
+            let model = ProductCardInfoViewModel(productId: product.productId ?? 0, productTitle: product.productName, likeCounts: 54, productPrice: product.productPrice)
+            models.append(model)
+        }
+        
+        completion(.Success, models)
     }
 }

@@ -12,8 +12,9 @@ class ProductInfoCardViewCell : UICollectionViewCell {
     
     var moreAction: (() -> Void)?
     var imagePressed: (() -> Void)?
-    var controller: UIViewController?
-    var selectedProduct = 2
+    var controller: UIViewController!
+    var productModel: ProductCardInfoViewModel!
+    var sharingService: SharingService!
     
     private var productImageView: UIImageView = {
        let iv = UIImageView()
@@ -76,6 +77,15 @@ class ProductInfoCardViewCell : UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         propertiesSetup()
+    }
+    
+    func setProductModel(model: ProductCardInfoViewModel) {
+        self.productModel = model
+    }
+    
+    func setupController(controller: UIViewController) {
+        self.controller = controller
+        sharingService = SharingService(with: controller)
     }
     
     private func viewSetup() {
@@ -192,11 +202,11 @@ class ProductInfoCardViewCell : UICollectionViewCell {
        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
        
        let viewProductAction = UIAlertAction(title: "View Product", style: .default) { (action) in
-        self.productSelected(self.selectedProduct)
+        self.productSelected(self.productModel.productId)
        }
        
        let shareAction = UIAlertAction(title: "Share", style: .default) { (action) in
-           //TODO: share product
+        self.sharingService.shareTextContent(text: "Product ID")
        }
        
        let goToShop = UIAlertAction(title: "Visit Shop", style: .default) {action in
@@ -223,7 +233,7 @@ class ProductInfoCardViewCell : UICollectionViewCell {
     @objc private func imageViewPressed() {
         print("Here")
         if controller != nil {
-            productSelected(selectedProduct)
+            productSelected(productModel.productId)
         } else {
             imagePressed?()
         }

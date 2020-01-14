@@ -24,6 +24,8 @@
 		B211EC2A22EF6E1D006B5A82 /* MenuContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2922EF6E1D006B5A82 /* MenuContentController.swift */; };
 		B211EC2C22EF6FFF006B5A82 /* MenuContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2B22EF6FFF006B5A82 /* MenuContentCollectionView.swift */; };
 		B211EC2E22EF7083006B5A82 /* MenuContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211EC2D22EF7083006B5A82 /* MenuContentCell.swift */; };
+		B213F6C223CD4EFC00D3E389 /* ProductCardInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213F6C123CD4EFC00D3E389 /* ProductCardInfoViewModel.swift */; };
+		B213F6C423CD52B600D3E389 /* SharingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213F6C323CD52B600D3E389 /* SharingService.swift */; };
 		B2171FAB239F334300B1CCE6 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2171FAA239F334300B1CCE6 /* ForgetPasswordViewController.swift */; };
 		B2171FAD239F38C400B1CCE6 /* PasswordsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2171FAC239F38C400B1CCE6 /* PasswordsService.swift */; };
 		B2171FAF239F3A9A00B1CCE6 /* ForgetPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2171FAE239F3A9A00B1CCE6 /* ForgetPasswordModel.swift */; };
@@ -202,6 +204,8 @@
 		B211EC2922EF6E1D006B5A82 /* MenuContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentController.swift; sourceTree = "<group>"; };
 		B211EC2B22EF6FFF006B5A82 /* MenuContentCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentCollectionView.swift; sourceTree = "<group>"; };
 		B211EC2D22EF7083006B5A82 /* MenuContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentCell.swift; sourceTree = "<group>"; };
+		B213F6C123CD4EFC00D3E389 /* ProductCardInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardInfoViewModel.swift; sourceTree = "<group>"; };
+		B213F6C323CD52B600D3E389 /* SharingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingService.swift; sourceTree = "<group>"; };
 		B2171FA7239F2EA700B1CCE6 /* HoneyBits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoneyBits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2171FA8239F2EA700B1CCE6 /* HoneyBitsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoneyBitsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2171FA9239F2EA700B1CCE6 /* HoneyBitsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoneyBitsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -850,6 +854,7 @@
 				B20EDA7A23628AB60053A8B7 /* FacebookUserModel.swift */,
 				B2171FAE239F3A9A00B1CCE6 /* ForgetPasswordModel.swift */,
 				B220784023CC149C003776C9 /* ShopCardViewModel.swift */,
+				B213F6C123CD4EFC00D3E389 /* ProductCardInfoViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -947,6 +952,7 @@
 				B203770D2360C4110001544E /* GoogleAuthService.swift */,
 				B20EDA74236243C20053A8B7 /* FacebookAuthService.swift */,
 				B2171FAC239F38C400B1CCE6 /* PasswordsService.swift */,
+				B213F6C323CD52B600D3E389 /* SharingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1397,6 +1403,7 @@
 				B211EC2C22EF6FFF006B5A82 /* MenuContentCollectionView.swift in Sources */,
 				B2DABEFC23273B8C001B4E4C /* ProductActionDelegate.swift in Sources */,
 				B21957ED22E24AD9008AEBA0 /* Roles.swift in Sources */,
+				B213F6C423CD52B600D3E389 /* SharingService.swift in Sources */,
 				B20EDA7B23628AB60053A8B7 /* FacebookUserModel.swift in Sources */,
 				B211EC2622EF47B9006B5A82 /* MenuBarItemCell.swift in Sources */,
 				B23FEA9A22F10078001E8B32 /* ProductCardViewCell.swift in Sources */,
@@ -1416,6 +1423,7 @@
 				B26C65262320994B0053537C /* KeeperShopDetailsCell.swift in Sources */,
 				B2453775233D98F3006F167A /* SearchProductTableCell.swift in Sources */,
 				B28F41AE22D8141600C7E2E6 /* AuthBackdropDelegate.swift in Sources */,
+				B213F6C223CD4EFC00D3E389 /* ProductCardInfoViewModel.swift in Sources */,
 				B2829F17230632B00050C45E /* UserRegistrationModel.swift in Sources */,
 				B2605725231F3506001B4EDF /* KeeperShopView.swift in Sources */,
 				B2A66DC32325A9A7008DCB59 /* ProductService.swift in Sources */,

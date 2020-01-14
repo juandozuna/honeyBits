@@ -21,6 +21,7 @@ class CustomerProductViewController : UIViewController {
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     var productName: String = "Product"
     var productService: ProductService?
+    private var sharingService: SharingService!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,11 @@ class CustomerProductViewController : UIViewController {
         setupProductBasicInformation()
         setupNavigationButtons()
         setupHeroImage()
+        setupSharingService()
+    }
+    
+    private func setupSharingService() {
+        sharingService = SharingService(with: self)
     }
     
     private func setupHeroImage() {
@@ -64,6 +70,10 @@ class CustomerProductViewController : UIViewController {
     }
     
     @objc private func shareBtnPressed() {
-        SVProgressHUD.showInfo(withStatus: "The Share BTN was pressed")
+        sharingService.shareTextContent(text: "DEMO SHARE")
+    }
+    
+    @IBAction func bigShareBtn(_ sender: Any) {
+        shareBtnPressed()
     }
 }

@@ -12,6 +12,7 @@ import ChameleonFramework
 class ProductSimilarItemsCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     var collectionView: UICollectionView!
+    var parentController: UIViewController!
     var cellHeight: CGFloat = 180
     var spacing: CGFloat = 13
     var itemCount: Int {
@@ -75,14 +76,16 @@ class ProductSimilarItemsCollectionViewCell: UICollectionViewCell, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! ProductInfoCardViewCell
         
+        cell.setupController(controller: parentController)
+        
         cell.moreAction = {
-            self.moreAction?(2)
+            self.moreAction?(2) //TODO: Fix this hardcoded
         }
         
         cell.imagePressed = {
-            self.pressedImage?(2)
+            self.pressedImage?(2) //TODO: Fix this hardcoded
         }
-        
+        cell.setProductModel(model: ProductCardInfoViewModel(productId: 2, productTitle: "HARDCOED", likeCounts: 45, productPrice: 34.44)) //TODO: Fix this
         return cell
     }
 
