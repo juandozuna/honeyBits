@@ -75,6 +75,7 @@ namespace honeybits_server
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IShopService, ShopService>();
+            services.AddScoped<IProductImageService, ProductImageService>();
         }
 
 

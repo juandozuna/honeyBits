@@ -8,13 +8,19 @@ target 'HoneyBits' do
   # Pods for HoneyBits
   pod 'Alamofire'
   pod 'PMSuperButton'
-  pod 'SwipeCellKit'
   pod 'SVProgressHUD'
   pod 'ChameleonFramework'
-  pod 'DependencyInjector' 
   pod 'Material'
   pod 'SwiftValidators'
-  pod 'IQKeyboardManagerSwift'
+  pod 'IHKeyboardAvoiding'
+  pod 'SwiftyJSON'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'SkeletonView'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn', '~> 4.4.0'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
 
   target 'HoneyBitsTests' do
     inherit! :search_paths

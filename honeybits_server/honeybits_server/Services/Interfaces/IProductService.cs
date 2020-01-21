@@ -9,13 +9,13 @@ namespace honeybits_server.Services.Interfaces
 {
     public interface IProductService
     {
-        Product Get(int id);
+        ProductDTO Get(int id);
         ProductDTO Create(ProductDTO data);
-        bool Delete(Product product);
+        bool Delete(ProductDTO product);
         IEnumerable<Product> GetAll();
         IEnumerable<Product> Search(string value);
         IEnumerable<ProductLike> GetProductLikes(int id);
-
         IEnumerable<ProductCategoryDTO> GetProductCategories();
+        ProductImageDTO AddProductImage(List<ProductImageDTO> data);
     }
 }

@@ -30,6 +30,7 @@ namespace honeybits_server.Services
             var product = new Product();
             var productImages = new List<ProductImage>();
             var productLikes = new List<ProductLike>();
+            ImageProcessor imageProcessor = new ImageProcessor();
 
             product.ProductName = data.ProductName;
             product.ProductPrice = data.ProductPrice;
@@ -52,7 +53,13 @@ namespace honeybits_server.Services
                         ProductImageDescription = image.ProductImageDesc,
                         ProductImageName = image.ProductImageName,
                         ProductImageType = image.ProductImageType,
-                        ProductImageUrl = CreateFileImage(image.ProductImageName, product.ProductName, image.ProductImageType, image.ImageContent),
+                        ProductImageUrl = imageProcessor.SaveImage(
+                            Path.Combine(_hostingEnviroment.ContentRootPath, _appSettings.ImageLocation),
+                            product.ProductName,
+                            image.ProductImageName,
+                            image.ProductImageType,
+                            image.ImageContent
+                        ),
                         CreatedBy = data.CreatedBy,
                         CreatedDate = DateTime.Now
                     });
@@ -83,7 +90,7 @@ namespace honeybits_server.Services
             return imagePath;
         }
 
-        public bool Delete(Product product)
+        public bool Delete(ProductDTO product)
         {
             product.CreatedDate = DateTime.Now;
             product.IsDeleted = true;
@@ -93,7 +100,37 @@ namespace honeybits_server.Services
             return results > 0;
         }
 
-        public Product Get(int id) => _context.Product.Where(x => x.IsDeleted == false).FirstOrDefault();
+        public ProductDTO Get(int id) {
+            var productInfo = _context
+            .Product
+            .Where(x => x.IsDeleted == false)
+            .Where(x => x.ProductId == id)
+            .FirstOrDefault();
+
+            if(productInfo == null)
+                return null;
+
+            // var productImages = _context.ProductImage.Where(x => x.ProductId == productInfo.ProductId).ToList();
+            // var productLikes = _context.ProductLike.Where(x => x.ProductId == productInfo.ProductId).ToList();
+
+            // ProductDTO product = new ProductDTO() {
+            //     ProductImages = productImages,
+            //     ProductLikes = productLikes,
+            //     ProductId = productInfo.ProductId,
+            //     CreatedBy = productInfo.CreatedBy,
+            //     ProductCategoryId = productInfo.ProductCategoryId,
+            //     ProductName = productInfo.ProductName,
+            //     ProductDescription = productInfo.ProductDescription,
+            //     ProductPrice = productInfo.ProductPrice    
+            // };
+            var pImages = _context.ProductImage.Where(x => x.ProductId == productInfo.ProductId).ToList();
+            var pLikes = _context.ProductLike.Where(x => x.ProductId == productInfo.ProductId).ToList();
+            productInfo.ProductImage = pImages;
+            productInfo.ProductLike = pLikes;
+            var product = new DtoHelper().fromProductToDto(productInfo, _hostingEnviroment.ContentRootPath.ToString());
+            return product;
+
+        }
 
         public IEnumerable<Product> GetAll() => _context.Product.ToList();
 
@@ -123,6 +160,11 @@ namespace honeybits_server.Services
         public IEnumerable<Product> Search(string value)
         {
             throw new NotImplementedException();
+        }
+
+        public ProductImageDTO AddProductImage(List<ProductImageDTO> data)
+        {
+            return new ProductImageDTO();
         }
     }
 }

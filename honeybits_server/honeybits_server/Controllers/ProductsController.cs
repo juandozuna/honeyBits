@@ -19,10 +19,12 @@ namespace honeybits_server.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
+        private readonly IProductImageService _productImageService;
         
-        public ProductsController(IProductService productService)
+        public ProductsController(IProductService productService, IProductImageService productImageService)
         {
             _productService = productService;
+            _productImageService = productImageService;
         }
 
         [HttpPost("create")]
@@ -66,5 +68,16 @@ namespace honeybits_server.Controllers
 
         [HttpGet("product_categories")]
         public IActionResult GetAllCategories() => Ok(_productService.GetProductCategories());
+
+        [HttpPost("add_product_images")]
+        public IActionResult AddProductImage(List<ProductImageDTO> data) 
+        {
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            _productService.AddProductImage(data);
+
+            return Ok(data);
+        }
     }
 }
