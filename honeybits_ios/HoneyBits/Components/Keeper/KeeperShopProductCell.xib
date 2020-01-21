@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LbU-Ag-wiP" customClass="KeeperShopProductCell" customModule="HoneyBits" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="230" height="186"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="230" height="186"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ge3-mD-OCD">
+                        <rect key="frame" x="0.0" y="0.0" width="230" height="186"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prod3" translatesAutoresizingMaskIntoConstraints="NO" id="F4Y-jy-c6t">
+                                <rect key="frame" x="4" y="4" width="222" height="178"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haf-vy-JTJ">
+                                <rect key="frame" x="4" y="4" width="222" height="178"/>
+                                <connections>
+                                    <action selector="generalBtn:" destination="LbU-Ag-wiP" eventType="touchUpInside" id="i2D-UI-Bjl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Va5-3g-iCe" customClass="ImageButton" customModule="HoneyBits" customModuleProvider="target">
+                                <rect key="frame" x="192" y="8" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JUy-WE-jMf"/>
+                                    <constraint firstAttribute="width" constant="30" id="hQE-hJ-CRX"/>
+                                </constraints>
+                                <state key="normal" image="edit-icon"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="-1" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="ripple" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.62342144690000001" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rippleSpeed">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="imageColor" value="PrimaryColorDark"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="editBtnPressed:" destination="LbU-Ag-wiP" eventType="touchUpInside" id="CZT-IO-Yg0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lrp-eb-SJm">
+                                <rect key="frame" x="4" y="153" width="222" height="25"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.62342144691780821" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="fBj-qi-rOo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="haf-vy-JTJ" firstAttribute="bottom" secondItem="F4Y-jy-c6t" secondAttribute="bottom" id="8KU-mi-zfD"/>
+                            <constraint firstItem="F4Y-jy-c6t" firstAttribute="leading" secondItem="ge3-mD-OCD" secondAttribute="leading" constant="4" id="GD3-r1-uk0"/>
+                            <constraint firstItem="haf-vy-JTJ" firstAttribute="trailing" secondItem="F4Y-jy-c6t" secondAttribute="trailing" id="IAu-zU-FYP"/>
+                            <constraint firstAttribute="trailing" secondItem="Lrp-eb-SJm" secondAttribute="trailing" constant="4" id="K6J-sQ-VBt"/>
+                            <constraint firstAttribute="bottom" secondItem="F4Y-jy-c6t" secondAttribute="bottom" constant="4" id="Yb8-Bi-RJa"/>
+                            <constraint firstItem="Va5-3g-iCe" firstAttribute="top" secondItem="ge3-mD-OCD" secondAttribute="top" constant="8" id="ajK-Gh-16Z"/>
+                            <constraint firstItem="haf-vy-JTJ" firstAttribute="top" secondItem="F4Y-jy-c6t" secondAttribute="top" id="dkE-vd-Gdm"/>
+                            <constraint firstAttribute="trailing" secondItem="F4Y-jy-c6t" secondAttribute="trailing" constant="4" id="jmF-8x-Pi9"/>
+                            <constraint firstItem="haf-vy-JTJ" firstAttribute="leading" secondItem="F4Y-jy-c6t" secondAttribute="leading" id="kwb-BK-DTm"/>
+                            <constraint firstAttribute="trailing" secondItem="Va5-3g-iCe" secondAttribute="trailing" constant="8" id="oWO-Ta-9iD"/>
+                            <constraint firstItem="F4Y-jy-c6t" firstAttribute="top" secondItem="ge3-mD-OCD" secondAttribute="top" constant="4" id="uYi-gP-UDb"/>
+                            <constraint firstItem="Lrp-eb-SJm" firstAttribute="leading" secondItem="ge3-mD-OCD" secondAttribute="leading" constant="4" id="viz-JE-GVg"/>
+                            <constraint firstAttribute="bottom" secondItem="Lrp-eb-SJm" secondAttribute="bottom" constant="8" id="wHH-5j-khk"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="ge3-mD-OCD" firstAttribute="leading" secondItem="LbU-Ag-wiP" secondAttribute="leading" id="MxJ-zT-huz"/>
+                <constraint firstAttribute="bottom" secondItem="ge3-mD-OCD" secondAttribute="bottom" id="NG7-xL-fCn"/>
+                <constraint firstItem="ge3-mD-OCD" firstAttribute="top" secondItem="LbU-Ag-wiP" secondAttribute="top" id="YHn-Dv-p2j"/>
+                <constraint firstAttribute="trailing" secondItem="ge3-mD-OCD" secondAttribute="trailing" id="rb1-ta-cn5"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="JEy-N1-8kl"/>
+            <size key="customSize" width="230" height="186"/>
+            <connections>
+                <outlet property="editBtn" destination="Va5-3g-iCe" id="xbt-bm-qRc"/>
+                <outlet property="productImage" destination="F4Y-jy-c6t" id="w3n-GF-fXf"/>
+                <outlet property="productLabel" destination="Lrp-eb-SJm" id="Bbn-6n-KPT"/>
+            </connections>
+            <point key="canvasLocation" x="-5.7971014492753632" y="89.0625"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="edit-icon" width="29.5" height="29.5"/>
+        <image name="prod3" width="700" height="525"/>
+    </resources>
+</document>

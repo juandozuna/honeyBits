@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dVa-C3-bE1">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorites-->
+        <scene sceneID="E5f-7P-rGt">
+            <objects>
+                <navigationController id="dVa-C3-bE1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heartIcon" id="Sq9-hM-afe"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WDr-Bm-tpg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mJZ-1c-1ms" kind="relationship" relationship="rootViewController" id="Tj3-0b-esI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yem-ny-qaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64" y="-180"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="uD1-F9-qc7">
+            <objects>
+                <viewController id="mJZ-1c-1ms" customClass="CustomerFavoritesHomeViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qbc-W8-oR1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y60-yJ-8Qf">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64v-Hr-nRj" userLabel="guest view" customClass="GuestView" customModule="HoneyBits" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="displayImage" value="favorite_ic"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="displayText" value="Sign in to save your favorite items and shops"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonText" value="Sign In"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NuF-MH-vSN" userLabel="Backdrop View">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.22380672089041095" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1P6-DD-mCt" firstAttribute="trailing" secondItem="NuF-MH-vSN" secondAttribute="trailing" id="2js-uN-NaJ"/>
+                            <constraint firstItem="y60-yJ-8Qf" firstAttribute="top" secondItem="1P6-DD-mCt" secondAttribute="top" id="4LE-tu-qIO"/>
+                            <constraint firstItem="64v-Hr-nRj" firstAttribute="leading" secondItem="1P6-DD-mCt" secondAttribute="leading" id="5z5-0B-Dzr"/>
+                            <constraint firstItem="1P6-DD-mCt" firstAttribute="bottom" secondItem="NuF-MH-vSN" secondAttribute="bottom" id="9vS-8H-aLZ"/>
+                            <constraint firstItem="y60-yJ-8Qf" firstAttribute="leading" secondItem="1P6-DD-mCt" secondAttribute="leading" id="FnH-Nc-TeS"/>
+                            <constraint firstItem="NuF-MH-vSN" firstAttribute="leading" secondItem="1P6-DD-mCt" secondAttribute="leading" id="S8v-aq-UTP"/>
+                            <constraint firstItem="64v-Hr-nRj" firstAttribute="bottom" secondItem="1P6-DD-mCt" secondAttribute="bottom" id="fZF-ke-vyk"/>
+                            <constraint firstItem="1P6-DD-mCt" firstAttribute="bottom" secondItem="y60-yJ-8Qf" secondAttribute="bottom" id="iJU-zn-VuK"/>
+                            <constraint firstItem="NuF-MH-vSN" firstAttribute="top" secondItem="1P6-DD-mCt" secondAttribute="top" id="nUO-d8-6Rc"/>
+                            <constraint firstItem="1P6-DD-mCt" firstAttribute="trailing" secondItem="y60-yJ-8Qf" secondAttribute="trailing" id="snY-4o-ZE5"/>
+                            <constraint firstItem="64v-Hr-nRj" firstAttribute="trailing" secondItem="1P6-DD-mCt" secondAttribute="trailing" id="v1J-gt-SQP"/>
+                            <constraint firstItem="64v-Hr-nRj" firstAttribute="top" secondItem="1P6-DD-mCt" secondAttribute="top" id="x1q-ly-Zzy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1P6-DD-mCt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favorites" id="ow5-ng-hsf"/>
+                    <connections>
+                        <outlet property="backdrop" destination="NuF-MH-vSN" id="rz2-gt-tUd"/>
+                        <outlet property="guestView" destination="64v-Hr-nRj" id="RdL-d7-P6R"/>
+                        <outlet property="userView" destination="y60-yJ-8Qf" id="Rlv-aH-xZv"/>
+                        <segue destination="jSG-hJ-Xv8" kind="presentation" identifier="goToSignIn" id="WBH-Cf-RpS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zw8-Nr-qWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1157.9710144927537" y="-204.24107142857142"/>
+        </scene>
+        <!--UserAuthentication-->
+        <scene sceneID="crz-gY-itO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserAuthentication" id="jSG-hJ-Xv8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJ9-qI-bCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1920" y="-613"/>
+        </scene>
+        <!--Items-->
+        <scene sceneID="bZd-Bv-kOj">
+            <objects>
+                <viewController storyboardIdentifier="customerItems" title="Items" id="Huy-OR-k32" customClass="CustomerFavoriteProductsViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Ea-PX-pbz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="a89-e5-TUA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m5N-7G-cde" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2444" y="-765.06746626686663"/>
+        </scene>
+        <!--Shops-->
+        <scene sceneID="aO3-h9-Ctd">
+            <objects>
+                <viewController storyboardIdentifier="customerShops" title="Shops" id="VyY-nY-71p" customClass="CustomerFavoriteShopsViewController" customModule="HoneyBits" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eIQ-DR-HhL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yvb-x5-R1h"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUM-OF-R6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2496.8000000000002" y="-49.025487256371818"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="favorite_ic" width="32" height="32"/>
+        <image name="heartIcon" width="15" height="15"/>
+    </resources>
+</document>

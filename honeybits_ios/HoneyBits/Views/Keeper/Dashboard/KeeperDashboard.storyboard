@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O5t-OF-xuy">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dashboard-->
+        <scene sceneID="oJ8-ja-W7v">
+            <objects>
+                <navigationController id="O5t-OF-xuy" customClass="KeeperDashboardNavigationController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard" id="MMQ-HF-p1y"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="xj6-px-qAn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="88T-bg-5du">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wcp-pO-SQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1693" y="-261"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="Abo-5J-MMC">
+            <objects>
+                <viewController storyboardIdentifier="dashboardView" title="Dashboard" id="YKD-Tj-4LJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="On9-lt-d7J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q68-0c-pdF">
+                                <rect key="frame" x="107" y="268" width="200" height="360"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="h5G-9W-JvK"/>
+                                    <constraint firstAttribute="height" constant="360" id="kQ0-cR-7hg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89246906729999997" green="0.36151764019999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Q68-0c-pdF" firstAttribute="centerX" secondItem="On9-lt-d7J" secondAttribute="centerX" id="h78-fB-biK"/>
+                            <constraint firstItem="Q68-0c-pdF" firstAttribute="centerY" secondItem="On9-lt-d7J" secondAttribute="centerY" id="hGz-SG-Bgu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZCz-WA-IEE"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Dashboard" id="QML-an-ZiS">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="vmv-Qh-NFf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yna-Hp-deJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-600" y="-548"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="k4N-Rc-Tzh">
+            <objects>
+                <viewController storyboardIdentifier="notificationsView" title="Notifications" id="PGY-zO-td2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TNn-DZ-QpW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pv6-pz-xiw">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="l0v-is-92N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.044739867109999998" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Pv6-pz-xiw" firstAttribute="leading" secondItem="eTd-MC-DEp" secondAttribute="leading" id="7xh-fN-IYo"/>
+                            <constraint firstItem="Pv6-pz-xiw" firstAttribute="top" secondItem="eTd-MC-DEp" secondAttribute="top" id="IiH-kW-Q6m"/>
+                            <constraint firstItem="eTd-MC-DEp" firstAttribute="trailing" secondItem="Pv6-pz-xiw" secondAttribute="trailing" id="QLg-xe-tRV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eTd-MC-DEp"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Notifications" id="VMi-6n-VR0">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q8C-mJ-Hws" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-600" y="260"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dashboard" width="32" height="32"/>
+    </resources>
+</document>

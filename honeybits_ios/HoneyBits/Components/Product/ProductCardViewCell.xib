@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WQK-DG-OY3" customClass="ProductCardViewCell" customModule="HoneyBits" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="268"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Nzz-oo-WVh">
+                <rect key="frame" x="0.0" y="0.0" width="353" height="268"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-gif" translatesAutoresizingMaskIntoConstraints="NO" id="F4d-WE-7jG">
+                        <rect key="frame" x="15" y="0.0" width="338" height="268"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjM-PR-LGa">
+                        <rect key="frame" x="298" y="10" width="45" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="tOB-Uc-MxB"/>
+                            <constraint firstAttribute="width" constant="45" id="tmI-ar-RRO"/>
+                        </constraints>
+                        <color key="tintColor" red="0.044739867109999998" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <state key="normal" backgroundImage="heart-outline"/>
+                        <connections>
+                            <action selector="favoriteBtnPressed:" destination="WQK-DG-OY3" eventType="touchUpInside" id="x3b-Lw-Xeb"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awM-Ap-qG4">
+                        <rect key="frame" x="16" y="0.0" width="272" height="268"/>
+                        <connections>
+                            <action selector="mainViewBtnPressed:" destination="WQK-DG-OY3" eventType="touchUpInside" id="Xne-Su-piR"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="F4d-WE-7jG" secondAttribute="bottom" id="4FM-bp-6Lb"/>
+                    <constraint firstItem="F4d-WE-7jG" firstAttribute="top" secondItem="Nzz-oo-WVh" secondAttribute="top" id="4bI-pJ-8fC"/>
+                    <constraint firstItem="tjM-PR-LGa" firstAttribute="leading" secondItem="awM-Ap-qG4" secondAttribute="trailing" constant="10" id="NkR-k6-BbQ"/>
+                    <constraint firstAttribute="trailing" secondItem="tjM-PR-LGa" secondAttribute="trailing" constant="10" id="UXO-s2-Gnw"/>
+                    <constraint firstAttribute="trailing" secondItem="F4d-WE-7jG" secondAttribute="trailing" id="Usy-DL-Uwo"/>
+                    <constraint firstItem="awM-Ap-qG4" firstAttribute="leading" secondItem="Nzz-oo-WVh" secondAttribute="leading" constant="16" id="V7A-W8-eoF"/>
+                    <constraint firstAttribute="bottom" secondItem="awM-Ap-qG4" secondAttribute="bottom" id="c69-Uz-bBJ"/>
+                    <constraint firstItem="tjM-PR-LGa" firstAttribute="top" secondItem="Nzz-oo-WVh" secondAttribute="top" constant="10" id="d1r-Oy-4Hs"/>
+                    <constraint firstItem="awM-Ap-qG4" firstAttribute="top" secondItem="Nzz-oo-WVh" secondAttribute="top" id="uJy-8P-qD9"/>
+                    <constraint firstItem="F4d-WE-7jG" firstAttribute="leading" secondItem="Nzz-oo-WVh" secondAttribute="leading" constant="15" id="zdH-hd-cF1"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="353" height="268"/>
+            <connections>
+                <outlet property="backgroundImage" destination="F4d-WE-7jG" id="fXO-cx-xe6"/>
+                <outlet property="favoriteBtn" destination="tjM-PR-LGa" id="8cc-LV-t8y"/>
+                <outlet property="likedBtnHeightConstraint" destination="tOB-Uc-MxB" id="kH6-VI-kHa"/>
+                <outlet property="likedBtnWidthConstraint" destination="tmI-ar-RRO" id="Mtv-JE-7Az"/>
+            </connections>
+            <point key="canvasLocation" x="-186.23188405797103" y="64.955357142857139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heart-outline" width="32" height="32"/>
+        <image name="loading-gif" width="852" height="480"/>
+    </resources>
+</document>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GZO-Ef-DWV">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="hHg-La-NVI">
+            <objects>
+                <navigationController id="GZO-Ef-DWV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="ITN-RI-Hb7"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="vFr-bj-eDf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hfy-mw-dQ1" kind="relationship" relationship="rootViewController" id="M9H-AR-E4v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ef2-po-nLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1299" y="139"/>
+        </scene>
+        <!--UserAuthentication-->
+        <scene sceneID="plV-YG-2Rj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserAuthentication" id="wII-Ti-E3D" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZCD-BH-vGd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641" y="-455"/>
+        </scene>
+        <!--Honey Bits-->
+        <scene sceneID="fIQ-iY-uW9">
+            <objects>
+                <viewController id="hfy-mw-dQ1" customClass="CustomerHomeViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WvO-8a-BHK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaU-gr-66d" customClass="GuestView" customModule="HoneyBits" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iaU-gr-66d" firstAttribute="top" secondItem="UpR-ta-zuK" secondAttribute="top" id="FOU-yx-Awa"/>
+                            <constraint firstItem="iaU-gr-66d" firstAttribute="leading" secondItem="UpR-ta-zuK" secondAttribute="leading" id="Mw9-ju-5kJ"/>
+                            <constraint firstItem="UpR-ta-zuK" firstAttribute="bottom" secondItem="iaU-gr-66d" secondAttribute="bottom" id="PvO-gM-0Im"/>
+                            <constraint firstItem="UpR-ta-zuK" firstAttribute="trailing" secondItem="iaU-gr-66d" secondAttribute="trailing" id="fCb-nF-IXA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UpR-ta-zuK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Honey Bits" id="7z9-rw-sJ5"/>
+                    <connections>
+                        <outlet property="guestView" destination="iaU-gr-66d" id="CZh-Nt-HeD"/>
+                        <segue destination="wII-Ti-E3D" kind="presentation" identifier="goToSignIn" id="wOj-nM-WPT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RTH-m9-Aqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-232" y="-311"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home" width="23" height="23"/>
+    </resources>
+</document>
