@@ -31,7 +31,7 @@ namespace honeybits_server.Helpers {
                     ProductImageDesc = image.ProductImageDescription,
                     ProductImageName = image.ProductImageName,
                     ProductImageType = image.ProductImageType,
-                    ImageContent = new ImageProcessor().GetImage(image, path),
+                    ImageContent = null, //new ImageProcessor().GetImage(image, path),
                     ImageUrl = image.ProductImageUrl,
                     CreatedBy = image.CreatedBy
                 });
