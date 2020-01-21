@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using honeybits_server.DTOs;
 using honeybits_server.Helpers;
 using honeybits_server.Models;
@@ -73,6 +75,18 @@ namespace honeybits_server.Services {
         public IEnumerable<ProductImageDTO> GetAllProductsImages(int productId)
         {
             throw new System.NotImplementedException();
+        }
+
+        public ProductImageDTO ImageByUrl(string imageUrl)
+        {
+            var pImage = _context.ProductImage.Where(x => x.ProductImageUrl == imageUrl).FirstOrDefault();
+
+            if (pImage == null)
+                return null;
+                
+            
+            return new DtoHelper().fromProductImageToDto(pImage);
+
         }
     }
 }
