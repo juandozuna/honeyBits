@@ -50,5 +50,20 @@ namespace honeybits_server.Helpers {
             }
             return likes;
         }
+
+        public ProductImageDTO fromProductImageToDto(ProductImage productImage)
+        {
+            return new ProductImageDTO
+            {
+                ProductId = productImage.ProductId,
+                CreatedBy = productImage.CreatedBy,
+                ImageContent = null,
+                ImageUrl = productImage.ProductImageUrl,
+                ProductImageDesc = productImage.ProductImageDescription,
+                ProductImageId = productImage.ProductImageId,
+                ProductImageName = productImage.ProductImageName,
+                ProductImageType = productImage.ProductImageType
+            };
+        }
     }
 }
