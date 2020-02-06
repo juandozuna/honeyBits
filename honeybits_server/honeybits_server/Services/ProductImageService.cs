@@ -1,5 +1,10 @@
 using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
+=======
+using System.IO;
+using System.Linq;
+>>>>>>> 832cb5218e9f089a6a515da4e8ceea798c55c965
 using honeybits_server.DTOs;
 using honeybits_server.Helpers;
 using honeybits_server.Models;
@@ -74,5 +79,20 @@ namespace honeybits_server.Services {
         {
             throw new System.NotImplementedException();
         }
+<<<<<<< HEAD
+=======
+
+        public ProductImageDTO ImageByUrl(string imageUrl)
+        {
+            var pImage = _context.ProductImage.Where(x => x.ProductImageUrl == imageUrl).FirstOrDefault();
+
+            if (pImage == null)
+                return null;
+                
+            
+            return new DtoHelper().fromProductImageToDto(pImage);
+
+        }
+>>>>>>> 832cb5218e9f089a6a515da4e8ceea798c55c965
     }
 }

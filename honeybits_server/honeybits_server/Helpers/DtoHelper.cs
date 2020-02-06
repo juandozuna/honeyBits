@@ -31,7 +31,11 @@ namespace honeybits_server.Helpers {
                     ProductImageDesc = image.ProductImageDescription,
                     ProductImageName = image.ProductImageName,
                     ProductImageType = image.ProductImageType,
+<<<<<<< HEAD
                     ImageContent = new ImageProcessor().GetImage(image, path),
+=======
+                    ImageContent = null, //new ImageProcessor().GetImage(image, path),
+>>>>>>> 832cb5218e9f089a6a515da4e8ceea798c55c965
                     ImageUrl = image.ProductImageUrl,
                     CreatedBy = image.CreatedBy
                 });
@@ -50,5 +54,23 @@ namespace honeybits_server.Helpers {
             }
             return likes;
         }
+<<<<<<< HEAD
+=======
+
+        public ProductImageDTO fromProductImageToDto(ProductImage productImage)
+        {
+            return new ProductImageDTO
+            {
+                ProductId = productImage.ProductId,
+                CreatedBy = productImage.CreatedBy,
+                ImageContent = null,
+                ImageUrl = productImage.ProductImageUrl,
+                ProductImageDesc = productImage.ProductImageDescription,
+                ProductImageId = productImage.ProductImageId,
+                ProductImageName = productImage.ProductImageName,
+                ProductImageType = productImage.ProductImageType
+            };
+        }
+>>>>>>> 832cb5218e9f089a6a515da4e8ceea798c55c965
     }
 }
