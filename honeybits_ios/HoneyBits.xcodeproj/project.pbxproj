@@ -81,6 +81,7 @@
 		B262AF4A22DBF14900ABF311 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AF4922DBF14900ABF311 /* BaseService.swift */; };
 		B262AF4C22DBF86600ABF311 /* UserTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AF4B22DBF86600ABF311 /* UserTokenModel.swift */; };
 		B262AF4F22DBF94D00ABF311 /* RequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AF4E22DBF94D00ABF311 /* RequestStatus.swift */; };
+		B265BE1023ECFDF1009BCE56 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B265BE0F23ECFDF1009BCE56 /* Colors.xcassets */; };
 		B26C6524232095F00053537C /* KeeperShopDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B26C6523232095F00053537C /* KeeperShopDetailsCell.xib */; };
 		B26C65262320994B0053537C /* KeeperShopDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26C65252320994B0053537C /* KeeperShopDetailsCell.swift */; };
 		B26C652A2320A38E0053537C /* ShopActionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26C65292320A38E0053537C /* ShopActionDelegate.swift */; };
@@ -264,6 +265,7 @@
 		B262AF4922DBF14900ABF311 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		B262AF4B22DBF86600ABF311 /* UserTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenModel.swift; sourceTree = "<group>"; };
 		B262AF4E22DBF94D00ABF311 /* RequestStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatus.swift; sourceTree = "<group>"; };
+		B265BE0F23ECFDF1009BCE56 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B26C6523232095F00053537C /* KeeperShopDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeeperShopDetailsCell.xib; sourceTree = "<group>"; };
 		B26C65252320994B0053537C /* KeeperShopDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperShopDetailsCell.swift; sourceTree = "<group>"; };
 		B26C65292320A38E0053537C /* ShopActionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopActionDelegate.swift; sourceTree = "<group>"; };
@@ -1044,6 +1046,7 @@
 				B2745FC522D57D2F00297A43 /* Components */,
 				B2270039232C6AB80074AFF7 /* Helper */,
 				B2FC8EEC22CA1FBE008CE65C /* Assets.xcassets */,
+				B265BE0F23ECFDF1009BCE56 /* Colors.xcassets */,
 				B2FC8EEE22CA1FBE008CE65C /* LaunchScreen.storyboard */,
 				B203770B236083840001544E /* GoogleService-Info.plist */,
 				B2FC8EF122CA1FBE008CE65C /* Info.plist */,
@@ -1167,6 +1170,7 @@
 				B27D794522D42BC80012F5CD /* CustomerSearch.storyboard in Resources */,
 				B2EE6A8722D8FDBF00350BBA /* AboutApp.storyboard in Resources */,
 				B2C4D8A2232F04E5009A614B /* ProductProfileImageCell.xib in Resources */,
+				B265BE1023ECFDF1009BCE56 /* Colors.xcassets in Resources */,
 				B26C6524232095F00053537C /* KeeperShopDetailsCell.xib in Resources */,
 				B272B8CB22CED34900E124B4 /* Localizable.strings in Resources */,
 				B2B7B91623C8107000D62DAB /* CustomerShopCell.xib in Resources */,
