@@ -146,7 +146,7 @@
 		B2EE458E237B225E00CE870A /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE458D237B225E00CE870A /* BarButtonItem.swift */; };
 		B2EE4591237B24AB00CE870A /* CustomerProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE4590237B24AB00CE870A /* CustomerProductViewController.swift */; };
 		B2EE4593237B5D4900CE870A /* ImageNavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE4592237B5D4900CE870A /* ImageNavButton.swift */; };
-		B2EE6A8422D8E54900350BBA /* CustomerGuestSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */; };
+		B2EE6A8422D8E54900350BBA /* UserSettingsMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE6A8322D8E54900350BBA /* UserSettingsMainController.swift */; };
 		B2EE6A8722D8FDBF00350BBA /* AboutApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EE6A8622D8FDBF00350BBA /* AboutApp.storyboard */; };
 		B2EE6A8922D8FE8500350BBA /* LegalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EE6A8822D8FE8500350BBA /* LegalData.storyboard */; };
 		B2F0835C2311811500AA395A /* RegistrationUsernameSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0835B2311811500AA395A /* RegistrationUsernameSelectionController.swift */; };
@@ -332,7 +332,7 @@
 		B2EE458D237B225E00CE870A /* BarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
 		B2EE4590237B24AB00CE870A /* CustomerProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProductViewController.swift; sourceTree = "<group>"; };
 		B2EE4592237B5D4900CE870A /* ImageNavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNavButton.swift; sourceTree = "<group>"; };
-		B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerGuestSettingsViewController.swift; sourceTree = "<group>"; };
+		B2EE6A8322D8E54900350BBA /* UserSettingsMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsMainController.swift; sourceTree = "<group>"; };
 		B2EE6A8622D8FDBF00350BBA /* AboutApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutApp.storyboard; sourceTree = "<group>"; };
 		B2EE6A8822D8FE8500350BBA /* LegalData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LegalData.storyboard; sourceTree = "<group>"; };
 		B2F0835B2311811500AA395A /* RegistrationUsernameSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUsernameSelectionController.swift; sourceTree = "<group>"; };
@@ -785,7 +785,7 @@
 			isa = PBXGroup;
 			children = (
 				B28F41AB22D80CD900C7E2E6 /* CustomerYouViewController.swift */,
-				B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */,
+				B2EE6A8322D8E54900350BBA /* UserSettingsMainController.swift */,
 			);
 			path = You;
 			sourceTree = "<group>";
@@ -1418,7 +1418,7 @@
 				B2270040232C7CB30074AFF7 /* PrimaryButtonOutline.swift in Sources */,
 				B239DDD3236762D30078C287 /* ProductInfoCardViewCell.swift in Sources */,
 				B2F8358E22D6837200A9910C /* CustomerHomeViewController.swift in Sources */,
-				B2EE6A8422D8E54900350BBA /* CustomerGuestSettingsViewController.swift in Sources */,
+				B2EE6A8422D8E54900350BBA /* UserSettingsMainController.swift in Sources */,
 				B2B7B91C23C94F2400D62DAB /* CustomerShopCell.swift in Sources */,
 				B2398A3422DD36280042C764 /* UIViewControllerExtension.swift in Sources */,
 				B20EDA75236243C20053A8B7 /* FacebookAuthService.swift in Sources */,

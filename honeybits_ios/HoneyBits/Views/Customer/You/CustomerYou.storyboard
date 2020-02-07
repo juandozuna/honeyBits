@@ -168,7 +168,7 @@
         <!--Settings-->
         <scene sceneID="oRc-Kd-AjK">
             <objects>
-                <tableViewController title="Settings" id="LOI-Sb-4rX" customClass="CustomerGuestSettingsViewController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="LOI-Sb-4rX" customClass="UserSettingsMainController" customModule="HoneyBits" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="insetGrouped" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="wf2-CF-MVT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -344,16 +344,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7jJ-vA-dAb">
-                                                    <rect key="frame" x="10" y="0.0" width="368" height="53"/>
+                                                    <rect key="frame" x="10" y="0.0" width="328" height="53"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ul-d8-hzj">
-                                                            <rect key="frame" x="0.0" y="16.5" width="328" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="16.5" width="288" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxj-hD-LkH">
-                                                            <rect key="frame" x="328" y="0.0" width="40" height="53"/>
+                                                            <rect key="frame" x="288" y="0.0" width="40" height="53"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V63-E1-SxM" customClass="ContainerView" customModule="HoneyBits" customModuleProvider="target">
                                                                     <rect key="frame" x="6.5" y="13" width="27" height="27"/>
@@ -507,6 +507,14 @@
                             <outlet property="delegate" destination="LOI-Sb-4rX" id="XMd-G0-iGd"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="helpCell" destination="Gu2-dE-HP4" id="13H-DS-d7I"/>
+                        <outlet property="messagesCell" destination="nZN-Z0-LKY" id="7my-0w-ivE"/>
+                        <outlet property="notificationsCell" destination="Zgn-6c-eAr" id="CKm-lF-GX9"/>
+                        <outlet property="profileCell" destination="lqA-Hc-ZCB" id="eiC-jp-QhX"/>
+                        <outlet property="purchasesCell" destination="iVZ-qE-Jqk" id="Fu0-cg-mBN"/>
+                        <outlet property="settingsCell" destination="Buv-tj-IK2" id="NSQ-Sh-QZv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="otL-Kb-rOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
