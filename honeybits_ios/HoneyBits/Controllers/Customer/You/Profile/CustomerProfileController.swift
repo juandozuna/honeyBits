@@ -19,19 +19,30 @@ class CustomerProfileController : UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 140
     }
 }
 
 extension CustomerProfileController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let index = indexPath.row
-        //condition for different cells
-        return setHeaderCell(indexPath: indexPath)
+        if index == 0 {
+            return setHeaderCell(indexPath: indexPath)
+        }
+        return setInfoCell(indexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let index = indexPath.row
+        if index == 0 {
+            return 190
+        }
+        return tableView.estimatedRowHeight
     }
     
     private func setHeaderCell(indexPath: IndexPath) -> UITableViewCell{
@@ -39,6 +50,14 @@ extension CustomerProfileController : UITableViewDelegate, UITableViewDataSource
         cell.setData()
         return cell
     }
+    
+    private func setInfoCell(indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "aboutCell", for: indexPath) as! ProfileAboutInfoCell
+        cell.setData()
+        return cell
+    }
+    
+    
     
     
 }

@@ -514,7 +514,7 @@
                         <outlet property="profileCell" destination="lqA-Hc-ZCB" id="eiC-jp-QhX"/>
                         <outlet property="purchasesCell" destination="iVZ-qE-Jqk" id="Fu0-cg-mBN"/>
                         <outlet property="settingsCell" destination="Buv-tj-IK2" id="NSQ-Sh-QZv"/>
-                        <segue destination="8I2-1D-kp6" kind="show" identifier="goToProfile" id="312-pc-rOD"/>
+                        <segue destination="8I2-1D-kp6" kind="show" identifier=" goToProfile" id="312-pc-rOD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="otL-Kb-rOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -529,7 +529,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OXH-DC-dOv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OXH-DC-dOv">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -680,7 +680,7 @@
                                             <outlet property="profileImageView" destination="beI-SC-F7f" id="Oe1-6s-gZh"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="154" id="ql3-GP-XRE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="aboutCell" rowHeight="154" id="ql3-GP-XRE" customClass="ProfileAboutInfoCell" customModule="HoneyBits" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="218" width="414" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ql3-GP-XRE" id="hfz-Fa-vKA">
@@ -750,6 +750,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="rfZ-V4-Tcf" secondAttribute="bottom" id="z5p-0m-htv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bornDateLb" destination="EKb-0F-A6x" id="xg4-Lc-JYW"/>
+                                            <outlet property="joinedDateLb" destination="2PX-OU-hqk" id="Aeb-6k-qzy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

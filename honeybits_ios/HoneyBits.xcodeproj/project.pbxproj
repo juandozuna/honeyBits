@@ -160,6 +160,7 @@
 		B2F8359122D6882F00A9910C /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8359022D6882F00A9910C /* UiViewExtension.swift */; };
 		B2FA1C5223F0E6AD001EC7DC /* CustomerProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FA1C5123F0E6AD001EC7DC /* CustomerProfileController.swift */; };
 		B2FA1C5423F0E9F8001EC7DC /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FA1C5323F0E9F8001EC7DC /* ProfileHeaderCell.swift */; };
+		B2FA1C5623F0F8DF001EC7DC /* ProfileAboutInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FA1C5523F0F8DF001EC7DC /* ProfileAboutInfoCell.swift */; };
 		B2FBFB6C23308C82004867EE /* ImageMediaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBFB6B23308C82004867EE /* ImageMediaHandler.swift */; };
 		B2FBFB6E2330916D004867EE /* ImageConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBFB6D2330916D004867EE /* ImageConfirmViewController.swift */; };
 		B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */; };
@@ -348,6 +349,7 @@
 		B2F8359022D6882F00A9910C /* UiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExtension.swift; sourceTree = "<group>"; };
 		B2FA1C5123F0E6AD001EC7DC /* CustomerProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProfileController.swift; sourceTree = "<group>"; };
 		B2FA1C5323F0E9F8001EC7DC /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
+		B2FA1C5523F0F8DF001EC7DC /* ProfileAboutInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAboutInfoCell.swift; sourceTree = "<group>"; };
 		B2FBFB6B23308C82004867EE /* ImageMediaHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaHandler.swift; sourceTree = "<group>"; };
 		B2FBFB6D2330916D004867EE /* ImageConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfirmViewController.swift; sourceTree = "<group>"; };
 		B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1021,6 +1023,7 @@
 			children = (
 				B2FA1C5123F0E6AD001EC7DC /* CustomerProfileController.swift */,
 				B2FA1C5323F0E9F8001EC7DC /* ProfileHeaderCell.swift */,
+				B2FA1C5523F0F8DF001EC7DC /* ProfileAboutInfoCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1463,6 +1466,7 @@
 				B2B7B91823C9388F00D62DAB /* HBTextLabel.swift in Sources */,
 				B2829F192306361C0050C45E /* UserRegistrationTypeSelection.swift in Sources */,
 				B2171FAF239F3A9A00B1CCE6 /* ForgetPasswordModel.swift in Sources */,
+				B2FA1C5623F0F8DF001EC7DC /* ProfileAboutInfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

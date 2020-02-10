@@ -36,7 +36,7 @@ class UserSettingsMainController: UITableViewController {
     }
     
     @objc private func goToProfile() {
-        showHudMessage("Profile", type: .info)
+        performSegue(withIdentifier: " goToProfile", sender: self)
     }
     
     @objc private func goToMessages() {
