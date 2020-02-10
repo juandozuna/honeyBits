@@ -48,6 +48,7 @@ class BaseService : NSObject {
     
     func urlRequestWithParams(_ url: URLConvertible, method: HTTPMethod?, parameters: Parameters?,
                     completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
+        print("URL Request: \(url)")
         SVProgressHUD.show()
           Alamofire.request(url,
                           method: method ?? .get,
@@ -60,7 +61,7 @@ class BaseService : NSObject {
     
     func jsonRequest(_ url: URLConvertible, jsonData: Data, method: HTTPMethod, completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
         let parameters = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: Any]
-        print("REQUEST URL: \(url)")
+        print("URL Request: \(url)")
         Alamofire.request(url, method: method, parameters: parameters, encoding: JSONEncoding.prettyPrinted, headers: setHeaders()).responseJSON { (response) in
             self.handleResponse(response: response, completion: completion)
         }
@@ -68,6 +69,7 @@ class BaseService : NSObject {
     }
     
     func request<T: Codable>(_ url: URLConvertible, model: T, method: HTTPMethod, completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
+        print("URL Request: \(url)")
         SVProgressHUD.show()
         let jsonData = try! JSONEncoder().encode(model)
         let parameters = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: Any]
@@ -86,6 +88,7 @@ class BaseService : NSObject {
     }
     
     func imageRequest(imageUrl: String, completion: @escaping CompletedRequestVoid<UIImage>) {
+        print("URL Request: \(imageUrl)")
         if let imageFromCache = imageCache.object(forKey: imageUrl as NSString) as? UIImage {
             completion(.Success, imageFromCache)
             return
@@ -104,6 +107,7 @@ class BaseService : NSObject {
     
     private func handleResponse(response: DataResponse<Any>, completion: @escaping (_ status: RequestStatus, _ response: Data?) -> Void) {
          print("------------------------------ RESPONSE FROM API ---------------------------------------")
+        //print("URI: \(response.request!.mainDocumentURL!.absoluteString)")
         print("RESPONSE: \(response)")
         if let statusCode = response.response?.statusCode {
             print("STATUS CODE: \(statusCode)")
