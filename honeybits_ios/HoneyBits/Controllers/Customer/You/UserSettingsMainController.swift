@@ -50,8 +50,7 @@ class UserSettingsMainController: UITableViewController {
     }
     
     @objc private func goToNotifications() {
-        showHudMessage("Notifications", type: .info)
-
+        performSegue(withIdentifier: "goToNotifications", sender: self)
     }
     
     @objc private func goToSettings() {
