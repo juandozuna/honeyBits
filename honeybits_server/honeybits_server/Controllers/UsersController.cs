@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -76,6 +76,10 @@ namespace honeybits_server.Controllers
                 return BadRequest("Value cannot be empty");
 
             return Ok(_userService.Search(value));
+        }
+
+        public async Task<IActionResult> GetLikedProducts() {
+            return Ok();
         }
     }
 }

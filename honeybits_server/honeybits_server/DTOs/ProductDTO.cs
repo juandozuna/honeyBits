@@ -31,6 +31,6 @@ namespace honeybits_server.DTOs
         public int? DeletedBy { get; set; }
 
         public IEnumerable<ProductImageDTO> ProductImages { get; set; }
-        public IEnumerable<ProductLikeDTO> ProductLikes { get; set; }
+        public int ProductLikes { get; set; }
     }
 }

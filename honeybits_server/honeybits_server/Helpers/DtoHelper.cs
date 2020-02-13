@@ -18,7 +18,7 @@ namespace honeybits_server.Helpers {
                 DeletedBy = product.DeletedBy,
                 IsDeleted = product.IsDeleted,
                 ProductImages = fromProductImageToDto(product.ProductImage, path),
-                ProductLikes = fromProductLikeToDto(product.ProductLike)
+                ProductLikes = fromProductLikeToCount(product.ProductLike)
             };
         }
 
@@ -50,6 +50,9 @@ namespace honeybits_server.Helpers {
             }
             return likes;
         }
+
+        public int fromProductLikeToCount(IEnumerable<ProductLike> productLikes) => new List<ProductLikeDTO>().Count;
+            
 
         public ProductImageDTO fromProductImageToDto(ProductImage productImage)
         {
