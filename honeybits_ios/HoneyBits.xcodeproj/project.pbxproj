@@ -81,6 +81,7 @@
 		B262AF4A22DBF14900ABF311 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AF4922DBF14900ABF311 /* BaseService.swift */; };
 		B262AF4C22DBF86600ABF311 /* UserTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AF4B22DBF86600ABF311 /* UserTokenModel.swift */; };
 		B262AF4F22DBF94D00ABF311 /* RequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262AF4E22DBF94D00ABF311 /* RequestStatus.swift */; };
+		B265BE1023ECFDF1009BCE56 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B265BE0F23ECFDF1009BCE56 /* Colors.xcassets */; };
 		B26C6524232095F00053537C /* KeeperShopDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B26C6523232095F00053537C /* KeeperShopDetailsCell.xib */; };
 		B26C65262320994B0053537C /* KeeperShopDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26C65252320994B0053537C /* KeeperShopDetailsCell.swift */; };
 		B26C652A2320A38E0053537C /* ShopActionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26C65292320A38E0053537C /* ShopActionDelegate.swift */; };
@@ -103,6 +104,7 @@
 		B27D794922D42CEB0012F5CD /* CustomerCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27D794822D42CEB0012F5CD /* CustomerCart.storyboard */; };
 		B2829F17230632B00050C45E /* UserRegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2829F16230632B00050C45E /* UserRegistrationModel.swift */; };
 		B2829F192306361C0050C45E /* UserRegistrationTypeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2829F182306361C0050C45E /* UserRegistrationTypeSelection.swift */; };
+		B2855D4023F2509C002B2D00 /* CustomerNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2855D3F23F2509C002B2D00 /* CustomerNotificationsController.swift */; };
 		B289AE14230B56060010F8C9 /* KeeperShopCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B289AE13230B56060010F8C9 /* KeeperShopCreation.storyboard */; };
 		B289AE16230B5BE20010F8C9 /* KeeperShopNameFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B289AE15230B5BE20010F8C9 /* KeeperShopNameFormController.swift */; };
 		B28F419B22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F419A22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift */; };
@@ -145,7 +147,7 @@
 		B2EE458E237B225E00CE870A /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE458D237B225E00CE870A /* BarButtonItem.swift */; };
 		B2EE4591237B24AB00CE870A /* CustomerProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE4590237B24AB00CE870A /* CustomerProductViewController.swift */; };
 		B2EE4593237B5D4900CE870A /* ImageNavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE4592237B5D4900CE870A /* ImageNavButton.swift */; };
-		B2EE6A8422D8E54900350BBA /* CustomerGuestSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */; };
+		B2EE6A8422D8E54900350BBA /* UserSettingsMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EE6A8322D8E54900350BBA /* UserSettingsMainController.swift */; };
 		B2EE6A8722D8FDBF00350BBA /* AboutApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EE6A8622D8FDBF00350BBA /* AboutApp.storyboard */; };
 		B2EE6A8922D8FE8500350BBA /* LegalData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2EE6A8822D8FE8500350BBA /* LegalData.storyboard */; };
 		B2F0835C2311811500AA395A /* RegistrationUsernameSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0835B2311811500AA395A /* RegistrationUsernameSelectionController.swift */; };
@@ -157,6 +159,9 @@
 		B2F8358A22D6820900A9910C /* SignInDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8358922D6820900A9910C /* SignInDelegate.swift */; };
 		B2F8358E22D6837200A9910C /* CustomerHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8358D22D6837200A9910C /* CustomerHomeViewController.swift */; };
 		B2F8359122D6882F00A9910C /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F8359022D6882F00A9910C /* UiViewExtension.swift */; };
+		B2FA1C5223F0E6AD001EC7DC /* CustomerProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FA1C5123F0E6AD001EC7DC /* CustomerProfileController.swift */; };
+		B2FA1C5423F0E9F8001EC7DC /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FA1C5323F0E9F8001EC7DC /* ProfileHeaderCell.swift */; };
+		B2FA1C5623F0F8DF001EC7DC /* ProfileAboutInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FA1C5523F0F8DF001EC7DC /* ProfileAboutInfoCell.swift */; };
 		B2FBFB6C23308C82004867EE /* ImageMediaHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBFB6B23308C82004867EE /* ImageMediaHandler.swift */; };
 		B2FBFB6E2330916D004867EE /* ImageConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBFB6D2330916D004867EE /* ImageConfirmViewController.swift */; };
 		B2FC8EE622CA1FBD008CE65C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */; };
@@ -264,6 +269,7 @@
 		B262AF4922DBF14900ABF311 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		B262AF4B22DBF86600ABF311 /* UserTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenModel.swift; sourceTree = "<group>"; };
 		B262AF4E22DBF94D00ABF311 /* RequestStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatus.swift; sourceTree = "<group>"; };
+		B265BE0F23ECFDF1009BCE56 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B26C6523232095F00053537C /* KeeperShopDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeeperShopDetailsCell.xib; sourceTree = "<group>"; };
 		B26C65252320994B0053537C /* KeeperShopDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperShopDetailsCell.swift; sourceTree = "<group>"; };
 		B26C65292320A38E0053537C /* ShopActionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopActionDelegate.swift; sourceTree = "<group>"; };
@@ -288,6 +294,7 @@
 		B27D794822D42CEB0012F5CD /* CustomerCart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomerCart.storyboard; sourceTree = "<group>"; };
 		B2829F16230632B00050C45E /* UserRegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationModel.swift; sourceTree = "<group>"; };
 		B2829F182306361C0050C45E /* UserRegistrationTypeSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationTypeSelection.swift; sourceTree = "<group>"; };
+		B2855D3F23F2509C002B2D00 /* CustomerNotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerNotificationsController.swift; sourceTree = "<group>"; };
 		B289AE13230B56060010F8C9 /* KeeperShopCreation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeeperShopCreation.storyboard; sourceTree = "<group>"; };
 		B289AE15230B5BE20010F8C9 /* KeeperShopNameFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperShopNameFormController.swift; sourceTree = "<group>"; };
 		B28F419A22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationNavigationController.swift; sourceTree = "<group>"; };
@@ -330,7 +337,7 @@
 		B2EE458D237B225E00CE870A /* BarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
 		B2EE4590237B24AB00CE870A /* CustomerProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProductViewController.swift; sourceTree = "<group>"; };
 		B2EE4592237B5D4900CE870A /* ImageNavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNavButton.swift; sourceTree = "<group>"; };
-		B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerGuestSettingsViewController.swift; sourceTree = "<group>"; };
+		B2EE6A8322D8E54900350BBA /* UserSettingsMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsMainController.swift; sourceTree = "<group>"; };
 		B2EE6A8622D8FDBF00350BBA /* AboutApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutApp.storyboard; sourceTree = "<group>"; };
 		B2EE6A8822D8FE8500350BBA /* LegalData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LegalData.storyboard; sourceTree = "<group>"; };
 		B2F0835B2311811500AA395A /* RegistrationUsernameSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUsernameSelectionController.swift; sourceTree = "<group>"; };
@@ -342,6 +349,9 @@
 		B2F8358922D6820900A9910C /* SignInDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDelegate.swift; sourceTree = "<group>"; };
 		B2F8358D22D6837200A9910C /* CustomerHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeViewController.swift; sourceTree = "<group>"; };
 		B2F8359022D6882F00A9910C /* UiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExtension.swift; sourceTree = "<group>"; };
+		B2FA1C5123F0E6AD001EC7DC /* CustomerProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProfileController.swift; sourceTree = "<group>"; };
+		B2FA1C5323F0E9F8001EC7DC /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
+		B2FA1C5523F0F8DF001EC7DC /* ProfileAboutInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAboutInfoCell.swift; sourceTree = "<group>"; };
 		B2FBFB6B23308C82004867EE /* ImageMediaHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaHandler.swift; sourceTree = "<group>"; };
 		B2FBFB6D2330916D004867EE /* ImageConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConfirmViewController.swift; sourceTree = "<group>"; };
 		B2FC8EE522CA1FBD008CE65C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -759,6 +769,14 @@
 			path = CustomerHome;
 			sourceTree = "<group>";
 		};
+		B2855D3E23F25073002B2D00 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				B2855D3F23F2509C002B2D00 /* CustomerNotificationsController.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		B28F41A222D783A300C7E2E6 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
@@ -782,8 +800,10 @@
 		B28F41AA22D80CC600C7E2E6 /* You */ = {
 			isa = PBXGroup;
 			children = (
+				B2855D3E23F25073002B2D00 /* Notifications */,
+				B2FA1C5023F0E69E001EC7DC /* Profile */,
 				B28F41AB22D80CD900C7E2E6 /* CustomerYouViewController.swift */,
-				B2EE6A8322D8E54900350BBA /* CustomerGuestSettingsViewController.swift */,
+				B2EE6A8322D8E54900350BBA /* UserSettingsMainController.swift */,
 			);
 			path = You;
 			sourceTree = "<group>";
@@ -1009,6 +1029,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B2FA1C5023F0E69E001EC7DC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B2FA1C5123F0E6AD001EC7DC /* CustomerProfileController.swift */,
+				B2FA1C5323F0E9F8001EC7DC /* ProfileHeaderCell.swift */,
+				B2FA1C5523F0F8DF001EC7DC /* ProfileAboutInfoCell.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		B2FBFB6A23308C6A004867EE /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1044,6 +1074,7 @@
 				B2745FC522D57D2F00297A43 /* Components */,
 				B2270039232C6AB80074AFF7 /* Helper */,
 				B2FC8EEC22CA1FBE008CE65C /* Assets.xcassets */,
+				B265BE0F23ECFDF1009BCE56 /* Colors.xcassets */,
 				B2FC8EEE22CA1FBE008CE65C /* LaunchScreen.storyboard */,
 				B203770B236083840001544E /* GoogleService-Info.plist */,
 				B2FC8EF122CA1FBE008CE65C /* Info.plist */,
@@ -1167,6 +1198,7 @@
 				B27D794522D42BC80012F5CD /* CustomerSearch.storyboard in Resources */,
 				B2EE6A8722D8FDBF00350BBA /* AboutApp.storyboard in Resources */,
 				B2C4D8A2232F04E5009A614B /* ProductProfileImageCell.xib in Resources */,
+				B265BE1023ECFDF1009BCE56 /* Colors.xcassets in Resources */,
 				B26C6524232095F00053537C /* KeeperShopDetailsCell.xib in Resources */,
 				B272B8CB22CED34900E124B4 /* Localizable.strings in Resources */,
 				B2B7B91623C8107000D62DAB /* CustomerShopCell.xib in Resources */,
@@ -1341,7 +1373,9 @@
 				B2DABEFA232739F9001B4E4C /* KeeperShopProductCell.swift in Sources */,
 				B28F419B22D6DD8C00C7E2E6 /* UserAuthenticationNavigationController.swift in Sources */,
 				B2B7B91E23C9720A00D62DAB /* CustomerFavoriteProductsViewController.swift in Sources */,
+				B2FA1C5223F0E6AD001EC7DC /* CustomerProfileController.swift in Sources */,
 				B2F23720232D2CF3006CFD70 /* ProductImage.swift in Sources */,
+				B2855D4023F2509C002B2D00 /* CustomerNotificationsController.swift in Sources */,
 				B23B3686232B023000DF0FB8 /* KeeperShopEditViewController.swift in Sources */,
 				B23FEA9C22F1BFE4001E8B32 /* CustomerHomeUserController.swift in Sources */,
 				B28F41AC22D80CD900C7E2E6 /* CustomerYouViewController.swift in Sources */,
@@ -1411,10 +1445,11 @@
 				B239DDD9236930F80078C287 /* HomeFooterCollectionViewCell.swift in Sources */,
 				B211EC2A22EF6E1D006B5A82 /* MenuContentController.swift in Sources */,
 				B227003E232C7A870074AFF7 /* PrimaryButton.swift in Sources */,
+				B2FA1C5423F0E9F8001EC7DC /* ProfileHeaderCell.swift in Sources */,
 				B2270040232C7CB30074AFF7 /* PrimaryButtonOutline.swift in Sources */,
 				B239DDD3236762D30078C287 /* ProductInfoCardViewCell.swift in Sources */,
 				B2F8358E22D6837200A9910C /* CustomerHomeViewController.swift in Sources */,
-				B2EE6A8422D8E54900350BBA /* CustomerGuestSettingsViewController.swift in Sources */,
+				B2EE6A8422D8E54900350BBA /* UserSettingsMainController.swift in Sources */,
 				B2B7B91C23C94F2400D62DAB /* CustomerShopCell.swift in Sources */,
 				B2398A3422DD36280042C764 /* UIViewControllerExtension.swift in Sources */,
 				B20EDA75236243C20053A8B7 /* FacebookAuthService.swift in Sources */,
@@ -1443,6 +1478,7 @@
 				B2B7B91823C9388F00D62DAB /* HBTextLabel.swift in Sources */,
 				B2829F192306361C0050C45E /* UserRegistrationTypeSelection.swift in Sources */,
 				B2171FAF239F3A9A00B1CCE6 /* ForgetPasswordModel.swift in Sources */,
+				B2FA1C5623F0F8DF001EC7DC /* ProfileAboutInfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1637,7 +1673,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C49A3648E7B99FD0B4DD36D /* Pods-HoneyBits.debug.xcconfig */;
 			buildSettings = {
-				API_ENDPOINT_BASE_URL = "http://honeybits.azurewebsites.net/";
+				API_ENDPOINT_BASE_URL = "http://honeybitsapp.azurewebsites.net/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1660,7 +1696,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9A8C8D69F1321C353BBA8B5 /* Pods-HoneyBits.release.xcconfig */;
 			buildSettings = {
-				API_ENDPOINT_BASE_URL = "http://honeybits.azurewebsites.net/";
+				API_ENDPOINT_BASE_URL = "http://honeybitsapp.azurewebsites.net/";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
